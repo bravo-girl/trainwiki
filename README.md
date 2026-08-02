@@ -13,6 +13,7 @@ Beide Dateien bilden gemeinsam die Schema-Schicht des Wikis und müssen bei jede
 
 - Öffentliche, responsive Chat-Website unter `/chat`, ohne Anmeldung
 - Serverseitiger Groq-Adapter für das feste Modell `openai/gpt-oss-20b`; der API-Schlüssel bleibt im Worker
+- sichere Darstellung von Modellantworten als GitHub-Flavored Markdown; rohes HTML wird verworfen
 - D1-gestützte Limits von vier Fragen pro Minute und 20 Fragen pro Tag je pseudonymisiertem Client sowie 25/Minute und 900/Tag global
 - Geschützte Admin-Website unter `/admin`, ohne ChatGPT/SIWC; ein GitHub-PAT wird einmalig gegen den freigegebenen GitHub-Login geprüft und nicht gespeichert
 - Quellen-, Job- und Lernvorschlagsansichten im Adminbereich

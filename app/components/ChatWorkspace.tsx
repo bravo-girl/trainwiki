@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const MODEL = "openai/gpt-oss-20b";
 const MAX_QUESTION_CHARS = 3_000;
@@ -33,6 +35,33 @@ const suggestions = [
   "Wie kann Wissen zuverlässig aktualisiert werden?",
   "Fasse deine Antwort in drei Punkten zusammen.",
 ];
+
+function MarkdownAnswer({ children }: { children: string }) {
+  return (
+    <div className="markdown-message">
+      <ReactMarkdown
+        components={{
+          a({ children: linkChildren, href }) {
+            const isExternal = /^https?:\/\//i.test(href ?? "");
+            return (
+              <a
+                href={href}
+                rel={isExternal ? "noopener noreferrer nofollow" : undefined}
+                target={isExternal ? "_blank" : undefined}
+              >
+                {linkChildren}
+              </a>
+            );
+          },
+        }}
+        remarkPlugins={[remarkGfm]}
+        skipHtml
+      >
+        {children}
+      </ReactMarkdown>
+    </div>
+  );
+}
 
 export function ChatWorkspace() {
   const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
@@ -175,7 +204,11 @@ export function ChatWorkspace() {
                     <span>{message.evidenceStatus}</span>
                   )}
                 </div>
-                <p style={{ whiteSpace: "pre-wrap" }}>{message.text}</p>
+                {message.role === "assistant" ? (
+                  <MarkdownAnswer>{message.text}</MarkdownAnswer>
+                ) : (
+                  <p>{message.text}</p>
+                )}
               </div>
             </article>
           ))}
