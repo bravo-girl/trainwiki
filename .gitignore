@@ -1,21 +1,51 @@
-# Local secrets
+# Dependencies
+/node_modules/
+/.pnp/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Tests and builds
+/coverage/
+/.next/
+/.vinext/
+/out/
+/dist/
+/.wrangler/
+/outputs/
+/work/
+
+# Secrets
 .env
 .env.*
 !.env.example
+*.pem
 
-# Dependencies and build output
-node_modules/
-dist/
-build/
-.venv/
-venv/
+# Python / DSPy jobs
+/.venv/
+/venv/
 __pycache__/
 *.py[cod]
 
-# Logs and local tooling
+# Logs
 *.log
-.idea/
-.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Editors and operating systems
+/.idea/
+/.vscode/
 .DS_Store
 Thumbs.db
 
+# Generated TypeScript
+next-env.d.ts
+*.tsbuildinfo
+
+# Provider-specific local metadata
+.vercel/
