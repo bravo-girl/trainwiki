@@ -10,6 +10,27 @@ type QueueItem = {
   status: "Wartet" | "Konvertierung" | "Wiki-Prüfung" | "Veröffentlicht";
 };
 
+type ProposalState = "Offen" | "In Prüfung" | "Verworfen";
+
+type AdminWorkspaceProps = {
+  adminName: string;
+};
+
+const MAX_UPLOAD_BYTES = 20 * 1024 * 1024;
+const SUPPORTED_EXTENSIONS = new Set([
+  "pdf",
+  "docx",
+  "xlsx",
+  "xml",
+  "json",
+  "yaml",
+  "yml",
+  "html",
+  "htm",
+  "md",
+  "markdown",
+]);
+
 const initialQueue: QueueItem[] = [
   {
     id: 1,
@@ -41,14 +62,16 @@ const statusClass: Record<QueueItem["status"], string> = {
   Veröffentlicht: "status-published",
 };
 
-export function AdminWorkspace() {
+export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
   const [queue, setQueue] = useState(initialQueue);
   const [url, setUrl] = useState("");
   const [dragging, setDragging] = useState(false);
   const [notice, setNotice] = useState(
     "Interaktiver Prototyp: Uploads werden lokal vorgemerkt, noch nicht übertragen.",
   );
-  const [proposals, setProposals] = useState([
+  const [proposals, setProposals] = useState<
+    Array<{ id: number; title: string; source: string; state: ProposalState }>
+  >([
     {
       id: 1,
       title: "LLM-Wiki als vorkompilierte Wissensschicht",
@@ -63,17 +86,30 @@ export function AdminWorkspace() {
     },
   ]);
 
+  const adminInitials = adminName
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("") || "AD";
+
   function addFiles(files: FileList | File[]) {
-    const next = Array.from(files).map((file, index) => ({
+    const candidates = Array.from(files);
+    const accepted = candidates.filter((file) => {
+      const extension = file.name.split(".").pop()?.toLowerCase() ?? "";
+      return SUPPORTED_EXTENSIONS.has(extension) && file.size <= MAX_UPLOAD_BYTES;
+    });
+    const next = accepted.map((file, index) => ({
       id: Date.now() + index,
       name: file.name,
       type: file.name.split(".").pop()?.toUpperCase() || "DATEI",
       size: formatBytes(file.size),
       status: "Wartet" as const,
     }));
-    setQueue((current) => [...next, ...current]);
+    if (next.length) setQueue((current) => [...next, ...current]);
+    const rejected = candidates.length - accepted.length;
     setNotice(
-      `${next.length} ${next.length === 1 ? "Datei wurde" : "Dateien wurden"} für die spätere Konvertierung vorgemerkt.`,
+      `${next.length} ${next.length === 1 ? "Datei wurde" : "Dateien wurden"} vorgemerkt.${rejected ? ` ${rejected} Datei(en) wegen Format oder 20-MiB-Limit abgewiesen.` : ""}`,
     );
   }
 
@@ -105,15 +141,15 @@ export function AdminWorkspace() {
     setNotice("Webquelle wurde für Abruf, Bereinigung und Markdown-Konvertierung vorgemerkt.");
   }
 
-  function decideProposal(id: number, decision: "Übernommen" | "Verworfen") {
+  function decideProposal(id: number, decision: "In Prüfung" | "Verworfen") {
     setProposals((current) =>
       current.map((proposal) =>
         proposal.id === id ? { ...proposal, state: decision } : proposal,
       ),
     );
     setNotice(
-      decision === "Übernommen"
-        ? "Lernvorschlag wurde zur geprüften Wiki-Änderung freigegeben."
+      decision === "In Prüfung"
+        ? "Review vorgemerkt: Vor einer Freigabe müssen Diff, Evidenz und exakter Commit geprüft werden."
         : "Lernvorschlag wurde verworfen und bleibt im Audit-Protokoll sichtbar.",
     );
   }
@@ -140,9 +176,9 @@ export function AdminWorkspace() {
           </a>
         </nav>
         <div className="admin-identity">
-          <span className="avatar">BG</span>
+          <span className="avatar">{adminInitials}</span>
           <span>
-            <strong>bravo-girl</strong>
+            <strong>{adminName}</strong>
             <small>Administratorin</small>
           </span>
         </div>
@@ -209,7 +245,7 @@ export function AdminWorkspace() {
               onDrop={onDrop}
             >
               <input
-                accept=".pdf,.docx,.xlsx,.xml,.json,.yaml,.yml,.md,text/markdown"
+                accept=".pdf,.docx,.xlsx,.xml,.json,.yaml,.yml,.html,.htm,.md,.markdown,text/html,text/markdown"
                 multiple
                 onChange={onFileChange}
                 type="file"
@@ -218,7 +254,7 @@ export function AdminWorkspace() {
               <strong>Dateien hier ablegen</strong>
               <p>oder klicken, um mehrere Quellen auszuwählen</p>
               <div className="format-list">
-                {['PDF', 'DOCX', 'XLSX', 'XML', 'JSON', 'YAML', 'MD'].map((format) => (
+                {['PDF', 'DOCX', 'XLSX', 'XML', 'JSON', 'YAML', 'HTML', 'MD'].map((format) => (
                   <span key={format}>{format}</span>
                 ))}
               </div>
@@ -307,8 +343,8 @@ export function AdminWorkspace() {
                       <button onClick={() => decideProposal(proposal.id, "Verworfen")} type="button">
                         Verwerfen
                       </button>
-                      <button onClick={() => decideProposal(proposal.id, "Übernommen")} type="button">
-                        Prüfen &amp; übernehmen
+                      <button onClick={() => decideProposal(proposal.id, "In Prüfung")} type="button">
+                        Diff &amp; Evidenz prüfen
                       </button>
                     </div>
                   ) : (
@@ -324,7 +360,14 @@ export function AdminWorkspace() {
               <p className="eyebrow">03 · Wiki-Gesundheit</p>
               <h2>Pflegezustand</h2>
             </div>
-            <div className="health-ring" aria-label="Gesundheit 96 Prozent">
+            <div
+              aria-label="Gesundheit 96 Prozent"
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={96}
+              className="health-ring"
+              role="progressbar"
+            >
               <strong>96</strong>
               <span>/ 100</span>
             </div>

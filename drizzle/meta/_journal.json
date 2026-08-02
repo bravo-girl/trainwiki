@@ -8,6 +8,13 @@
       "when": 1785649011803,
       "tag": "0000_icy_solo",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1785651063460,
+      "tag": "0001_wooden_grim_reaper",
+      "breakpoints": true
     }
   ]
 }

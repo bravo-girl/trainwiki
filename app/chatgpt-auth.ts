@@ -48,6 +48,56 @@ export async function requireChatGPTUser(
   redirect(chatGPTSignInPath(returnTo));
 }
 
+export async function requireTrainWikiAdmin(
+  returnTo: string,
+): Promise<ChatGPTUser> {
+  const requestHeaders = await headers();
+  const user = await getChatGPTUser();
+
+  if (!user && process.env.NODE_ENV === "development") {
+    const host = requestHeaders.get("host")?.toLowerCase() ?? "";
+    if (
+      host === "localhost" ||
+      host.startsWith("localhost:") ||
+      host === "127.0.0.1" ||
+      host.startsWith("127.0.0.1:") ||
+      host === "[::1]" ||
+      host.startsWith("[::1]:")
+    ) {
+      return {
+        userId: "local-admin",
+        displayName: "Lokale Administration",
+        email: "local-admin@localhost.invalid",
+        fullName: "Lokale Administration",
+      };
+    }
+  }
+
+  if (!user) redirect(chatGPTSignInPath(returnTo));
+
+  const allowlist = (process.env.TRAINWIKI_ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((email) => email.trim().toLowerCase())
+    .filter(Boolean);
+  const allowedUserIds = (process.env.TRAINWIKI_ADMIN_USER_IDS ?? "")
+    .split(",")
+    .map((userId) => userId.trim())
+    .filter(Boolean);
+
+  if (
+    allowedUserIds.includes(user.userId) ||
+    allowlist.includes(user.email.toLowerCase())
+  ) {
+    return user;
+  }
+
+  redirect(
+    allowlist.length === 0 && allowedUserIds.length === 0
+      ? "/chat?admin=configuration-required"
+      : "/chat?admin=forbidden",
+  );
+}
+
 export function chatGPTSignInPath(returnTo: string): string {
   const safeReturnTo = safeRelativeReturnPath(returnTo);
   return `${SIGN_IN_PATH}?return_to=${encodeURIComponent(safeReturnTo)}`;

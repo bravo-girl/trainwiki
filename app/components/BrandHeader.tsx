@@ -18,10 +18,18 @@ export function BrandHeader({ active }: BrandHeaderProps) {
       </Link>
 
       <nav className="primary-nav" aria-label="Hauptnavigation">
-        <Link className={active === "chat" ? "is-active" : ""} href="/chat">
+        <Link
+          aria-current={active === "chat" ? "page" : undefined}
+          className={active === "chat" ? "is-active" : ""}
+          href="/chat"
+        >
           Chat
         </Link>
-        <Link className={active === "admin" ? "is-active" : ""} href="/admin">
+        <Link
+          aria-current={active === "admin" ? "page" : undefined}
+          className={active === "admin" ? "is-active" : ""}
+          href="/admin"
+        >
           Admin
         </Link>
       </nav>

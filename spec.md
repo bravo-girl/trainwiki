@@ -120,7 +120,7 @@ Der Standard-Antwortablauf lautet:
 
 ### 6.2 Admin-Website
 
-Die Admin-Seite ist nicht über bloßes Verbergen geschützt, sondern verlangt serverseitig geprüfte Identität und Rollenfreigabe. Sie bietet folgende Bereiche:
+Die Admin-Seite ist nicht über bloßes Verbergen geschützt, sondern verlangt serverseitig geprüfte Identität und Rollenfreigabe. `TRAINWIKI_ADMIN_USER_IDS` und optional `TRAINWIKI_ADMIN_EMAILS` bilden die serverseitige Allowlist; ohne mindestens einen Eintrag bleibt `/admin` auch für angemeldete Nutzer gesperrt. Die private Sites-Vorschau ist zusätzlich auf den Eigentümer begrenzt. Sie bietet folgende Bereiche:
 
 #### Übersicht
 
@@ -346,7 +346,7 @@ Die Namen sind logisch; konkrete Drizzle-Schemas dürfen technisch abweichen, m�
 - `id`, `source_id`, `sha256`, `size_bytes`, `media_type`, `original_filename_optional`
 - `raw_release_tag_optional`, `raw_asset_id_optional`, `normalized_repo_path_optional`, `converter_name`, `converter_version`
 - `fetch_time_optional`, `created_at`, `supersedes_version_id_optional`, `manifest_json`
-- Eindeutigkeit auf `(source_id, sha256)`; Inhalt ist unveränderlich.
+- Eindeutigkeit auf `(source_id, sha256)`; Inhalt ist unveränderlich. Einfache Fremdschlüssel sichern die Existenz der Versions-ID; D1-kompatible `BEFORE INSERT/UPDATE`-Trigger binden `current_version_id` und `supersedes_version_id` zusätzlich an dieselbe `source_id`.
 
 #### `jobs` und `job_events`
 
@@ -358,7 +358,7 @@ Die Namen sind logisch; konkrete Drizzle-Schemas dürfen technisch abweichen, m�
 
 - `id`, `job_id`, `base_commit`, `branch`, `head_commit_optional`, `pull_request_url_optional`
 - `risk`, `status`, `summary`, `validation_json`, `created_at`, `reviewed_by_optional`, `reviewed_at_optional`.
-- Eine Freigabe muss genau den geprüften `head_commit` referenzieren.
+- Eine Freigabe muss genau den geprüften `head_commit` referenzieren. D1-Trigger blockieren `approved`, `publishing` und `succeeded`, solange Commit, Prüfer, Prüfzeit oder expliziter `reviewed_head_commit` fehlen beziehungsweise abweichen.
 
 #### `wiki_pages` und `wiki_chunks`
 
@@ -366,6 +366,7 @@ Die Namen sind logisch; konkrete Drizzle-Schemas dürfen technisch abweichen, m�
 - `wiki_pages`: `path`, `title`, `summary`, `commit_sha`, `content_sha`, `updated_at`, Metadaten.
 - `wiki_chunks`: `id`, `page_path`, `ordinal`, `heading_path`, `text`, `token_count`, `source_refs_json`, `content_sha`.
 - Optionaler Volltextindex nutzt SQLite FTS, sofern die Ziel-D1-Version dies unterstützt; andernfalls wird ein deterministischer Termindex geführt.
+- `wiki_terms`: abgeleiteter deterministischer Fallbackindex aus `chunk_id`, normalisiertem `term` und positiver `frequency`; Eindeutigkeit auf `(chunk_id, term)` und Query-Index auf `(term, frequency)`.
 
 #### `conversations`, `messages` und `feedback`
 
@@ -670,7 +671,7 @@ Die tatsächlichen Werte sind konfigurierbar und werden an die kleinste externe 
 
 - Besucher: maximal 4 Chatrequests pro Minute, 20 pro Tag und pseudonymer Kennung/IP-Bucket, eine parallele Anfrage.
 - Angemeldete Admins: maximal zwei parallele Jobs und ein inhaltsverändernder Wiki-Job zur selben Zeit.
-- Upload: standardmäßig 25 MiB pro Datei, höchstens 100 Dateien pro Bootstrap-Batch.
+- Upload: standardmäßig 20 MiB pro Datei, höchstens 100 Dateien pro Bootstrap-Batch.
 - URL: eine Seite pro Auftrag, maximal 10 MiB Download, fünf Redirects, kein rekursives Crawling.
 - LLM-Kontext: maximal 12.000 Eingabetokens, 1.200 Ausgabetokens und sechs Evidenzausschnitte pro normaler Antwort.
 - Tagesbudget: globaler harter Request-/Token-Cutoff unterhalb des tatsächlich verfügbaren Groq-Free-Limits.

@@ -84,6 +84,8 @@ export const sources = sqliteTable(
     status: text("status").notNull(),
     createdBy: text("created_by").notNull(),
     createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    // Same-source membership is additionally enforced by D1 triggers because
+    // SQLite cannot SET NULL only one column of a composite foreign key.
     currentVersionId: text("current_version_id").references(
       (): AnySQLiteColumn => sourceVersions.id,
       { onDelete: "set null" },
@@ -113,6 +115,7 @@ export const sourceVersions = sqliteTable(
     converterVersion: text("converter_version").notNull(),
     fetchTime: text("fetch_time"),
     createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    // The D1 migration trigger rejects predecessor links across sources.
     supersedesVersionId: text("supersedes_version_id").references(
       (): AnySQLiteColumn => sourceVersions.id,
       { onDelete: "set null" },
@@ -263,6 +266,22 @@ export const wikiChunks = sqliteTable(
     index("wiki_chunks_content_sha_idx").on(table.contentSha),
     check("wiki_chunks_ordinal_nonnegative", sql`${table.ordinal} >= 0`),
     check("wiki_chunks_token_count_nonnegative", sql`${table.tokenCount} >= 0`),
+  ],
+);
+
+export const wikiTerms = sqliteTable(
+  "wiki_terms",
+  {
+    chunkId: text("chunk_id")
+      .notNull()
+      .references(() => wikiChunks.id, { onDelete: "cascade" }),
+    term: text("term").notNull(),
+    frequency: integer("frequency").notNull(),
+  },
+  (table) => [
+    uniqueIndex("wiki_terms_chunk_term_unique").on(table.chunkId, table.term),
+    index("wiki_terms_term_frequency_idx").on(table.term, table.frequency),
+    check("wiki_terms_frequency_positive", sql`${table.frequency} > 0`),
   ],
 );
 

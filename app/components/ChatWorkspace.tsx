@@ -7,6 +7,7 @@ type Message = {
   role: "assistant" | "user";
   text: string;
   citations?: Array<{ label: string; detail: string }>;
+  evidenceStatus?: "belegt" | "Systemhinweis" | "Prototyp · nicht verbunden";
   learned?: boolean;
 };
 
@@ -14,6 +15,7 @@ const initialMessages: Message[] = [
   {
     id: 1,
     role: "assistant",
+    evidenceStatus: "Systemhinweis",
     text: "Guten Morgen. Ich beantworte Fragen aus der gepflegten TrainWiki-Wissensbasis. Jede sachliche Aussage bleibt auf ihre Rohquelle zurückführbar. Was möchtest du untersuchen?",
   },
   {
@@ -24,6 +26,7 @@ const initialMessages: Message[] = [
   {
     id: 3,
     role: "assistant",
+    evidenceStatus: "belegt",
     text: "Klassisches RAG setzt die Antwort bei jeder Frage erneut aus Rohtext-Fragmenten zusammen. TrainWiki integriert neue Quellen vorher in dauerhafte, verlinkte Themenseiten. Die Suche arbeitet anschließend auf dieser bereits verdichteten Wissensschicht und greift nur bei Lücken auf Rohquellen zurück. So können geprüfte Synthesen, Widersprüche und Querverbindungen über Gespräche hinweg erhalten bleiben.",
     citations: [
       { label: "[1]", detail: "llm-wiki.md · Grundprinzip" },
@@ -60,6 +63,7 @@ export function ChatWorkspace() {
       {
         id: nextId + 1,
         role: "assistant",
+        evidenceStatus: "Prototyp · nicht verbunden",
         text: "Diese Oberfläche ist bereits interaktiv, aber noch nicht mit Groq und dem DSPy-Programm verbunden. In der produktiven Stufe würde ich jetzt passende Wiki-Seiten abrufen, die Antwort belegen und eine neue Synthese als prüfbaren Lernvorschlag ablegen.",
         citations: [
           { label: "Plan", detail: "spec.md · Phase 3 und 4" },
@@ -93,7 +97,14 @@ export function ChatWorkspace() {
             <p className="eyebrow">Wissensbasis</p>
             <span className="health-score">96%</span>
           </div>
-          <div className="health-track" aria-label="Wiki-Gesundheit 96 Prozent">
+          <div
+            aria-label="Wiki-Gesundheit 96 Prozent"
+            aria-valuemax={100}
+            aria-valuemin={0}
+            aria-valuenow={96}
+            className="health-track"
+            role="progressbar"
+          >
             <span />
           </div>
           <dl>
@@ -135,7 +146,9 @@ export function ChatWorkspace() {
               <div className="message-content">
                 <div className="message-meta">
                   <strong>{message.role === "assistant" ? "TrainWiki" : "Du"}</strong>
-                  {message.role === "assistant" && <span>belegt</span>}
+                  {message.role === "assistant" && message.evidenceStatus && (
+                    <span>{message.evidenceStatus}</span>
+                  )}
                 </div>
                 <p>{message.text}</p>
                 {message.citations && (

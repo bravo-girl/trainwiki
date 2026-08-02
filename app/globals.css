@@ -711,6 +711,7 @@ a {
 .admin-main {
   margin: 0 auto;
   max-width: 1300px;
+  min-width: 0;
   padding: 46px clamp(24px, 4vw, 64px) 80px;
   width: 100%;
 }
