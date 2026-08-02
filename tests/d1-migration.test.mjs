@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { DatabaseSync } from "node:sqlite";
 import test from "node:test";
+import { retrieveWikiEvidence } from "../lib/wiki-retrieval.ts";
 
 async function applyMigration(db, filename) {
   const sql = await readFile(new URL(`../drizzle/${filename}`, import.meta.url), "utf8");
@@ -112,6 +113,69 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
       ('change-valid', 'job-a', 'base', 'proposal/valid', 'head-valid',
        'approved', 'low', 'Test', '{}', 'admin', CURRENT_TIMESTAMP, 'head-valid');
   `);
+
+  await applyMigration(db, "0002_bootstrap_taf_tap.sql");
+
+  assert.equal(
+    db.prepare("SELECT count(*) AS count FROM sources WHERE created_by = 'bootstrap'").get().count,
+    21,
+  );
+  assert.equal(
+    db.prepare("SELECT count(*) AS count FROM wiki_pages WHERE json_extract(metadata_json, '$.bootstrap') = 1").get().count,
+    21,
+  );
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_chunks").get().count, 282);
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_terms").get().count, 12_229);
+  assert.equal(
+    db.prepare("SELECT count(*) AS count FROM source_versions WHERE original_filename LIKE 'Kickoff-Ende-zu-Ende-%' OR original_filename = 'TAF-TAP-TSI-Dialog-24-Juni-2026-Terminunterlage-data.pdf'").get().count,
+    0,
+  );
+  assert.deepEqual(db.prepare("PRAGMA foreign_key_check").all(), []);
+
+  const retrievalDb = {
+    prepare(sql) {
+      const statement = db.prepare(sql);
+      let boundValues = [];
+      return {
+        bind(...values) {
+          boundValues = values;
+          return this;
+        },
+        async all() {
+          return { results: statement.all(...boundValues) };
+        },
+      };
+    },
+  };
+  const evidence = await retrieveWikiEvidence(
+    retrievalDb,
+    "Was ist der Company Code und wofür wird er verwendet?",
+  );
+  assert.ok(evidence.chunks.length > 0);
+  assert.match(evidence.chunks[0].title, /Company Code/i);
+  assert.match(evidence.evidenceBlock, /^Nummerierte Evidenz/m);
+
+  db.exec(`
+    INSERT INTO wiki_pages
+      (path, title, summary, commit_sha, content_sha, updated_at, metadata_json)
+    VALUES
+      ('wiki/private.md', 'Private Quelle', 'Privat', 'test', 'private-page',
+       CURRENT_TIMESTAMP,
+       json_object('source_id', 'source-a', 'source_version_id', 'version-a'));
+    INSERT INTO wiki_chunks
+      (id, page_path, ordinal, heading_path, text, token_count,
+       source_refs_json, content_sha)
+    VALUES
+      ('private-chunk', 'wiki/private.md', 0, 'Privat', 'Geheimbegriff', 1,
+       '{}', 'private-chunk');
+    INSERT INTO wiki_terms (chunk_id, term, frequency)
+    VALUES ('private-chunk', 'geheimbegriff', 1);
+  `);
+  const privateEvidence = await retrieveWikiEvidence(
+    retrievalDb,
+    "Geheimbegriff",
+  );
+  assert.deepEqual(privateEvidence.chunks, []);
 
   db.close();
 });

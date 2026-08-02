@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-tcm-ptcm-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-TCM-PTCM-data.pdf",
+  "page_count": 2,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 193928,
+  "source_id": "src_a731ecf1b5573c6eba01",
+  "source_sha256": "c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47",
+  "source_version_id": "sv_c7063d63a8af5e6fac38fb2c",
+  "title": "Flyer TCM PTCM",
+  "visibility": "public"
+}

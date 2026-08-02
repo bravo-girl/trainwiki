@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "filename": "Kickoff-Ende-zu-Ende-Kundentests-TTT-mit-Identifiern-data.pdf",
+      "reasons": [
+        {
+          "marker": "DB Intern / DB internal",
+          "pages": [13],
+          "detected_by": "visual_review"
+        }
+      ]
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-24-Juni-2026-Terminunterlage-data.pdf",
+      "reasons": [
+        {
+          "marker": "DB Vertraulich / DB confidential",
+          "pages": [7],
+          "detected_by": "visual_review"
+        }
+      ]
+    }
+  ]
+}

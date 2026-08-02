@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-company-code-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-Company-Code-data.pdf",
+  "page_count": 2,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 512725,
+  "source_id": "src_d2976558d7a33946b943",
+  "source_sha256": "c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861",
+  "source_version_id": "sv_c0cdd67495939c10345fbc12",
+  "title": "Flyer Company Code",
+  "visibility": "public"
+}

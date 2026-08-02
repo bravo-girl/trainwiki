@@ -74,8 +74,8 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
   >([
     {
       id: 1,
-      title: "LLM-Wiki als vorkompilierte Wissensschicht",
-      source: "Unterhaltung · LLM-Wiki und RAG",
+      title: "Wissensbasis als geprüfte Antwortgrundlage",
+      source: "Unterhaltung · Wissensbasis und Suche",
       state: "Offen",
     },
     {
@@ -149,7 +149,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
     );
     setNotice(
       decision === "In Prüfung"
-        ? "Review vorgemerkt: Vor einer Freigabe müssen Diff, Evidenz und exakter Commit geprüft werden."
+        ? "Prüfung vorgemerkt: Vor einer Freigabe müssen Änderung, Belege und exakte Version geprüft werden."
         : "Lernvorschlag wurde verworfen und bleibt im Audit-Protokoll sichtbar.",
     );
   }
@@ -201,7 +201,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
           </div>
           <div className="admin-heading-actions">
             <button className="outline-button" type="button">
-              Lint-Lauf starten
+              Prüfung starten
             </button>
             <button className="text-button" onClick={signOut} type="button">
               Abmelden
@@ -301,7 +301,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
               ["1", "Ablegen"],
               ["2", "In Markdown"],
               ["3", "Claims prüfen"],
-              ["4", "Wiki-Diff"],
+              ["4", "Änderungen prüfen"],
               ["5", "Veröffentlichen"],
             ].map(([number, label], index) => (
               <div className="pipeline-step" key={number}>
@@ -354,7 +354,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
                         Verwerfen
                       </button>
                       <button onClick={() => decideProposal(proposal.id, "In Prüfung")} type="button">
-                        Diff &amp; Evidenz prüfen
+                        Änderung &amp; Belege prüfen
                       </button>
                     </div>
                   ) : (

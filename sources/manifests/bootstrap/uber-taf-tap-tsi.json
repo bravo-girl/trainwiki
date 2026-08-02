@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "identity-markdown",
+    "version": "1"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "text/markdown",
+  "normalized_repo_path": "sources/normalized/bootstrap/uber-taf-tap-tsi.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Über TAF_TAP TSI.md",
+  "page_count": null,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 11436,
+  "source_id": "src_0ed972984c152ac37d60",
+  "source_sha256": "7c633488c07b24cabd17e8b90258c25559c2bfbe215c2e23efcc3a0ddb98e0ba",
+  "source_version_id": "sv_7c633488c07b24cabd17e8b9",
+  "title": "Über TAF/TAP TSI",
+  "visibility": "public"
+}

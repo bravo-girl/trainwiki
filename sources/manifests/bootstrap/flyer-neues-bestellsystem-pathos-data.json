@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-neues-bestellsystem-pathos-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-Neues-Bestellsystem-pathOS--data.pdf",
+  "page_count": 1,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 136549,
+  "source_id": "src_828f1b79362a62ea820f",
+  "source_sha256": "66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52",
+  "source_version_id": "sv_66fe54f6cac1cc941df10fd8",
+  "title": "Flyer Neues Bestellsystem pathOS",
+  "visibility": "public"
+}

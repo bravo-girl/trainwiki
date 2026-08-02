@@ -9,15 +9,36 @@ process.env.TRAINWIKI_ADMIN_GITHUB_LOGIN = "bravo-girl";
 process.env.TRAINWIKI_ADMIN_SESSION_SECRET = adminSecret;
 delete process.env.GROQ_API_KEY;
 
-function createD1Counter(value = 1) {
+const defaultWikiRows = [
+  {
+    id: "chunk-test",
+    page_path: "wiki/sources/test.md",
+    ordinal: 0,
+    heading_path: "Abschnitt 1",
+    text: "TAF/TAP ist eine geprüfte Testaussage.",
+    source_refs_json: "{}",
+    title: "Testquelle",
+    metadata_json: JSON.stringify({ canonical_url: "https://example.org/source" }),
+    score: 2,
+    matched_terms: 1,
+  },
+];
+
+function createD1Counter(value = 1, wikiRows = defaultWikiRows) {
   return {
     prepare(query) {
-      return {
+      const statement = {
         query,
+        values: [],
         bind(...values) {
-          return { query, values };
+          this.values = values;
+          return this;
+        },
+        async all() {
+          return { results: wikiRows };
         },
       };
+      return statement;
     },
     async batch(statements) {
       return statements.map(() => ({ results: [{ value }] }));
@@ -49,6 +70,14 @@ async function call(pathname, options = {}, bindings = {}) {
   );
 }
 
+function visibleText(html) {
+  return html
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+}
+
 function createAdminCookie(login = "bravo-girl", now = Date.now()) {
   const issuedAt = Math.floor(now / 1_000);
   const payload = Buffer.from(
@@ -60,7 +89,7 @@ function createAdminCookie(login = "bravo-girl", now = Date.now()) {
   return `__Host-trainwiki_admin=${payload}.${signature}`;
 }
 
-test("renders the public Groq chat without authentication", async () => {
+test("renders the public, source-bound chat without authentication", async () => {
   const response = await call("/chat", {
     headers: { accept: "text/html" },
   });
@@ -69,9 +98,13 @@ test("renders the public Groq chat without authentication", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Chat · TrainWiki<\/title>/i);
-  assert.match(html, /Frag GPT-OSS 20B\./);
-  assert.match(html, /Öffentlicher Groq-Dialog/);
-  assert.match(html, /Groq · ohne Anmeldung/);
+  assert.match(html, /Frag TrainWiki\./);
+  assert.match(html, /Wissenschat/);
+  assert.match(html, /TAF\/TAP-Unterlagen/);
+  assert.doesNotMatch(
+    visibleText(html),
+    /groq|gpt-oss|chatgpt|openai|cloudflare|dspy|modell/i,
+  );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
@@ -84,7 +117,8 @@ test("shows the app-owned admin login without a session", async () => {
   const html = await response.text();
   assert.match(html, /<title>Admin · TrainWiki<\/title>/i);
   assert.match(html, /Adminzugang/);
-  assert.match(html, /GitHub Personal Access Token/);
+  assert.match(html, /Persönlicher Zugangsschlüssel/);
+  assert.doesNotMatch(visibleText(html), /GitHub|Worker|API/i);
   assert.doesNotMatch(html, /Quellen rein\. Wissen wächst\./);
 });
 
@@ -218,7 +252,7 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
       upstreamRequest = { input, init };
       return Response.json({
-        choices: [{ message: { content: "Testantwort" } }],
+        choices: [{ message: { content: "Testantwort [1]" } }],
       });
     }
     return originalFetch(input, init);
@@ -238,7 +272,10 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
     assert.equal(response.status, 200);
-    assert.equal((await response.json()).answer, "Testantwort");
+    const responsePayload = await response.json();
+    assert.equal(responsePayload.answer, "Testantwort [1]");
+    assert.equal(responsePayload.sources[0].title, "Testquelle");
+    assert.equal("path" in responsePayload.sources[0], false);
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-20b");
@@ -247,6 +284,76 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     assert.equal(payload.include_reasoning, false);
     assert.equal(payload.stream, false);
     assert.match(upstreamRequest.init.headers.Authorization, /^Bearer gsk_/);
+    assert.match(payload.messages[0].content, /Nummerierte Evidenz/);
+    assert.match(payload.messages[0].content, /ausschließlich anhand/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("does not expose an answer whose source citations are missing", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input, init) => {
+    if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
+      return Response.json({
+        choices: [{ message: { content: "Unbelegte Behauptung" } }],
+      });
+    }
+    return originalFetch(input, init);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          origin: "http://localhost",
+        },
+        body: JSON.stringify({ question: "Kurzer Test", history: [] }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.match(payload.answer, /nicht zuverlässig/i);
+    assert.deepEqual(payload.sources, []);
+    assert.doesNotMatch(payload.answer, /Unbelegte Behauptung/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("abstains without evidence and does not call the answer service", async () => {
+  const originalFetch = globalThis.fetch;
+  let called = false;
+  globalThis.fetch = async (...args) => {
+    called = true;
+    return originalFetch(...args);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          origin: "http://localhost",
+        },
+        body: JSON.stringify({ question: "Unbelegte Frage", history: [] }),
+      },
+      {
+        DB: createD1Counter(1, []),
+        GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture",
+      },
+    );
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.match(payload.answer, /keinen ausreichenden Beleg/i);
+    assert.deepEqual(payload.sources, []);
+    assert.equal(called, false);
   } finally {
     globalThis.fetch = originalFetch;
   }

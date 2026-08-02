@@ -1,0 +1,24 @@
+{
+  "canonical_url": null,
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/fragenkatalog-annex-vii-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Fragenkatalog-Annex-VII-data.pdf",
+  "page_count": 33,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 342989,
+  "source_id": "src_49e6bd4a29f18c068815",
+  "source_sha256": "ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca",
+  "source_version_id": "sv_ad7a22df2cd5529c685aa7d1",
+  "title": "Fragenkatalog Annex VII",
+  "visibility": "public"
+}

@@ -1,0 +1,24 @@
+{
+  "canonical_url": null,
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/infoveranstaltung-vertiefung-20h-zug-15-juli-2026-terminunterlage-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Infoveranstaltung-Vertiefung-20h-Zug-15-Juli-2026-Terminunterlage-data.pdf",
+  "page_count": 28,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 2013214,
+  "source_id": "src_b1dc4ddce9e5b5a345e6",
+  "source_sha256": "20848958c0b6e9f3ebfd74418fcaa3031f0095f16c8e9c4ee2900eca13bf4971",
+  "source_version_id": "sv_20848958c0b6e9f3ebfd7441",
+  "title": "Infoveranstaltung Vertiefung 20h Zug 15 Juli 2026 Terminunterlage",
+  "visibility": "public"
+}

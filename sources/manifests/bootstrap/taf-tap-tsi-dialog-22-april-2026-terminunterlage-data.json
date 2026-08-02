@@ -1,0 +1,24 @@
+{
+  "canonical_url": null,
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/taf-tap-tsi-dialog-22-april-2026-terminunterlage-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "TAF-TAP-TSI-Dialog-22-April-2026-Terminunterlage-data.pdf",
+  "page_count": 20,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 879482,
+  "source_id": "src_ea6d92cb2a3f2e4138ef",
+  "source_sha256": "0c0b08c0adcc9c32c1dcad55bd94be9808b743faa7245e80d1509de084e82df1",
+  "source_version_id": "sv_0c0b08c0adcc9c32c1dcad55",
+  "title": "TAF/TAP TSI Dialog 22 April 2026 Terminunterlage",
+  "visibility": "public"
+}

@@ -47,3 +47,23 @@ test("wires the safe Markdown renderer into assistant messages", async () => {
   assert.match(source, /message\.role === "assistant"/);
   assert.match(source, /noopener noreferrer nofollow/);
 });
+
+test("keeps the chat mobile-first and exposes pair and session exports", async () => {
+  const [source, css] = await Promise.all([
+    readFile(
+      new URL("../app/components/ChatWorkspace.tsx", import.meta.url),
+      "utf8",
+    ),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(source, /downloadExchange/);
+  assert.match(source, /downloadSession/);
+  assert.match(source, /Diese Antwort/);
+  assert.match(source, /Aktuelle Sitzung/);
+  assert.match(source, /\["md", "html", "pdf"\]/);
+  assert.match(css, /\.chat-layout-lean/);
+  assert.ok(
+    css.indexOf(".chat-layout-lean") < css.indexOf("@media (min-width: 720px)"),
+  );
+});

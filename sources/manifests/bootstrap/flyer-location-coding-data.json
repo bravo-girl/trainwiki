@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-location-coding-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-Location-Coding-data.pdf",
+  "page_count": 2,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 206513,
+  "source_id": "src_b1e36372becf6e4cd12f",
+  "source_sha256": "eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4",
+  "source_version_id": "sv_eea6b839bbd8c7cb46a03b73",
+  "title": "Flyer Location Coding",
+  "visibility": "public"
+}

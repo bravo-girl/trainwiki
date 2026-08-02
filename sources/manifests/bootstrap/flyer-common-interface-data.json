@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-common-interface-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-Common-Interface-data.pdf",
+  "page_count": 1,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 206796,
+  "source_id": "src_a17ac4dcb38672799aa4",
+  "source_sha256": "e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d",
+  "source_version_id": "sv_e519d2e39261121ea3f27952",
+  "title": "Flyer Common Interface",
+  "visibility": "public"
+}

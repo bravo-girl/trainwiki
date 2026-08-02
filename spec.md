@@ -98,6 +98,7 @@ Die Zuständigkeiten sind getrennt:
 
 Die Chat-Seite ist die öffentliche Hauptansicht und für Mobilgeräte optimiert. Sie enthält:
 
+- Eine bewusst schlanke Einspaltenansicht, die auf kleinen Bildschirmen beginnt und keine Anbieter-, Modell-, Hardware- oder Laufzeitdetails offenlegt.
 - Produktname, kurze Erklärung der Wissensbasis und sichtbaren Aktualitätsstand des Wikis.
 - Texteingabe mit Absenden- und Abbrechen-Funktion.
 - Streaming-Anzeige für Status und Antwort; interne Gedankengänge werden nicht ausgegeben.
@@ -108,6 +109,7 @@ Die Chat-Seite ist die öffentliche Hauptansicht und für Mobilgeräte optimiert
 - Feedback `hilfreich`, `nicht hilfreich`, `Quelle falsch` und optionaler Kommentar.
 - Hinweis, wenn ein Feedback oder eine Frage als Lernkandidat vorgeschlagen wurde; es erfolgt keine direkte Veröffentlichung.
 - Fehlerzustände für Cold Start, Freikontingent erschöpft, Wartung und Zeitüberschreitung.
+- Export des jeweiligen Frage-Antwort-Paars oder aller Paare der aktuellen Browser-Sitzung als Markdown, eigenständiges HTML oder druckbares PDF; der PDF-Export nutzt den nativen Druckdialog und benötigt keine schwere Client-Bibliothek.
 - Tastaturbedienung, semantische Überschriften, ausreichende Kontraste und Screenreader-taugliche Statusmeldungen.
 
 Der Standard-Antwortablauf lautet:
@@ -810,7 +812,8 @@ Die Tests prüfen Textvollständigkeit, Überschriften, Tabellen, stabile Fundst
 
 **Lieferumfang**
 
-- Dry-Run-Inventar und Batch-Importer für initiale Markdown-Dateien/Linklisten.
+- Dry-Run-Inventar und Batch-Importer für initiale Markdown- und PDF-Dateien sowie Markdown-Linklisten.
+- Visuelle Sicherheitsprüfung für PDF-Bestände, Quarantäne ausdrücklich intern/vertraulich gekennzeichneter Gesamtdokumente und Datenminimierung direkter Kontaktdaten vor dem öffentlichen Index.
 - DSPy-Module für Extraktion, Änderungsplanung, Patch, Widerspruch und Prüfung.
 - Git-basierter Review-Ablauf mit Diffs und Teil-/Gesamtfreigabe.
 - Deterministischer Wiki-Linter und Aufbau des D1-Suchindexes.

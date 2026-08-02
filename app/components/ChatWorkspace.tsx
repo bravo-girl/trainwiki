@@ -1,39 +1,51 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {
+  downloadExchange,
+  downloadSession,
+  type ChatExchange,
+  type ChatExportFormat,
+} from "../../lib/chat-export";
 
-const MODEL = "openai/gpt-oss-20b";
 const MAX_QUESTION_CHARS = 3_000;
 const MAX_HISTORY_MESSAGES = 8;
+
+type ChatSource = {
+  number: number;
+  title: string;
+  heading: string;
+  canonicalUrl?: string;
+};
 
 type Message = {
   id: number;
   role: "assistant" | "user";
   text: string;
-  evidenceStatus?: string;
   includeInContext?: boolean;
+  replyTo?: number;
+  sources?: ChatSource[];
 };
 
 type ChatResponse = {
   answer?: string;
   error?: string;
-  model?: string;
+  sources?: unknown;
 };
 
 const welcomeMessage: Message = {
   id: 1,
   role: "assistant",
-  evidenceStatus: "Groq · GPT-OSS 20B",
-  text: "Hallo! Ich bin TrainWiki. Meine Antworten werden öffentlich und ohne Anmeldung über Groq mit GPT-OSS 20B erzeugt. Was möchtest du wissen?",
+  text: "Hallo! Stelle mir eine Frage zu den eingelesenen TAF/TAP-Unterlagen.",
   includeInContext: false,
 };
 
 const suggestions = [
-  "Erkläre den Unterschied zwischen einem Wiki und RAG.",
-  "Wie kann Wissen zuverlässig aktualisiert werden?",
-  "Fasse deine Antwort in drei Punkten zusammen.",
+  "Was ist TAF/TAP TSI?",
+  "Welche Identifikatoren werden verwendet?",
+  "Was ändert sich für Eisenbahnverkehrsunternehmen?",
 ];
 
 function MarkdownAnswer({ children }: { children: string }) {
@@ -63,20 +75,190 @@ function MarkdownAnswer({ children }: { children: string }) {
   );
 }
 
+function collectExchanges(messages: readonly Message[]): ChatExchange[] {
+  const questions = new Map(
+    messages
+      .filter((message) => message.role === "user")
+      .map((message) => [message.id, message.text]),
+  );
+
+  return messages.flatMap((message) => {
+    if (message.role !== "assistant" || message.replyTo === undefined) return [];
+    const question = questions.get(message.replyTo);
+    if (!question) return [];
+    const sourceLines = (message.sources ?? []).map((source) => {
+      const heading = source.heading ? ` — ${source.heading}` : "";
+      const url = source.canonicalUrl ? ` — ${source.canonicalUrl}` : "";
+      return `- [${source.number}] ${source.title}${heading}${url}`;
+    });
+    const answer = sourceLines.length
+      ? `${message.text}\n\n### Quellen\n\n${sourceLines.join("\n")}`
+      : message.text;
+    return [{ question, answer }];
+  });
+}
+
+function cleanPublicLabel(value: string) {
+  return value
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 300);
+}
+
+function parseChatSources(value: unknown): ChatSource[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const candidate = item as Record<string, unknown>;
+    if (
+      typeof candidate.number !== "number" ||
+      !Number.isInteger(candidate.number) ||
+      candidate.number < 1 ||
+      typeof candidate.title !== "string" ||
+      typeof candidate.heading !== "string"
+    ) {
+      return [];
+    }
+
+    let canonicalUrl: string | undefined;
+    if (typeof candidate.canonicalUrl === "string") {
+      try {
+        const parsed = new URL(candidate.canonicalUrl);
+        if (
+          (parsed.protocol === "https:" || parsed.protocol === "http:") &&
+          !parsed.username &&
+          !parsed.password
+        ) {
+          canonicalUrl = parsed.href;
+        }
+      } catch {
+        canonicalUrl = undefined;
+      }
+    }
+
+    return [{
+      number: candidate.number,
+      title: cleanPublicLabel(candidate.title),
+      heading: cleanPublicLabel(candidate.heading),
+      ...(canonicalUrl ? { canonicalUrl } : {}),
+    }];
+  });
+}
+
+function ExportButtons({
+  exchange,
+  session,
+  onError,
+}: {
+  exchange: ChatExchange;
+  session: readonly ChatExchange[];
+  onError: (message: string) => void;
+}) {
+  function run(scope: "exchange" | "session", format: ChatExportFormat) {
+    try {
+      onError("");
+      if (scope === "exchange") {
+        downloadExchange(exchange, format, {
+          title: "TrainWiki – Frage und Antwort",
+          fileName: "trainwiki-antwort",
+        });
+      } else {
+        downloadSession(session, format, {
+          title: "TrainWiki – aktuelle Sitzung",
+          fileName: "trainwiki-sitzung",
+        });
+      }
+    } catch (exportError) {
+      onError(
+        exportError instanceof Error
+          ? exportError.message
+          : "Der Export konnte nicht erstellt werden.",
+      );
+    }
+  }
+
+  return (
+    <details className="export-menu">
+      <summary>Exportieren</summary>
+      <div className="export-groups">
+        <div>
+          <span>Diese Antwort</span>
+          <div className="export-actions">
+            {(["md", "html", "pdf"] as const).map((format) => (
+              <button
+                key={format}
+                onClick={() => run("exchange", format)}
+                title={format === "pdf" ? "Als PDF über den Druckdialog speichern" : undefined}
+                type="button"
+              >
+                {format.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span>Aktuelle Sitzung</span>
+          <div className="export-actions">
+            {(["md", "html", "pdf"] as const).map((format) => (
+              <button
+                key={format}
+                onClick={() => run("session", format)}
+                title={format === "pdf" ? "Als PDF über den Druckdialog speichern" : undefined}
+                type="button"
+              >
+                {format.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </details>
+  );
+}
+
+function AnswerSources({ sources }: { sources: readonly ChatSource[] }) {
+  if (sources.length === 0) return null;
+
+  return (
+    <details className="answer-sources">
+      <summary>{sources.length === 1 ? "1 Quellenabschnitt" : `${sources.length} Quellenabschnitte`}</summary>
+      <ol>
+        {sources.map((source) => (
+          <li key={`${source.number}-${source.title}-${source.heading}`}>
+            <span className="source-number">[{source.number}]</span>
+            <span>
+              {source.canonicalUrl ? (
+                <a href={source.canonicalUrl} rel="noopener noreferrer nofollow" target="_blank">
+                  {source.title}
+                </a>
+              ) : (
+                <strong>{source.title}</strong>
+              )}
+              {source.heading && <small>{source.heading}</small>}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </details>
+  );
+}
+
 export function ChatWorkspace() {
   const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
   const [draft, setDraft] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [feedback, setFeedback] = useState<"up" | "down" | null>(null);
   const nextId = useRef(2);
+  const exchanges = useMemo(() => collectExchanges(messages), [messages]);
 
   function resetConversation() {
     if (isLoading) return;
     setMessages([welcomeMessage]);
     setDraft("");
     setError(null);
-    setFeedback(null);
     nextId.current = 2;
   }
 
@@ -99,7 +281,6 @@ export function ChatWorkspace() {
     setMessages((current) => [...current, userMessage]);
     setDraft("");
     setError(null);
-    setFeedback(null);
     setIsLoading(true);
 
     try {
@@ -112,7 +293,7 @@ export function ChatWorkspace() {
       const answer = payload.answer;
 
       if (!response.ok || typeof answer !== "string") {
-        throw new Error(payload.error || "Groq konnte die Frage nicht beantworten.");
+        throw new Error(payload.error || "Die Frage konnte nicht beantwortet werden.");
       }
 
       setMessages((current) => [
@@ -120,9 +301,10 @@ export function ChatWorkspace() {
         {
           id: nextId.current++,
           role: "assistant",
-          evidenceStatus: payload.model === MODEL ? "Groq · GPT-OSS 20B" : "Groq",
           text: answer,
           includeInContext: true,
+          replyTo: userMessage.id,
+          sources: parseChatSources(payload.sources),
         },
       ]);
     } catch (requestError) {
@@ -142,158 +324,102 @@ export function ChatWorkspace() {
   }
 
   return (
-    <main className="chat-layout">
-      <aside className="chat-sidebar" aria-label="Chat-Informationen">
-        <button className="new-chat-button" disabled={isLoading} onClick={resetConversation} type="button">
-          <span aria-hidden="true">＋</span> Neue Unterhaltung
-        </button>
-
-        <section className="sidebar-section">
-          <p className="eyebrow">Öffentlicher Chat</p>
-          <div className="history-item is-selected">
-            <span>Aktuelle Unterhaltung</span>
-            <small>nur in diesem Browserfenster</small>
-          </div>
-        </section>
-
-        <section className="sidebar-section knowledge-health">
-          <div className="section-heading">
-            <p className="eyebrow">LLM-Verbindung</p>
-            <span className="health-score">Groq</span>
-          </div>
-          <dl>
-            <div>
-              <dt>Modell</dt>
-              <dd>GPT-OSS 20B</dd>
-            </div>
-            <div>
-              <dt>Anmeldung</dt>
-              <dd>keine</dd>
-            </div>
-            <div>
-              <dt>API-Schlüssel</dt>
-              <dd>serverseitig</dd>
-            </div>
-          </dl>
-          <p className="demo-label">Direkte Server-Anbindung – keine ChatGPT-Abhängigkeit</p>
-        </section>
-      </aside>
-
-      <section className="conversation-shell">
-        <header className="conversation-header">
+    <main className="chat-layout chat-layout-lean">
+      <section className="conversation-shell chat-panel">
+        <header className="conversation-header chat-topbar">
           <div>
-            <p className="eyebrow">Öffentlicher Groq-Dialog</p>
-            <h1>Frag GPT-OSS 20B.</h1>
+            <p className="eyebrow">Wissenschat</p>
+            <h1>Frag TrainWiki.</h1>
           </div>
-          <div className="freshness-badge">
-            <span className="status-dot" aria-hidden="true" />
-            Groq · ohne Anmeldung
-          </div>
+          <button className="chat-reset" disabled={isLoading} onClick={resetConversation} type="button">
+            Neu
+          </button>
         </header>
 
         <div className="conversation-stream" aria-busy={isLoading} aria-live="polite">
-          {messages.map((message) => (
-            <article className={`message message-${message.role}`} key={message.id}>
-              <div className="avatar" aria-hidden="true">
-                {message.role === "assistant" ? "TW" : "DU"}
-              </div>
-              <div className="message-content">
-                <div className="message-meta">
-                  <strong>{message.role === "assistant" ? "TrainWiki" : "Du"}</strong>
-                  {message.role === "assistant" && message.evidenceStatus && (
-                    <span>{message.evidenceStatus}</span>
+          {messages.map((message) => {
+            const exchange =
+              message.role === "assistant" && message.replyTo !== undefined
+                ? collectExchanges(messages.filter((item) => item.id === message.replyTo || item.id === message.id))[0]
+                : undefined;
+
+            return (
+              <article className={`message message-${message.role}`} key={message.id}>
+                <div className="message-content">
+                  <div className="message-meta">
+                    <strong>{message.role === "assistant" ? "TrainWiki" : "Du"}</strong>
+                  </div>
+                  {message.role === "assistant" ? (
+                    <MarkdownAnswer>{message.text}</MarkdownAnswer>
+                  ) : (
+                    <p>{message.text}</p>
+                  )}
+                  {message.role === "assistant" && (
+                    <AnswerSources sources={message.sources ?? []} />
+                  )}
+                  {exchange && (
+                    <ExportButtons
+                      exchange={exchange}
+                      onError={(messageText) => setError(messageText || null)}
+                      session={exchanges}
+                    />
                   )}
                 </div>
-                {message.role === "assistant" ? (
-                  <MarkdownAnswer>{message.text}</MarkdownAnswer>
-                ) : (
-                  <p>{message.text}</p>
-                )}
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
 
           {isLoading && (
             <article className="message message-assistant" role="status">
-              <div className="avatar" aria-hidden="true">TW</div>
               <div className="message-content">
-                <div className="message-meta">
-                  <strong>TrainWiki</strong>
-                  <span>Groq · GPT-OSS 20B</span>
-                </div>
-                <p>Groq erzeugt die Antwort …</p>
+                <div className="message-meta"><strong>TrainWiki</strong></div>
+                <p className="typing-line"><span aria-hidden="true" />Antwort wird vorbereitet …</p>
               </div>
             </article>
           )}
 
           {error && (
-            <article className="message message-assistant" role="alert">
-              <div className="avatar" aria-hidden="true">!</div>
-              <div className="message-content">
-                <div className="message-meta">
-                  <strong>Verbindungsfehler</strong>
-                  <span>nicht gesendet</span>
-                </div>
-                <p>{error}</p>
-              </div>
-            </article>
+            <div className="chat-error" role="alert">
+              <span>{error}</span>
+              <button aria-label="Meldung schließen" onClick={() => setError(null)} type="button">×</button>
+            </div>
           )}
         </div>
 
         <div className="chat-composer-wrap">
-          <div className="suggestion-row" aria-label="Vorgeschlagene Fragen">
-            {suggestions.map((suggestion) => (
-              <button
-                disabled={isLoading}
-                key={suggestion}
-                onClick={() => setDraft(suggestion)}
-                type="button"
-              >
-                {suggestion}
-              </button>
-            ))}
-          </div>
+          {messages.length === 1 && (
+            <div className="suggestion-row" aria-label="Beispielfragen">
+              {suggestions.map((suggestion) => (
+                <button
+                  disabled={isLoading}
+                  key={suggestion}
+                  onClick={() => setDraft(suggestion)}
+                  type="button"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          )}
           <form className="chat-composer" onSubmit={submitQuestion}>
-            <label className="sr-only" htmlFor="chat-question">
-              Frage an TrainWiki
-            </label>
+            <label className="sr-only" htmlFor="chat-question">Frage an TrainWiki</label>
             <textarea
               disabled={isLoading}
               id="chat-question"
               maxLength={MAX_QUESTION_CHARS}
               onChange={(event) => setDraft(event.target.value)}
-              placeholder="Frage an GPT-OSS 20B stellen …"
+              placeholder="Frage stellen …"
               rows={2}
               value={draft}
             />
             <div className="composer-footer">
-              <span>{draft.length}/{MAX_QUESTION_CHARS} · Modell: {MODEL}</span>
+              <span>{draft.length}/{MAX_QUESTION_CHARS}</span>
               <button disabled={isLoading || !draft.trim()} type="submit">
-                {isLoading ? "Warten …" : "Senden"} <span aria-hidden="true">↗</span>
+                {isLoading ? "Warten …" : "Senden"}
               </button>
             </div>
           </form>
-          <div className="answer-feedback">
-            <span>War die letzte Antwort hilfreich?</span>
-            <button
-              aria-pressed={feedback === "up"}
-              className={feedback === "up" ? "is-selected" : ""}
-              disabled={isLoading}
-              onClick={() => setFeedback("up")}
-              type="button"
-            >
-              Ja
-            </button>
-            <button
-              aria-pressed={feedback === "down"}
-              className={feedback === "down" ? "is-selected" : ""}
-              disabled={isLoading}
-              onClick={() => setFeedback("down")}
-              type="button"
-            >
-              Nein
-            </button>
-          </div>
+          <small className="session-note">Die Unterhaltung bleibt in diesem Browserfenster.</small>
         </div>
       </section>
     </main>

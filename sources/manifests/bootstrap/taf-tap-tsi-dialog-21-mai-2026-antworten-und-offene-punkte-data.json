@@ -1,0 +1,24 @@
+{
+  "canonical_url": null,
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf",
+  "page_count": 16,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 625224,
+  "source_id": "src_fd6211533b1f4da5f776",
+  "source_sha256": "7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a",
+  "source_version_id": "sv_7c053a98498b96504a8dc7de",
+  "title": "TAF/TAP TSI Dialog 21 Mai 2026 Antworten und offene Punkte",
+  "visibility": "public"
+}

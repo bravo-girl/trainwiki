@@ -34,10 +34,6 @@ export function BrandHeader({ active }: BrandHeaderProps) {
         </Link>
       </nav>
 
-      <div className="system-pill" title="Öffentliche TrainWiki-Website">
-        <span className="status-dot" aria-hidden="true" />
-        Öffentlich
-      </div>
     </header>
   );
 }

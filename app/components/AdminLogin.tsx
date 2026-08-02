@@ -28,7 +28,7 @@ export function AdminLogin() {
       setMessage(
         response.status === 429
           ? "Zu viele Versuche. Bitte warte kurz und versuche es erneut."
-          : "Anmeldung nicht möglich. Prüfe den PAT und versuche es erneut.",
+          : "Anmeldung nicht möglich. Prüfe den Zugangsschlüssel und versuche es erneut.",
       );
     } catch {
       setStatus("error");
@@ -42,17 +42,17 @@ export function AdminLogin() {
         <p className="eyebrow">Geschützter Wissensbetrieb</p>
         <h1 id="admin-login-title">Adminzugang</h1>
         <p>
-          TrainWiki prüft einmalig, ob der eingegebene GitHub-PAT zum
-          freigegebenen Administrator gehört. Der PAT wird nicht gespeichert;
-          anschließend gilt nur eine signierte, acht Stunden kurze Sitzung.
+          TrainWiki prüft einmalig, ob der eingegebene Zugangsschlüssel zum
+          freigegebenen Administratorkonto gehört. Der Schlüssel wird nicht
+          gespeichert; anschließend gilt eine zeitlich begrenzte Sitzung.
         </p>
         <form onSubmit={submit}>
-          <label htmlFor="github-pat">GitHub Personal Access Token</label>
+          <label htmlFor="admin-access-token">Persönlicher Zugangsschlüssel</label>
           <input
             autoComplete="current-password"
-            id="github-pat"
+            id="admin-access-token"
             onChange={(event) => setToken(event.target.value)}
-            placeholder="github_pat_…"
+            placeholder="Zugangsschlüssel"
             type="password"
             value={token}
           />
@@ -62,8 +62,8 @@ export function AdminLogin() {
         </form>
         {message && <p className="admin-login-error" role="alert">{message}</p>}
         <small>
-          Nutze möglichst einen fein begrenzten PAT. Er wird nur an diesen
-          Worker und die GitHub-API gesendet.
+          Der Schlüssel wird ausschließlich für die einmalige
+          Berechtigungsprüfung verwendet.
         </small>
       </section>
     </main>

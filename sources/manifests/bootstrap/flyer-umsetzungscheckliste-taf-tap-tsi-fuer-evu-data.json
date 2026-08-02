@@ -1,0 +1,24 @@
+{
+  "canonical_url": "https://www.dbinfrago.com/resource/blob/11089304/748022c34b79d03bdd3e6ae0e5914836/Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf",
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf",
+  "page_count": 2,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 219407,
+  "source_id": "src_154242f98906f347d53b",
+  "source_sha256": "1eeb0a97a58e3ea6424808511dea54b1fdd13f3355b02dedd05eaab6f0fed061",
+  "source_version_id": "sv_1eeb0a97a58e3ea642480851",
+  "title": "Flyer Umsetzungscheckliste TAF/TAP TSI fuer EVU",
+  "visibility": "public"
+}

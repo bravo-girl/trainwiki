@@ -11,17 +11,20 @@ Beide Dateien bilden gemeinsam die Schema-Schicht des Wikis und müssen bei jede
 
 ## Aktueller Stand
 
-- Öffentliche, responsive Chat-Website unter `/chat`, ohne Anmeldung
+- Öffentliche, schlanke Mobile-first-Chat-Website unter `/chat`, ohne Anmeldung und ohne sichtbare Angaben zum technischen Unterbau
 - Serverseitiger Groq-Adapter für das feste Modell `openai/gpt-oss-20b`; der API-Schlüssel bleibt im Worker
+- Quellengebundenes D1-Retrieval mit nummerierten Belegen und ausdrücklicher Enthaltung ohne ausreichende Evidenz
 - sichere Darstellung von Modellantworten als GitHub-Flavored Markdown; rohes HTML wird verworfen
+- Export eines Frage-Antwort-Paars oder der gesamten aktuellen Sitzung als Markdown, eigenständiges HTML oder über den Druckdialog als PDF
 - D1-gestützte Limits von vier Fragen pro Minute und 20 Fragen pro Tag je pseudonymisiertem Client sowie 25/Minute und 900/Tag global
 - Geschützte Admin-Website unter `/admin`, ohne ChatGPT/SIWC; ein GitHub-PAT wird einmalig gegen den freigegebenen GitHub-Login geprüft und nicht gespeichert
 - Quellen-, Job- und Lernvorschlagsansichten im Adminbereich
 - Admin-Eingang für PDF, DOCX, XLSX, XML, JSON, YAML, Markdown und URLs
 - additive D1-Migrationen für Betriebsdaten, Retrieval und Quoten
+- reproduzierbarer Bootstrap-Import aus `../input`: aktuell 21 öffentliche Quellen, 282 Abschnitte und 12.229 Suchterme; zwei gekennzeichnete PDFs sind quarantänisiert
 - Zielarchitektur und phasenweiser Umsetzungsplan in `spec.md`
 
-Der Chat-Endpunkt ist implementiert, benötigt im Hosting aber das Secret `GROQ_API_KEY`. Ohne dieses Secret antwortet er absichtlich mit `503`, statt einen Schlüssel im Browser zu verwenden. Die Admin-Uploads und nachgelagerten Konvertierungs-/Ingest-Jobs zeigen weiterhin den geplanten Ablauf mit Prototypdaten; sie übertragen noch keine Dateien.
+Der Chat-Endpunkt ist implementiert, benötigt im Hosting aber das Secret `GROQ_API_KEY`. Ohne passenden Wiki-Beleg antwortet er bewusst ohne Modellaufruf; mit Beleg und fehlendem Secret liefert er `503`, statt einen Schlüssel im Browser zu verwenden. Die Admin-Uploads und nachgelagerten Konvertierungs-/Ingest-Jobs zeigen weiterhin den geplanten Ablauf mit Prototypdaten; sie übertragen noch keine Dateien.
 
 ## Lokale Entwicklung
 
@@ -37,6 +40,14 @@ Produktionsbuild:
 ```bash
 npm run build
 ```
+
+Bootstrap-Import von Markdown und PDF (Original-PDFs bleiben außerhalb von Git):
+
+```bash
+python scripts/bootstrap_input.py --input ../input --repo .
+```
+
+Die reproduzierbaren Markdown-Dateien, Manifeste und der abgeleitete D1-Seed liegen unter `sources/`, `wiki/sources/` und `drizzle/`. Die Quarantäneentscheidung ist in `sources/quarantine/bootstrap-review.json` dokumentiert.
 
 ## Laufzeitkonfiguration
 

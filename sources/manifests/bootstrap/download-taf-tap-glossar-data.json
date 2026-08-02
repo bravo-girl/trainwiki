@@ -1,0 +1,24 @@
+{
+  "canonical_url": null,
+  "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+  "converter": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "imported_at": "2026-08-02T10:25:48Z",
+  "language": "de",
+  "license": "unknown",
+  "media_type": "application/pdf",
+  "normalized_repo_path": "sources/normalized/bootstrap/download-taf-tap-glossar-data.md",
+  "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
+  "original_filename": "Download-TAF-TAP-Glossar-data.pdf",
+  "page_count": 3,
+  "raw_binary_committed": false,
+  "schema_version": 1,
+  "size_bytes": 186552,
+  "source_id": "src_660bf8039cf0527ee7b6",
+  "source_sha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2",
+  "source_version_id": "sv_51fb412fc4f0d41650cb55bf",
+  "title": "Download TAF/TAP Glossar",
+  "visibility": "public"
+}

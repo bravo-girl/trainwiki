@@ -88,7 +88,8 @@ Die Chat-Oberfläche MUSS anonym oder mit optionaler Anmeldung lesend funktionie
 - Fragen senden;
 - gestreamte Antworten und verifizierte Quellen anzeigen;
 - Unsicherheiten, Konflikte und fehlende Evidenz sichtbar machen;
-- Feedback zu einer Antwort übermitteln.
+- Feedback zu einer Antwort übermitteln;
+- einzelne Frage-Antwort-Paare oder die aktuelle flüchtige Sitzung in dokumentorientierte Formate exportieren.
 
 Sie DARF NICHT:
 
