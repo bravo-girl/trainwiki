@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { requireTrainWikiAdmin } from "../chatgpt-auth";
+import { getAdminSession } from "../admin-auth";
+import { AdminLogin } from "../components/AdminLogin";
 import { AdminWorkspace } from "../components/AdminWorkspace";
 import { BrandHeader } from "../components/BrandHeader";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -9,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default async function AdminPage() {
-  const admin = await requireTrainWikiAdmin("/admin");
+  const admin = await getAdminSession();
 
   return (
     <div className="site-frame">
       <BrandHeader active="admin" />
-      <AdminWorkspace adminName={admin.displayName} />
+      {admin ? <AdminWorkspace adminName={admin.sub} /> : <AdminLogin />}
     </div>
   );
 }

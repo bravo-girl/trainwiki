@@ -1,143 +1,168 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+
+const MODEL = "openai/gpt-oss-20b";
+const MAX_QUESTION_CHARS = 3_000;
+const MAX_HISTORY_MESSAGES = 8;
 
 type Message = {
   id: number;
   role: "assistant" | "user";
   text: string;
-  citations?: Array<{ label: string; detail: string }>;
-  evidenceStatus?: "belegt" | "Systemhinweis" | "Prototyp · nicht verbunden";
-  learned?: boolean;
+  evidenceStatus?: string;
+  includeInContext?: boolean;
 };
 
-const initialMessages: Message[] = [
-  {
-    id: 1,
-    role: "assistant",
-    evidenceStatus: "Systemhinweis",
-    text: "Guten Morgen. Ich beantworte Fragen aus der gepflegten TrainWiki-Wissensbasis. Jede sachliche Aussage bleibt auf ihre Rohquelle zurückführbar. Was möchtest du untersuchen?",
-  },
-  {
-    id: 2,
-    role: "user",
-    text: "Was unterscheidet unser Wiki von einem klassischen RAG-System?",
-  },
-  {
-    id: 3,
-    role: "assistant",
-    evidenceStatus: "belegt",
-    text: "Klassisches RAG setzt die Antwort bei jeder Frage erneut aus Rohtext-Fragmenten zusammen. TrainWiki integriert neue Quellen vorher in dauerhafte, verlinkte Themenseiten. Die Suche arbeitet anschließend auf dieser bereits verdichteten Wissensschicht und greift nur bei Lücken auf Rohquellen zurück. So können geprüfte Synthesen, Widersprüche und Querverbindungen über Gespräche hinweg erhalten bleiben.",
-    citations: [
-      { label: "[1]", detail: "llm-wiki.md · Grundprinzip" },
-      { label: "[2]", detail: "spec.md · Retrievalstrategie" },
-    ],
-    learned: true,
-  },
-];
+type ChatResponse = {
+  answer?: string;
+  error?: string;
+  model?: string;
+};
+
+const welcomeMessage: Message = {
+  id: 1,
+  role: "assistant",
+  evidenceStatus: "Groq · GPT-OSS 20B",
+  text: "Hallo! Ich bin TrainWiki. Meine Antworten werden öffentlich und ohne Anmeldung über Groq mit GPT-OSS 20B erzeugt. Was möchtest du wissen?",
+  includeInContext: false,
+};
 
 const suggestions = [
-  "Welche Quellen widersprechen sich?",
-  "Was wurde zuletzt neu gelernt?",
-  "Fasse den aktuellen Wissensstand zusammen.",
+  "Erkläre den Unterschied zwischen einem Wiki und RAG.",
+  "Wie kann Wissen zuverlässig aktualisiert werden?",
+  "Fasse deine Antwort in drei Punkten zusammen.",
 ];
 
 export function ChatWorkspace() {
-  const [messages, setMessages] = useState(initialMessages);
+  const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
   const [draft, setDraft] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<"up" | "down" | null>(null);
+  const nextId = useRef(2);
 
-  const nextId = useMemo(
-    () => Math.max(...messages.map((message) => message.id)) + 1,
-    [messages],
-  );
+  function resetConversation() {
+    if (isLoading) return;
+    setMessages([welcomeMessage]);
+    setDraft("");
+    setError(null);
+    setFeedback(null);
+    nextId.current = 2;
+  }
 
-  function submitQuestion(event: FormEvent) {
+  async function submitQuestion(event: FormEvent) {
     event.preventDefault();
     const question = draft.trim();
-    if (!question) return;
+    if (!question || isLoading) return;
 
-    setMessages((current) => [
-      ...current,
-      { id: nextId, role: "user", text: question },
-      {
-        id: nextId + 1,
-        role: "assistant",
-        evidenceStatus: "Prototyp · nicht verbunden",
-        text: "Diese Oberfläche ist bereits interaktiv, aber noch nicht mit Groq und dem DSPy-Programm verbunden. In der produktiven Stufe würde ich jetzt passende Wiki-Seiten abrufen, die Antwort belegen und eine neue Synthese als prüfbaren Lernvorschlag ablegen.",
-        citations: [
-          { label: "Plan", detail: "spec.md · Phase 3 und 4" },
-        ],
-      },
-    ]);
+    const userMessage: Message = {
+      id: nextId.current++,
+      role: "user",
+      text: question,
+      includeInContext: true,
+    };
+    const history = messages
+      .filter((message) => message.includeInContext)
+      .slice(-MAX_HISTORY_MESSAGES)
+      .map((message) => ({ role: message.role, content: message.text }));
+
+    setMessages((current) => [...current, userMessage]);
     setDraft("");
+    setError(null);
+    setFeedback(null);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, history }),
+      });
+      const payload = (await response.json().catch(() => ({}))) as ChatResponse;
+      const answer = payload.answer;
+
+      if (!response.ok || typeof answer !== "string") {
+        throw new Error(payload.error || "Groq konnte die Frage nicht beantworten.");
+      }
+
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextId.current++,
+          role: "assistant",
+          evidenceStatus: payload.model === MODEL ? "Groq · GPT-OSS 20B" : "Groq",
+          text: answer,
+          includeInContext: true,
+        },
+      ]);
+    } catch (requestError) {
+      const message =
+        requestError instanceof Error
+          ? requestError.message
+          : "Der Chat ist vorübergehend nicht erreichbar.";
+      setMessages((current) =>
+        current.map((item) =>
+          item.id === userMessage.id ? { ...item, includeInContext: false } : item,
+        ),
+      );
+      setError(message);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
     <main className="chat-layout">
-      <aside className="chat-sidebar" aria-label="Unterhaltungen und Wiki-Status">
-        <button className="new-chat-button" type="button">
+      <aside className="chat-sidebar" aria-label="Chat-Informationen">
+        <button className="new-chat-button" disabled={isLoading} onClick={resetConversation} type="button">
           <span aria-hidden="true">＋</span> Neue Unterhaltung
         </button>
 
         <section className="sidebar-section">
-          <p className="eyebrow">Heute</p>
-          <button className="history-item is-selected" type="button">
-            <span>LLM-Wiki und RAG</span>
-            <small>vor 8 Min.</small>
-          </button>
-          <button className="history-item" type="button">
-            <span>Quellenlage analysieren</span>
-            <small>vor 2 Std.</small>
-          </button>
+          <p className="eyebrow">Öffentlicher Chat</p>
+          <div className="history-item is-selected">
+            <span>Aktuelle Unterhaltung</span>
+            <small>nur in diesem Browserfenster</small>
+          </div>
         </section>
 
         <section className="sidebar-section knowledge-health">
           <div className="section-heading">
-            <p className="eyebrow">Wissensbasis</p>
-            <span className="health-score">96%</span>
-          </div>
-          <div
-            aria-label="Wiki-Gesundheit 96 Prozent"
-            aria-valuemax={100}
-            aria-valuemin={0}
-            aria-valuenow={96}
-            className="health-track"
-            role="progressbar"
-          >
-            <span />
+            <p className="eyebrow">LLM-Verbindung</p>
+            <span className="health-score">Groq</span>
           </div>
           <dl>
             <div>
-              <dt>Wiki-Seiten</dt>
-              <dd>438</dd>
+              <dt>Modell</dt>
+              <dd>GPT-OSS 20B</dd>
             </div>
             <div>
-              <dt>Rohquellen</dt>
-              <dd>162</dd>
+              <dt>Anmeldung</dt>
+              <dd>keine</dd>
             </div>
             <div>
-              <dt>Offene Konflikte</dt>
-              <dd>3</dd>
+              <dt>API-Schlüssel</dt>
+              <dd>serverseitig</dd>
             </div>
           </dl>
-          <p className="demo-label">Beispieldaten für den UI-Prototyp</p>
+          <p className="demo-label">Direkte Server-Anbindung – keine ChatGPT-Abhängigkeit</p>
         </section>
       </aside>
 
       <section className="conversation-shell">
         <header className="conversation-header">
           <div>
-            <p className="eyebrow">Quellengebundener Dialog</p>
-            <h1>Frag dein wachsendes Wissen.</h1>
+            <p className="eyebrow">Öffentlicher Groq-Dialog</p>
+            <h1>Frag GPT-OSS 20B.</h1>
           </div>
           <div className="freshness-badge">
             <span className="status-dot" aria-hidden="true" />
-            Stand: heute, 06:42
+            Groq · ohne Anmeldung
           </div>
         </header>
 
-        <div className="conversation-stream" aria-live="polite">
+        <div className="conversation-stream" aria-busy={isLoading} aria-live="polite">
           {messages.map((message) => (
             <article className={`message message-${message.role}`} key={message.id}>
               <div className="avatar" aria-hidden="true">
@@ -150,31 +175,47 @@ export function ChatWorkspace() {
                     <span>{message.evidenceStatus}</span>
                   )}
                 </div>
-                <p>{message.text}</p>
-                {message.citations && (
-                  <div className="citation-row" aria-label="Quellen">
-                    {message.citations.map((citation) => (
-                      <button key={citation.detail} type="button" title={citation.detail}>
-                        {citation.label} {citation.detail}
-                      </button>
-                    ))}
-                  </div>
-                )}
-                {message.learned && (
-                  <div className="learning-note">
-                    <span aria-hidden="true">↗</span>
-                    Neue Verbindung als Lernvorschlag vorgemerkt
-                  </div>
-                )}
+                <p style={{ whiteSpace: "pre-wrap" }}>{message.text}</p>
               </div>
             </article>
           ))}
+
+          {isLoading && (
+            <article className="message message-assistant" role="status">
+              <div className="avatar" aria-hidden="true">TW</div>
+              <div className="message-content">
+                <div className="message-meta">
+                  <strong>TrainWiki</strong>
+                  <span>Groq · GPT-OSS 20B</span>
+                </div>
+                <p>Groq erzeugt die Antwort …</p>
+              </div>
+            </article>
+          )}
+
+          {error && (
+            <article className="message message-assistant" role="alert">
+              <div className="avatar" aria-hidden="true">!</div>
+              <div className="message-content">
+                <div className="message-meta">
+                  <strong>Verbindungsfehler</strong>
+                  <span>nicht gesendet</span>
+                </div>
+                <p>{error}</p>
+              </div>
+            </article>
+          )}
         </div>
 
         <div className="chat-composer-wrap">
           <div className="suggestion-row" aria-label="Vorgeschlagene Fragen">
             {suggestions.map((suggestion) => (
-              <button key={suggestion} onClick={() => setDraft(suggestion)} type="button">
+              <button
+                disabled={isLoading}
+                key={suggestion}
+                onClick={() => setDraft(suggestion)}
+                type="button"
+              >
                 {suggestion}
               </button>
             ))}
@@ -184,16 +225,18 @@ export function ChatWorkspace() {
               Frage an TrainWiki
             </label>
             <textarea
+              disabled={isLoading}
               id="chat-question"
+              maxLength={MAX_QUESTION_CHARS}
               onChange={(event) => setDraft(event.target.value)}
-              placeholder="Frage stellen oder eine Verbindung untersuchen …"
+              placeholder="Frage an GPT-OSS 20B stellen …"
               rows={2}
               value={draft}
             />
             <div className="composer-footer">
-              <span>Antwort nur mit belastbaren Quellen</span>
-              <button aria-label="Frage absenden" type="submit">
-                Senden <span aria-hidden="true">↗</span>
+              <span>{draft.length}/{MAX_QUESTION_CHARS} · Modell: {MODEL}</span>
+              <button disabled={isLoading || !draft.trim()} type="submit">
+                {isLoading ? "Warten …" : "Senden"} <span aria-hidden="true">↗</span>
               </button>
             </div>
           </form>
@@ -202,6 +245,7 @@ export function ChatWorkspace() {
             <button
               aria-pressed={feedback === "up"}
               className={feedback === "up" ? "is-selected" : ""}
+              disabled={isLoading}
               onClick={() => setFeedback("up")}
               type="button"
             >
@@ -210,6 +254,7 @@ export function ChatWorkspace() {
             <button
               aria-pressed={feedback === "down"}
               className={feedback === "down" ? "is-selected" : ""}
+              disabled={isLoading}
               onClick={() => setFeedback("down")}
               type="button"
             >

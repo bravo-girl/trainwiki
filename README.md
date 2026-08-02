@@ -11,14 +11,16 @@ Beide Dateien bilden gemeinsam die Schema-Schicht des Wikis und müssen bei jede
 
 ## Aktueller Stand
 
-- Interaktiver UI-Prototyp unter `/chat` und `/admin`
-- responsive Chat-, Quellen- und Lernvorschlagsansichten
+- Öffentliche, responsive Chat-Website unter `/chat`, ohne Anmeldung
+- Serverseitiger Groq-Adapter für das feste Modell `openai/gpt-oss-20b`; der API-Schlüssel bleibt im Worker
+- D1-gestützte Limits von vier Fragen pro Minute und 20 Fragen pro Tag je pseudonymisiertem Client sowie 25/Minute und 900/Tag global
+- Geschützte Admin-Website unter `/admin`, ohne ChatGPT/SIWC; ein GitHub-PAT wird einmalig gegen den freigegebenen GitHub-Login geprüft und nicht gespeichert
+- Quellen-, Job- und Lernvorschlagsansichten im Adminbereich
 - Admin-Eingang für PDF, DOCX, XLSX, XML, JSON, YAML, Markdown und URLs
-- Zielarchitektur und phasenweiser Umsetzungsplan dokumentiert
-- D1 als logische Betriebsdatenbank vorgesehen
-- Groq-, GitHub- und Konverterintegration folgen gemäß `spec.md`
+- additive D1-Migrationen für Betriebsdaten, Retrieval und Quoten
+- Zielarchitektur und phasenweiser Umsetzungsplan in `spec.md`
 
-Beispieldaten in den Oberflächen sind ausdrücklich als Prototypdaten gekennzeichnet. Uploads und Chatantworten werden in dieser ersten Version noch nicht an externe Dienste übertragen.
+Der Chat-Endpunkt ist implementiert, benötigt im Hosting aber das Secret `GROQ_API_KEY`. Ohne dieses Secret antwortet er absichtlich mit `503`, statt einen Schlüssel im Browser zu verwenden. Die Admin-Uploads und nachgelagerten Konvertierungs-/Ingest-Jobs zeigen weiterhin den geplanten Ablauf mit Prototypdaten; sie übertragen noch keine Dateien.
 
 ## Lokale Entwicklung
 
@@ -34,6 +36,16 @@ Produktionsbuild:
 ```bash
 npm run build
 ```
+
+## Laufzeitkonfiguration
+
+Die Namen stehen ohne geheime Werte in [`.env.example`](./.env.example):
+
+- `GROQ_API_KEY`: Groq-Secret, ausschließlich serverseitig
+- `TRAINWIKI_ADMIN_GITHUB_LOGIN`: einziger zugelassener GitHub-Login
+- `TRAINWIKI_ADMIN_SESSION_SECRET`: zufälliges Secret mit mindestens 32 Zeichen für die signierte, acht Stunden gültige Admin-Session
+
+Für die Admin-Anmeldung genügt ein fein begrenzter GitHub-PAT, mit dem GitHub den Login über `GET /user` ausweist. TrainWiki speichert den PAT weder in D1 noch im Cookie; nach erfolgreicher Prüfung enthält der Browser nur die signierte `HttpOnly`-Session.
 
 ## Zielbetrieb ohne Kreditkarte
 

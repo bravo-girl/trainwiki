@@ -473,7 +473,7 @@ Eine offene Websuche ist standardmäßig deaktiviert. Wenn sie später explizit 
 
 ## 15. DSPy- und Groq-Verantwortung
 
-DSPy ist die programmierbare Orchestrierungs- und Optimierungsschicht, Groq der austauschbare Remote-Inference-Provider. Der Groq-Zugang erfolgt ausschließlich serverseitig; kein Browser erhält den API-Schlüssel. Der Provideradapter SOLL die weitgehend OpenAI-kompatible Groq-API nutzen, aber Modellkennung und Fähigkeiten nicht fest in die Wissenslogik einbauen.
+DSPy ist die programmierbare Orchestrierungs- und Optimierungsschicht, Groq der austauschbare Remote-Inference-Provider. Der Groq-Zugang erfolgt ausschließlich serverseitig; kein Browser erhält den API-Schlüssel. Die öffentliche Laufzeit besitzt keine ChatGPT-/SIWC-Abhängigkeit. Das aktuelle Betriebsprofil pinnt `openai/gpt-oss-20b`, während der Provideradapter Modellkennung und Fähigkeiten von der Wissenslogik getrennt hält, damit ein späterer, ausdrücklich freigegebener Modellwechsel möglich bleibt.
 
 Die DSPy-Anwendung SOLL mindestens folgende getrennte Module besitzen:
 

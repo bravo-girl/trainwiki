@@ -24,6 +24,7 @@ Die Zuständigkeiten sind getrennt:
 5. **Der Betrieb bleibt hart kostenbegrenzt.** Es gibt keinen automatischen Wechsel in kostenpflichtige Tarife und keine Komponente, die für den Regelbetrieb eine Kreditkarte voraussetzt.
 6. **Große oder rechenintensive Arbeiten laufen asynchron.** Datei-Konvertierung, Ingest, Wiki-Patches, Lint und DSPy-Optimierung gehören nicht in den Request-Pfad des Web-Frontends.
 7. **Nachvollziehbarkeit ist wichtiger als maximale Automatisierung.** Jede veröffentlichte Aussage muss auf Quellen und jede Wiki-Änderung auf einen Job, ein Modell/Programm und einen Git-Commit zurückführbar sein.
+8. **Die öffentliche Laufzeit hängt nicht von ChatGPT ab.** Chat und Admin verwenden weder ChatGPT-Inferenz noch SIWC. Modellaufrufe laufen serverseitig über Groq mit der festen Modellkennung `openai/gpt-oss-20b`.
 
 ## 3. Ziele
 
@@ -120,7 +121,7 @@ Der Standard-Antwortablauf lautet:
 
 ### 6.2 Admin-Website
 
-Die Admin-Seite ist nicht über bloßes Verbergen geschützt, sondern verlangt serverseitig geprüfte Identität und Rollenfreigabe. `TRAINWIKI_ADMIN_USER_IDS` und optional `TRAINWIKI_ADMIN_EMAILS` bilden die serverseitige Allowlist; ohne mindestens einen Eintrag bleibt `/admin` auch für angemeldete Nutzer gesperrt. Die private Sites-Vorschau ist zusätzlich auf den Eigentümer begrenzt. Sie bietet folgende Bereiche:
+Die Admin-Seite ist nicht über bloßes Verbergen geschützt, sondern verlangt eine serverseitig geprüfte Sitzung. Im Single-Admin-MVP wird ein eingegebener GitHub-PAT genau einmal über die GitHub-API geprüft: Der dort ausgewiesene Login muss exakt `TRAINWIKI_ADMIN_GITHUB_LOGIN` entsprechen. Der PAT wird nicht gespeichert und nicht in das Session-Cookie übernommen. Danach gilt ausschließlich ein mit `TRAINWIKI_ADMIN_SESSION_SECRET` HMAC-signiertes, `HttpOnly`, `Secure`, `SameSite=Strict` und acht Stunden kurzlebiges Host-Cookie. Fehlt eine der beiden Konfigurationen, bleibt der Adminzugang fail-closed. Die öffentlich erreichbare Chat-Seite benötigt keine Anmeldung. Die Admin-Seite bietet folgende Bereiche:
 
 #### Übersicht
 
@@ -169,7 +170,7 @@ Die Admin-Seite ist nicht über bloßes Verbergen geschützt, sondern verlangt s
 | Web-BFF | Auth, Rate-Limits, D1, Retrieval, Streaming, API-Orchestrierung | Cloudflare Worker Free | anderer kostenloser Edge-/Function-Hoster ohne Kartenpflicht |
 | DSPy-Programmierung | Signaturen, Optimierung, Evaluation und Export portabler Laufzeitartefakte | natives Python in GitHub Actions | lokale, manuell gestartete Python-Ausführung |
 | Online-Programmlaufzeit | getestetes DSPy-Artefakt laden, strukturierte Groq-Aufrufe und Validatoren ausführen | TypeScript im Cloudflare Worker, ohne Python und ohne WASM | Retrieval-only-Degradation |
-| LLM | Generierung und Prüfentscheidungen | GroqCloud Free über serverseitigen API-Schlüssel | kein automatischer kostenpflichtiger Fallback; bei Ausfall Retrieval-only/Fehlerzustand |
+| LLM | Generierung und Prüfentscheidungen mit festem Modell `openai/gpt-oss-20b`; keine ChatGPT-Abhängigkeit | GroqCloud Free über serverseitigen API-Schlüssel | kein automatischer kostenpflichtiger Fallback; bei Ausfall Retrieval-only/Fehlerzustand |
 | Konverter | Dateien und URLs in normalisiertes Markdown umwandeln | Cloudflare Workers AI `toMarkdown` und Browser Run `/markdown` | MarkItDown, bei OCR/komplexem Layout Docling, jeweils in GitHub Actions |
 | Ingest-/Lint-Worker | Wiki-Patches, Validierung, DSPy-Optimierung, Git-PRs | GitHub Actions | stateless Python-Jobrunner |
 | Betriebsdaten | Benutzer, Quellenmetadaten, Jobs, Chatmetadaten, Kandidaten, Index | Cloudflare D1 Free | SQLite-kompatibler Store |
@@ -625,6 +626,8 @@ Alle Module verwenden typisierte Signaturen. Parserfehler, fehlende Quellen-IDs 
 ### 16.1 Authentifizierung und Autorisierung
 
 - Admin-Endpunkte prüfen die serverseitig gelieferte Identität und eine explizite Allowlist/Rolle bei jedem Request.
+- Das Single-Admin-MVP prüft einen GitHub-PAT nur für den zugehörigen Login, verwirft ihn sofort und setzt anschließend ausschließlich eine HMAC-signierte Host-Cookie-Session; der Groq-Key ist kein Admin-Credential.
+- ChatGPT-/SIWC-Header, Client-Header oder die bloße Sichtbarkeit einer UI verleihen niemals Adminrechte.
 - UI-Ausblendung ist keine Zugriffskontrolle.
 - Zustandsändernde Browseranfragen benötigen SameSite-Cookies, Origin-Prüfung und CSRF-Schutz.
 - CORS ist standardmäßig same-origin; interne APIs erlauben keine Browser-Origin.
@@ -673,7 +676,7 @@ Die tatsächlichen Werte sind konfigurierbar und werden an die kleinste externe 
 - Angemeldete Admins: maximal zwei parallele Jobs und ein inhaltsverändernder Wiki-Job zur selben Zeit.
 - Upload: standardmäßig 20 MiB pro Datei, höchstens 100 Dateien pro Bootstrap-Batch.
 - URL: eine Seite pro Auftrag, maximal 10 MiB Download, fünf Redirects, kein rekursives Crawling.
-- LLM-Kontext: maximal 12.000 Eingabetokens, 1.200 Ausgabetokens und sechs Evidenzausschnitte pro normaler Antwort.
+- LLM-Kontext: maximal 12.000 Eingabetokens, 1.024 Ausgabetokens und sechs Evidenzausschnitte pro normaler Antwort.
 - Tagesbudget: globaler harter Request-/Token-Cutoff unterhalb des tatsächlich verfügbaren Groq-Free-Limits.
 - Konvertierung: geringe Parallelität; rechenintensive OCR-Jobs werden serialisiert oder zur manuellen Planung zurückgestellt.
 

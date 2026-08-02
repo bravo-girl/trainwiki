@@ -34,9 +34,9 @@ export function BrandHeader({ active }: BrandHeaderProps) {
         </Link>
       </nav>
 
-      <div className="system-pill" title="Architekturprototyp">
+      <div className="system-pill" title="Öffentliche TrainWiki-Website">
         <span className="status-dot" aria-hidden="true" />
-        Prototyp
+        Öffentlich
       </div>
     </header>
   );

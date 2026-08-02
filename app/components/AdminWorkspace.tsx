@@ -154,6 +154,11 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
     );
   }
 
+  async function signOut() {
+    await fetch("/api/admin/logout", { method: "POST" });
+    window.location.assign("/admin");
+  }
+
   return (
     <main className="admin-layout">
       <aside className="admin-sidebar" aria-label="Admin-Navigation">
@@ -194,9 +199,14 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
               Teil des kanonischen Wikis.
             </p>
           </div>
-          <button className="outline-button" type="button">
-            Lint-Lauf starten
-          </button>
+          <div className="admin-heading-actions">
+            <button className="outline-button" type="button">
+              Lint-Lauf starten
+            </button>
+            <button className="text-button" onClick={signOut} type="button">
+              Abmelden
+            </button>
+          </div>
         </header>
 
         <div className="prototype-notice" role="status">
