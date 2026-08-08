@@ -35,13 +35,6 @@ type ChatResponse = {
   sources?: unknown;
 };
 
-const welcomeMessage: Message = {
-  id: 1,
-  role: "assistant",
-  text: "Hallo! Stelle eine Frage zu den eingelesenen Unterlagen.",
-  includeInContext: false,
-};
-
 function MarkdownAnswer({ children }: { children: string }) {
   return (
     <div className="markdown-message">
@@ -241,20 +234,12 @@ function AnswerSources({ sources }: { sources: readonly ChatSource[] }) {
 }
 
 export function ChatWorkspace() {
-  const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const nextId = useRef(2);
+  const nextId = useRef(1);
   const exchanges = useMemo(() => collectExchanges(messages), [messages]);
-
-  function resetConversation() {
-    if (isLoading) return;
-    setMessages([welcomeMessage]);
-    setDraft("");
-    setError(null);
-    nextId.current = 2;
-  }
 
   async function submitQuestion(event: FormEvent) {
     event.preventDefault();
@@ -321,13 +306,6 @@ export function ChatWorkspace() {
   return (
     <main className="chat-layout chat-layout-lean">
       <section className="conversation-shell chat-panel">
-        <header className="conversation-header chat-topbar">
-          <h1>Was möchtest du wissen?</h1>
-          <button className="chat-reset" disabled={isLoading} onClick={resetConversation} type="button">
-            Neu
-          </button>
-        </header>
-
         <div className="conversation-stream" aria-busy={isLoading} aria-live="polite">
           {messages.map((message) => {
             const exchange =
@@ -391,16 +369,11 @@ export function ChatWorkspace() {
               value={draft}
             />
             <div className="composer-footer">
-              <span>{draft.length}/{MAX_QUESTION_CHARS}</span>
               <button disabled={isLoading || !draft.trim()} type="submit">
                 {isLoading ? "Warten …" : "Senden"}
               </button>
             </div>
           </form>
-          <small className="session-note">
-            Der Verlauf bleibt in diesem Browserfenster. Eine bereinigte Frage
-            und belegte Quell-IDs können als prüfbarer Lernhinweis gespeichert werden.
-          </small>
         </div>
       </section>
     </main>

@@ -7,7 +7,7 @@ import { parseDspyArtifact } from "../lib/dspy-artifact.ts";
 import { retrieveWikiEvidence } from "../lib/wiki-retrieval.ts";
 
 const bootstrapInputMigrations = (await readdir(new URL("../drizzle/", import.meta.url)))
-  .filter((filename) => /_bootstrap_input_20260808_(?:final_)?part\d+\.sql$/.test(filename))
+  .filter((filename) => /_(?:bootstrap_input_20260808_(?:final_)?part\d+|kundinneninfo_20260808_part\d+)\.sql$/.test(filename))
   .sort();
 
 async function applyMigration(database, filename) {

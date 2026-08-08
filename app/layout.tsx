@@ -7,15 +7,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
   const base = new URL(host ? `${protocol}://${host}` : "http://localhost:3000");
-  const description =
-    "Ein quellengebundener Wissenschat mit kontrollierter Wissenspflege.";
+  const description = "Quellengebundene Wissensbasis.";
 
   return {
     metadataBase: base,
     title: "TrainWiki",
     description,
     openGraph: {
-      title: "TrainWiki · Wissen, das mitdenkt.",
+      title: "TrainWiki",
       description,
       images: [{ url: new URL("/og.png", base).toString(), width: 1536, height: 1024 }],
       type: "website",
@@ -23,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "TrainWiki · Wissen, das mitdenkt.",
+      title: "TrainWiki",
       description,
       images: [new URL("/og.png", base).toString()],
     },

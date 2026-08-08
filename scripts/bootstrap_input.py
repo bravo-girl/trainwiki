@@ -1435,6 +1435,13 @@ def parse_imported_at(value: str | None) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument(
+        "--additional-input",
+        action="append",
+        default=[],
+        type=Path,
+        help="Zusätzliches Eingangsverzeichnis für denselben atomaren Importlauf.",
+    )
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--imported-at")
     parser.add_argument(
@@ -1444,6 +1451,10 @@ def main() -> int:
     )
     args = parser.parse_args()
     input_dir = args.input.resolve()
+    input_dirs = [input_dir, *(path.resolve() for path in args.additional_input)]
+    for directory in input_dirs:
+        if not directory.is_dir():
+            parser.error(f"Eingangsverzeichnis fehlt: {directory}")
     repo = args.repo.resolve()
     requested_imported_at = parse_imported_at(args.imported_at)
 
@@ -1471,7 +1482,8 @@ def main() -> int:
     paths = sorted(
         [
             path
-            for path in input_dir.iterdir()
+            for directory in input_dirs
+            for path in directory.iterdir()
             if path.is_file()
             and path.suffix.casefold() in {".pdf", ".md", ".markdown", ".json", ".xml", ".html", ".htm", ".pptx", ".xlsx"}
         ],
@@ -1542,8 +1554,10 @@ def main() -> int:
                 # A content-addressed version is immutable. Newly discovered link
                 # context must not rewrite provenance already sealed in its manifest.
                 raw_canonical_url = (
-                    previous_source.canonical_url if previous_source else None
-                ) or link_map.get(path.name.casefold())
+                    previous_source.canonical_url
+                    if previous_source
+                    else link_map.get(path.name.casefold())
+                )
                 canonical_url = normalize_source_url(raw_canonical_url)
                 if raw_canonical_url and not canonical_url:
                     raise ValueError("Ungültige kanonische HTTP(S)-URL.")
@@ -1554,8 +1568,10 @@ def main() -> int:
                     media_type="application/pdf",
                     canonical_url=canonical_url,
                     origin_page_url=(
-                        previous_source.origin_page_url if previous_source else None
-                    ) or link_origin_map.get(path.name.casefold()),
+                        previous_source.origin_page_url
+                        if previous_source
+                        else link_origin_map.get(path.name.casefold())
+                    ),
                     sha256=digest,
                     sections=sections,
                     page_count=page_count,

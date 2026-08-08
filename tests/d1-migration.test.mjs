@@ -6,7 +6,7 @@ import test from "node:test";
 import { retrieveWikiEvidence } from "../lib/wiki-retrieval.ts";
 
 const bootstrapInputMigrations = (await readdir(new URL("../drizzle/", import.meta.url)))
-  .filter((filename) => /_bootstrap_input_20260808_(?:final_)?part\d+\.sql$/.test(filename))
+  .filter((filename) => /_(?:bootstrap_input_20260808_(?:final_)?part\d+|kundinneninfo_20260808_part\d+)\.sql$/.test(filename))
   .sort();
 
 async function applyMigration(db, filename) {
@@ -39,7 +39,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
     createHash("sha256").update(immutableBootstrapMigration).digest("hex"),
     "d9417d94251400f2e334463d2b5eab06a2092bd158a1833f99d908ea2e19f367",
   );
-  assert.equal(bootstrapInputMigrations.length, 169);
+  assert.equal(bootstrapInputMigrations.length, 192);
   const initialInputHash = createHash("sha256");
   for (const filename of bootstrapInputMigrations) {
     initialInputHash.update(
@@ -48,7 +48,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
   }
   assert.equal(
     initialInputHash.digest("hex"),
-    "1f6aee9a4b2541d0aa7812fbd4c2e9e52f24b59fd8c72fd0667ca6931408d26d",
+    "85fb2bd5d8af2e52c2f0cdff566a47f42c0d2ac19e29ea865fc68bd2f0518180",
   );
 
   const db = new DatabaseSync(":memory:");
@@ -156,25 +156,25 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
 
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM sources WHERE created_by = 'bootstrap'").get().count,
-    253,
+    302,
   );
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM wiki_pages WHERE json_extract(metadata_json, '$.bootstrap') = 1").get().count,
-    253,
+    302,
   );
-  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_chunks").get().count, 6_234);
-  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_terms").get().count, 290_961);
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_chunks").get().count, 6_509);
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_terms").get().count, 303_960);
   assert.equal(
     db.prepare(
       "SELECT count(*) AS count FROM source_versions WHERE normalized_sha256 IS NOT NULL",
     ).get().count,
-    253,
+    302,
   );
   assert.equal(
     db.prepare(
       "SELECT count(*) AS count FROM source_identities WHERE identity_type = 'canonical_url'",
     ).get().count,
-    108,
+    150,
   );
   assert.equal(
     db.prepare(

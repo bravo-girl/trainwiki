@@ -106,8 +106,7 @@ test("renders the public, source-bound chat without authentication", async () =>
 
   const html = await response.text();
   assert.match(html, /<title>TrainWiki<\/title>/i);
-  assert.match(html, /Was möchtest du wissen\?/);
-  assert.match(html, /eingelesenen Unterlagen/);
+  assert.doesNotMatch(html, /Was möchtest du wissen|eingelesenen Unterlagen|Wissenschat/);
   assert.equal((visibleText(html).match(/TrainWiki/gi) ?? []).length, 1);
   assert.doesNotMatch(visibleText(html).replace(/TrainWiki/i, ""), /Frag den Wiki|TAF\/TAP/i);
   assert.doesNotMatch(html, />Chat<|>Admin</i);
