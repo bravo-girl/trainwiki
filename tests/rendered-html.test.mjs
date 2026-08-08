@@ -373,6 +373,51 @@ test("prioritizes temporary chat documents without permanently importing them", 
   }
 });
 
+test("repairs invalid source numbers instead of discarding a grounded answer", async () => {
+  const originalFetch = globalThis.fetch;
+  const upstreamRequests = [];
+  globalThis.fetch = async (input, init) => {
+    if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
+      upstreamRequests.push(JSON.parse(init.body));
+      return Response.json({
+        choices: [{
+          message: {
+            content: upstreamRequests.length === 1
+              ? "Ausführlicher Entwurf mit falscher Quelle [99]"
+              : "## Erklärung\n\nAusführliche, korrigierte Antwort mit gültiger Quelle [1]",
+          },
+        }],
+      });
+    }
+    return originalFetch(input, init);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", origin: "http://localhost" },
+        body: JSON.stringify({
+          question: "Erkläre das Verfahren detailliert",
+          history: [],
+          turnId: testTurnId,
+        }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.match(payload.answer, /korrigierte Antwort/);
+    assert.equal(payload.sources[0].number, 1);
+    assert.equal(upstreamRequests.length, 2);
+    assert.equal(upstreamRequests[1].reasoning_effort, "medium");
+    assert.match(upstreamRequests[1].messages.at(-1).content, /Zulässige Quellennummern: \[1\]/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("does not expose an answer whose source citations are missing", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
