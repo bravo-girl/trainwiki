@@ -22,5 +22,11 @@ test("repairs single and repeated UTF-8 mojibake in German source labels", () =>
     repairCommonMojibake("Wagenlisten fÃ1⁄4r ZÃ1⁄4ge nur noch Ã1⁄4ber den Rechnungsbahnhof"),
     "Wagenlisten für Züge nur noch über den Rechnungsbahnhof",
   );
+  assert.equal(
+    repairCommonMojibake(
+      "DB InfraGO AG \u00e2\u20ac\u00a2 Adam-Riese-Str. 11-13 \u00e2\u20ac\u00a2 60327 Frankfurt am Main",
+    ),
+    "DB InfraGO AG • Adam-Riese-Str. 11-13 • 60327 Frankfurt am Main",
+  );
   assert.equal(repairCommonMojibake("Bereits korrekt: Züge für München"), "Bereits korrekt: Züge für München");
 });
