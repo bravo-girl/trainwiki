@@ -370,6 +370,40 @@ test("safely compacts a long prior answer instead of rejecting the next question
   }
 });
 
+test("answers suggested document-discovery questions directly from retrieval", async () => {
+  const originalFetch = globalThis.fetch;
+  let called = false;
+  globalThis.fetch = async (...args) => {
+    called = true;
+    return originalFetch(...args);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", origin: "http://localhost" },
+        body: JSON.stringify({
+          question: "Welche Dokumente behandeln Stationsentgelte?",
+          history: [],
+          turnId: testTurnId,
+        }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.equal(called, false);
+    assert.match(payload.answer, /Gefundene Dokumente/);
+    assert.match(payload.answer, /Testquelle/);
+    assert.match(payload.answer, /\[1\]/);
+    assert.equal(payload.sources[0].title, "Testquelle");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("prioritizes temporary chat documents without permanently importing them", async () => {
   const originalFetch = globalThis.fetch;
   let upstreamRequest;
@@ -458,7 +492,7 @@ test("repairs invalid source numbers instead of discarding a grounded answer", a
   }
 });
 
-test("does not expose an answer whose source citations are missing", async () => {
+test("returns cited evidence excerpts when an answer cannot be repaired", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
@@ -488,8 +522,9 @@ test("does not expose an answer whose source citations are missing", async () =>
     );
     assert.equal(response.status, 200);
     const payload = await response.json();
-    assert.match(payload.answer, /nicht zuverlässig/i);
-    assert.deepEqual(payload.sources, []);
+    assert.match(payload.answer, /Belegte Fundstellen/i);
+    assert.match(payload.answer, /geprüfte Testaussage/i);
+    assert.equal(payload.sources[0].number, 1);
     assert.doesNotMatch(payload.answer, /Unbelegte Behauptung/);
   } finally {
     globalThis.fetch = originalFetch;

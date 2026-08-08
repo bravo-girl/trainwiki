@@ -7,7 +7,9 @@ import { getRuntimeBinding } from "../../../lib/runtime-env";
 import {
   retrieveWikiEvidence,
   type D1DatabaseLike,
+  type WikiRetrievalResult,
 } from "../../../lib/wiki-retrieval";
+import { repairCommonMojibake } from "../../../lib/text-encoding";
 import { validateAnswerCitations } from "../../../lib/citation-validation";
 import {
   recordLearningObservation,
@@ -349,6 +351,90 @@ function extractGroqAnswer(payload: unknown) {
   return typeof content === "string" && content.trim() ? content.trim() : null;
 }
 
+function isDocumentDiscoveryQuestion(question: string) {
+  return /\b(?:welche|welcher|welches|zeige|nenne)\b[\s\S]{0,50}\b(?:dokumente|quellen|unterlagen)\b/iu.test(
+    question,
+  );
+}
+
+function safeMarkdownLabel(value: string) {
+  return repairCommonMojibake(value)
+    .replace(/[\\`*_[\]<>]/g, (character) => `\\${character}`)
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildDocumentDiscoveryAnswer(
+  storedAttachments: readonly { filename: string }[],
+  wikiEvidence: WikiRetrievalResult,
+) {
+  const seen = new Set<string>();
+  const items = [
+    ...storedAttachments.map((attachment, index) => ({
+      number: index + 1,
+      title: attachment.filename,
+      heading: "Hochgeladenes Dokument",
+      key: `attachment:${attachment.filename.toLocaleLowerCase("de-DE")}`,
+    })),
+    ...wikiEvidence.sources.map((source) => ({
+      number: source.number + storedAttachments.length,
+      title: source.title,
+      heading: source.heading,
+      key: source.canonicalUrl || source.path || source.title.toLocaleLowerCase("de-DE"),
+    })),
+  ].filter((item) => {
+    if (seen.has(item.key)) return false;
+    seen.add(item.key);
+    return true;
+  });
+
+  return [
+    "## Gefundene Dokumente",
+    "",
+    `Die Wissensbasis enthält ${items.length === 1 ? "ein passendes Dokument" : `${items.length} passende Dokumente`} zu dieser Frage:`,
+    "",
+    ...items.map((item) => {
+      const heading = safeMarkdownLabel(item.heading);
+      return `- **${safeMarkdownLabel(item.title)}**${heading ? ` — ${heading}` : ""} [${item.number}]`;
+    }),
+  ].join("\n");
+}
+
+function buildExtractiveFallbackAnswer(
+  storedAttachments: readonly { filename: string; text: string }[],
+  wikiEvidence: WikiRetrievalResult,
+) {
+  const sections = [
+    ...storedAttachments.map((attachment, index) => ({
+      number: index + 1,
+      title: attachment.filename,
+      heading: "Hochgeladenes Dokument",
+      text: attachment.text,
+    })),
+    ...wikiEvidence.chunks.map((chunk, index) => ({
+      number: index + 1 + storedAttachments.length,
+      title: chunk.title,
+      heading: chunk.heading,
+      text: chunk.text,
+    })),
+  ];
+
+  return [
+    "## Belegte Fundstellen",
+    "",
+    "Die Wissensbasis enthält dazu folgende unmittelbar passende Inhalte:",
+    "",
+    ...sections.map((section) => {
+      const excerpt = repairCommonMojibake(section.text)
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 700);
+      const heading = safeMarkdownLabel(section.heading);
+      return `### ${safeMarkdownLabel(section.title)} [${section.number}]\n\n${heading ? `**${heading}:** ` : ""}${excerpt}${section.text.length > 700 ? " …" : ""} [${section.number}]`;
+    }),
+  ].join("\n\n");
+}
+
 async function repairAnswerCitations(input: {
   apiKey: string;
   systemPrompt: string;
@@ -464,6 +550,73 @@ export async function POST(request: Request) {
         },
       );
       return jsonResponse({ answer: NO_EVIDENCE_ANSWER, sources: [] });
+    }
+
+    if (isDocumentDiscoveryQuestion(question)) {
+      const availableNumbers = [
+        ...storedAttachments.map((_, index) => index + 1),
+        ...wikiEvidence.sources.map((source) => source.number + storedAttachments.length),
+      ];
+      const answer = buildDocumentDiscoveryAnswer(storedAttachments, wikiEvidence);
+      const citedNumbers = new Set(
+        validateAnswerCitations(answer, availableNumbers).citedNumbers,
+      );
+      const attachmentLearningRefs: LearningEvidenceRef[] = addAttachmentsToWiki
+        ? storedAttachments.flatMap((attachment, index) => citedNumbers.has(index + 1) ? [{
+            chunkId: `attachment_${attachment.rawSha256.slice(0, 24)}`,
+            chunkContentSha: attachment.normalizedSha256,
+            pagePath: attachment.pagePath,
+            sourceId: attachment.sourceId,
+            sourceVersionId: attachment.sourceVersionId,
+            sourceSha256: attachment.rawSha256,
+            heading: "Hochgeladenes Dokument",
+          }] : [])
+        : [];
+      await safelyRecordLearningObservation(
+        database as unknown as LearningDatabaseLike,
+        {
+          turnId,
+          question,
+          answer,
+          answerStatus: "grounded",
+          evidenceRefs: [
+            ...attachmentLearningRefs,
+            ...wikiEvidence.chunks.flatMap((chunk, index) =>
+              citedNumbers.has(index + 1 + storedAttachments.length) ? [{
+              chunkId: chunk.id,
+              chunkContentSha: chunk.contentSha,
+              pagePath: chunk.path,
+              sourceId: chunk.sourceId,
+              sourceVersionId: chunk.sourceVersionId,
+              sourceSha256: chunk.sourceSha256,
+              ...(chunk.heading ? { heading: chunk.heading } : {}),
+              }] : [],
+            ),
+          ],
+          programVersion: PROGRAM_VERSION,
+        },
+      );
+      const publicSources = [
+        ...storedAttachments.map((attachment, index) => ({
+          number: index + 1,
+          title: attachment.filename,
+          heading: addAttachmentsToWiki
+            ? attachment.added ? "Zur Wissensbasis hinzugefügt" : "Bereits in der Wissensbasis"
+            : "Nur für diese Frage",
+        })),
+        ...wikiEvidence.sources.map((source) => ({
+          ...source,
+          number: source.number + storedAttachments.length,
+        })),
+      ]
+        .filter((source) => citedNumbers.has(source.number))
+        .map((source) => ({
+          number: source.number,
+          title: repairCommonMojibake(source.title),
+          heading: repairCommonMojibake(source.heading),
+          ...(source.canonicalUrl ? { canonicalUrl: source.canonicalUrl } : {}),
+        }));
+      return jsonResponse({ answer, sources: publicSources });
     }
 
     const apiKey = getApiKey();
@@ -595,8 +748,12 @@ export async function POST(request: Request) {
       }
     }
     if (!citationValidation.valid) {
-      console.error("Answer rejected because its source citations are missing or invalid.");
-      return jsonResponse({ answer: UNVERIFIED_ANSWER, sources: [] });
+      console.error("Answer citations remained invalid; returning extractive evidence instead.");
+      answer = buildExtractiveFallbackAnswer(storedAttachments, wikiEvidence);
+      citationValidation = validateAnswerCitations(answer, availableCitationNumbers);
+      if (!citationValidation.valid) {
+        return jsonResponse({ answer: UNVERIFIED_ANSWER, sources: [] });
+      }
     }
 
     const citedNumbers = new Set(citationValidation.citedNumbers);
@@ -646,8 +803,8 @@ export async function POST(request: Request) {
       .filter((source) => citedNumbers.has(source.number))
       .map((source) => ({
         number: source.number,
-        title: source.title,
-        heading: source.heading,
+        title: repairCommonMojibake(source.title),
+        heading: repairCommonMojibake(source.heading),
         ...(source.canonicalUrl ? { canonicalUrl: source.canonicalUrl } : {}),
       }));
     await safelyRecordLearningObservation(
