@@ -359,10 +359,7 @@ test("proxies chat only to the fixed Groq GPT-OSS 120B model", async () => {
       ["alt-1", "alt-2", "neu-1", "neu-2", "neu-3", "neu-4"],
     );
     assert.ok(
-      payload.messages.slice(1, -1).reduce(
-        (sum, message) => sum + message.content.length,
-        0,
-      ) <= 48_000,
+      payload.messages.reduce((sum, message) => sum + message.content.length, 0) <= 20_000,
     );
   } finally {
     globalThis.fetch = originalFetch;
