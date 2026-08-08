@@ -304,7 +304,7 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-20b");
-    assert.equal(payload.max_completion_tokens, 2048);
+    assert.equal(payload.max_completion_tokens, 4096);
     assert.equal(payload.reasoning_effort, "high");
     assert.equal(payload.include_reasoning, false);
     assert.equal(payload.stream, false);
