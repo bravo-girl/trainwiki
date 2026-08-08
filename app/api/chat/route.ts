@@ -506,7 +506,7 @@ export async function POST(request: Request) {
             { role: "user", content: question },
           ],
           temperature: 0.2,
-          reasoning_effort: "high",
+          reasoning_effort: "medium",
           include_reasoning: false,
           max_completion_tokens: MAX_COMPLETION_TOKENS,
           stream: false,
