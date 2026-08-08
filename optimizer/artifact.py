@@ -229,8 +229,8 @@ def build_artifact(
         "mode": "dspy-optimized" if optimized_programs else "deterministic-baseline",
         "runtime": {
             "provider": "groq",
-            "model": "openai/gpt-oss-20b",
-            "dspyModel": "groq/openai/gpt-oss-20b",
+            "model": "openai/gpt-oss-120b",
+            "dspyModel": "groq/openai/gpt-oss-120b",
             "dspyVersion": "3.2.1",
         },
         "corpus": {

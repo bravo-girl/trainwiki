@@ -29,7 +29,7 @@ class ArtifactTests(unittest.TestCase):
     def test_baseline_has_no_network_or_secret_state(self) -> None:
         artifact = build_artifact()
         self.assertEqual(artifact["programVersion"], PROGRAM_VERSION)
-        self.assertEqual(artifact["runtime"]["dspyModel"], "groq/openai/gpt-oss-20b")
+        self.assertEqual(artifact["runtime"]["dspyModel"], "groq/openai/gpt-oss-120b")
         self.assertFalse(artifact["build"]["networkUsed"])
         self.assertEqual(artifact["build"]["optimizer"], "none")
         self.assertIn("programDigest", artifact["build"])

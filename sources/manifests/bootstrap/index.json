@@ -1,7 +1,7 @@
 {
   "content_duplicate_groups": [],
-  "corpus_sha256": "8167d6e7e0c67277823535238e2de902fd05f9a26c8361e8c46f513f4d612747",
-  "duplicate_count": 2,
+  "corpus_sha256": "d09b7c863fd966ea9248a370a4241383133aefdde7044138c9f5797d3f624d57",
+  "duplicate_count": 0,
   "files": [
     {
       "filename": "260528_Ausnahme-253-zur-Ril-408_vorlaeufige-Inkraftsetzung-data.pdf",
@@ -20,6 +20,12 @@
       "source_id": "src_f52bbbce133d8ceb5a73",
       "source_version_id": "sv_61459b509c8504cb910be29f",
       "status": "retry_noop"
+    },
+    {
+      "filename": "40800-ab-15-12-2024-data.pdf",
+      "source_id": "src_d0263239de89da5b7590",
+      "source_version_id": "sv_8828b4d450a0e5f4aaafc9ff",
+      "status": "imported"
     },
     {
       "filename": "483-0701-Ausnahme-104-Akt-02-data.pdf",
@@ -50,6 +56,12 @@
       "source_id": "src_2af17c88611b27b945f4",
       "source_version_id": "sv_1e42c9895a9a9c61f41b894e",
       "status": "retry_noop"
+    },
+    {
+      "filename": "Anleitung-zur-pathOS-Userverwaltung-im-Infraportal-data.pdf",
+      "source_id": "src_7edff199c4b88a8ba840",
+      "source_version_id": "sv_6dd80982cc45a919ac14c9c6",
+      "status": "imported"
     },
     {
       "filename": "Annex VII – Der neue Prozess zur Baukommunikation.md",
@@ -160,6 +172,12 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Download-Faktenblatt-Digitaler-Befehl-data.pdf",
+      "source_id": "src_1d1dc35d6f68310f04f7",
+      "source_version_id": "sv_3b0ed50647eb7d1719600620",
+      "status": "retry_noop"
+    },
+    {
       "filename": "Download-TAF-TAP-Glossar-data.pdf",
       "source_id": "src_660bf8039cf0527ee7b6",
       "source_version_id": "sv_51fb412fc4f0d41650cb55bf",
@@ -202,15 +220,45 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Faktenblatt-Bauen-im-Takt-data.pdf",
+      "source_id": "src_09aff349771f1b2c9ba2",
+      "source_version_id": "sv_1553141dc84c9081deafd46e",
+      "status": "retry_noop"
+    },
+    {
       "filename": "FAQ zur Informationsveranstaltung „Wiedereinführung von Rahmenverträgen zur Netzfahrplanperiode 2029_.md",
       "source_id": "src_2bb834bd277f6d25671b",
       "source_version_id": "sv_a468bec7b87cdbdf11369215",
       "status": "retry_noop"
     },
     {
+      "filename": "FAQ-aus-der-Marktkonsultation-2024-data.pdf",
+      "source_id": "src_63619e3a1e5fadb20ab6",
+      "source_version_id": "sv_c9c1e8842919a2bb9622ee54",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "FAQ-aus-der-Marktkonsultation-2025-data.pdf",
+      "source_id": "src_2cf941ad8732a94016f2",
+      "source_version_id": "sv_1d2c82d7187d296bba67d393",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "FAQ-aus-der-Marktkonsultation-2026-data.pdf",
+      "source_id": "src_9b2dac9778fe5a3bff1f",
+      "source_version_id": "sv_ac4cc39d27d76df03a9bd70b",
+      "status": "retry_noop"
+    },
+    {
       "filename": "FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf",
       "source_id": "src_b5fb8ccb80d176b38310",
       "source_version_id": "sv_4fbe32d73c5618c02a183f43",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "FAQ-Pufferzeit-Joker-Gleise-und-Flex-Abfahrten-data.pdf",
+      "source_id": "src_ef447b15f0df0c897551",
+      "source_version_id": "sv_192577ce275ff8ccd68d0c72",
       "status": "retry_noop"
     },
     {
@@ -286,6 +334,18 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Geltungsbereich-Pufferzeit-3-Stufe-Karte-fuer-2028--data.pdf",
+      "source_id": "src_eb589aa2d40047069f42",
+      "source_version_id": "sv_daed3ee5b013840aa1a3320c",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Geltungsbereich-Pufferzeit-Karte-fuer-2026-2027--data.pdf",
+      "source_id": "src_053788de0753bef1b89f",
+      "source_version_id": "sv_b7cc330d5188116905aae4da",
+      "status": "retry_noop"
+    },
+    {
       "filename": "Gesamtdatei-Ausnahme-250-data.pdf",
       "source_id": "src_82c1e52d2164a9226590",
       "source_version_id": "sv_35aadaaeb0b42c6acf35e208",
@@ -331,6 +391,18 @@
       "filename": "Handbuch-40820-INB-2026-data.pdf",
       "source_id": "src_289a2864d8d21dcf1d64",
       "source_version_id": "sv_0ce2100159de2983ba7601f0",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Handbuch-pathOS-Webportal-Version-1-01-Stand-13-Maerz-2026--data.pdf",
+      "source_id": "src_831ef14bdef2f9d63f2e",
+      "source_version_id": "sv_8c269c353c8a93217fa94129",
+      "status": "imported"
+    },
+    {
+      "filename": "INB-2026-Anlage-4-2-2-4-data.pdf",
+      "source_id": "src_3056a8121fbbf4dcb584",
+      "source_version_id": "sv_5c5eb4b6809d78f1ce3284c5",
       "status": "retry_noop"
     },
     {
@@ -646,6 +718,12 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Leitfaden-Bau-und-Sperrzeiten_Rev-02-data.pdf",
+      "source_id": "src_4f3c061ae065a0908041",
+      "source_version_id": "sv_087e137032325dc46c16f4ed",
+      "status": "retry_noop"
+    },
+    {
       "filename": "Letzte Erinnerung_ Rückmeldung zur Umstellung auf verschlüsselte BDV-Kommunikation bis zum 30. Juni 2026 erforderlich.md",
       "source_id": "src_617c8fe9f616bc0c8f9f",
       "source_version_id": "sv_7f95c72c113549a2dec924ff",
@@ -712,9 +790,21 @@
       "status": "retry_noop"
     },
     {
+      "filename": "pathOS – Das System zur Trassenanmeldung bei der DB InfraGO.md",
+      "source_id": "src_f24686f98d5621c2dde5",
+      "source_version_id": "sv_fd582f1ba41be5962a16574b",
+      "status": "imported"
+    },
+    {
       "filename": "Rahmenvertrag.md",
       "source_id": "src_67784974dc879eeff939",
       "source_version_id": "sv_e3ffbc367584b6746788d07c",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Regelungskonzept-data.pdf",
+      "source_id": "src_3c8cb648308b774eae6f",
+      "source_version_id": "sv_4909618516fb186264db64db",
       "status": "retry_noop"
     },
     {
@@ -766,30 +856,10 @@
       "status": "retry_noop"
     },
     {
-      "canonical_url": null,
-      "content_sha256": "eb5fbe913792a6714c1d9e8df82b2794b40dcb4b69b4eb47dbef6712dae5737a",
-      "duplicate_of": "Ril-402-0202-INB-2027-data.pdf",
-      "filename": "Ril-402-0202-INB-2027-data (1).pdf",
-      "normalized_sha256": "ebf31d00f297d7678e3b05e1cb6d945c509edfd42f599db8331473176f8c37cb",
-      "reason": "same_bytes_as_existing_source",
-      "source_id": "src_185a09c3daddf7c8a278",
-      "status": "duplicate"
-    },
-    {
       "filename": "Ril-402-0202-INB-2027-data.pdf",
       "source_id": "src_185a09c3daddf7c8a278",
       "source_version_id": "sv_eaa9bd42fea1960a09060098",
       "status": "retry_noop"
-    },
-    {
-      "canonical_url": null,
-      "content_sha256": "7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237",
-      "duplicate_of": "Ril-402-0202A01-INB-2027-data.pdf",
-      "filename": "Ril-402-0202A01-INB-2027-data (1).pdf",
-      "normalized_sha256": "23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b",
-      "reason": "same_bytes_as_existing_source",
-      "source_id": "src_020acbee32d4681c346b",
-      "status": "duplicate"
     },
     {
       "filename": "Ril-402-0202A01-INB-2027-data.pdf",
@@ -928,6 +998,12 @@
       "source_id": "src_ce73813d6d29259d470b",
       "source_version_id": "sv_0a295126c89cfb4cfdde4b62",
       "status": "retry_noop"
+    },
+    {
+      "filename": "Ril-408-21-27-INB-2027-data.pdf",
+      "source_id": "src_ab4b8c3297db3618ded7",
+      "source_version_id": "sv_ca891f04a4aa134c5cd82f87",
+      "status": "imported"
     },
     {
       "filename": "Ril-408-21-27Z31-INB-2026-data.pdf",
@@ -1686,6 +1762,12 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Themendienst-Korridorsanierung-data.pdf",
+      "source_id": "src_4952f1cbd7a1bf287e3a",
+      "source_version_id": "sv_f089e38e5405909debac1925",
+      "status": "retry_noop"
+    },
+    {
       "filename": "TNB-INB-2026-data.pdf",
       "source_id": "src_e06393180f0aab5223ed",
       "source_version_id": "sv_7238e77092101530ff2524fc",
@@ -1782,6 +1864,12 @@
       "status": "retry_noop"
     },
     {
+      "filename": "Verbindlichkeit der Pufferzeit in der Fahrplankonstruktion.md",
+      "source_id": "src_066331292bc2d5776193",
+      "source_version_id": "sv_ae689a08df719880beb03733",
+      "status": "retry_noop"
+    },
+    {
       "filename": "Veröffentlichung baubedingter Kapazitätseinschränkungen Fahrplan 2027 (Teil 2).md",
       "source_id": "src_d469ddc44374092ca7b2",
       "source_version_id": "sv_747c335804e2f3b28c14403a",
@@ -1797,6 +1885,18 @@
       "filename": "Veröffentlichung FAQ zu ANNEX VII – 4. Konsultationsphase.md",
       "source_id": "src_6c1bf40991300fb84e49",
       "source_version_id": "sv_47af4757eaee2c5d00816e0f",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Weitere Entgeltelemente.md",
+      "source_id": "src_5389c64b056c4fa6ce37",
+      "source_version_id": "sv_55bed8f982014bec8f11e731",
+      "status": "imported"
+    },
+    {
+      "filename": "Wie die DB InfraGO Stabilität und Pünktlichkeit zurückgewinnen will.md",
+      "source_id": "src_58d896ffc32ff224ba62",
+      "source_version_id": "sv_eb562221735b935f284622f0",
       "status": "retry_noop"
     },
     {
@@ -1836,13 +1936,13 @@
       "status": "retry_noop"
     }
   ],
-  "imported_at": "2026-08-08T16:35:02Z",
-  "imported_count": 302,
+  "imported_at": "2026-08-08T21:00:45Z",
+  "imported_count": 322,
   "input_directory": "../input",
   "new_version_count": 0,
   "quarantined_count": 0,
   "schema_version": 2,
-  "source_count": 302,
+  "source_count": 322,
   "sources": [
     {
       "aliases": [],
@@ -1944,6 +2044,40 @@
       "source_version_id": "sv_61459b509c8504cb910be29f",
       "supersedes_source_version_id": null,
       "title": "260807 Ausnahme Ril 420 0213",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "6493191f84aa0c9a4d8679b78e3e74a82ca7d86337e88ce038db6bdf7c1b7eb2",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_8828b4d450a0e5f4aaafc9ff.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/40800-ab-15-12-2024-data/sv_8828b4d450a0e5f4aaafc9ff.md",
+      "normalized_sha256": "eaf379e3c66614bc3722aba8deed233000183150f9369f76559628c5e08fbf18",
+      "origin_page_url": null,
+      "original_filename": "40800-ab-15-12-2024-data.pdf",
+      "page_count": 532,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 18209347,
+      "source_id": "src_d0263239de89da5b7590",
+      "source_sha256": "6493191f84aa0c9a4d8679b78e3e74a82ca7d86337e88ce038db6bdf7c1b7eb2",
+      "source_version_id": "sv_8828b4d450a0e5f4aaafc9ff",
+      "supersedes_source_version_id": null,
+      "title": "40800 ab 15 12 2024",
       "visibility": "public"
     },
     {
@@ -2114,6 +2248,40 @@
       "source_version_id": "sv_1e42c9895a9a9c61f41b894e",
       "supersedes_source_version_id": null,
       "title": "Angespannte Situation bei der Zugnummernvergabe bis vsl. Anfang September 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/resource/blob/13636002/3d53668bffdcbc0973ce45791fc54221/Anleitung-zur-pathOS-Userverwaltung-im-Infraportal-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "72afda992e25a6320d7a53af446914dbf1fc6bc22761e35127c81f62df9f79eb",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.dbinfrago.com/resource/blob/13636002/3d53668bffdcbc0973ce45791fc54221/Anleitung-zur-pathOS-Userverwaltung-im-Infraportal-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_6dd80982cc45a919ac14c9c6.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/anleitung-zur-pathos-userverwaltung-im-infraportal-data/sv_6dd80982cc45a919ac14c9c6.md",
+      "normalized_sha256": "ec1d1d5ba4713b186dad5165ea5a3b4cc4acc6e7908bb96ef90994d5fd37d6d4",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "original_filename": "Anleitung-zur-pathOS-Userverwaltung-im-Infraportal-data.pdf",
+      "page_count": 5,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/resource/blob/13636002/3d53668bffdcbc0973ce45791fc54221/Anleitung-zur-pathOS-Userverwaltung-im-Infraportal-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 733040,
+      "source_id": "src_7edff199c4b88a8ba840",
+      "source_sha256": "72afda992e25a6320d7a53af446914dbf1fc6bc22761e35127c81f62df9f79eb",
+      "source_version_id": "sv_6dd80982cc45a919ac14c9c6",
+      "supersedes_source_version_id": null,
+      "title": "Anleitung zur pathOS Userverwaltung im Infraportal",
       "visibility": "public"
     },
     {
@@ -2719,6 +2887,40 @@
       "visibility": "public"
     },
     {
+      "aliases": [],
+      "canonical_url": "https://www.deutschebahn.com/resource/blob/13866464/dc90c38d4f412516eb55c2506b99555a/Download-Faktenblatt-Digitaler-Befehl-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "710716e31307165e987b02af5b5ccc4fb39e163b1c73a016e8695cd5fb811211",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.deutschebahn.com/resource/blob/13866464/dc90c38d4f412516eb55c2506b99555a/Download-Faktenblatt-Digitaler-Befehl-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_3b0ed50647eb7d1719600620.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/download-faktenblatt-digitaler-befehl-data/sv_3b0ed50647eb7d1719600620.md",
+      "normalized_sha256": "d5e09be9f0ee5fddf9a18ff01c45be4d1f711efc116b63b09626a0d86d1edafe",
+      "origin_page_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "original_filename": "Download-Faktenblatt-Digitaler-Befehl-data.pdf",
+      "page_count": 1,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.deutschebahn.com/resource/blob/13866464/dc90c38d4f412516eb55c2506b99555a/Download-Faktenblatt-Digitaler-Befehl-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 55132,
+      "source_id": "src_1d1dc35d6f68310f04f7",
+      "source_sha256": "710716e31307165e987b02af5b5ccc4fb39e163b1c73a016e8695cd5fb811211",
+      "source_version_id": "sv_3b0ed50647eb7d1719600620",
+      "supersedes_source_version_id": null,
+      "title": "Download Faktenblatt Digitaler Befehl",
+      "visibility": "public"
+    },
+    {
       "canonical_url": null,
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "converter": {
@@ -2948,6 +3150,40 @@
     },
     {
       "aliases": [],
+      "canonical_url": "https://www.deutschebahn.com/resource/blob/13866474/d94417915770158a31a92fb7c0dde2c2/Faktenblatt-Bauen-im-Takt-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "63685f0bda8766474857bd407723150c1b39bc01e55453080b48e4c60ad60914",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.deutschebahn.com/resource/blob/13866474/d94417915770158a31a92fb7c0dde2c2/Faktenblatt-Bauen-im-Takt-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_1553141dc84c9081deafd46e.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faktenblatt-bauen-im-takt-data/sv_1553141dc84c9081deafd46e.md",
+      "normalized_sha256": "01cfe871cf0110fadef91cf54a8a853be6571655342ab7babb602cc83f884780",
+      "origin_page_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "original_filename": "Faktenblatt-Bauen-im-Takt-data.pdf",
+      "page_count": 1,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.deutschebahn.com/resource/blob/13866474/d94417915770158a31a92fb7c0dde2c2/Faktenblatt-Bauen-im-Takt-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 53742,
+      "source_id": "src_09aff349771f1b2c9ba2",
+      "source_sha256": "63685f0bda8766474857bd407723150c1b39bc01e55453080b48e4c60ad60914",
+      "source_version_id": "sv_1553141dc84c9081deafd46e",
+      "supersedes_source_version_id": null,
+      "title": "Faktenblatt Bauen im Takt",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": "https://www.dbinfrago.com/web/aktuelles/kund-inneninformationen/kund-inneninformationen/2026-KW12-Faq-Wiedereinfuehrung-Rahenvertrag-Netzfpl-2029-13773796",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -2985,6 +3221,108 @@
       "canonical_url": null,
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
+      "content_sha256": "4c518ffc3a05bc4615c0f2b8942196af1bf119cca9b4019fd756d05c60864ddd",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_c9c1e8842919a2bb9622ee54.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faq-aus-der-marktkonsultation-2024-data/sv_c9c1e8842919a2bb9622ee54.md",
+      "normalized_sha256": "82446eece49be5da9ed395b90e0ecb64cea323b9236fc9368ed04691c2086d39",
+      "origin_page_url": null,
+      "original_filename": "FAQ-aus-der-Marktkonsultation-2024-data.pdf",
+      "page_count": 2,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 346769,
+      "source_id": "src_63619e3a1e5fadb20ab6",
+      "source_sha256": "4c518ffc3a05bc4615c0f2b8942196af1bf119cca9b4019fd756d05c60864ddd",
+      "source_version_id": "sv_c9c1e8842919a2bb9622ee54",
+      "supersedes_source_version_id": null,
+      "title": "FAQ aus der Marktkonsultation 2024",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "8c21d1a01ce03a87355d4765b53d2926d9d1526a70f406098fc62b3309afcdd2",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_1d2c82d7187d296bba67d393.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faq-aus-der-marktkonsultation-2025-data/sv_1d2c82d7187d296bba67d393.md",
+      "normalized_sha256": "319e801a936ce05ec3927c98dd26f7067da88023f7dcebcf3fd9005cc0b7e9d7",
+      "origin_page_url": null,
+      "original_filename": "FAQ-aus-der-Marktkonsultation-2025-data.pdf",
+      "page_count": 2,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 471771,
+      "source_id": "src_2cf941ad8732a94016f2",
+      "source_sha256": "8c21d1a01ce03a87355d4765b53d2926d9d1526a70f406098fc62b3309afcdd2",
+      "source_version_id": "sv_1d2c82d7187d296bba67d393",
+      "supersedes_source_version_id": null,
+      "title": "FAQ aus der Marktkonsultation 2025",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "55b146bac54fdd0eae58e7e7b58d4fcc5dadf4c5b8e4e9bd2a5c8cca6d51c932",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_ac4cc39d27d76df03a9bd70b.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faq-aus-der-marktkonsultation-2026-data/sv_ac4cc39d27d76df03a9bd70b.md",
+      "normalized_sha256": "13370eefedaf87f113021300f1f9fd7730f43e115906f305ef2c39880e8566cc",
+      "origin_page_url": null,
+      "original_filename": "FAQ-aus-der-Marktkonsultation-2026-data.pdf",
+      "page_count": 1,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 137415,
+      "source_id": "src_9b2dac9778fe5a3bff1f",
+      "source_sha256": "55b146bac54fdd0eae58e7e7b58d4fcc5dadf4c5b8e4e9bd2a5c8cca6d51c932",
+      "source_version_id": "sv_ac4cc39d27d76df03a9bd70b",
+      "supersedes_source_version_id": null,
+      "title": "FAQ aus der Marktkonsultation 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
       "content_sha256": "79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689",
       "converter": {
         "name": "pdfplumber",
@@ -3012,6 +3350,40 @@
       "source_version_id": "sv_4fbe32d73c5618c02a183f43",
       "supersedes_source_version_id": null,
       "title": "FAQ Infoveranstaltung Netzfahrplan 2027",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.deutschebahn.com/resource/blob/13866594/1c3310a1740e3c8162b76b54b6e66c61/FAQ-Pufferzeit-Joker-Gleise-und-Flex-Abfahrten-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "770a51ada9802ce9736ca39cdf44bf1e90f6c0a2039ab716b12c1ee63e1bcd8e",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.deutschebahn.com/resource/blob/13866594/1c3310a1740e3c8162b76b54b6e66c61/FAQ-Pufferzeit-Joker-Gleise-und-Flex-Abfahrten-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_192577ce275ff8ccd68d0c72.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faq-pufferzeit-joker-gleise-und-flex-abfahrten-data/sv_192577ce275ff8ccd68d0c72.md",
+      "normalized_sha256": "7855656a140160e257a7d8b35e2ce121e9f3cc70180b6bc138bd101386ad2378",
+      "origin_page_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "original_filename": "FAQ-Pufferzeit-Joker-Gleise-und-Flex-Abfahrten-data.pdf",
+      "page_count": 2,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.deutschebahn.com/resource/blob/13866594/1c3310a1740e3c8162b76b54b6e66c61/FAQ-Pufferzeit-Joker-Gleise-und-Flex-Abfahrten-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 70843,
+      "source_id": "src_ef447b15f0df0c897551",
+      "source_sha256": "770a51ada9802ce9736ca39cdf44bf1e90f6c0a2039ab716b12c1ee63e1bcd8e",
+      "source_version_id": "sv_192577ce275ff8ccd68d0c72",
+      "supersedes_source_version_id": null,
+      "title": "FAQ Pufferzeit Joker Gleise und Flex Abfahrten",
       "visibility": "public"
     },
     {
@@ -3324,6 +3696,74 @@
     },
     {
       "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "840b417db66907745f73ac1ff331d21d18271d4e11cc4d3e645939d92753bb48",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_daed3ee5b013840aa1a3320c.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/geltungsbereich-pufferzeit-3-stufe-karte-fuer-2028-data/sv_daed3ee5b013840aa1a3320c.md",
+      "normalized_sha256": "a71a2a0571da47bb5df93b6914de16ba1326881497ad846e35060bd1087f282b",
+      "origin_page_url": null,
+      "original_filename": "Geltungsbereich-Pufferzeit-3-Stufe-Karte-fuer-2028--data.pdf",
+      "page_count": 1,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 415528,
+      "source_id": "src_eb589aa2d40047069f42",
+      "source_sha256": "840b417db66907745f73ac1ff331d21d18271d4e11cc4d3e645939d92753bb48",
+      "source_version_id": "sv_daed3ee5b013840aa1a3320c",
+      "supersedes_source_version_id": null,
+      "title": "Geltungsbereich Pufferzeit 3 Stufe Karte fuer 2028",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "fdadd42ae21d826d16092a85e5efe92fb337be6f4916d0f7fa7538ee9cfdbb82",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_b7cc330d5188116905aae4da.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/geltungsbereich-pufferzeit-karte-fuer-2026-2027-data/sv_b7cc330d5188116905aae4da.md",
+      "normalized_sha256": "b4ab8c5ecbfe601076d893fe416ec727dfecf73ead4d08101aab787989a7a9b1",
+      "origin_page_url": null,
+      "original_filename": "Geltungsbereich-Pufferzeit-Karte-fuer-2026-2027--data.pdf",
+      "page_count": 1,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 348519,
+      "source_id": "src_053788de0753bef1b89f",
+      "source_sha256": "fdadd42ae21d826d16092a85e5efe92fb337be6f4916d0f7fa7538ee9cfdbb82",
+      "source_version_id": "sv_b7cc330d5188116905aae4da",
+      "supersedes_source_version_id": null,
+      "title": "Geltungsbereich Pufferzeit Karte fuer 2026 2027",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": "https://www.dbinfrago.com/resource/blob/13699746/2802db8eea28ad9397cfb14838b2c0ae/Gesamtdatei-Ausnahme-250-data.pdf",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -3592,6 +4032,74 @@
       "source_version_id": "sv_0ce2100159de2983ba7601f0",
       "supersedes_source_version_id": null,
       "title": "Handbuch 40820 INB 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/resource/blob/13716038/9e644d9152371922c4a5bb0282b61567/Handbuch-pathOS-Webportal-Version-1-01-Stand-13-Maerz-2026--data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "732cbdad7389921262b64c0138f1132a05d75ee3d8785956326dac503eb4a8a1",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.dbinfrago.com/resource/blob/13716038/9e644d9152371922c4a5bb0282b61567/Handbuch-pathOS-Webportal-Version-1-01-Stand-13-Maerz-2026--data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_8c269c353c8a93217fa94129.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/handbuch-pathos-webportal-version-1-01-stand-13-maerz-2026-data/sv_8c269c353c8a93217fa94129.md",
+      "normalized_sha256": "6ddd450ea96c4aa3b4adb02745a23f42cabc1be1915e9610da092d811e0d1565",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "original_filename": "Handbuch-pathOS-Webportal-Version-1-01-Stand-13-Maerz-2026--data.pdf",
+      "page_count": 239,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/resource/blob/13716038/9e644d9152371922c4a5bb0282b61567/Handbuch-pathOS-Webportal-Version-1-01-Stand-13-Maerz-2026--data.pdf",
+      "schema_version": 2,
+      "size_bytes": 20638134,
+      "source_id": "src_831ef14bdef2f9d63f2e",
+      "source_sha256": "732cbdad7389921262b64c0138f1132a05d75ee3d8785956326dac503eb4a8a1",
+      "source_version_id": "sv_8c269c353c8a93217fa94129",
+      "supersedes_source_version_id": null,
+      "title": "Handbuch pathOS Webportal Version 1 01 Stand 13 Maerz 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/resource/blob/13131462/64302af4f86937f0286e78ca6abe653d/INB-2026-Anlage-4-2-2-4-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "3c9c22fc8362b2d267062d516172562b1188f2fdf2a2d0473fcec82960d1fe90",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.dbinfrago.com/resource/blob/13131462/64302af4f86937f0286e78ca6abe653d/INB-2026-Anlage-4-2-2-4-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_5c5eb4b6809d78f1ce3284c5.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/inb-2026-anlage-4-2-2-4-data/sv_5c5eb4b6809d78f1ce3284c5.md",
+      "normalized_sha256": "905f676c9d3480fafe082331ec1ca26b6947a3209bfe22724a092d3771b31ba3",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/INB/Infrastrukturnutzungsbedingungen-der-DB-InfraGO-AG-INB-2026-13131402",
+      "original_filename": "INB-2026-Anlage-4-2-2-4-data.pdf",
+      "page_count": 22,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/resource/blob/13131462/64302af4f86937f0286e78ca6abe653d/INB-2026-Anlage-4-2-2-4-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 428471,
+      "source_id": "src_3056a8121fbbf4dcb584",
+      "source_sha256": "3c9c22fc8362b2d267062d516172562b1188f2fdf2a2d0473fcec82960d1fe90",
+      "source_version_id": "sv_5c5eb4b6809d78f1ce3284c5",
+      "supersedes_source_version_id": null,
+      "title": "INB 2026 Anlage 4 2 2 4",
       "visibility": "public"
     },
     {
@@ -5354,6 +5862,40 @@
     },
     {
       "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "077792b3caad5431e00a1df4edab15629a9f87ff0d4c9d9ca834eec42b2c4034",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_087e137032325dc46c16f4ed.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/leitfaden-bau-und-sperrzeiten-rev-02-data/sv_087e137032325dc46c16f4ed.md",
+      "normalized_sha256": "61284509f5991b512bdc536e06fb6d8b6ad15e2f0e589d4768bb9b986295be14",
+      "origin_page_url": null,
+      "original_filename": "Leitfaden-Bau-und-Sperrzeiten_Rev-02-data.pdf",
+      "page_count": 28,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 711226,
+      "source_id": "src_4f3c061ae065a0908041",
+      "source_sha256": "077792b3caad5431e00a1df4edab15629a9f87ff0d4c9d9ca834eec42b2c4034",
+      "source_version_id": "sv_087e137032325dc46c16f4ed",
+      "supersedes_source_version_id": null,
+      "title": "Leitfaden Bau und Sperrzeiten Rev 02",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": "https://www.dbinfrago.com/web/aktuelles/kund-inneninformationen/kund-inneninformationen/2026-KW26-Umstellung-BDV-Komm-bis-30-Juni-13955478",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -5728,6 +6270,40 @@
     },
     {
       "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "ee129b4071d1870637d1470c0898e5b6f021aff4c6e5441a9e563d8d83fa6c21",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_fd582f1ba41be5962a16574b.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/pathos-das-system-zur-trassenanmeldung-bei-der-db-infrago/sv_fd582f1ba41be5962a16574b.md",
+      "normalized_sha256": "0f7162695a3ed4ff4798cd538234968d02c3f46c8b2979b3c9910dc4a9d8ae15",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "original_filename": "pathOS – Das System zur Trassenanmeldung bei der DB InfraGO.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/pathOS-neues-Bestellsystem--13003480",
+      "schema_version": 2,
+      "size_bytes": 36410,
+      "source_id": "src_f24686f98d5621c2dde5",
+      "source_sha256": "ee129b4071d1870637d1470c0898e5b6f021aff4c6e5441a9e563d8d83fa6c21",
+      "source_version_id": "sv_fd582f1ba41be5962a16574b",
+      "supersedes_source_version_id": null,
+      "title": "pathOS – Das System zur Trassenanmeldung bei der DB InfraGO",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/rahmenvertrag-11916868",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -5758,6 +6334,40 @@
       "source_version_id": "sv_e3ffbc367584b6746788d07c",
       "supersedes_source_version_id": null,
       "title": "Rahmenvertrag",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "65eb8a08e2a1fa14401f9246839c25bf099dadeb8ab5bc32b20c8069ab204a21",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_4909618516fb186264db64db.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/regelungskonzept-data/sv_4909618516fb186264db64db.md",
+      "normalized_sha256": "d30684eff22b694ded54262c72c246338f6296c5b6e42ae7cd4d39273273b0dc",
+      "origin_page_url": null,
+      "original_filename": "Regelungskonzept-data.pdf",
+      "page_count": 35,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 4585024,
+      "source_id": "src_3c8cb648308b774eae6f",
+      "source_sha256": "65eb8a08e2a1fa14401f9246839c25bf099dadeb8ab5bc32b20c8069ab204a21",
+      "source_version_id": "sv_4909618516fb186264db64db",
+      "supersedes_source_version_id": null,
+      "title": "Regelungskonzept",
       "visibility": "public"
     },
     {
@@ -6846,6 +7456,40 @@
       "source_version_id": "sv_0a295126c89cfb4cfdde4b62",
       "supersedes_source_version_id": null,
       "title": "Ril 408 21 27 INB 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "bd167e6a00d8dbcc59ec7cb13f14a5275c151fa39a1c951229f2b8429edba08f",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_ca891f04a4aa134c5cd82f87.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/ril-408-21-27-inb-2027-data/sv_ca891f04a4aa134c5cd82f87.md",
+      "normalized_sha256": "bb51780303eccd175954d0665a2f682e8fe1302d28851c6cceb0dba8c1e6cef0",
+      "origin_page_url": null,
+      "original_filename": "Ril-408-21-27-INB-2027-data.pdf",
+      "page_count": 231,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 5006958,
+      "source_id": "src_ab4b8c3297db3618ded7",
+      "source_sha256": "bd167e6a00d8dbcc59ec7cb13f14a5275c151fa39a1c951229f2b8429edba08f",
+      "source_version_id": "sv_ca891f04a4aa134c5cd82f87",
+      "supersedes_source_version_id": null,
+      "title": "Ril 408 21 27 INB 2027",
       "visibility": "public"
     },
     {
@@ -11064,6 +11708,40 @@
     },
     {
       "aliases": [],
+      "canonical_url": "https://www.deutschebahn.com/resource/blob/13866470/3f4ab63bb56078858ac354800de11570/Themendienst-Korridorsanierung-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "b9387ea6c4adecd1c3812a53d5f14cc26259ae9d8f1741225c9279ff28e97b36",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.deutschebahn.com/resource/blob/13866470/3f4ab63bb56078858ac354800de11570/Themendienst-Korridorsanierung-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_f089e38e5405909debac1925.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/themendienst-korridorsanierung-data/sv_f089e38e5405909debac1925.md",
+      "normalized_sha256": "549fa3df8c79f0730d334b4098cd80d0769444ce985bcf35304473314788a663",
+      "origin_page_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "original_filename": "Themendienst-Korridorsanierung-data.pdf",
+      "page_count": 4,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.deutschebahn.com/resource/blob/13866470/3f4ab63bb56078858ac354800de11570/Themendienst-Korridorsanierung-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 64746,
+      "source_id": "src_4952f1cbd7a1bf287e3a",
+      "source_sha256": "b9387ea6c4adecd1c3812a53d5f14cc26259ae9d8f1741225c9279ff28e97b36",
+      "source_version_id": "sv_f089e38e5405909debac1925",
+      "supersedes_source_version_id": null,
+      "title": "Themendienst Korridorsanierung",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": null,
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -11608,6 +12286,40 @@
     },
     {
       "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/Verbindlichkeit-der-Pufferzeit-in-der-Fahrplankonstruktion-12847824",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "bbdc1988cde551841ff36c61725a77ba274bfe99ac06a89a4bfee2f020b23996",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/Verbindlichkeit-der-Pufferzeit-in-der-Fahrplankonstruktion-12847824",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_ae689a08df719880beb03733.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/verbindlichkeit-der-pufferzeit-in-der-fahrplankonstruktion/sv_ae689a08df719880beb03733.md",
+      "normalized_sha256": "023c84dd2d2e944aafcc63a6f09f6cbbfe10352cc809e0cde27062704413ee66",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/Verbindlichkeit-der-Pufferzeit-in-der-Fahrplankonstruktion-12847824",
+      "original_filename": "Verbindlichkeit der Pufferzeit in der Fahrplankonstruktion.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/nutzungsbedingungen/Verbindlichkeit-der-Pufferzeit-in-der-Fahrplankonstruktion-12847824",
+      "schema_version": 2,
+      "size_bytes": 3176,
+      "source_id": "src_066331292bc2d5776193",
+      "source_sha256": "bbdc1988cde551841ff36c61725a77ba274bfe99ac06a89a4bfee2f020b23996",
+      "source_version_id": "sv_ae689a08df719880beb03733",
+      "supersedes_source_version_id": null,
+      "title": "Verbindlichkeit der Pufferzeit in der Fahrplankonstruktion",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
       "canonical_url": "https://www.dbinfrago.com/web/aktuelles/kund-inneninformationen/kund-inneninformationen/2026-KW22-Veroeffentlichung-BKE-Fahrplan-2027-Teil-2-13885480",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "content_duplicate_group": null,
@@ -11706,6 +12418,74 @@
       "source_version_id": "sv_47af4757eaee2c5d00816e0f",
       "supersedes_source_version_id": null,
       "title": "Veröffentlichung FAQ zu ANNEX VII – 4. Konsultationsphase",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenpreissystem-2026/schienengueterverkehr-sgv/weitere-entgeltelemente-13091136",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "2f335e9659ed91825a374ebcd66a1e2dfe687680177aef488bdd03d2db73ed53",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenpreissystem-2026/schienengueterverkehr-sgv/weitere-entgeltelemente-13091136",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T21:00:45Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_55bed8f982014bec8f11e731.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/weitere-entgeltelemente/sv_55bed8f982014bec8f11e731.md",
+      "normalized_sha256": "2c62931996b9cee0a7f2d77b9b7c9e1a29fdd15fd61b9c1594741bb025eb51cb",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenpreissystem-2026/schienengueterverkehr-sgv/weitere-entgeltelemente-13091136",
+      "original_filename": "Weitere Entgeltelemente.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenpreissystem-2026/schienengueterverkehr-sgv/weitere-entgeltelemente-13091136",
+      "schema_version": 2,
+      "size_bytes": 13251,
+      "source_id": "src_5389c64b056c4fa6ce37",
+      "source_sha256": "2f335e9659ed91825a374ebcd66a1e2dfe687680177aef488bdd03d2db73ed53",
+      "source_version_id": "sv_55bed8f982014bec8f11e731",
+      "supersedes_source_version_id": null,
+      "title": "Weitere Entgeltelemente",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "64b7b565571384e884695108875359cf8a327d7deb81032f206ffac1506e9c13",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T20:39:39Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_eb562221735b935f284622f0.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/wie-die-db-infrago-stabilitat-und-punktlichkeit-zuruckgewinnen-will/sv_eb562221735b935f284622f0.md",
+      "normalized_sha256": "85835833104042064a2147249b36ca6562f1e6fcae700b5eb5e3c7bbca142863",
+      "origin_page_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "original_filename": "Wie die DB InfraGO Stabilität und Pünktlichkeit zurückgewinnen will.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wie-die-DB-InfraGO-Stabilitaet-und-Puenktlichkeit-zurueckgewinnen-will-13866314",
+      "schema_version": 2,
+      "size_bytes": 13287,
+      "source_id": "src_58d896ffc32ff224ba62",
+      "source_sha256": "64b7b565571384e884695108875359cf8a327d7deb81032f206ffac1506e9c13",
+      "source_version_id": "sv_eb562221735b935f284622f0",
+      "supersedes_source_version_id": null,
+      "title": "Wie die DB InfraGO Stabilität und Pünktlichkeit zurückgewinnen will",
       "visibility": "public"
     },
     {
@@ -11903,5 +12683,5 @@
       "visibility": "public"
     }
   ],
-  "unchanged_count": 302
+  "unchanged_count": 316
 }

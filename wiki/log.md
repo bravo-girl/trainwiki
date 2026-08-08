@@ -41,3 +41,21 @@ Dieses Protokoll ist append-only. Git bleibt der exakte technische Änderungsnac
 - 0 Dokument(e) quarantänisiert.
 - Original-PDFs verbleiben unverändert außerhalb des Repositories.
 - Korpus-SHA-256: `8167d6e7e0c67277823535238e2de902fd05f9a26c8361e8c46f513f4d612747`.
+
+## [2026-08-08T20:39:39Z] bootstrap-import | TAF/TAP-Quellen
+
+- 316 logische Markdown-/PDF-Quellen normalisiert und indiziert.
+- 0 Retry-/Dateiduplikat(e) ohne zusätzliche Source-Version.
+- 0 quellenübergreifende Inhaltsgruppe(n) mit getrennter Provenienz.
+- 0 Dokument(e) quarantänisiert.
+- Original-PDFs verbleiben unverändert außerhalb des Repositories.
+- Korpus-SHA-256: `5cb4d29c7134ea5d26d386cf23fc258f84bf7b14c3c6e99e39d011cc6d6fb57f`.
+
+## [2026-08-08T21:00:45Z] bootstrap-import | TAF/TAP-Quellen
+
+- 322 logische Markdown-/PDF-Quellen normalisiert und indiziert.
+- 0 Retry-/Dateiduplikat(e) ohne zusätzliche Source-Version.
+- 0 quellenübergreifende Inhaltsgruppe(n) mit getrennter Provenienz.
+- 0 Dokument(e) quarantänisiert.
+- Original-PDFs verbleiben unverändert außerhalb des Repositories.
+- Korpus-SHA-256: `d09b7c863fd966ea9248a370a4241383133aefdde7044138c9f5797d3f624d57`.

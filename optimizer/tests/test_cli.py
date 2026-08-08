@@ -44,7 +44,7 @@ class CliTests(unittest.TestCase):
     def test_budget_is_enforced_before_a_second_lm_forward(self) -> None:
         budget = CallBudget(1)
         lm = BudgetedGroqLM(
-            "groq/openai/gpt-oss-20b",
+            "groq/openai/gpt-oss-120b",
             call_budget=budget,
             api_key="test-only",
             num_retries=0,

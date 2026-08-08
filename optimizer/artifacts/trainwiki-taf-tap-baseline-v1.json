@@ -1180,9 +1180,9 @@
     }
   },
   "runtime": {
-    "dspyModel": "groq/openai/gpt-oss-20b",
+    "dspyModel": "groq/openai/gpt-oss-120b",
     "dspyVersion": "3.2.1",
-    "model": "openai/gpt-oss-20b",
+    "model": "openai/gpt-oss-120b",
     "provider": "groq"
   },
   "schemaVersion": 1

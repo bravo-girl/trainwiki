@@ -26,7 +26,7 @@ from .programs import build_program
 from .signatures import SIGNATURES
 
 
-GROQ_DSPY_MODEL = "groq/openai/gpt-oss-20b"
+GROQ_DSPY_MODEL = "groq/openai/gpt-oss-120b"
 MAX_ALLOWED_CALLS = 200
 MAX_ALLOWED_EXAMPLES_PER_TASK = 16
 MAX_ALLOWED_OUTPUT_TOKENS = 4096

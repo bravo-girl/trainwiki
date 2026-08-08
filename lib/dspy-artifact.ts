@@ -59,8 +59,8 @@ export interface DspyArtifact {
   mode: DspyArtifactMode;
   runtime: {
     provider: "groq";
-    model: "openai/gpt-oss-20b";
-    dspyModel: "groq/openai/gpt-oss-20b";
+    model: "openai/gpt-oss-120b";
+    dspyModel: "groq/openai/gpt-oss-120b";
     dspyVersion: "3.2.1";
   };
   corpus: {
@@ -427,10 +427,10 @@ export function parseDspyArtifact(value: unknown): Readonly<DspyArtifact> {
     "artifact.runtime",
   );
   if (value.runtime.provider !== "groq") fail("artifact.runtime.provider", "expected groq");
-  if (value.runtime.model !== "openai/gpt-oss-20b")
-    fail("artifact.runtime.model", "expected openai/gpt-oss-20b");
-  if (value.runtime.dspyModel !== "groq/openai/gpt-oss-20b")
-    fail("artifact.runtime.dspyModel", "expected groq/openai/gpt-oss-20b");
+  if (value.runtime.model !== "openai/gpt-oss-120b")
+    fail("artifact.runtime.model", "expected openai/gpt-oss-120b");
+  if (value.runtime.dspyModel !== "groq/openai/gpt-oss-120b")
+    fail("artifact.runtime.dspyModel", "expected groq/openai/gpt-oss-120b");
   if (value.runtime.dspyVersion !== "3.2.1")
     fail("artifact.runtime.dspyVersion", "expected 3.2.1");
 

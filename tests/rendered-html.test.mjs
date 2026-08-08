@@ -294,7 +294,7 @@ test("returns grounded evidence when Groq rejects a suggested ETCS question", as
   }
 });
 
-test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
+test("proxies chat only to the fixed Groq GPT-OSS 120B model", async () => {
   const originalFetch = globalThis.fetch;
   let upstreamRequest;
   globalThis.fetch = async (input, init) => {
@@ -340,10 +340,10 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     assert.equal("path" in responsePayload.sources[0], false);
 
     const payload = JSON.parse(upstreamRequest.init.body);
-    assert.equal(payload.model, "openai/gpt-oss-20b");
+    assert.equal(payload.model, "openai/gpt-oss-120b");
     assert.equal(payload.max_completion_tokens, 4096);
     assert.equal(payload.reasoning_effort, "high");
-    assert.equal(payload.include_reasoning, false);
+    assert.equal(payload.reasoning_format, "hidden");
     assert.equal(payload.stream, false);
     assert.match(upstreamRequest.init.headers.Authorization, /^Bearer gsk_/);
     assert.match(payload.messages[0].content, /Nummerierte Evidenz/);
@@ -523,6 +523,7 @@ test("repairs invalid source numbers instead of discarding a grounded answer", a
     assert.equal(payload.sources[0].number, 1);
     assert.equal(upstreamRequests.length, 2);
     assert.equal(upstreamRequests[1].reasoning_effort, "high");
+    assert.equal(upstreamRequests[1].reasoning_format, "hidden");
     assert.match(upstreamRequests[1].messages.at(-1).content, /Zulässige Quellennummern: \[1\]/);
   } finally {
     globalThis.fetch = originalFetch;

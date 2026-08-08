@@ -3,23 +3,25 @@ id: system:wiki-index
 title: TrainWiki-Index
 type: index
 status: approved
-updated_at: 2026-08-08T16:35:02Z
+updated_at: 2026-08-08T21:00:45Z
 ---
 
 # TrainWiki-Index
 
-Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
+Die öffentliche Wissensbasis enthält 322 geprüfte Bootstrap-Quellen.
 
 ## Quellseiten
 
 - [260528 Ausnahme 253 zur Ril 408 vorlaeufige Inkraftsetzung](sources/260528-ausnahme-253-zur-ril-408-vorlaeufige-inkraftsetzung-data.md)
 - [260731 Fragenkatalog ANNEX VII 4 KP](sources/260731-fragenkatalog-annex-vii-4-kp-data.md)
 - [260807 Ausnahme Ril 420 0213](sources/260807-ausnahme-ril-420-0213-data.md)
+- [40800 ab 15 12 2024](sources/40800-ab-15-12-2024-data.md)
 - [483 0701 Ausnahme 104 Akt 02](sources/483-0701-ausnahme-104-akt-02-data.md)
 - [Aktuelle Ausnahmegenehmigungen](sources/aktuelle-ausnahmegenehmigungen.md)
 - [Aktuelle Informationen zu TPS 2025 und TPS 2026](sources/aktuelle-informationen-zu-tps-2025-und-tps-2026.md)
 - [Aktueller Planungsstand zu ETCS-Maßnahmen bis 2031](sources/aktueller-planungsstand-zu-etcs-manahmen-bis-2031.md)
 - [Angespannte Situation bei der Zugnummernvergabe bis vsl. Anfang September 2026](sources/angespannte-situation-bei-der-zugnummernvergabe-bis-vsl-anfang-september-2026.md)
+- [Anleitung zur pathOS Userverwaltung im Infraportal](sources/anleitung-zur-pathos-userverwaltung-im-infraportal-data.md)
 - [Annex VII – Der neue Prozess zur Baukommunikation](sources/annex-vii-der-neue-prozess-zur-baukommunikation.md)
 - [Ausnahme 239 Ril 408 gueltig ab 15 12 2025](sources/ausnahme-239-ril-408-gueltig-ab-15-12-2025-data.md)
 - [Ausnahme 241 Ril 408](sources/ausnahme-241-ril-408-data.md)
@@ -38,6 +40,7 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [DB InfraGO beantragt Stationsentgelte 2027](sources/db-infrago-beantragt-stationsentgelte-2027.md)
 - [Die Infrastrukturnutzungsbedingungen (INB) als Vertragsgrundlage für Trasse und Serviceeinrichtungen](sources/die-infrastrukturnutzungsbedingungen-inb-als-vertragsgrundlage-fur-trasse-und-serviceeinrichtung.md)
 - [Die neue digitale BauFplo: Nutzen Sie unser Angebot zur guten Vorbereitung](sources/die-neue-digitale-baufplo-nutzen-sie-unser-angebot-zur-guten-vorbereitung.md)
+- [Download Faktenblatt Digitaler Befehl](sources/download-faktenblatt-digitaler-befehl-data.md)
 - [Download TAF/TAP Glossar](sources/download-taf-tap-glossar-data.md)
 - [Einbindung der EVU bei der Vorbereitung des „European Framework for Capacity Management“ der geplanten neuen EU-Kapazitätsverordnung](sources/einbindung-der-evu-bei-der-vorbereitung-des-european-framework-for-capacity-management-der-gepla.md)
 - [Einführung eines neuen Rechnungslayouts für das Anreizsystem im SGV](sources/einfuhrung-eines-neuen-rechnungslayouts-fur-das-anreizsystem-im-sgv.md)
@@ -45,8 +48,13 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [ETCS-Systemkompatibilität](sources/etcs-systemkompatibilitat.md)
 - [Europäischer Gerichtshof erklärt Trassenpreisbremse im SPNV für unvereinbar mit dem Europarecht](sources/europaischer-gerichtshof-erklart-trassenpreisbremse-im-spnv-fur-unvereinbar-mit-dem-europarecht.md)
 - [Fahrzeugausrüstung für den Einsatz im Bereich der Schienenwege der DB InfraGO AG](sources/fahrzeugausrustung-fur-den-einsatz-im-bereich-der-schienenwege-der-db-infrago-ag.md)
+- [Faktenblatt Bauen im Takt](sources/faktenblatt-bauen-im-takt-data.md)
 - [FAQ zur Informationsveranstaltung „Wiedereinführung von Rahmenverträgen zur Netzfahrplanperiode 2029\](sources/faq-zur-informationsveranstaltung-wiedereinfuhrung-von-rahmenvertragen-zur-netzfahrplanperiode-2.md)
+- [FAQ aus der Marktkonsultation 2024](sources/faq-aus-der-marktkonsultation-2024-data.md)
+- [FAQ aus der Marktkonsultation 2025](sources/faq-aus-der-marktkonsultation-2025-data.md)
+- [FAQ aus der Marktkonsultation 2026](sources/faq-aus-der-marktkonsultation-2026-data.md)
 - [FAQ Infoveranstaltung Netzfahrplan 2027](sources/faq-infoveranstaltung-netzfahrplan-2027-data.md)
+- [FAQ Pufferzeit Joker Gleise und Flex Abfahrten](sources/faq-pufferzeit-joker-gleise-und-flex-abfahrten-data.md)
 - [FAQ zur Informationsveranstaltung fuer ETCS L2oS Massnahmen bis 2031](sources/faq-zur-informationsveranstaltung-fuer-etcs-l2os-massnahmen-bis-2031-data.md)
 - [FAQ RV 29 Stand Maerz26](sources/faq-rv-29-stand-maerz26-data.md)
 - [Flyer Common Interface](sources/flyer-common-interface-data.md)
@@ -59,6 +67,8 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Flyer Umsetzungscheckliste TAF/TAP TSI fuer EVU](sources/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md)
 - [Flyer zur Unterjaehrigen Baukommunikation nach Annex VII](sources/flyer-zur-unterjaehrigen-baukommunikation-nach-annex-vii-data.md)
 - [Fragenkatalog Annex VII](sources/fragenkatalog-annex-vii-data.md)
+- [Geltungsbereich Pufferzeit 3 Stufe Karte fuer 2028](sources/geltungsbereich-pufferzeit-3-stufe-karte-fuer-2028-data.md)
+- [Geltungsbereich Pufferzeit Karte fuer 2026 2027](sources/geltungsbereich-pufferzeit-karte-fuer-2026-2027-data.md)
 - [Gesamtdatei Ausnahme 250](sources/gesamtdatei-ausnahme-250-data.md)
 - [Glossar ZvF](sources/glossar-zvf-data.md)
 - [Glossar ETCS](sources/glossar-etcs-data.md)
@@ -67,6 +77,8 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Grundsatz-INV 2027: Versand, Zeichnung und Neuerungen](sources/grundsatz-inv-2027-versand-zeichnung-und-neuerungen.md)
 - [Grundwissen ETCS](sources/grundwissen-etcs.md)
 - [Handbuch 40820 INB 2026](sources/handbuch-40820-inb-2026-data.md)
+- [Handbuch pathOS Webportal Version 1 01 Stand 13 Maerz 2026](sources/handbuch-pathos-webportal-version-1-01-stand-13-maerz-2026-data.md)
+- [INB 2026 Anlage 4 2 2 4](sources/inb-2026-anlage-4-2-2-4-data.md)
 - [INB 2027 Anlage 1 0](sources/inb-2027-anlage-1-0-data.md)
 - [INB 2027 Anlage 2 3 10](sources/inb-2027-anlage-2-3-10-data.md)
 - [INB 2027 Anlage 2 3 12](sources/inb-2027-anlage-2-3-12-data.md)
@@ -119,6 +131,7 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Key Management zur ETCS-Nutzung](sources/key-management-zur-etcs-nutzung.md)
 - [Kickoff Ende zu Ende Kundentests TTT mit Identifiern](sources/kickoff-ende-zu-ende-kundentests-ttt-mit-identifiern-data.md)
 - [Konsultation baubedingter Kapazitäts- und Anlageneinschränkungen für die 2. KP im Fahrplanjahr 2028](sources/konsultation-baubedingter-kapazitats-und-anlageneinschrankungen-fur-die-2-kp-im-fahrplanjahr-202.md)
+- [Leitfaden Bau und Sperrzeiten Rev 02](sources/leitfaden-bau-und-sperrzeiten-rev-02-data.md)
 - [Letzte Erinnerung: Rückmeldung zur Umstellung auf verschlüsselte BDV-Kommunikation bis zum 30. Juni 2026 erforderlich](sources/letzte-erinnerung-ruckmeldung-zur-umstellung-auf-verschlusselte-bdv-kommunikation-bis-zum-30-jun.md)
 - [Marktsegment Nacht: Abgabe von Wagenlisten für Züge mit Verkehrstagen ab dem Fahrplanjahr 2027 nur noch über den Rechnungsbahnhof möglich](sources/marktsegment-nacht-abgabe-von-wagenlisten-fur-zuge-mit-verkehrstagen-ab-dem-fahrplanjahr-2027-nu.md)
 - [Marktsegmente im Schienengüterverkehr (SGV)](sources/marktsegmente-im-schienenguterverkehr-sgv.md)
@@ -130,7 +143,9 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Normierte Schnittstelle (NSS): Umstellung der Kommunikationswege im Rahmen der TAF/TAP TSI-Einführung](sources/normierte-schnittstelle-nss-umstellung-der-kommunikationswege-im-rahmen-der-taf-tap-tsi-einfuhru.md)
 - [NSS: Anpassung der Fahrplanbereitstellung im Rahmen der Einführung von TAF/TAP TSI](sources/nss-anpassung-der-fahrplanbereitstellung-im-rahmen-der-einfuhrung-von-taf-tap-tsi.md)
 - [NTR Liste 02 09 25](sources/ntr-liste-02-09-25-data.md)
+- [pathOS – Das System zur Trassenanmeldung bei der DB InfraGO](sources/pathos-das-system-zur-trassenanmeldung-bei-der-db-infrago.md)
 - [Rahmenvertrag](sources/rahmenvertrag.md)
+- [Regelungskonzept](sources/regelungskonzept-data.md)
 - [Richtlinien des betrieblich-technischen Regelwerks der INB 2026](sources/richtlinien-des-betrieblich-technischen-regelwerks-der-inb-2026.md)
 - [Ril 301 0001Z21 INB 2026](sources/ril-301-0001z21-inb-2026-data.md)
 - [Ril 301 INB 2026](sources/ril-301-inb-2026-data.md)
@@ -163,6 +178,7 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Ril 406 1301 INB 2026](sources/ril-406-1301-inb-2026-data.md)
 - [Ril 408 0051 56Z31 INB 2026](sources/ril-408-0051-56z31-inb-2026-data.md)
 - [Ril 408 21 27 INB 2026](sources/ril-408-21-27-inb-2026-data.md)
+- [Ril 408 21 27 INB 2027](sources/ril-408-21-27-inb-2027-data.md)
 - [Ril 408 21 27Z31 INB 2026](sources/ril-408-21-27z31-inb-2026-data.md)
 - [Ril 408 2101Z21 INB 2026](sources/ril-408-2101z21-inb-2026-data.md)
 - [Ril 408 31 37 INB 2026](sources/ril-408-31-37-inb-2026-data.md)
@@ -289,6 +305,7 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [TAF/TAP TSI Dialog 26 Maerz 2026 Terminunterlage](sources/taf-tap-tsi-dialog-26-maerz-2026-terminunterlage-data.md)
 - [TAF/TAP TSI FAQ](sources/taf-tap-tsi-faq.md)
 - [Teils unzureichende Datenqualität in der TCM/PTCM](sources/teils-unzureichende-datenqualitat-in-der-tcm-ptcm.md)
+- [Themendienst Korridorsanierung](sources/themendienst-korridorsanierung-data.md)
 - [TNB INB 2026](sources/tnb-inb-2026-data.md)
 - [TNB INB 2027](sources/tnb-inb-2027-data.md)
 - [TPS 2027: Bundesnetzagentur genehmigt Marktsegmentierung](sources/tps-2027-bundesnetzagentur-genehmigt-marktsegmentierung.md)
@@ -305,9 +322,12 @@ Die öffentliche Wissensbasis enthält 302 geprüfte Bootstrap-Quellen.
 - [Unterlage zur Infoveranstaltung Wiedereinfuehrung von Rahmenvertraegen zur Netzfahrplanperiode 2029](sources/unterlage-zur-infoveranstaltung-wiedereinfuehrung-von-rahmenvertraegen-zur-netzfahrplanperiode-2.md)
 - [Unterlage RV April 2026](sources/unterlage-rv-april-2026-data.md)
 - [Update der Dokumentation der TAF/TAP-konformen EVU-Schnittstelle zu pathOS und KOMBau](sources/update-der-dokumentation-der-taf-tap-konformen-evu-schnittstelle-zu-pathos-und-kombau.md)
+- [Verbindlichkeit der Pufferzeit in der Fahrplankonstruktion](sources/verbindlichkeit-der-pufferzeit-in-der-fahrplankonstruktion.md)
 - [Veröffentlichung baubedingter Kapazitätseinschränkungen Fahrplan 2027 (Teil 2)](sources/veroffentlichung-baubedingter-kapazitatseinschrankungen-fahrplan-2027-teil-2.md)
 - [Veröffentlichung des DB InfraGO Geschäftsplans 2025 gemäß § 9 ERegG](sources/veroffentlichung-des-db-infrago-geschaftsplans-2025-gema-9-eregg.md)
 - [Veröffentlichung FAQ zu ANNEX VII – 4. Konsultationsphase](sources/veroffentlichung-faq-zu-annex-vii-4-konsultationsphase.md)
+- [Weitere Entgeltelemente](sources/weitere-entgeltelemente.md)
+- [Wie die DB InfraGO Stabilität und Pünktlichkeit zurückgewinnen will](sources/wie-die-db-infrago-stabilitat-und-punktlichkeit-zuruckgewinnen-will.md)
 - [Wiedereinfuehrung Rahmenvertraege Fahrplanperioden 2028 2032 1 Vertiefungstermin](sources/wiedereinfuehrung-rahmenvertraege-fahrplanperioden-2028-2032-1-vertiefungstermin-data.md)
 - [Wiedereinfuehrung Rahmenvertraege Fahrplanperioden 2028 2032 2 Vertiefungstermin](sources/wiedereinfuehrung-rahmenvertraege-fahrplanperioden-2028-2032-2-vertiefungstermin-data.md)
 - [ZvF-Stafette](sources/zvf-stafette.md)

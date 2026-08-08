@@ -21,8 +21,8 @@ test("parses the checked-in portable artifact without Python", async () => {
   const artifact = parseDspyArtifact(await fixture());
 
   assert.equal(artifact.programVersion, "taf-tap-program-v1");
-  assert.equal(artifact.runtime.model, "openai/gpt-oss-20b");
-  assert.equal(artifact.runtime.dspyModel, "groq/openai/gpt-oss-20b");
+  assert.equal(artifact.runtime.model, "openai/gpt-oss-120b");
+  assert.equal(artifact.runtime.dspyModel, "groq/openai/gpt-oss-120b");
   assert.equal(artifact.build.networkUsed, false);
   assert.equal(artifact.retrieval.aliasExpansion.CC[1], "RICS-Code");
   assert.match(artifact.programs.groundedAnswer.instructions, /evidence/i);
