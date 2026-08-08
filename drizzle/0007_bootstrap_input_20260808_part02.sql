@@ -1,1116 +1,332 @@
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_6dfa6ab185d7b13bde7c1fcc','wiki/sources/download-taf-tap-glossar-data.md',3,'Seite 2','Begriff Beschreibung
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c9746e39ec9ec628a11f73d2','wiki/sources/celex-32017d2075-de-txt.md',12,'Seite 5','Absatz 1, die Kosten des Infrastrukturbetreibers zu senken. Der Infrastrukturbetreiber veröffentlicht diese Kriterien
 
-PLC Diese Abkürzung steht für Primary Location Code. Mit dem Primary Location Code werden
+zusammen mit einer vorläufigen Zuweisung der verbleibenden Kapazität für die einzelnen Arten von Schienenver
 
-Betriebsstellen eindeutig und in einem einheitlichen, standardisierten europäischen Format codiert.
+kehrsdiensten im Rahmen der Maßnahmen gemäß Nummer 8 in seinen Schienennetz-Nutzungsbedingungen. Nach
 
-Somit identifiziert ein Primary Location Code eine Örtlichkeit auf dem Schienennetzwerk. Primary
+dem Ende der Konsultation und unbeschadet der Verpflichtungen des Infrastrukturbetreibers gemäß Anhang IV
 
-Location Codes werden zukünftig bei jeder Art von TAF/TAP-Kommunikation verwendet. Daneben
+Nummer 3 stellt der Infrastrukturbetreiber den betroffenen Eisenbahnunternehmen auf der Grundlage der
 
-wird es auch weiterhin die Ril100 Codes geben (z.B. im Trassenbestellsystem).
+Rückmeldungen der Antragsteller eine vorläufige Aufschlüsselung nach Art der Dienstleistung für die verbleibende
 
-Primary Location Eine Primary Location ist ein Ort innerhalb des Schienennetzes, an dem eine Zugfahrt beginnt, endet,
-
-anhält, durchfährt oder die Strecke wechselt. Dieser Ort muss von einem Infrastrukturbetreiber, der
-
-durch einen Company Code identifiziert wird, verwaltet werden. Beispiele für Primary Locations sind
-
-Bahnhöfe, Haltepunkte oder Grenzpunkte.
-
-PRM bzw. Path Request Abkürzung für die Path Request Message, eine Pflichtnachricht in der Trassenanmeldung, mit der ein
-
-Path erstmalig bestellt wird. Diese Nachricht wird vom EVU an das EIU geschickt
-
-RA Die Abkürzung für den "Responsible Applicant", das vertragsbindende Unternehmen. Es kann sein,
-
-dass ein und dasselbe EVU die Rollen des LeadRU, RA und ResponsibleRU einnimmt.
-
-ReferenceTrain Familie von Zügen (Trains) bzw. Zugfamilie. Objekt im Kontext des TAF/TAP-Modells. Darunter werden
-
-verschiedene zueinander gehörige Züge (Trains) zusammengefasst. Dies können z.B. Züge mit
-
-abweichenden Zugläufen werktags und am Wochenende sein. Wird durch eine ReferenceTrainID
-
-identifiziert
-
-ResponsibleIM Das für die Bereitstellung einer Trasse (Path) und die betriebliche Durchführung der Zugfahrt auf
-
-Infrastrukturseite verantwortliche EIU. Analog zum ResponsibleRU.',222,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','b2773faca825eba224bc4dda0fecde0e5ca300d969c8085fd3d3bc275a7e87da');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_691eecbef550448fc3f31beb','wiki/sources/download-taf-tap-glossar-data.md',4,'Seite 2','ResponsibleRU, auch RRU Das für die Durchführung einer Zugfahrt verantwortliche EVU, also der "Eigner der Trasse". Dieses EVU
-
-ist gemäß TAF/TAP der Partner für den Datenaustausch mit dem EIU in der Betriebsphase. Dies behält
-
-auch seine Gültigkeit, falls das ResponsibleRU einen Subunternehmer mit der Durchführung der
-
-Zugfahrt beauftragt. Es kann sein, dass ein und dasselbe EVU die Rollen des LeadRU, RA und
-
-ResponsibleRU einnimmt.
-
-RNE RNE ist die Rail Net Europe, ein europäischer Verband der Eisenbahninfrastrukturunternehmen. Sie ist
-
-einer der Hauptakteure bei der Umsetzung von TAF/TAP TSI. Die RNE gibt es seit 2004 und hat zum
-
-übergreifenden Ziel die Herausforderungen des europäischen Eisenbahnsektors anzugehen und zu
-
-vereinfachen. Die RNE versucht, die europäische Vernetzung seiner Mitglieder zu unterstützen und z.B.
-
-auch bei rechtlichen Fragestellungen innerhalb der EU zu vermitteln. Mit Stand 2022 hat die RNE 38
-
-Vollmitglieder aus über 30 Ländern.
-
-Route Objekt im Kontext des TAF/TAP-Modells. Beinhaltet den groben Zuglauf (Start, Ziel, Grenzübergänge
-
-sowie Informationen zu Tageswechseln) durch Europa.
-
-Wird durch eine RouteID identifiziert
-
-RU Die englische Bezeichnung für ein EVU (Eisenbahnverkehrsunternehmen), also ein "Railway
-
-Undertaking"
-
-SLC Ein Subsidiary Location Code identifiziert eindeutig eine Subsidiary Location innerhalb einer
-
-bestehenden Primary Location. Mit dem SLC werden Subsidiary Locations in einem einheitlichen,
-
-standardisierten europäischen Format codiert. Mit Hilfe der Subsidiary Location Codes kann ein
-
-Nachrichtenaustausch zwischen Unternehmen stattfinden, die in einer geschäftlichen Beziehung
-
-stehen.
-
-Subsidiary Location Eine Subsidiary Location ist immer mit einer Primary Location verknüpft und beschreibt Teile,',237,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','6ad1b77340cbbb64f9c59095157320e8a87b6f65378b68b54566cb4302da9460');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f4c2966b7573656c83d6ee68','wiki/sources/download-taf-tap-glossar-data.md',5,'Seite 2','Attribute von Primary Locations oder die Verwendung von Primary Locations näher. Es kann sich auch
-
-um einen nicht-schienengebundenen oder schienengebundenen Punkt handeln, der nicht von einem
-
-Infrastrukturbetreiber (IM) betrieben wird. Beispiele für Subsidiary Locations sind Gleise, Tankanlagen
-
-oder Ladepunkte.
-
-TAF TSI Telematics Applications for Freight Services - Technical Specification for Interoperability (Telematische
-
-Anwendungen für den Güterverkehr - Technische Spezifikation für Interoperabilität)
-
-TAP TSI Telematics Applications for Passenger Services - Technical Specification for Interoperability
-
-(Telematische Anwendungen für den Personenverkehr - Technische Spezifikation für Interoperabilität)
-
-TCM/PTCM Train Composition Message (Güterverkehr) bzw. Passenger Train Composition Message
-
-(Personenverkehr): Die beiden künftig verbindlichen Nachrichtentypen von TAF/TAP im Betrieb
-
-werden vom EVU an das EIU gesendet. Sie geben Auskunft über die aktuellen Zuginhaltsdaten (Länge,
-
-Gewicht, Angaben zu Bremsen, etc.) und sind nicht gleichzusetzen mit der heutigen Wagenliste.
-
-Einführung erfolgt vsl. in 09/2023, eine Verpflichtung zu Abgabe in NBN ist grundsätzlich geplant -
-
-genauere Termine hierzu werden separat kommuniziert, sobald bekannt.
-
-TPN Trassen Portal Netz, also das bisherige System zur Trassenanmeldung bei der DB InfraGO. Dieses wird
-
-mit Einführung von TAF/TAP durch das neue Bestellsystem ersetzt. Aus heutiger Sicht bleibt TPN bis
-
-einschließlich Fahrplanjahr 2025 führend, ab Fahrplanjahr 2026 gilt das neue System
-
-Train Zug. Objekt im Kontext des TAF/TAP-Modells. Beinhaltet Informationen zum Zug und dessen
-
-Eigenschaften. Wird durch eine TrainID identifiziert.
-
-Glossar zu TAF/TAP TSI, Stand Dezember 2023 Seite 2 von 3',226,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','f32b15911d72bd0f7aa87a0526042c697a1908e12a6d6841ab7f40df1e828c5d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f8dc47de8f9f289558f4aa3a','wiki/sources/download-taf-tap-glossar-data.md',6,'Seite 3','Begriff Beschreibung
-
-Train Activity Ein Feld innerhalb einiger Nachrichten, u.a. in der Trassenanmeldung für den Fahrplan oder der
-
-Information zu Abhängigkeiten zwischen Zügen im Betrieb. Hiermit wird die Zugaktivität an einem
-
-bestimmten Laufwegspunkt beschrieben. Dies sind z.B. gebräuchliche Aktivitäten wie der
-
-Verkehrshalt, Anschluss-/Umlaufinformationen oder das Zusammenführen von Zügen oder weniger
-
-oft genutzte wie Lokführererholungshalt, Fotohalt etc.
-
-UIC Die International Union of Railways mit der Mission: "Promote rail transport globally with the
-
-objective of responding effectively to current and future challenges relating to mobility and
-
-sustainable development; Develop and facilitate all forms of international cooperation among
-
-members and promote sharing of best practice" (Auszug zitiert von der UIC-Homepage). Die UIC
-
-vergibt u.a. die Company Codes
-
-UIC-Telegramme Bestehendes international standardisiertes Datenaustauschformat im Betrieb. Einige Telegramme sind
-
-analog zu den entsprechenden TAF/TAP-Meldungen (z.B. Zugstandort, Prognose). Gegenüber den
-
-TAF/TAP-Meldungen decken die UIC-Telegramme jedoch weniger Geschäftsfälle ab und bieten
-
-weniger Umfang
-
-xsd XML Schema Definition: Das Dateiformat, in dem z.B. die RNE ihre Schnittstellenbeschreibungen
-
-veröffentlicht
-
-Zugnummer Die heute im Betrieb verwandte Zugnummer, mit der auch Passagiere im Aushangfahrplan ihren Zug
-
-erkennen können
-
-Glossar zu TAF/TAP TSI, Stand Dezember 2023 Seite 3 von 3',188,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":3,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','458d76a4c10481f2b76f1de5bce7f735b39b8e0c6f12975d073419534732b310');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_b5fb8ccb80d176b38310','file','FAQ Infoveranstaltung Netzfahrplan 2027',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_4fbe32d73c5618c02a183f43','src_b5fb8ccb80d176b38310','79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689','ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c',91280,'application/pdf','FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf','sources/normalized/bootstrap/faq-infoveranstaltung-netzfahrplan-2027-data/sv_4fbe32d73c5618c02a183f43.md','pdfplumber','0.11.9','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","converter":{"name":"pdfplumber","profile":"bootstrap-markdown-v2","version":"0.11.9"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_4fbe32d73c5618c02a183f43.json","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/faq-infoveranstaltung-netzfahrplan-2027-data/sv_4fbe32d73c5618c02a183f43.md","normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","origin_page_url":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf","page_count":6,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":91280,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43","supersedes_source_version_id":null,"title":"FAQ Infoveranstaltung Netzfahrplan 2027","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689','src_b5fb8ccb80d176b38310','sv_4fbe32d73c5618c02a183f43','{"content_duplicate_group":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c','src_b5fb8ccb80d176b38310',NULL,'{"content_duplicate_group":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_4fbe32d73c5618c02a183f43' WHERE id='src_b5fb8ccb80d176b38310';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md','FAQ Infoveranstaltung Netzfahrplan 2027','Fragen / Antworten Kundenveranstaltung „Teilzuweisungen, Storno- und Annahmequote und E-Mailtypen“ Termin 15.04.2026 1. Warum werden die Jahre 2023/2024 bei der AQ und SQ berücksichtigt? es war doch nicht bekannt bei den Bestellungen in diesen Jahren, dass das EVU 3 Jahre später zu einem nicht verlässlichem EVU wird Hierzu gab es in der Zwischenzeit für die ','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','37561f38c1148d07edd9772d0577f5d40f32d01065cc6366ed3b3b45a55a4a27','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_b5fb8ccb80d176b38310","source_version_id":"sv_4fbe32d73c5618c02a183f43"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b0884b3a3a90c7d64ae50b20','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',0,'Seite 1','Fragen / Antworten Kundenveranstaltung „Teilzuweisungen, Storno- und
-
-Annahmequote und E-Mailtypen“
-
-Termin 15.04.2026
-
-1. Warum werden die Jahre 2023/2024 bei der AQ und SQ berücksichtigt? es war
-
-doch nicht bekannt bei den Bestellungen in diesen Jahren, dass das EVU 3 Jahre
-
-später zu einem nicht verlässlichem EVU wird
-
-Hierzu gab es in der Zwischenzeit für die Werte der 1. NEP eine
-
-Kundeninformation vom 21.04.2026, auf die wir verweisen. Link: Änderungen
-
-für die Berechnung der diesjährigen relevanten Storno- und Annahmequoten für
-
-die erste Phase der Netzfahrplanerstellung 2027. Im Übrigen stellt die Ziffer
-
-4.2.1.9 lit c) - e) der INB 2027 das aktuell geltende Regelwerk dar, das auch
-
-nicht durch die Bundesnetzagentur beanstandet wurde.
-
-2. Zählen zukünftig Ablehnungen nach einem FPE/NAÄ in die Stornoquote?
-
-Wenn ein FPE/NAÄ einen Ausfall aufgrund einer baubedingten
-
-Kapazitätseinschränkung vorsieht, fällt dies grundsätzlich in den Einflussbereich
-
-der DB InfraGO AG und wird daher nicht in der Stornoquote berücksichtigt.
-
-Sofern die FPE/NAÄ zu einer Anpassung der Trasse führt, hat der
-
-Zugangsberechtigte nach der Richtlinie 402.0305 Abschnitt 8 Absatz 6 (2027)
-
-die Möglichkeit diese innerhalb von drei Arbeitstagen kostenfrei zu stornieren.
-
-Eine solche fristgerechte Stornierung ist der Stornoquote nicht zuzurechnen.
-
-Sollten gleichwohl in der Auswertungsdatei zur Stellungnahme bzgl.
-
-nichtwirtschaftlicher Gründe solche Fälle auftauchen, bitten wir diese zu
-
-reklamieren.
-
-3. Warum fließen Stornierungen, welche durch die DB InfraGO verursacht werden,
-
-z.B. Baubedingt, Streik etc. trotzdem in die Stornoquote?
-
-Grundsätzlich sind DB-InfraGO-AG-ausgelöste Ursachen der Stornoquote nicht
-
-zuzurechnen. Sollten aufgrund von systembedingten Umständen solche Ursachen',241,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":1,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','b63d0c02bda9cd7ffef3c99f9f05a7c47549d101dc82a7325685ae75ef50a3c9');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d2aa6318e7f1b64532f99254','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',1,'Seite 1','gleichwohl in der Auswertungsdatei zur Stellungnahme bzgl.
-
-nichtwirtschaftlicher Gründe auftauchen, bitten wir diese zu reklamieren. Wir
-
-prüfen derzeit, ob eine technische Anpassung und Unterstützung zu
-
-Stornierungen, insbesondere zur Erklärung eines Stornierungsgrunds, in pathOS
-
-möglich ist.
-
-4. Warum werden den EVUs keine detaillierten Auswertungen zur Stornoquote
-
-bereitgestellt? Es war doch im letzten Jahr eine monatliche Übersicht
-
-angekündigt? Dies ist bis heute nicht erfolgt. Mindestens eine quartalsweise
-
-Übersicht wäre wünschenswert.
-
-Nach den geltenden Regelungen (Ziffer 4.2.1.9 lit. c) – e) der INB) werden die
-
-Werte nur einmal jährlich versendet. Wir prüfen derzeit, ob eine technische
-
-Anpassung und Unterstützung zu Stornierungen, insbesondere zur Erklärung
-
-eines Stornierungsgrunds, in pathOS möglich ist.',107,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":1,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','2413f524a01f441ff4f82749102249c0f94e8a19d1f75df9fe0750dbfbfd6fd4');
+Kapazität bereit.“',79,'{"canonical_url":null,"normalized_sha256":"6f9374549aa7339e6c8e0655477ac6f91fae79fee7391e4033e1a0a5b952c710","page":5,"source_id":"src_fb87aaf72d699df68d35","source_sha256":"ee9fc6b3ca6f222446aef1bb77496672f1cf3083ed0a9ef6d493178d4e70839c","source_version_id":"sv_ee9fc6b3ca6f222446aef1bb"}','f4bc42731942b3bd50687b3ea5f540b1f41219f75051a026c9b15a4e76a29b64');
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_28b158f4a907a9a3718ded20','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',2,'Seite 2','5. Wurden die Stellungnahme zu den Storno / Annahmequote für NFPL 2023 /
-
-2024 bei den EVU abgefordert?
-
-Hierzu gab es in der Zwischenzeit für die Werte der 1. NEP eine
-
-Kundeninformation vom 21.04.2026, auf die wir verweisen. Link: Änderungen
-
-für die Berechnung der diesjährigen relevanten Storno- und Annahmequoten für
-
-die erste Phase der Netzfahrplanerstellung 2027. Danach werden aus
-
-Gleichbehandlungsgründen für alle Zugangsberechtigten eine Stornoquote von
-
-0% und eine Annahmequote von 100% für die Werte der 1. NEP 2025 angesetzt.
-
-6. Auf welcher Basis wird die 95/30% Quote ermittelt? Gesamthaft über alle
-
-Trassen eines EVU in allen Zeitscheiben - oder z.B. je Teilmenge nach
-
-Kundennummern (Teilnetzen)?
-
-Für die Ermittlung der Quoten wird auf den konkreten Zugangsberechtigten
-
-(juristische Person) abgestellt. Es werden also die Trassenkilometer aller
-
-Trassenverträge eines Zugangsberechtigten herangezogen, die den
-
-Kundennummern des Zugangsberechtigten bzw. dem Company Code zugeordnet
-
-werden. Zudem werden nur die Trassen betrachtet, die innerhalb der ersten
-
-Netzfahrplanerstellungsphase bestellt wurden.
-
-7. Was ist, wenn ich mit der Teilzuweisung am Ende doch nichts anfangen kann,
-
-weil mir andere Teile der Trasse fehlen? Wird das trotzdem in die Stornoquote
-
-reingerechnet?
-
-Ja, sofern Sie eine Teilzuweisungsinteresse erklärt haben und daraufhin ein
-
-Teilangebot erhalten, dieses in der Folge aber stornieren, wird die Stornierung
-
-dieses Teilangebots in der Stornoquote zu Ihren Lasten berücksichtigt. Wenn Sie
-
-Interesse an einer Teilzuweisung bekunden, erklären Sie Ihr Interesse an diesem
-
-Teilangebot. Falls Sie beabsichtigen, dieses Teilangebot später mit einer
-
-weiteren angemeldeten Leistung zu kombinieren, ist dies ausschließlich Ihr',242,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":2,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','4403da14b4766b9fa8d90cb9116266487c9d247571ef0cf87140168e2feef47f');
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_9a8ac84849939f0108ef','file','Changelog BauFplo API EVU 2 17 0',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8bab0fe944184e3f300ecdd6','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',3,'Seite 2','eigenes wirtschaftliches Risiko.
-
-8. Fällt das erhöhte Stornierungsentgelt ausschließlich auf die einzelnen Konflikte
-
-in einer Zeitscheibe oder auf alle Verkehrstage innerhalb einer Zeitscheibe an?
-
-Das erhöhte Stornierungsentgelt findet im Falle einer Stornierung für die
-
-gesamte Zeitscheibe/Path Request Anwendung, die, wenn auch nur in Teilen,
-
-von einem Konfliktverfahren betroffen war.
-
-9. Bei pauschaler Zustimmung zum erhöhten Stornierungsentgelt - findet das
-
-erhöhte Entgelt Anwendung auf alle Trassen des EVU, oder nur auf Trassen mit
-
-Konflikten in der NEP1?
-
-Eine Anwendung des erhöhten Stornierungsentgelts betrifft lediglich
-
-konfliktbehaftete Trassen, die künftig storniert werden.',89,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":2,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','e35f86d334475dd7dc49be02ec178a22f2bb1db0fe1589befeafc5a882fbab87');
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_9aacda759a56475d3f64f6e0','src_9a8ac84849939f0108ef','c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb','910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428',137463,'application/pdf','Changelog-BauFplo-API-EVU-2-17-0-data.pdf','sources/normalized/bootstrap/changelog-baufplo-api-evu-2-17-0-data/sv_9aacda759a56475d3f64f6e0.md','pdfplumber','0.11.9','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","converter":{"name":"pdfplumber","profile":"bootstrap-markdown-v2","version":"0.11.9"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_9aacda759a56475d3f64f6e0.json","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/changelog-baufplo-api-evu-2-17-0-data/sv_9aacda759a56475d3f64f6e0.md","normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","origin_page_url":null,"original_filename":"Changelog-BauFplo-API-EVU-2-17-0-data.pdf","page_count":4,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":137463,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0","supersedes_source_version_id":null,"title":"Changelog BauFplo API EVU 2 17 0","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_df447f920542db4ff2ec55b2','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',4,'Seite 3','10. Welche Antwortfrist gilt bei der Abfrage zum erhöhten Stornoentgelt in einem
-
-Konfliktfall?
-
-Die Frist zur Abfrage zum erhöhten Stornierungsentgelt im Konfliktfall beträgt 2
-
-Arbeitstage.
-
-11. Wie wirkt sich die Annahme des erhöhten Stornierungsentgeltes in den drei
-
-zurückliegenden Jahren auf die Storno- oder Annahmequote aus? Wie wird das
-
-berücksichtigt?
-
-Es erfolgt jedes Jahr eine erneute Abfrage zur Akzeptanz eines erhöhten
-
-Stornierungsentgelts, sofern ein Zugangsberechtigter die Annahmequote
-
-und/oder Stornoquote unter- bzw. überschritten haben. Insofern haben
-
-Aussagen, die in den zurückliegenden Jahren in Bezug auf das erhöhte
-
-Stornierungsentgelt getroffen wurden, keine Auswirkung auf die Storno- und
-
-Annahmequote in der aktuellen oder künftigen Netzfahrplanphase(n). Da Sie das
-
-erhöhte Stornierungsentgelt ausschließlich für das Netzfahrplanjahr auf das sich
-
-die Trassenanmeldung bezieht erklären, fällt es nur an, wenn Sie eine zukünftige,
-
-konfliktbehaftete Trassenanmeldung stornieren, für welche Sie im Vorfeld das
-
-erhöhte Stornierungsentgelt akzeptiert haben.
-
-12. Wir haben seit Jahresfahrplan 2026 durch die erhöhten Bautätigkeiten bei
-
-bestimmten Trassen eine enorme baubedingte Stornoquote seitens des EIU DB
-
-InfraGO, da keine alternativen Trassen zur Verfügung stehen / gestellt werden
-
-können. Wie wird dies im Prozess (Entwurf der Stornoqoute + finale
-
-Stornoqoute) berücksichtigt?
-
-Wenn ein Ausfall aufgrund einer baubedingten Kapazitätseinschränkung vorliegt,
-
-fällt dies grundsätzlich in den Einflussbereich der DB InfraGO AG und wird daher
-
-nicht in der Stornoquote berücksichtigt. Sofern es aufgrund der baubedingten
-
-Kapazitätseinschränkung zu einer Anpassung der Trasse kommt, hat der',223,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":3,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','98e7769837a2c2b5f960068bc975afc463b44534673170568d0cdfe1feb2832f');
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb','src_9a8ac84849939f0108ef','sv_9aacda759a56475d3f64f6e0','{"content_duplicate_group":null,"original_filename":"Changelog-BauFplo-API-EVU-2-17-0-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_acfa147445551b8a20914c3c','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',5,'Seite 3','Zugangsberechtigte nach der Richtlinie 402.0305 Abschnitt 8 Absatz 6 (2027)
-
-die Möglichkeit diese innerhalb von drei Arbeitstagen kostenfrei zu stornieren.
-
-Eine solche fristgerechte Stornierung ist der Stornoquote nicht zuzurechnen.
-
-Sollten gleichwohl in der Auswertungsdatei zur Stellungnahme bzgl.
-
-nichtwirtschaftlicher Gründe solche Fälle auftauchen, bitten wir diese zu
-
-reklamieren. Sollten gleichwohl in der Auswertungsdatei zur Stellungnahme bzgl.
-
-nichtwirtschaftlicher Gründe solche Fälle auftauchen, bitten wir diese zu
-
-reklamieren.',65,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":3,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','b905a94694b1fde97637dbdf368ea0d911b900a7f647c3743b0f23da06956dc4');
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428','src_9a8ac84849939f0108ef',NULL,'{"content_duplicate_group":null,"original_filename":"Changelog-BauFplo-API-EVU-2-17-0-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a3ae8ca099e7c34ae3e56d38','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',6,'Seite 4','13. Es ist weder kundenorientiert noch korrekt, dass eine schon durch das EIU
-
-baubedingt stornierte Trasse in der Stornoquote nochmals reklamiert werden
-
-muss. Final kann dies zu einem erhöhten Stornoentgelt führen für eine Trasse,
-
-die seitens EIU storniert wurde. Wir werden dies über das Anliegenportal auch
-
-nochmals zu überdenken geben.
-
-Wenn ein Ausfall aufgrund einer baubedingten Kapazitätseinschränkung vorliegt,
-
-fällt dies grundsätzlich in den Einflussbereich der DB InfraGO AG und wird daher
-
-nicht in der Stornoquote berücksichtigt. Sofern es aufgrund der baubedingten
-
-Kapazitätseinschränkung zu einer Anpassung der Trasse kommt, hat der
-
-Zugangsberechtigte nach der Richtlinie 402.0305 Abschnitt 8 Absatz 6 (2027)
-
-die Möglichkeit diese innerhalb von drei Arbeitstagen kostenfrei zu stornieren.
-
-Eine solche fristgerechte Stornierung ist der Stornoquote nicht zuzurechnen.
-
-Sollten gleichwohl in der Auswertungsdatei zur Stellungnahme bzgl.
-
-nichtwirtschaftlicher Gründe solche Fälle auftauchen, bitten wir diese zu
-
-reklamieren. Wir prüfen derzeit, ob eine technische Anpassung und
-
-Unterstützung zu Stornierungen, insbesondere zur Erklärung eines
-
-Stornierungsgrunds in pathOS möglich ist.',157,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":4,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','24668ac32db2d1ad8d29db7a5ecb6f0d3c6dd22778eb2028f85ff0d1f7429b8f');
+UPDATE sources SET current_version_id='sv_9aacda759a56475d3f64f6e0' WHERE id='src_9a8ac84849939f0108ef';
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_548de898e9ea831521d04e59','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',7,'Seite 5','Termin 20.04.2026
-
-1. Bleibt es so, dass für die Storno/Annahmequote nach 3 Jahren gesehen werden?
-
-Oder wird das Zeitraum in die nächste Jahre noch angepasst?
-
-Es sind keine Änderungen diesbezüglich geplant. Daher werden auch künftig die
-
-dann maßgeblichen zurückliegenden drei Jahre betrachtet. Für die erste Phase
-
-der Netzfahrplanerstellung (1. NEP) 2028 werden somit die Annahmequoten aus
-
-der 1. NEP 2027, 2026 und 2025 sowie die Stornoquoten aus der 1. NEP 2026,
-
-2025 und 2024 relevant sein.
-
-2. Teilzuweisung: Wie können wir mit Teilzuweisungen eine durchgehende
-
-internationale Trasse bekommen? Wenn wir vor und nach das Konflikt eine
-
-Trasse wünschen, haben wir nur eine internationale Zugnummer, für eine Trasse
-
-das normalerweise 2 Grenzübergangen hat.
-
-Wenn Sie Interesse an einer Teilzuweisung bekunden, erklären Sie Ihr Interesse
-
-an diesem Teilangebot. Die DB InfraGO AG hat zu diesem Zeitpunkt keine
-
-Kapazität, um ein gesamthaftes Trassenangebot zu erstellen. Falls Sie
-
-beabsichtigen, dieses Teilangebot später mit einer weiteren angemeldeten
-
-Leistung zu kombinieren, ist dies ausschließlich Ihr eigenes wirtschaftliches
-
-Risiko. Diese Kombination kann entweder durch die Nutzung einer zweiten
-
-Zugnummer oder durch Stornierung und erneute Anmeldung erfolgen – beachten
-
-Sie dabei, dass eine Stornierung unter die geltende Stornoquote fällt.
-
-3. Im Rahmen der inhaltsgleichen Informationsveranstaltung am 15.04.2026 um
-
-10:00 Uhr wurde mitgeteilt, dass kurzfristige Stornierungen, die durch DB
-
-InfraGO (z. B. infolge von Baumaßnahmen) ausgelöst werden, in die Stornoquote
-
-einbezogen werden. Begründet wurde dies damit, dass DB InfraGO systemseitig
-
-nicht erfasst, wenn eine Trasse beispielsweise aufgrund einer kurzfristigen
-
-Baumaßnahme storniert wurde.',243,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":5,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','287f873c424c9db02ada3109e2678b10d3adec7ba9e310c4349c0e844c884887');
+INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md','Changelog BauFplo API EVU 2 17 0','DB Changelog BauFplo API EVU Inhaltsverzeichnis 1. Einleitung. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 2. Version 2.17.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 2.1. Zusammenfassung der Auswirkungen','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','1b4e098d04d2c4475816ce0819398df6285ff1d748473d225d71ec9f1aa5a811','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_9a8ac84849939f0108ef","source_version_id":"sv_9aacda759a56475d3f64f6e0"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c6ea8b70587d7c6cb68ea3cf','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',8,'Seite 5','Im nachgelagerten Prozess zur Stellungnahme im Rahmen der Annahme- bzw.
-
-Stornoquote hat jedes EVU die Möglichkeit, DB InfraGO darauf hinzuweisen,
-
-dass die jeweilige Trasse aufgrund einer kurzfristigen Baumaßnahme durch DB
-
-InfraGO storniert wurde, damit diese nicht mehr der Stornoquote
-
-hinzugerechnet wird.
-
-Vor diesem Hintergrund ergeben sich für uns folgende Fragen:
-
-1. Wie viel Zeit steht einem EVU künftig für die Abgabe der Stellungnahme zur
-
-Annahme- bzw. Stornierungsquote zur Verfügung, insbesondere vor dem
-
-Hintergrund, dass aktuell eine unbekannte Anzahl von Zügen beim EVU geprüft
-
-werden muss?
-
-Der Stellungnahmeprozess zu nichtwirtschaftlichen Gründen beginnt 15
-
-Arbeitstage vor Beginn der Trassenanmeldephase zur ersten Phase der
-
-Netzfahrplanerstellung (1. NEP). Zu diesem Zeitpunkt erhalten die
-
-Zugangsberechtigten die Information und bei Überschreiten / Unterschreiten der
-
-Storno- bzw. Annahmequote die Auswertedatei von der DB InfraGO AG. Die
-
-Zugangsberechtigten haben bis 10 Arbeitstage vor Ende der
-
-Trassenanmeldephase (1. NEP) Zeit zu nichtwirtschaftlichen Gründen, die sich
-
-ihrem Einflussbereich entziehen, Stellung zu nehmen. Erfolgt keine',154,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":5,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','f9625d5c749acbaf1d35e61bd2cf2240300b72b83eb189f6aa9c2ebd6ff71203');
+DELETE FROM wiki_chunks WHERE page_path='wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md';
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_128107883692e64dbd4f9f60','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',9,'Seite 6','entsprechende Übermittlung, werden die Zugangsberechtigten erneut von der
-
-DB InfraGO AG aufgefordert innerhalb von 5 Arbeitstagen zu antworten. Somit
-
-stehen knapp sechs Wochen für die Stellungnahme zur Verfügung.
-
-2. Wie validiert DB InfraGO die von den EVU im Rahmen der Stellungnahmen
-
-übermittelten Angaben, wenn es derzeit systemseitig nicht möglich ist,
-
-kurzfristige, durch DB InfraGO verursachte Stornierungen in den Systemen von
-
-DB InfraGO zu erfassen, sodass diese im Anschluss automatisiert aus der
-
-Stornoquote herausgerechnet werden können?
-
-Die DB InfraGO AG verfügt über die erforderlichen Informationen, allerdings
-
-sind diese in verschiedenen Systemen gespeichert und können nur manuell
-
-validiert werden.
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_dbba9e8d8ff88994e53eab19','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',0,'Seite 1','DB
 
-4. Wenn das Trassenangebot in NEP 1 von InfraGO nicht zu meinem Verkehr passt,
+Changelog BauFplo API EVU
 
-(z.B. Zeitlich nicht fahrbar) und daher die Angebotene Trasse nicht vom EVU
+Inhaltsverzeichnis
 
-angenommen wird, sinkt die Annahmequote?
+1. Einleitung. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-Es ist richtig, dass sofern zum ENP angebotene Trassen nicht angenommen
+2. Version 2.17.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-werden, sich dies negativ auf die Annahmequote auswirkt.
+2.1. Zusammenfassung der Auswirkungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-a. Kommentar als Ergänzung: Warum? also muss ich die Trassen alle
+3. Version 2.16.4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-annehmen um sie danach zu stornieren?
+3.1. Zusammenfassung der Auswirkungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-Wenn die Trassenangebote angenommen, später aber wieder storniert
+3.2. Detaillierte Änderungen. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
 
-werden, hat diese Stornierung wiederum negative Auswirkungen auf die
+4. Version 2.16.1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
 
-Stornoquote.
+4.1. Zusammenfassung der Auswirkungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
 
-b. Kommentar als Ergänzung: um somit meine Annahme Quote zu retten?
+4.2. Detaillierte Änderungen. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
 
-Um nicht von der Stornoquote oder der Annahmequote negativ betroffen
+5. Version 2.8.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
 
-zu sein, müssen Sie bereits zum Zeitpunkt der Anmeldung Ihren
+5.1. Zusammenfassung der Auswirkungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
 
-tatsächlichen Bedarf anmelden. Darüber hinaus sollten Sie erweiterten
+5.2. Detaillierte Änderungen. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
 
-Konstruktionsspielräumen nur so zustimmen, dass wir Ihnen ein Ihrem
+6. Version 2.2.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
 
-Bedarf entsprechendes Trassenangebot erstellen können.
+1. Einleitung
 
-Sofern im Rahmen der vereinfachten oder komplexen Koordinierung keine',244,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":6,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','8871cf6282f3f871d575a78576b268bd83fa14e06373fe12fad47f4ff9eb2c12');
+Diese Änderungsübersicht der Schnittstellenbeschreibung der Digitalen',700,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":1,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','8871c6fdced54e5f70468706ea36a29656ea3bf9b816924ba2692cff47c8e34d');
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0ceac7f7783af845704ab736','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',10,'Seite 6','annehmbare Lösung möglich ist, besteht die Möglichkeit einer Abmeldung
-
-bis zum VNP. In diesem Fall entstehen keine negativen Auswirkungen auf
-
-die Annahme- oder Stornoquote.',24,'{"canonical_url":null,"normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","page":6,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43"}','00c964fbde0fb649377bc2f925098270f77e7d08630d4065ca922720c34665a7');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_a17ac4dcb38672799aa4','file','Flyer Common Interface','https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_e519d2e39261121ea3f27952','src_a17ac4dcb38672799aa4','e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d','3dbb09ceb66f9f7999813d89471e025806efa3f8d0ec45bc656d8475e48c629a',206796,'application/pdf','Flyer-Common-Interface-data.pdf','sources/normalized/bootstrap/flyer-common-interface-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-common-interface-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-Common-Interface-data.pdf","page_count":1,"raw_binary_committed":false,"schema_version":1,"size_bytes":206796,"source_id":"src_a17ac4dcb38672799aa4","source_sha256":"e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d","source_version_id":"sv_e519d2e39261121ea3f27952","title":"Flyer Common Interface","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d','src_a17ac4dcb38672799aa4','sv_e519d2e39261121ea3f27952','{"content_duplicate_group":null,"original_filename":"Flyer-Common-Interface-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','3dbb09ceb66f9f7999813d89471e025806efa3f8d0ec45bc656d8475e48c629a','src_a17ac4dcb38672799aa4',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-Common-Interface-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','8063b35fbcb7d5c3d6709f290338181d321eb3c675d316e3659c55f08091a0cf','src_a17ac4dcb38672799aa4',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_e519d2e39261121ea3f27952' WHERE id='src_a17ac4dcb38672799aa4';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-common-interface-data.md','Flyer Common Interface','D a s „Co m m o n In t e r fa ce“ – S c h n it t st e lle für Me ld un g s a ust a us c h m it TA F / T A P T S I Ziel der TAF/TAP TSI ist es, europaweiten Datenaustausch ohne Zusatzaufwand zu ermöglichen, unabhängig davon in welchem Land ein beteiligter Bahnakteur ist. TAF/TAP definiert daher neben dem Meldungsaustausch auch eine harmonisierte System-Schnit','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','a982a8ce04f53cefc1d7eddf3543b6d1859ccae81951fc113db1d9588b4840f6','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_a17ac4dcb38672799aa4","source_version_id":"sv_e519d2e39261121ea3f27952"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-common-interface-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_06f0cca69bd1f70ec0093d0c','wiki/sources/flyer-common-interface-data.md',0,'Seite 1','D a s „Co m m o n In t e r fa ce“ – S c h n it t st e lle
-
-für Me ld un g s a ust a us c h m it TA F / T A P T S I
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_32fb7d0aa6862651a4ec8e78','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',1,'Seite 1','Baufahrplananordnung wird fortlaufend gepflegt und informiert über Anpassungen,
 
-Ziel der TAF/TAP TSI ist es, europaweiten Datenaustausch ohne Zusatzaufwand
+Erweiterungen und Korrekturen der Schnittstelle. Ziel ist es, relevante Änderungen kompakt
 
-zu ermöglichen, unabhängig davon in welchem Land ein beteiligter Bahnakteur
+darzustellen und die Bewertung möglicher Auswirkungen auf Ihre Systeme zu unterstützen.
 
-ist. TAF/TAP definiert daher neben dem Meldungsaustausch auch eine
+Bitte prüfen Sie die aufgeführten Punkte und planen Sie erforderliche Anpassungen
 
-harmonisierte System-Schnittstelle mit erforderliche Spezifikationen. Diese wird
+rechtzeitig ein. Bei Fragen nutzen Sie bitte die bekannten Support-Kanäle.
 
-in TAF/TAP „Common Interface“ – kurz: CI – genannt.
+2. Version 2.17.0
 
-• Eine Software, die strukturierte Datenformate aus Systemen beteiligter Unternehmen in
+2.1. Zusammenfassung der Auswirkungen
 
-TAF/TAP-Meldungen übersetzt bzw. TAF/TAP-Meldungen zurück in das jeweilige lokale
+Erhöhung der Versionsnummer, um der bereitgestellten Version auf dem DB API
 
-Format. Dies kann man sich wie eine Art „Dolmetscher“ vorstellen:
+Marketplace zu entsprechen. Keine weiteren Änderungen im Vergleich zu Version 2.16.4.
 
-• Grundsätzlich benötigt jedes Unternehmen zur Teilnahme am TAF/TAP-Datenaustausch
+3. Version 2.16.4
 
-ein CI. Zusätzlich bietet die DB InfraGO AG für verschiedene Elemente aber eigene
+3.1. Zusammenfassung der Auswirkungen
 
-Lösungen an, wie z.B. das Trassen-Bestellportal (bisher: TPN). Daher ist ein eigenes CI
+▮ Breaking Changes: keine
 
-nicht für alle Beteiligten immer notwendig, nur dann wenn eigene Software verwendet
+▮ Deprecations ohne Ersatz:
 
-wird
+▮ „Baumassnahme"
 
-• Die Standard CI-Software kann als fertiges Produkt bei der RNE (RailNetEurope)
+▮ „nummer"
 
-erworben werden, genau wie das für den Datenaustausch vorgeschriebene
+▮ „zeitraum"
 
-Sicherheitszertifikat: https://rne.eu/it/products/ccs/
+▮ „artDerArbeiten"
 
-• Alternativ kann eine selbst entwickelte oder von einem anderen Anbieter erworbene
+3.2. Detaillierte Änderungen
 
-Schnittstellen-Software für die Bereiche Fahrplanung und Betrieb genutzt werden; die
+Tabelle 1. Beschreibung der Änderungen zwischen Version 2.16.4 und 2.16.1
 
-Spezifikationen gibt die RNE bzw. die ERA vor. Unternehmen können sich natürlich
-
-zusammentun, um Aufwand und Kosten zu reduzieren.
-
-• Es ist kein zentrales System bei RNE oder einem anderen europäischen Akteur. Der
-
-TAF/TAP-Meldungsaustausch erfolgt standardmäßig bilateral zwischen den Unternehmen.
-
-dbinfrago.com/taf-tap-tsi',256,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089300/4ecb2b413d7c89a1eb2c6d9d7fe4bb80/Flyer-Common-Interface-data.pdf","normalized_sha256":"3dbb09ceb66f9f7999813d89471e025806efa3f8d0ec45bc656d8475e48c629a","page":1,"source_id":"src_a17ac4dcb38672799aa4","source_sha256":"e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d","source_version_id":"sv_e519d2e39261121ea3f27952"}','79a13d1eb0ffab3b1b07a52c8926cd9978ad032d012e9360c483fb4f4112a855');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_d2976558d7a33946b943','file','Flyer Company Code','https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_c0cdd67495939c10345fbc12','src_d2976558d7a33946b943','c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861','cae117e243401d941e992896498a6e83cf35f458715ccc5199a8660257b87615',512725,'application/pdf','Flyer-Company-Code-data.pdf','sources/normalized/bootstrap/flyer-company-code-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-company-code-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-Company-Code-data.pdf","page_count":2,"raw_binary_committed":false,"schema_version":1,"size_bytes":512725,"source_id":"src_d2976558d7a33946b943","source_sha256":"c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861","source_version_id":"sv_c0cdd67495939c10345fbc12","title":"Flyer Company Code","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861','src_d2976558d7a33946b943','sv_c0cdd67495939c10345fbc12','{"content_duplicate_group":null,"original_filename":"Flyer-Company-Code-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','cae117e243401d941e992896498a6e83cf35f458715ccc5199a8660257b87615','src_d2976558d7a33946b943',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-Company-Code-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','5510ed8c9dcde4d3d4609dac20e7a9ca12ae71f53db26274c2f3b768eadaa6f7','src_d2976558d7a33946b943',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_c0cdd67495939c10345fbc12' WHERE id='src_d2976558d7a33946b943';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-company-code-data.md','Flyer Company Code','Wichtige Information zum Company Code (CC) und zur Umstellung auf den Organisation Code (OC) Verbindlich zur Nutzung von TAF/TAP TSI Bis zum 31.12.2025 benötigt noch jedes Unternehmen für den TAF/TAPkonformen Nachrichtenaustausch (z.B. zur Trassenanmeldung und im Betrieb) u.a. zur eindeutigen Identifizierung, einen Company Code. Ab dem 01.01.2026 tritt der O','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','05229f4308665054251cce3c43ce80a04e6b3bd4d744e0e64364dbff5dd59a07','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_d2976558d7a33946b943","source_version_id":"sv_c0cdd67495939c10345fbc12"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-company-code-data.md';
+Changelog BauFplo API EVU 1',121,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":1,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','fdb2a5238bcc80d9c42a6e454ff25f35ff9749ddfc6748472d709b10b2241d2f');
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1eadc89bffc0a74c02b50bef','wiki/sources/flyer-company-code-data.md',0,'Seite 1','Wichtige Information zum Company Code (CC)
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ee533dfa6e4ee31d78e0b364','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',2,'Seite 2','DB
 
-und zur Umstellung auf den Organisation Code
+Thema Änderung
 
-(OC)
+Baumassnahme Das Element „Baumassnahme" ist deprecated
 
-Verbindlich zur Nutzung von TAF/TAP TSI
+mit dem Hinweis in der Beschreibung, dass es
 
-Bis zum 31.12.2025 benötigt noch jedes Unternehmen für den TAF/TAPkonformen Nachrichtenaustausch (z.B. zur Trassenanmeldung und im Betrieb)
+nur noch für das Fahrplanjahr 2026 relevant ist
 
-u.a. zur eindeutigen Identifizierung, einen Company Code. Ab dem 01.01.2026
+und ab Fahrplanjahr 2027 nicht mehr befüllt wird.
 
-tritt der Organisation Code an die Stelle des Company Code. Daher beantragen
+Baumassnahme > properties > nummer Attribut „nummer" ist deprecated mit dem
 
-Sie bitte bis zum 01.01.2026 einen zum Company Code gleichlautenden
+Hinweis in der Beschreibung, dass es nur noch
 
-Organisation Code!
+für das Fahrplanjahr 2026 relevant ist und ab
 
-Beantragung des Company Codes
+Fahrplanjahr 2027 nicht mehr befüllt wird.
 
-Sollten Sie bisher noch keinen Company Code haben und noch dieses Jahr mit
+Baumassnahme > properties > zeitraum Attribut „zeitraum" ist deprecated mit dem
 
-dem Nachrichtenaustausch gemäß TAF/TAP TSI beginnen wollen, müssen Sie
+Hinweis in der Beschreibung, dass es nur noch
 
-bei der UIC (International Union of Railways) einen Company Code
+für das Fahrplanjahr 2026 relevant ist und ab
 
-beantragen.
+Fahrplanjahr 2027 nicht mehr befüllt wird.
 
-https://uic.org/supportactivities/it/rics
+Baumassnahme > properties > artDerArbeiten Attribut „artDerArbeiten" ist deprecated mit dem
 
-Der Company Code ist ebenfalls unter der Bezeichnung RICS-Code bekannt
+Hinweis in der Beschreibung, dass es nur noch
 
-(Railway Interchange Coding System).
+für das Fahrplanjahr 2026 relevant ist und ab
 
-Umstellung auf Organisation Code
+Fahrplanjahr 2027 nicht mehr befüllt wird.
 
-Ab dem 01.01.2026 wird im TAF/TAP-Nachrichtenaustausch auf den
+4. Version 2.16.1
 
-Organisation Code umgestellt. Für die Vergabe des Organisation Codes ist die
+4.1. Zusammenfassung der Auswirkungen
 
-die ERA (European Union Agency for Railways, EUAR) zuständig.
+▮ Breaking Changes: keine
 
-Beantragung Organisation Code
+▮ Deprecations mit Ersatz:
 
-Unsere Empfehlung: Bitte beantragen Sie den Organisation Code beim EBA!
+▮ „hatNotbremsueberbrueckung" am Zugverband wird ersetzt durch
 
-https://www.eba.bund.de/DE/Themen/Fahrzeugeinst
+„notbremsueberbrueckung" an den Regelungen
 
-ellungsregister/OCR/ocr_node.html
+▮ „hatNotbremsueberbrueckung" am RahmendatenZugverband wird ersetzt durch
 
-Kontakt: [E-Mail-Adresse entfernt]
+„notbremsueberbrueckung" an den Regelungen
 
-https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi',174,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf","normalized_sha256":"cae117e243401d941e992896498a6e83cf35f458715ccc5199a8660257b87615","page":1,"source_id":"src_d2976558d7a33946b943","source_sha256":"c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861","source_version_id":"sv_c0cdd67495939c10345fbc12"}','425701d68f548c2b1f2fac2b4b3f5d24f2575af105c2c067053260660670536b');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f49a4eaa86a0402a33db19dd','wiki/sources/flyer-company-code-data.md',1,'Seite 2','Eine Beantragung ist auch über die ERA-Webseite möglich aber aus folgenden
-
-Gründen nicht empfehlenswert:
-
-− Zu lange Bearbeitungszeit durch ERA
-
-− Beim EBA haben Sie einen direkten Ansprechpartner in deutscher Sprache
-
-− Unterstützung bei den Anträgen und fachliche Prüfung der Unterlagen
-
-Vorgehensweise
+▮ Additive Erweiterungen:
 
-Company Code und Organisation Code vorhanden und identisch
+▮ „keineangabe" am Fahrplan
 
-keine Aktion notwendig
+▮ „startBetriebsstelleRoute"
 
-Company Code und Organisation vorhanden und unterschiedlich
+▮ „zielBetriebsstelleRoute"
 
-Löschung aktueller OC und Beantragung gleichlautenden OC
+▮ „bpolMeldepflichtig"
 
-Company Code vorhanden aber kein Organisation Code
+▮ „leichterNahverkehrstriebwagen"
 
-Beantragung gleichlautenden OC
+▮ „notbremsueberbrueckung"
 
-Weder Company Code noch Organisation Code vorhanden
+4.2. Detaillierte Änderungen
 
-Beantragung OC (Code kann beliebig sein, melden Sie bitte den OC an ihre
+Tabelle 2. Beschreibung der Änderungen zwischen Version 2.16.1 und 2.8.0
 
-Kundenberatung der DB InfraGO und/oder an weitere EIU und Partner)
+Thema Änderung
 
-Auswirkungen auf das NVR/EVR
+Fahrplan > properties > keineangabe Neues Element „keineangabe" vom Typ
 
-Als EVU mit vorhandenem Organisation Code müssen Sie nach Anpassung des
+„KeineAngabe". Enthält Informationen zu Teilen
 
-OC auch die Einträge im Nationalen Fahrzeugeinstellungsregister
+des Laufwegs, bei denen keine
 
-(NVR)/Europäischem Fahrzeugeinstellungsregister (EVR) aktualisieren.
+Fahrplanangaben erfolgen (mit Angaben zu
 
-Bei Antragsstellung über das EBA unterstützt Sie das EBA!
-
-Kontakt: [E-Mail-Adresse entfernt]
-
-https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi',146,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089290/4d0d46e1e07b0fb5a22f8a6bd4cff0b7/Flyer-Company-Code-data.pdf","normalized_sha256":"cae117e243401d941e992896498a6e83cf35f458715ccc5199a8660257b87615","page":2,"source_id":"src_d2976558d7a33946b943","source_sha256":"c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861","source_version_id":"sv_c0cdd67495939c10345fbc12"}','a9a85ab7f7b6c03883b041790b65f83ea71f1cc27b019121de2f938a2aa8ce84');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_b1e36372becf6e4cd12f','file','Flyer Location Coding','https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_eea6b839bbd8c7cb46a03b73','src_b1e36372becf6e4cd12f','eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4','1c3abeedc18493bcc73122b4bcd3e8d9b4025ba4547b4e73c2e5da86fc71dbee',206513,'application/pdf','Flyer-Location-Coding-data.pdf','sources/normalized/bootstrap/flyer-location-coding-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-location-coding-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-Location-Coding-data.pdf","page_count":2,"raw_binary_committed":false,"schema_version":1,"size_bytes":206513,"source_id":"src_b1e36372becf6e4cd12f","source_sha256":"eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4","source_version_id":"sv_eea6b839bbd8c7cb46a03b73","title":"Flyer Location Coding","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4','src_b1e36372becf6e4cd12f','sv_eea6b839bbd8c7cb46a03b73','{"content_duplicate_group":null,"original_filename":"Flyer-Location-Coding-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','1c3abeedc18493bcc73122b4bcd3e8d9b4025ba4547b4e73c2e5da86fc71dbee','src_b1e36372becf6e4cd12f',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-Location-Coding-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','35583daff6ca12837aec28a7111df630b7742de97686679c3028497ef26909fe','src_b1e36372becf6e4cd12f',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+Start-/Zielbetriebsstelle, Einreihung, Art und',230,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":2,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','f7c378a84c3905cecdc374f3ad3e247a6f293d33c9c1260109bba94e96be0cba');
 --> statement-breakpoint
-UPDATE sources SET current_version_id='sv_eea6b839bbd8c7cb46a03b73' WHERE id='src_b1e36372becf6e4cd12f';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-location-coding-data.md','Flyer Location Coding','Umstellung auf Primary und Subsidiary Locations Location Coding gemäß TAF/TAP TSI Mit der Umsetzung von TAF/TAP TSI kommt es im Rahmen der Harmonisierung von Prozessen und Verfahren zur Einführung eines europaweit standardisierten Formats zur Codierung von Betriebsstellen. Dadurch entsteht die Aufteilung von Betriebsstellen in Primary und Subsidiary Location','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','4ffad7cfeb775f479268e8ad094fe15f419bc9193eb7ec57f76ab3294fb4740a','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_b1e36372becf6e4cd12f","source_version_id":"sv_eea6b839bbd8c7cb46a03b73"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-location-coding-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e95048c71165c7ad7ba42de9','wiki/sources/flyer-location-coding-data.md',0,'Seite 1','Umstellung auf Primary und Subsidiary
-
-Locations
-
-Location Coding gemäß TAF/TAP TSI
-
-Mit der Umsetzung von TAF/TAP TSI kommt es im Rahmen der
-
-Harmonisierung von Prozessen und Verfahren zur Einführung eines
-
-europaweit standardisierten Formats zur Codierung von Betriebsstellen.
-
-Dadurch entsteht die Aufteilung von Betriebsstellen in Primary und
-
-Subsidiary Locations.
-
-Was ist eine Primary Location?
-
-Definiert im Allgemeinen eine Betriebsstelle eines EIU, an der Züge beginnen, enden,
-
-halten, durchfahren oder die Strecke wechseln.
-
-Codiert wird diese mit einem Primary Location Code (PLC):
-
-Ländercode Location Code Betriebsstelle
-
-DE + 13276 = Frankfurt (Main) Hbf
-
-(2 Buchstaben) (1-5 stellig, Zahlencode)
-
-Was ist eine Subsidiary Location?
-
-Der untergeordnete Betriebsstellenteil (Subsidiary) muss mit einer Primary Location
-
-verknüpft sein und spezifiziert einen bestimmten Teil, die Attribute oder die Verwendung
-
-der Primary Location. Beispiele sind Gleis, Verladestellen oder Bahnsteig.
-
-Codiert wird dieser mit einem Subsidiary Location Code (SLC):
-
-Ländercode Location Code Location Subsidiary Location Subsidiary Company Code
-
-Type Code Code
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_99d0ef6198a77ada56e95a0c','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',3,'Seite 2','Beschreibung).
 
-DE + 13276 + 37 + VL01856NM9 + 0080
-
-(= Verladestelle) (1-10 stellig, (= DB InfraGO)
-
-alphanummerisch)
-
-Kontakt: [E-Mail-Adresse entfernt]
-
-dbinfrago.com/taf-tap-tsi Location Coding | Seite 1 von 2',180,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf","normalized_sha256":"1c3abeedc18493bcc73122b4bcd3e8d9b4025ba4547b4e73c2e5da86fc71dbee","page":1,"source_id":"src_b1e36372becf6e4cd12f","source_sha256":"eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4","source_version_id":"sv_eea6b839bbd8c7cb46a03b73"}','be3fe5784e1a5bcfb7c4045d563cc9a054f70d33b7c7b82a7022adbfb06b0895');
+Changelog BauFplo API EVU 2',6,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":2,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','bc47b6132e4ed1ce599ba17c8df600695a9b02baab9d88db8c48012e68716f57');
 --> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0270e6bf55051472ed15a323','wiki/sources/flyer-location-coding-data.md',1,'Seite 2','Wo werden die Location Codes verwaltet?
-
-Die Central Reference Files Database (CRD) ist die zentrale Datenbank in
-
-Europa für die Location Codes (PLC und SLC), Company Codes (CC) und
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e4fcbeb029e49b726bac725f','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',4,'Seite 3','DB
 
-Länder. Betrieben wird die CRD von Rail Net Europe (RNE)
+Thema Änderung
 
-CRD
+Rahmendaten > properties > Attribut „startBetriebsstelleRoute" neu. Erste
 
-Wo werden die Retail Location Codes der TAP TSI geführt?
+startBetriebsstelleRoute Betriebsstelle der Gesamtzugroute (weicht von
 
-Die für Reisende relevanten Örtlichkeiten des vertrieblichen Teils der TAP
+„startBetriebsstelle" ab, wenn der Zug im
 
-TSI sind in einer eigenen Datenbank, der Retail Reference Database (RRD)
+Fremdnetz beginnt).
 
-in Verantwortung der TAP TSI Services Governance Association (TSGA)
+Rahmendaten > properties > Attribut „zielBetriebsstelleRoute" neu. Letzte
 
-RRD
+zielBetriebsstelleRoute Betriebsstelle der Gesamtzugroute (weicht von
 
-Wie ist der nationale Prozess der Codevergabe und das Hochladen in die
+„zielBetriebsstelle" ab, wenn der Zug im
 
-Referenzdatenbanken?
+Fremdnetz endet).
 
-Die Revisionen der TAF und TAP TSI beinhalten dazu eine neue Rolle:
+Rahmendaten > properties > bpolMeldepflichtig Attribut „bpolMeldepflichtig" neu. Gibt an, ob die
 
-Die National Allocation Entity (NAE) hat die Hoheit für die
+Zugtrasse an die Bundespolizei gemeldet
 
-einheitliche und eindeutige Vergabe von Location Codes auf
+werden muss.
 
-nationaler Ebene und die Pflege der Codes in die
+RahmendatenZugcharakteristik > properties > Attribut „leichterNahverkehrstriebwagen" neu.
 
-National Allocation
+leichterNahverkehrstriebwagen Angabe, ob es sich um einen leichten
 
-Referenzdatenbanken CRD und RRD sowie für deren Aktualität
+Nahverkehrstriebwagen handelt.
 
-Entity (NAE)
+RahmendatenRegelungen > properties > Attribut „notbremsueberbrueckung" neu. Angabe,
 
-Verantwortliches EIU/ NAE oder
+notbremsueberbrueckung ob eine NBÜ erforderlich ist.
 
-Antragsteller
+RahmendatenZugverband > properties > Attribut „hatNotbremsueberbrueckung" ist
 
-Responsible IM Delegierter
+hatNotbremsueberbrueckung deprecated mit dem Hinweis in der
 
-EIU Übertragung
+Beschreibung, dass „notbremsueberbrueckung"
 
-Antrag auf...
+gilt. Bitte nutzen Sie dieses Attribut nicht mehr.
 
-nationaler Location
+Zugverband > properties > Attribut „hatNotbremsueberbrueckung" ist
 
-- Vergabe Codes in CRD
+hatNotbremsueberbrueckung deprecated mit dem Hinweis in der
 
-EVU - Änderung
+Beschreibung, dass „notbremsueberbrueckung"
 
-- Löschung Überprüft und Finale
+gilt. Bitte nutzen Sie dieses Attribut nicht mehr.
 
-Station validiert Anfrage Überprüfung und CRD/RRD
+5. Version 2.8.0
 
-Manager Validierung sowie
+5.1. Zusammenfassung der Auswirkungen
 
-Prozesshoheit
+▮ Breaking Changes:
 
-Wie wird mit den heutigen Ril100 Codes und deren Vergabe verfahren?
+▮ „zugfolgevermerk“ entfernt (Ablösung über „hinweise“)
 
-Vorerst hat dieser Prozess keine Auswirkungen auf die Vergabe von Ril100 Codes. Die
+▮ Deprecations mit Ersatz:
 
-heutigen Codes werden also zunächst weitergenutzt
+▮ „abfahrzeit“ wird ersetzt durch „abfahrtuhrzeit“
 
-Wer nimmt die Funktion der National Allocation Entity (NAE) in Deutschland wahr?
+▮ „ankunftzeit“ wird ersetzt durch „ankunftuhrzeit“
 
-Das Bundesministerium für Verkehr (BMV) und die DB InfraGO AG haben sich darauf
+▮ „betriebsname“ am Buchfahrplanverweis wird ersetzt durch „betriebsname“ am
 
-verständigt, dass diese Funktion durch die DB InfraGO AG wahrgenommen wird. Somit
+Laufwegpunkt
 
-wurde in der Folge die Funktion zum 01.08.2024 bei der DB InfraGO AG eingerichtet.',263,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf","normalized_sha256":"1c3abeedc18493bcc73122b4bcd3e8d9b4025ba4547b4e73c2e5da86fc71dbee","page":2,"source_id":"src_b1e36372becf6e4cd12f","source_sha256":"eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4","source_version_id":"sv_eea6b839bbd8c7cb46a03b73"}','ef0a647b63adb3c459bd0884e67a3793ae34965286e1ef7338aa624fe059c318');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_047154e1c1707e053658bf90','wiki/sources/flyer-location-coding-data.md',2,'Seite 2','Kontakt: [E-Mail-Adresse entfernt] (Hr. [Kontaktname entfernt], DB InfraGO AG, [Dienstanschrift entfernt], Mobil: [Telefonnummer entfernt])
+▮ Additive Erweiterungen:
 
-dbinfrago.com/taf-tap-tsi Location Coding | Seite 2 von 2',22,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089306/e5136b48ca351e34b2ac216bca04b341/Flyer-Location-Coding-data.pdf","normalized_sha256":"1c3abeedc18493bcc73122b4bcd3e8d9b4025ba4547b4e73c2e5da86fc71dbee","page":2,"source_id":"src_b1e36372becf6e4cd12f","source_sha256":"eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4","source_version_id":"sv_eea6b839bbd8c7cb46a03b73"}','ace86b8221ec90cd858685ff88b8d8b277459c6aab05bea8c48f67d58acab1aa');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_ef37beb95dff453ad8f1','file','Flyer National Contact Point','https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_8b33fdc8de9e5fb970f80c2f','src_ef37beb95dff453ad8f1','8b33fdc8de9e5fb970f80c2f79eca631cf3a98e8f281c7b9a4a4582fb3f5d948','95db98c6c47898fc3145139e086bb67c7547e36f20dbe6d8b43441aa02dbc8f3',196594,'application/pdf','Flyer-National-Contact-Point-data.pdf','sources/normalized/bootstrap/flyer-national-contact-point-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-national-contact-point-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-National-Contact-Point-data.pdf","page_count":1,"raw_binary_committed":false,"schema_version":1,"size_bytes":196594,"source_id":"src_ef37beb95dff453ad8f1","source_sha256":"8b33fdc8de9e5fb970f80c2f79eca631cf3a98e8f281c7b9a4a4582fb3f5d948","source_version_id":"sv_8b33fdc8de9e5fb970f80c2f","title":"Flyer National Contact Point","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','8b33fdc8de9e5fb970f80c2f79eca631cf3a98e8f281c7b9a4a4582fb3f5d948','src_ef37beb95dff453ad8f1','sv_8b33fdc8de9e5fb970f80c2f','{"content_duplicate_group":null,"original_filename":"Flyer-National-Contact-Point-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','95db98c6c47898fc3145139e086bb67c7547e36f20dbe6d8b43441aa02dbc8f3','src_ef37beb95dff453ad8f1',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-National-Contact-Point-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','45f34c6ebb7d8bb503ff41d295235f8bf7d611d34ffa922f146106497b2511d6','src_ef37beb95dff453ad8f1',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+▮ „strecke“',194,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":3,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','31d593a16f79d724eff6939e9469416e1992a6e83f33faa0fda3620e1ce18492');
 --> statement-breakpoint
-UPDATE sources SET current_version_id='sv_8b33fdc8de9e5fb970f80c2f' WHERE id='src_ef37beb95dff453ad8f1';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-national-contact-point-data.md','Flyer National Contact Point','D e r N a t io n a l Co n t a c t P o in t ( N C P ) für TA F / T A P T S I im Üb e rb lic k Der NCP nimmt im Auftrag des Bundesministeriums für Verkehr (BMV) die Interessenvertretung des deutschen Bahnsektors auf europäischer Ebene zu TAF/TAP TSI wahr. Die Einrichtung einer Nationalen Anlaufstelle für alle Bahnakteure zur Umsetzung TAF/TAP TSI ist in der EU','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','e98e7fa7b62423d5e7f31e7e7449552a1dd2e275bc3a573244ade0a3a0f7c33a','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_ef37beb95dff453ad8f1","source_version_id":"sv_8b33fdc8de9e5fb970f80c2f"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-national-contact-point-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b79e846b6eb39265d816412e','wiki/sources/flyer-national-contact-point-data.md',0,'Seite 1','D e r N a t io n a l Co n t a c t P o in t ( N C P ) für
-
-TA F / T A P T S I im Üb e rb lic k
-
-Der NCP nimmt im Auftrag des Bundesministeriums für Verkehr (BMV) die
-
-Interessenvertretung des deutschen Bahnsektors auf europäischer Ebene zu
-
-TAF/TAP TSI wahr. Die Einrichtung einer Nationalen Anlaufstelle für alle
-
-Bahnakteure zur Umsetzung TAF/TAP TSI ist in der EU-Verordnung 1305/2014
-
-geregelt. Das BMV hat für Deutschland die DB InfraGO AG mit der Einrichtung
-
-der Rolle und Ausübung dieser Funktion betraut
-
-Funktion Gremien und Meetings
-
-− Interessenvertretung des EU- − Hauptgremium des NCP ist die
-
-Mitgliedstaates Deutschland in den TAF/TAP TSI Implementation
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ad4d19944316e64c15c902a0','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',5,'Seite 3','▮ Validierungsänderung:
 
-europäischen TAF/TAP Gremien Cooperation Group (ICG)
+▮ „minItems“ bei „textbausteine“ entfällt
 
-− Informationsschnittstelle zw. ERA, • Bewertung & Analyse
+5.2. Detaillierte Änderungen
 
-RNE, nationalen Behörden/ Verbänden Umsetzungsfortschritt TAF/TAP TSI
+Tabelle 3. Beschreibung der Änderungen zwischen Version 2.8.0 und 2.2.0
 
-sowie deutschen Bahnakteuren • Erstellung/Aktualisierung Masterplan,
-
-− Unterstützung deutscher Bahnakteure Berichterstattung über die ERA an
-
-bei der Umsetzung von TAF/TAP TSI die Europäische Kommission
-
-− Förderung Informationsaustausch • Diskussion und Abstimmung mit den
-
-unter den deutschen Bahnakteuren NCPs zu Unterstützungsmaßnahmen
-
-bei der nationalen Umsetzung
-
-− Koordinierung der Umsetzungspläne
-
-der Infrastrukturbetreiber mit dem Ziel − Durchführung & Einladung
-
-einer abgestimmten Einführung Sektorgruppe TAF/TAP TSI (4x p.a.)
-
-− Enger Austausch und Abstimmung mit • Informations-, Austausch- und
-
-nationalem Vertreter im Railway Meinungsbildungsplattform TAF/TAP
-
-Interoperability and Safety Committee • Teilnahme steht allen Bahnakteuren
-
-(RISC) in Deutschland offen
-
-− Zusätzlich Teilnahme an weiteren
-
-Arbeitsgruppen/Terminen zum Thema
-
-TAF/TAP, z.B. RNE, ERA, VDV',249,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf","normalized_sha256":"95db98c6c47898fc3145139e086bb67c7547e36f20dbe6d8b43441aa02dbc8f3","page":1,"source_id":"src_ef37beb95dff453ad8f1","source_sha256":"8b33fdc8de9e5fb970f80c2f79eca631cf3a98e8f281c7b9a4a4582fb3f5d948","source_version_id":"sv_8b33fdc8de9e5fb970f80c2f"}','86de1568268d0b3c4c5b0502107f98b3d6490f0a64966bc3d27f6c76a89e86a7');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d6df3455c37d2ad31c5a74d0','wiki/sources/flyer-national-contact-point-data.md',1,'Seite 1','Kontakt: [E-Mail-Adresse entfernt] (Hr. [Kontaktname entfernt], DB InfraGO AG, [Dienstanschrift entfernt] Mobil: [Telefonnummer entfernt]
-
-dbinfrago.com/taf-tap-tsi',15,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089296/2af27698e8ca6f1897d945b1bfe322b9/Flyer-National-Contact-Point-data.pdf","normalized_sha256":"95db98c6c47898fc3145139e086bb67c7547e36f20dbe6d8b43441aa02dbc8f3","page":1,"source_id":"src_ef37beb95dff453ad8f1","source_sha256":"8b33fdc8de9e5fb970f80c2f79eca631cf3a98e8f281c7b9a4a4582fb3f5d948","source_version_id":"sv_8b33fdc8de9e5fb970f80c2f"}','371e9e3c457276f5a1b99f0873b11dfd3bb9c850578a75ce254b5b319c6e9122');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_828f1b79362a62ea820f','file','Flyer Neues Bestellsystem pathOS','https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_66fe54f6cac1cc941df10fd8','src_828f1b79362a62ea820f','66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52','7db785f776d34cb5c781736993ba8f3928b2c03b6e8b6fff3956e3c7e10da8b2',136549,'application/pdf','Flyer-Neues-Bestellsystem-pathOS--data.pdf','sources/normalized/bootstrap/flyer-neues-bestellsystem-pathos-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-neues-bestellsystem-pathos-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-Neues-Bestellsystem-pathOS--data.pdf","page_count":1,"raw_binary_committed":false,"schema_version":1,"size_bytes":136549,"source_id":"src_828f1b79362a62ea820f","source_sha256":"66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52","source_version_id":"sv_66fe54f6cac1cc941df10fd8","title":"Flyer Neues Bestellsystem pathOS","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52','src_828f1b79362a62ea820f','sv_66fe54f6cac1cc941df10fd8','{"content_duplicate_group":null,"original_filename":"Flyer-Neues-Bestellsystem-pathOS--data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','7db785f776d34cb5c781736993ba8f3928b2c03b6e8b6fff3956e3c7e10da8b2','src_828f1b79362a62ea820f',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-Neues-Bestellsystem-pathOS--data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','5bcb13e403dc83edc3667b59e7b873fdde68a7719fe35c7e19d33dd6b63a16f1','src_828f1b79362a62ea820f',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_66fe54f6cac1cc941df10fd8' WHERE id='src_828f1b79362a62ea820f';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-neues-bestellsystem-pathos-data.md','Flyer Neues Bestellsystem pathOS','Die neue Trassenanmeldung – TAF/TAP-konformes Bestellsystem „pathOS“ Einführung zum Fahrplanjahr 2027 Das neue Bestellsystem der DB InfraGO AG wird vollständig kompatibel zu TAF/TAP TSI und setzt alle aktuellen Anforderungen an die Trassenanmeldung um. Durch die Modernisierung von Design und Layout stellen wir einen deutlich erhöhten Bedienkomfort sowie eine','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','07345435a5be703f88c8234abbe668ff6ae37df1b60e3a81c960c263d279db36','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_828f1b79362a62ea820f","source_version_id":"sv_66fe54f6cac1cc941df10fd8"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
+Changelog BauFplo API EVU 3',25,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":3,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','4924d4bc450e5cd7841732fe4d34c77cf4c050238d4c30211cc65769657c3a81');
 --> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-neues-bestellsystem-pathos-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4405788298f54fc0ad59497d','wiki/sources/flyer-neues-bestellsystem-pathos-data.md',0,'Seite 1','Die neue Trassenanmeldung –
-
-TAF/TAP-konformes Bestellsystem
-
-„pathOS“
-
-Einführung zum Fahrplanjahr 2027
-
-Das neue Bestellsystem der DB InfraGO AG wird vollständig kompatibel zu
-
-TAF/TAP TSI und setzt alle aktuellen Anforderungen an die Trassenanmeldung
-
-um. Durch die Modernisierung von Design und Layout stellen wir einen deutlich
-
-erhöhten Bedienkomfort sowie eine intuitivere und einfache Bedienerführung
-
-sicher. Die Sicht unserer Kund:innen ist von Anfang an wesentlicher Faktor in der
-
-Entwicklung. Wir bauen damit eine ausbaufähige Plattform für die Zukunft!
-
-Wichtige Informationen Aktuelle Zeitplanung
-
-Wir gestalten ein vollständig neues,
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a3e6fb4999ffa6450caa01e6','wiki/sources/changelog-baufplo-api-evu-2-17-0-data.md',6,'Seite 4','DB
 
-TAF/TAP TSI-konformes 2020: Start IT-Entwicklung
+Thema Änderung
 
-Anmeldeverfahren, welches TPN und die
+Allgemeines > properties > textbausteine Attribut „minItems“ entfällt.
 
-Ab Q3 2021: Erste Kundentests
+Laufwegpunkt > properties > betriebsname Attribut „betriebsname“ am „Laufwegpunkt“ neu.
 
-heutige EVU-Schnittstelle zum
+Buchfahrplanverweis > properties > Attribut „betriebsname“ am
 
-der Schnittstelle
+betriebsname „Buchfahrplanverweis“ ist deprecated, da dieser
 
-Fahrplanjahr 2027 ablösen soll. Auch
+am „Laufwegpunkt“ gepflegt wird.
 
-künftig können unsere Kunden entweder
+Laufwegpunkt > properties > abfahrtuhrzeit Attribut „abfahrtuhrzeit“ neu.
 
-Ab Q2 2022: Erste Kundentests
+Laufwegpunkt > properties > abfahrzeit Attribut „abfahrzeit“ ist deprecated mit dem
 
-das Bestellportal (online) nutzen oder
+Hinweis in der Beschreibung, dass
 
-des Portals (Web-Anwendung)
+„abfahrtuhrzeit“ gilt. Bitte nutzen Sie dieses
 
-über eine Schnittstelle mit uns agieren.
+Attribut nicht mehr.
 
-Ab Q4 2024: Start
+Laufwegpunkt > properties > ankunftuhrzeit Attribut „ankunftuhrzeit“ neu.
 
-Wer heute und künftig mit eigenen IT-
+Laufwegpunkt > properties > ankunftzeit Attribut „ankunftzeit“ ist deprecated mit dem
 
-Schulungsplattform
+Hinweis in der Beschreibung, dass
 
-Lösungen die EVU-Schnittstelle nutzt,
+„ankunftuhrzeit“ gilt. Bitte nutzen Sie dieses
 
-muss in diesen die neue TAF/TAP TSI-
+Attribut nicht mehr.
 
-2025: Intensivierung Tests, Bereit-
+Laufwegpunkt > properties > strecke Attribut „strecke“ wurde hinzugefügt.
 
-Schnittstelle implementieren, damit ein
+Laufwegpunkt > properties > zugfolgevermerk Attribut „zugfolgevermerk“ entfällt. Ein
 
-stellung Schulungen & Zugänge
+Zugfolgevermerk wird über die „hinweise“ am
 
-Nachrichtenaustausch mit der DB InfraGO
+„Laufwegpunkt“ übergeben.
 
-weiterhin möglich ist. Alle Details hierzu
+6. Version 2.2.0
 
-2026: Portal & Schnittstelle live
+Initialerstellung
 
-finden Sie in der Schnittstellenmit Anmeldephase Nfpl. 2027 /
-
-Dokumentation.
-
-danach GelV-Module live
-
-Mehr Informationen zum Neuen
-
-Zum Fahrplanjahr 2027:
-
-Bestellsystem finden Sie auch auf unserer
-
-Bestellung nur im neuen System
-
-aktuellen Internetseite!
-
-Lust selber mal das neue Portal auszuprobieren? Schicken Sie uns eine E-Mail!
-
-Kontakt: [E-Mail-Adresse entfernt]',232,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf","normalized_sha256":"7db785f776d34cb5c781736993ba8f3928b2c03b6e8b6fff3956e3c7e10da8b2","page":1,"source_id":"src_828f1b79362a62ea820f","source_sha256":"66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52","source_version_id":"sv_66fe54f6cac1cc941df10fd8"}','0d43be09c2b2bab8fb0722cbafe608e0e25e8f843468d97316e644a98da85ce3');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_3e2f7b2af3f5a46712f1e697','wiki/sources/flyer-neues-bestellsystem-pathos-data.md',1,'Seite 1','dbinfrago.com/taf-tap-tsi und dbinfrago.com/pathos',3,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089292/ddf605e647c997ba20c272183179ef7d/Flyer-Neues-Bestellsystem-pathOS--data.pdf","normalized_sha256":"7db785f776d34cb5c781736993ba8f3928b2c03b6e8b6fff3956e3c7e10da8b2","page":1,"source_id":"src_828f1b79362a62ea820f","source_sha256":"66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52","source_version_id":"sv_66fe54f6cac1cc941df10fd8"}','7adb2913be0be8c7dfeca125d0533c4f9c4d7ad629521fbe2d90ba38ecb071bf');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_f99e066f37874620df4e','file','Flyer TAF/TAP Identifikatoren','https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_c88a5b74e140e9fe73443e98','src_f99e066f37874620df4e','c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b','e78666ffc6c51fcf488e8a18d3a827bdb6a63564bc3f3bbd875c2294cfdd2c2d',358859,'application/pdf','Flyer-TAF-TAP-Identifikatoren-data.pdf','sources/normalized/bootstrap/flyer-taf-tap-identifikatoren-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-taf-tap-identifikatoren-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-TAF-TAP-Identifikatoren-data.pdf","page_count":2,"raw_binary_committed":false,"schema_version":1,"size_bytes":358859,"source_id":"src_f99e066f37874620df4e","source_sha256":"c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b","source_version_id":"sv_c88a5b74e140e9fe73443e98","title":"Flyer TAF/TAP Identifikatoren","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b','src_f99e066f37874620df4e','sv_c88a5b74e140e9fe73443e98','{"content_duplicate_group":null,"original_filename":"Flyer-TAF-TAP-Identifikatoren-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+Changelog BauFplo API EVU 4',139,'{"canonical_url":null,"normalized_sha256":"910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428","page":4,"source_id":"src_9a8ac84849939f0108ef","source_sha256":"c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb","source_version_id":"sv_9aacda759a56475d3f64f6e0"}','d524a3f05a9243d40f4d493b0a469218585037c2dc81129cbfa7170021e5081c');
 --> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','e78666ffc6c51fcf488e8a18d3a827bdb6a63564bc3f3bbd875c2294cfdd2c2d','src_f99e066f37874620df4e',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-TAF-TAP-Identifikatoren-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_87a0d1da7ffe15350d9d','file','Click & Ride','https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236','de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
 --> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','89a22ff47944d0df11158682faf0e6d9dc9c6cbc56622e9e78ce1eaa38e7c14f','src_f99e066f37874620df4e',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_2e22d860175ac7f66366cbe9','src_87a0d1da7ffe15350d9d','a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09','8d41ec8cb8e71bddb957af0f0b485d4120af7639a8996a6ff0c2021d1619e916',10091,'text/markdown','Click & Ride.md','sources/normalized/bootstrap/click-ride/sv_2e22d860175ac7f66366cbe9.md','identity-markdown','1','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":"https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236","contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09","converter":{"name":"identity-markdown","profile":"bootstrap-markdown-v2","version":"1"},"final_url":"https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236","import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_2e22d860175ac7f66366cbe9.json","media_type":"text/markdown","normalized_repo_path":"sources/normalized/bootstrap/click-ride/sv_2e22d860175ac7f66366cbe9.md","normalized_sha256":"8d41ec8cb8e71bddb957af0f0b485d4120af7639a8996a6ff0c2021d1619e916","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236","original_filename":"Click & Ride.md","page_count":null,"raw_binary_committed":false,"requested_url":"https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236","schema_version":2,"size_bytes":10091,"source_id":"src_87a0d1da7ffe15350d9d","source_sha256":"a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09","source_version_id":"sv_2e22d860175ac7f66366cbe9","supersedes_source_version_id":null,"title":"Click & Ride","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
 --> statement-breakpoint
-UPDATE sources SET current_version_id='sv_c88a5b74e140e9fe73443e98' WHERE id='src_f99e066f37874620df4e';
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09','src_87a0d1da7ffe15350d9d','sv_2e22d860175ac7f66366cbe9','{"content_duplicate_group":null,"original_filename":"Click & Ride.md"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-taf-tap-identifikatoren-data.md','Flyer TAF/TAP Identifikatoren','Informationen zu den neuen TAF/TAP- TSI-Objekten und ihren Identifikatoren Ein Kernanliegen von TAF/TAP-TSI ist die Schaffung von eindeutig zu zuordnenden Elementen zu ihren Eigentümern. Dafür wurden für den Austausch zwischen EIU und EVU die Objekte ReferenceTrain, Route sowie Path(-Request) mit zugehörigen Identifikatoren geschaffen. Züge und Routen sind P','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','680c9ebe395455e2436774b12973fef30987a6903bf3ed2d9d073851bebd6518','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_f99e066f37874620df4e","source_version_id":"sv_c88a5b74e140e9fe73443e98"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','8d41ec8cb8e71bddb957af0f0b485d4120af7639a8996a6ff0c2021d1619e916','src_87a0d1da7ffe15350d9d',NULL,'{"content_duplicate_group":null,"original_filename":"Click & Ride.md"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-taf-tap-identifikatoren-data.md';
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','daf1240ee2303bd9945b06008260763b22f1034269435ad1e712e77a0104eca2','src_87a0d1da7ffe15350d9d',NULL,'{"canonical_url":"https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
