@@ -413,7 +413,7 @@ async function repairAnswerCitations(input: {
           },
         ],
         temperature: 0,
-        reasoning_effort: "medium",
+        reasoning_effort: "high",
         include_reasoning: false,
         max_completion_tokens: MAX_COMPLETION_TOKENS,
         stream: false,
@@ -611,7 +611,7 @@ export async function POST(request: Request) {
               { role: "user", content: question },
             ],
             temperature: 0.2,
-            reasoning_effort: "medium",
+            reasoning_effort: "high",
             include_reasoning: false,
             max_completion_tokens: MAX_COMPLETION_TOKENS,
             stream: false,
@@ -648,6 +648,10 @@ export async function POST(request: Request) {
       }
     }
 
+    // Both model output and stored source excerpts can contain legacy import
+    // encoding. Normalize the complete answer before validating or persisting it.
+    answer = repairCommonMojibake(answer);
+
     const availableCitationNumbers = [
       ...storedAttachments.map((_, index) => index + 1),
       ...wikiEvidence.sources.map((source) => source.number + storedAttachments.length),
@@ -667,7 +671,7 @@ export async function POST(request: Request) {
           availableCitationNumbers,
         );
         if (repairedValidation.valid) {
-          answer = repairedAnswer;
+          answer = repairCommonMojibake(repairedAnswer);
           citationValidation = repairedValidation;
         }
       }
@@ -680,6 +684,8 @@ export async function POST(request: Request) {
         return jsonResponse({ answer: UNVERIFIED_ANSWER, sources: [] });
       }
     }
+
+    answer = repairCommonMojibake(answer);
 
     const citedNumbers = new Set(citationValidation.citedNumbers);
     const attachmentLearningRefs: LearningEvidenceRef[] = addAttachmentsToWiki

@@ -301,7 +301,7 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
       upstreamRequest = { input, init };
       return Response.json({
-        choices: [{ message: { content: "Testantwort [1]" } }],
+        choices: [{ message: { content: "Pr\u00c3\u00bcfung f\u00c3\u00bcr Z\u00c3\u00bcge [1]" } }],
       });
     }
     return originalFetch(input, init);
@@ -335,14 +335,14 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     assert.equal(response.headers.has("x-ratelimit-limit-minute"), false);
     assert.equal(response.headers.has("x-ratelimit-limit-day"), false);
     const responsePayload = await response.json();
-    assert.equal(responsePayload.answer, "Testantwort [1]");
+    assert.equal(responsePayload.answer, "Prüfung für Züge [1]");
     assert.equal(responsePayload.sources[0].title, "Testquelle");
     assert.equal("path" in responsePayload.sources[0], false);
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-20b");
     assert.equal(payload.max_completion_tokens, 4096);
-    assert.equal(payload.reasoning_effort, "medium");
+    assert.equal(payload.reasoning_effort, "high");
     assert.equal(payload.include_reasoning, false);
     assert.equal(payload.stream, false);
     assert.match(upstreamRequest.init.headers.Authorization, /^Bearer gsk_/);
@@ -522,7 +522,7 @@ test("repairs invalid source numbers instead of discarding a grounded answer", a
     assert.match(payload.answer, /korrigierte Antwort/);
     assert.equal(payload.sources[0].number, 1);
     assert.equal(upstreamRequests.length, 2);
-    assert.equal(upstreamRequests[1].reasoning_effort, "medium");
+    assert.equal(upstreamRequests[1].reasoning_effort, "high");
     assert.match(upstreamRequests[1].messages.at(-1).content, /Zulässige Quellennummern: \[1\]/);
   } finally {
     globalThis.fetch = originalFetch;

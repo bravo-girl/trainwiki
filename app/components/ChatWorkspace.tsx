@@ -325,7 +325,7 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
         {
           id: nextId.current++,
           role: "assistant",
-          text: answer,
+          text: repairCommonMojibake(answer),
           includeInContext: true,
           replyTo: userMessage.id,
           sources: parseChatSources(payload.sources),
