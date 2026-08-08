@@ -18,5 +18,9 @@ test("repairs single and repeated UTF-8 mojibake in German source labels", () =>
     ),
     "Marktsegment Nacht: Abgabe von Wagenlisten für Züge mit Verkehrstagen ab dem Fahrplanjahr 2027 nur noch über den Rechnungsbahnhof möglich",
   );
+  assert.equal(
+    repairCommonMojibake("Wagenlisten fÃ1⁄4r ZÃ1⁄4ge nur noch Ã1⁄4ber den Rechnungsbahnhof"),
+    "Wagenlisten für Züge nur noch über den Rechnungsbahnhof",
+  );
   assert.equal(repairCommonMojibake("Bereits korrekt: Züge für München"), "Bereits korrekt: Züge für München");
 });
