@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
@@ -9,10 +9,14 @@ import {
   type ChatExchange,
   type ChatExportFormat,
 } from "../../lib/chat-export";
+import {
+  extractChatAttachment,
+  MAX_CHAT_ATTACHMENTS,
+  type ExtractedChatAttachment,
+} from "../../lib/client-document-extraction";
 
 const MAX_QUESTION_CHARS = 3_000;
 const MAX_HISTORY_MESSAGES = 8;
-
 type ChatSource = {
   number: number;
   title: string;
@@ -233,18 +237,44 @@ function AnswerSources({ sources }: { sources: readonly ChatSource[] }) {
   );
 }
 
-export function ChatWorkspace() {
+export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: readonly string[] }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isExtracting, setIsExtracting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [attachments, setAttachments] = useState<ExtractedChatAttachment[]>([]);
+  const [addAttachmentsToWiki, setAddAttachmentsToWiki] = useState(true);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const nextId = useRef(1);
   const exchanges = useMemo(() => collectExchanges(messages), [messages]);
+
+  async function selectAttachments(event: ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(event.target.files ?? []);
+    event.target.value = "";
+    if (attachments.length + files.length > MAX_CHAT_ATTACHMENTS) {
+      setError(`Pro Frage sind höchstens ${MAX_CHAT_ATTACHMENTS} Dokumente möglich.`);
+      return;
+    }
+    setIsExtracting(true);
+    setError(null);
+    try {
+      const extracted = await Promise.all(files.map(extractChatAttachment));
+      setAttachments((current) => {
+        const known = new Set(current.map((item) => item.rawSha256));
+        return [...current, ...extracted.filter((item) => !known.has(item.rawSha256))];
+      });
+    } catch (attachmentError) {
+      setError(attachmentError instanceof Error ? attachmentError.message : "Dokument konnte nicht gelesen werden.");
+    } finally {
+      setIsExtracting(false);
+    }
+  }
 
   async function submitQuestion(event: FormEvent) {
     event.preventDefault();
     const question = draft.trim();
-    if (!question || isLoading) return;
+    if (!question || isLoading || isExtracting) return;
 
     const userMessage: Message = {
       id: nextId.current++,
@@ -267,7 +297,7 @@ export function ChatWorkspace() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, history, turnId }),
+        body: JSON.stringify({ question, history, turnId, attachments, addAttachmentsToWiki }),
       });
       const payload = (await response.json().catch(() => ({}))) as ChatResponse;
       const answer = payload.answer;
@@ -287,6 +317,7 @@ export function ChatWorkspace() {
           sources: parseChatSources(payload.sources),
         },
       ]);
+      setAttachments([]);
     } catch (requestError) {
       const message =
         requestError instanceof Error
@@ -357,6 +388,15 @@ export function ChatWorkspace() {
         </div>
 
         <div className="chat-composer-wrap">
+          {messages.length === 0 && initialSuggestions.length > 0 && (
+            <div className="suggestion-row" aria-label="Zufällige Fragen">
+              {initialSuggestions.map((suggestion) => (
+                <button key={suggestion} onClick={() => setDraft(suggestion)} type="button">
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          )}
           <form className="chat-composer" onSubmit={submitQuestion}>
             <label className="sr-only" htmlFor="chat-question">Frage eingeben</label>
             <textarea
@@ -368,8 +408,53 @@ export function ChatWorkspace() {
               rows={2}
               value={draft}
             />
+            {attachments.length > 0 && (
+              <div className="attachment-list" aria-label="Ausgewählte Dokumente">
+                {attachments.map((attachment) => (
+                  <span key={attachment.rawSha256}>
+                    {attachment.filename}
+                    <button
+                      aria-label={`${attachment.filename} entfernen`}
+                      onClick={() => setAttachments((current) => current.filter((item) => item.rawSha256 !== attachment.rawSha256))}
+                      type="button"
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            )}
+            <div className="attachment-controls">
+              <input
+                accept=".md,.pdf,.html,.htm,.docx,.xlsx"
+                disabled={isLoading || isExtracting || attachments.length >= MAX_CHAT_ATTACHMENTS}
+                hidden
+                multiple
+                onChange={selectAttachments}
+                ref={fileInputRef}
+                type="file"
+              />
+              <button
+                className="attachment-button"
+                disabled={isLoading || isExtracting || attachments.length >= MAX_CHAT_ATTACHMENTS}
+                onClick={() => fileInputRef.current?.click()}
+                type="button"
+              >
+                {isExtracting ? "Lese Dokumente …" : `Dokumente (${attachments.length}/5)`}
+              </button>
+              {attachments.length > 0 && (
+                <label className="learn-toggle">
+                  <input
+                    checked={addAttachmentsToWiki}
+                    onChange={(event) => setAddAttachmentsToWiki(event.target.checked)}
+                    type="checkbox"
+                  />
+                  Zur Wissensbasis hinzufügen
+                </label>
+              )}
+            </div>
             <div className="composer-footer">
-              <button disabled={isLoading || !draft.trim()} type="submit">
+              <button disabled={isLoading || isExtracting || !draft.trim()} type="submit">
                 {isLoading ? "Warten …" : "Senden"}
               </button>
             </div>

@@ -59,6 +59,11 @@ test("keeps the chat mobile-first and exposes pair and session exports", async (
 
   assert.match(source, /downloadExchange/);
   assert.match(source, /downloadSession/);
+  assert.match(source, /MAX_CHAT_ATTACHMENTS/);
+  assert.match(source, /\.md,\.pdf,\.html,\.htm,\.docx,\.xlsx/);
+  assert.match(source, /Zur Wissensbasis hinzufügen/);
+  assert.match(source, /useState\(true\)/);
+  assert.match(source, /Zufällige Fragen/);
   assert.match(source, /Diese Antwort/);
   assert.match(source, /Aktuelle Sitzung/);
   assert.match(source, /\["md", "html", "pdf"\]/);

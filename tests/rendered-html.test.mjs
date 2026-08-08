@@ -327,6 +327,49 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
   }
 });
 
+test("prioritizes temporary chat documents without permanently importing them", async () => {
+  const originalFetch = globalThis.fetch;
+  let upstreamRequest;
+  globalThis.fetch = async (input, init) => {
+    if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
+      upstreamRequest = init;
+      return Response.json({ choices: [{ message: { content: "Anhangsantwort [1]" } }] });
+    }
+    return originalFetch(input, init);
+  };
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", origin: "http://localhost" },
+        body: JSON.stringify({
+          question: "Was steht im Anhang?",
+          history: [],
+          turnId: testTurnId,
+          addAttachmentsToWiki: false,
+          attachments: [{
+            filename: "hinweis.md",
+            mediaType: "text/markdown",
+            rawSha256: "c".repeat(64),
+            text: "Der Anhang nennt eine besondere Frist am Monatsende.",
+          }],
+        }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const body = await response.json();
+    assert.equal(body.sources[0].title, "hinweis.md");
+    assert.equal(body.sources[0].heading, "Nur für diese Frage");
+    const groqPayload = JSON.parse(upstreamRequest.body);
+    assert.match(groqPayload.messages[0].content, /^.*\[1\] hinweis\.md/m);
+    assert.match(groqPayload.messages[0].content, /besondere Frist/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("does not expose an answer whose source citations are missing", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
