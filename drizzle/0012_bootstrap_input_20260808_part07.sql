@@ -1,3 +1,5957 @@
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4b7b8cc2b19255366b6cb2b3','wiki/sources/ril-402-0202a01-inb-2027-data.md',8,'Seite 5','konstruiert werden soll Höchstgeschwindigkeit des Zugs, z.B. auf
+
+einem definierten Streckenabschnitt den
+
+Wunsch nach harmonisiertem Fahren zu
+
+dokumentieren.
+
+Gültig ab: 13.12.2026',21,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":5,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','4984ef24221847bda410add453c3a46ad2159cdc5020e86c1ae8d57faf3fba9c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_145378082296e8b24807bfa8','wiki/sources/ril-402-0202a01-inb-2027-data.md',9,'Seite 6','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 6
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(17) M Eingabe der Baureihe des Triebfahrzeugs bzw. Die Baureihenvariante berücksichtigt auch
+
+Triebzugs bzw. der Triebwageneinheit schiebendes oder ziehendes Triebfahrzeug
+
+ausschließlich in folgender Schreibweise (gem. bei Wendezügen.
+
+UIC-Merkblatt 438-3) Durch die Angabe der Baureihenvariante
+
+- Ländercode (2-stellig und Leerzeichen) bzw. Variantennummer entfällt bei
+
+- Triebfahrzeugbaureihenbezeichnung (4-stellig) Triebzügen/Triebwageneinheiten die
+
+- Bindestrich (ohne Leerzeichen davor und Angabe zur Anzahl der Mittel-/Steuerwagen
+
+danach) bzw. integrierten Beiwagen.
+
+- Variantennummer (dreistellig1 oder 2-stellig)
+
+z.B: 80 6185-001
+
+(17a) Angabe der Rolle der Bespannung:
+
+Rolle 1: Zuglok an der Spitze des Zuges,
+
+Rolle 2: Zuglok in der Mitte des Zuges
+
+(Steuerwagen an der Zugspitze ist dann Pflicht),
+
+Rolle 5: Zuglok am Ende des Zuges (Steuerwagen
+
+an der Zugspitze ist dann Pflicht).,
+
+(17b) Lfd. Nr. der Bespannung (ist bei Zuglok immer 1)
+
+(18) M Eingabe der Baureihe des Triebfahrzeugs (Zuglok)
+
+ausschließlich in folgender Schreibweise (gem.
+
+UIC-Merkblatt 438-3):
+
+- Ländercode (2-stellig und Leerzeichen)
+
+- Triebfahrzeugbaureihenbezeichnung (4-stellig)
+
+- Bindestrich (ohne Leerzeichen davor und
+
+danach)
+
+- Variantennummer (dreistellig)
+
+z.B: 80 6185-001
+
+(18a) Angabe der Rolle der Bespannung:
+
+Rolle 1: Zuglok an der Spitze des Zuges
+
+(18b) Lfd. Nr. der Bespannung (ist bei Zuglok immer 1)
+
+Gültig ab: 13.12.2026',200,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":6,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','9cd872cd702ab3549a1abad490799437a0e0c731a8ea41f131600570269ce986');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1dfe80093570aa0aa0c59179','wiki/sources/ril-402-0202a01-inb-2027-data.md',10,'Seite 7','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 7
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(19) (M) zweites Triebfahrzeug (Zusatzlok oder weitere
+
+Mittellok) in der Darstellungsweise des Feldes
+
+(17), bzw. (18)
+
+(19a) Angabe der Rolle der Bespannung:
+
+Rolle 1: Zusätzliche Lok an der Spitze des Zuges
+
+(als Vorspannlok oder Doppeltraktion)
+
+Rolle 2: Zusätzliche Lok in der Mitte des Zuges
+
+(Steuerwagen an der Zugspitze ist dann Pflicht),
+
+Rolle 3: Gekuppelte Schiebelok,
+
+Rolle 4: Ungekuppelte Schiebelok,
+
+Rolle 5: Zusätzliche Lok am Ende des Zuges
+
+(Steuerwagen an der Zugspitze ist dann Pflicht).,
+
+(19b) Lfd. Nr. der Bespannung (ist 2 bei Rolle 1; ist 1
+
+oder 2 bei Rolle 2, ist 2 bei Rolle 5, ist 1 bei Rollen
+
+3 und 4).
+
+(20) (M) Bei Zügen mit Steuerwagen ist die Die Position des Steuerwagens ergibt sich
+
+Wendezugfähigkeit anzugeben. aus der angegebenen Rolle des Tfz: Rolle 1:
+
+Steuerwagen am Zugende, Rollen 2 und 5:
+
+Steuerwagen an der Zugspitze.
+
+(21) (M) Baureihe der Schiebelok in der Darstellungsweise
+
+des Feldes (19). Angabe, ob Schiebelok mit dem
+
+Zug gekuppelt ist (ja/nein)
+
+(22) M Gesamtlänge des Zuges in Metern. Die nach Ril
+
+408 zulässigen maximalen Zuglängen dürfen nicht
+
+überschritten werden. Bei Triebwagen/Triebzügen
+
+bleibt das Feld frei.
+
+(22a) (M) Länge des Wagenzuges bei lokbespannten Zügen
+
+in Metern.
+
+(22b) (M) Länge des Tfz in Metern mit einer
+
+Nachkommastelle bei lokbespannten Zügen.
+
+(23) M Gesamtmasse (Last) des Zuges in Tonnen.
+
+(23a) (M) Masse des Wagenzuges bei lokbespannten Zügen
+
+(23b) (M) Masse des Tfz bei lokbespannten Zügen
+
+(24) M Bremsstellung, mit der die Trassen konstruiert Im Güterverkehr kann die Angabe
+
+werden soll. lastabhängig doppelt sein, z.B. bis 1600 t
+
+Bremsstellung P, über 1600 t Bremsstellung
+
+G.',271,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":7,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','341723141f1a026061cc5e4bb501ded98a7180fa76d884f4f9626b829d102815');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0a6c09ad58976be12692c763','wiki/sources/ril-402-0202a01-inb-2027-data.md',11,'Seite 7','(25) M Vorhandenes Bremsvermögen des Zugs, das bei Bremsgewicht x 100
+
+der Trassenkonstruktion berücksichtigt werden soll Eigengewicht
+
+Gültig ab: 13.12.2026',20,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":7,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','2a42ad410c8e7dea7eec61f6b1c55960ad8ffbd07d20cb63337e980eb0eaab09');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b96cf16e91945dbd99b8d31c','wiki/sources/ril-402-0202a01-inb-2027-data.md',12,'Seite 8','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 8
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(26) (M) LZB (Linienzugbeeinflussung) bzw. PZB 90 Bitte geben Sie alle Zugsicherungssysteme
+
+und/oder ETCS (European Train Control System) an, die im Fahrzeug vorhanden sind.
+
+wird für die Zugfahrt genutzt
+
+Bei ETCS ist die Angabe der konkreten
+
+Ausprägung erforderlich
+
+(27) (M) NBÜ = Notbremsüberbrückung
+
+Angabe, dass die angemeldete Trasse die
+
+Bedingungen der NBÜ-Pflicht erfüllt, sofern sie
+
+über NBÜ-pflichtige Streckenabschnitte gem.
+
+Infrastrukturregister angemeldet wird.
+
+(28) M Die Zugfahrt wird auf Basis von Buchfahrplandaten Falls Buchfahrplandaten in elektronischer
+
+aus einer Schnittstelle der DB InfraGO Form genutzt/abgerufen werden sollen, ist
+
+durchgeführt (ja/nein) hier „ja“ anzugeben.
+
+(29) (M) üFz = übergroße Fahrzeuge
+
+Werden Bedingungen der EBO nicht eingehalten,
+
+sind besondere Beförderungsbedingungen
+
+notwendig und die Technischen
+
+Netzzugangsbedingungen (Anlage 2.4.2. der
+
+SNB) kommen zur Anwendung
+
+(30) (M) BZA/Beförderungsanordnung: Werden Bedingungen der EBO nicht eingehalten, sind
+
+besondere Beförderungsbedingungen notwendig.
+
+Hier kommt Ziffer 4.3 der Ril 402.0202 zur
+
+Anwendung.
+
+(31) M Geben Sie hier bitte an, ob sich Doppel- Für den Einsatz von Doppelstockfahrzeuge im Wagenzug befinden (Ja/nein). stockfahrzeugen muss die vorgesehene
+
+Strecke vorher geprüft und zugelassen
+
+werden.
+
+(32) (M) Angabe der Streckenklasse. Wenn keine Angabe, Für die Streckenklasse der Trasse ist die
+
+wird D4 angenommen. Streckenklasse des Fahrzeuges im Zug mit
+
+der höchsten Streckenklassenbewertung
+
+maßgebend.
+
+(33) (M) Nei-Tech: Bei Triebwagen mit Neigetechnik
+
+angeben, in welchem Streckenabschnitt (definiert',222,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":8,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','568f545784bfcd196063da605bdcf5247e6d7b377df1b1149a5fb353fceac6da');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4fce2570db4956b9ddd73891','wiki/sources/ril-402-0202a01-inb-2027-data.md',13,'Seite 8','in der Ortszeile) die Neigetechnik aktiv ist.
+
+(33a) Überhöhungsfehlbetrag
+
+(34) M Definierte Überschreitungen des Lichtraumprofils Falls KV ja, geben Sie bitte das KV-Profil in
+
+nach EBO sind auf festgelegten Strecken zulässig. Feld (34) an.
+
+Es ist immer anzugeben, ob der Zug KV befördert,
+
+oder nicht (nichtzutreffendes streichen).
+
+Gültig ab: 13.12.2026',50,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":8,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','be339bf072e3a3a2427f42e4c5590d9acf73a5800a9c69d7e4fa201d9f5b90bf');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2d23e117cf6a41fe2bfa7113','wiki/sources/ril-402-0202a01-inb-2027-data.md',14,'Seite 9','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 9
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(35) (M) Angabe der Streckenklasse. Wenn keine Angabe, Für die Streckenklasse ist das schwerste
+
+wird D4 angenommen. Fahrzeug im Zug maßgebend.
+
+Ggf. Bemerkungen zur Zugcharakteristik, die
+
+durch die anderen Felder nicht dargestellt werden
+
+können.
+
+(36) (M) Besonderheiten der Zugcharakteristik, die Bei Unklarheiten beraten wir Sie gerne
+
+aufgrund der geltenden Konstruktionsregeln zu ausführlich
+
+berücksichtigen sind; einzutragen sind z.B.:
+
+Lü Halten Fahrzeuge das Lichtraumprofil
+
+gemäß EBO nicht ein, sind besondere
+
+Beförderungsbedingungen notwendig
+
+RID-Nummer Ganzzüge mit gefährlichen Gütern nach
+
+GGVSEB (einschließlich dem RID) sowie
+
+daraus aufkommende geschlossene
+
+Leerwagenganzzüge mit ungereinigten
+
+Kesselwagen und Tankcontainern
+
+Außergewöhnliche Transporte/Fahrzeuge Hierfür ist die aktuell vorhandene Bza-
+
+Nummer anzugeben
+
+Einzelgrenzlastberechnung Liegt für die Trassenanmeldung eine Einzelgrenzlastberechnung vor, so ist hier die
+
+entspr. Nummer (EGB-Nr.) einzutragen. Im
+
+Trassenanmeldesystem können hier unter
+
+„bearbeiten“ bis zu 10 EGB-Nummern
+
+eingetragen werden.
+
+(36a) M Angabe zur Lärmemission gem. Schienenlärm- Angabe der Lärmemission („laut“, leise“ oder
+
+schutzgesetz „laut mit Befreiung“) wird der Einsatz von
+
+mindestens einem Güterwagen in einem Zug
+
+im Sinne des Schienenlärmschutzgesetzes
+
+(SchlärmschG) mitgeteilt.
+
+(37) M Ortsbezeichnung; Kürzel oder Bezeichnung der
+
+Betriebsstelle gem. Abkürzungsverzeichnis Ril
+
+100.
+
+Angabe des möglichst genauen Laufwegs.
+
+Bei Zügen, die teilweise im Netz eines anderen
+
+Eisenbahninfrastrukturunternehmens verkehren,',201,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":9,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','66c41a50c8b8e9f99db6b8dcb52e3e0f40fa462f0c969bfde121a4c2d6318dda');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_49c70d43b7cf940a381906b3','wiki/sources/ril-402-0202a01-inb-2027-data.md',15,'Seite 9','ist der Grenzeingangs- und/oder Grenzausgangsbahnhof bzw. erste und/oder letzte konstruktionsrelevante Betriebsstelle der DB InfraGO AG
+
+anzugeben.
+
+(38) O gewünschtes Gleis
+
+(39) (M) gewünschte Ankunft (bleibt bei Zuganfangsbahnhof frei, bzw. Bereitstellungszeit am
+
+Bahnsteig in kursiver Schrift angeben)
+
+(40) (M) Haltezeit, Genauigkeit in Zehntel-Minuten; z.B.
+
+10,5 Minuten
+
+Gültig ab: 13.12.2026',48,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":9,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','fbbeb4fb35fd697c19777bcf840e6a83697b606358010f2f704278a8136521c5');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_20fe14c2da8ce167de1d28b2','wiki/sources/ril-402-0202a01-inb-2027-data.md',16,'Seite 10','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 10
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(41) (M) Angabe zur Art des Haltes nachrichtlich:
+
+Es gibt folgende Train Activitys: Halte aus Konstruktionsgründen werden
+
+0001 Verkehrshalt vom Konstrukteur unter ‘Hinweise aus der
+
+Konstruktion’ eingetragen
+
+0002 Betriebshalt
+
+0003 Servicehalt
+
+0004 Systemwechselhalt
+
+0005 Richtungswechsel (ohne Wechsel Tfz)
+
+0006 Fahrtrichtungswechsel / Führerstandswechsel (mit Wechsel Tfz am anderen Ende und
+
+Fahrerwechsel)
+
+0007 Richtungswechsel (mit Nutzung des
+
+gleichen Tfz am anderen Ende)
+
+0008 Technische Wagenuntersuchung
+
+0009 Wechsel der Spurweite
+
+0010 Triebfahrzeug beistellen
+
+0011 Triebfahrzeug absetzen
+
+0012 Triebfahrzeugwechsel
+
+0013 Wagen zusetzen
+
+0014 Wagen absetzen
+
+0015 Wagen ab- und zusetzen
+
+0016 Zusammenführung von Zugteilen
+
+0017 Trennung von Zugteilen
+
+0018 Zwischenabstellung
+
+0019 Behandlung Post und Expressgut
+
+0020 Rangieren
+
+0021 Rangierdienstliche Behandlung
+
+0022 Abschlussdienst (am Zielbahnhof)
+
+0023 Triebfahrzeugführerwechsel
+
+0024 Lokführererholungshalt
+
+0025 Personalwechsel
+
+0026 Zoll- und Grenzabfertigung
+
+0027 Andere Haltegründe (Verschiedenes)
+
+0028 Nur zum Einsteigen
+
+0029 Nur zum Aussteigen
+
+0030 Bedarfshalt
+
+0031 Ankunftszeit gleich Abfahrtzeit
+
+0032 Abfahrt nach Aussteigen
+
+0033 Kein Warten auf Anschlusszüge
+
+0034 Bewässern
+
+0035 Heizen
+
+Gültig ab: 13.12.2026',167,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":10,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','8b965eccc9984df9a35d59f826eb60e83b796b39a73b4e9f38c8e83d0a587b5e');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4bce88f8f60aad2ed7c1948e','wiki/sources/ril-402-0202a01-inb-2027-data.md',17,'Seite 11','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 11
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+0036 Reinigen / Desinfizieren
+
+0037 Behandlung von Pflanzen oder lebenden
+
+Tieren
+
+0038 Behandlung verderblicher Güter
+
+0039 Verwaltungsaufgaben (z. B. Zoll)
+
+0040 Durchfahrt
+
+0041 Fotohalt
+
+0042 Zug wartet
+
+0043 Zug fährt mit einem anderen Zug
+
+0044 Übergang auf Zug
+
+0045 Übergang von Zug
+
+0046 Anschlussbeziehung zu einem anderen Zug
+
+0047 Anschlussbeziehung von einem anderen
+
+Zug
+
+0048 OTN bei Übergang an einer Grenze
+
+0049 Ladehalt für Akku-Triebfahrzeug
+
+(42) (M) Personenverkehr: Ebenso Ankunftszeit
+
+Abfahrtszeit (bleibt bei Zugendbahnhof frei, bzw. Unterscheidung nach frühester/spätester
+
+Ende der Bahnsteigbelegungszeit in kursiver Ankunfts- oder Abfahrtszeit, künftig auch
+
+Schrift) exakte gewünschte Fahrplanzeit möglich.
+
+Güterverkehr:
+
+Abfahrtszeit (bleibt bei Zugendbahnhof frei, bzw.
+
+Ende der Gleisbelegungszeit in kursiver Schrift)
+
+(43) (M) Personenverkehr: Konstruktionsvorgaben:
+
+Vorgaben für die Konstruktion, z.B. Anschluss, A = Anschluss, K= Korrespondenz, ‘ A (Zug-
+
+Korrespondenz Nr.) Gl ‘.. oder ‘gl.Bstg’ (= am gleichen
+
+Bahnsteig)’
+
+z.B. Neitech aktiv oder inaktiv, Wechsel von
+
+geschoben auf gezogen, Änderungen der
+
+Zugmasse:
+
+Gültig ab: 13.12.2026',164,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":11,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','15eeca3a06ab4744cad8aa91c72a51f705890d8f2b88c1a7b0b5cfbca59c8e9c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_fd678273b75a04c6320372d1','wiki/sources/ril-402-0202a01-inb-2027-data.md',18,'Seite 12','Bahnbetrieb Trassenmanagement
+
+Trassenanmeldung 402.0202A01
+
+Netzfahrplan Seite 12
+
+Feld- Art Inhalt Erläuterung
+
+Nr. M/O
+
+(43) (M) Güterverkehr: Konstruktionsvorgaben:
+
+Vorgaben für die Konstruktion, z.B. Wagen- W = Wagenübergang; W xxxxx (Zug-Nr) auf
+
+übergang xxxxx (ZugNr)
+
+Eintrag von ortsbezogenen Änderungen der sofern nicht unter Zugcharakteristik (Felder
+
+Zugcharakteristik 16 – 26) bereits dargestellt
+
+Eintrag ortsbezogener Konstruktionsspielräume Die Konstruktionsspielräume sind in Minuten
+
+unter Nutzung der Vorzeichen +, - oder ± ,
+
+des Bezugsortes und einem Hinweis auf
+
+Abfahrt (ab) oder Ankunft (an) anzugeben;
+
+AMA ab ± 15 bedeutet: Abfahrt in AMA
+
+zwischen 15 Minuten vor und 15 Minuten
+
+nach der in Spalte 29 angegebenen Zeit
+
+möglich
+
+Gültig ab: 13.12.2026',104,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf","normalized_sha256":"23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b","page":12,"source_id":"src_020acbee32d4681c346b","source_sha256":"7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237","source_version_id":"sv_b97562496bb6bb640477c1e5"}','a4120919820e0b2706cdad849280321d108645f6dee429bb6a67e34d63467d75');
+--> statement-breakpoint
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_a8fc6bb3e8b7db7a8077','file','Schnittstellenbeschreibung BauFplo API EVU Test 2 17 0 im json Format',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
+--> statement-breakpoint
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_4d9deecdfe44da586bc04290','src_a8fc6bb3e8b7db7a8077','beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8','1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4',96184,'application/json','Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json','sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data/sv_4d9deecdfe44da586bc04290.md','identity-structured-text','1','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","converter":{"name":"identity-structured-text","profile":"bootstrap-markdown-v2","version":"1"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_4d9deecdfe44da586bc04290.json","media_type":"application/json","normalized_repo_path":"sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data/sv_4d9deecdfe44da586bc04290.md","normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","origin_page_url":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json","page_count":null,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":96184,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290","supersedes_source_version_id":null,"title":"Schnittstellenbeschreibung BauFplo API EVU Test 2 17 0 im json Format","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8','src_a8fc6bb3e8b7db7a8077','sv_4d9deecdfe44da586bc04290','{"content_duplicate_group":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4','src_a8fc6bb3e8b7db7a8077',NULL,'{"content_duplicate_group":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+UPDATE sources SET current_version_id='sv_4d9deecdfe44da586bc04290' WHERE id='src_a8fc6bb3e8b7db7a8077';
+--> statement-breakpoint
+INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md','Schnittstellenbeschreibung BauFplo API EVU Test 2 17 0 im json Format','{ "openapi": "3.0.1", "info": { "title": "Baufplo API EVU", "description": "Die Baufplo API stellt Baufplo-Informationen für EVUs bereit", "contact": { "name": "Team BSV", "email": "[E-Mail-Adresse entfernt]" }, "license": { "name": "DB Inner Source Lizenz Version 1.0", "url": "https://foss.gitpages.tech.rz.db.de/40_Inner%20Source/20_lizenz.html" }, "version','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','07cc991f72287f71bee851ed996bfe20268005709835925605626f682b94efc9','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_version_id":"sv_4d9deecdfe44da586bc04290"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+DELETE FROM wiki_chunks WHERE page_path='wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md';
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_74e4ca9e8161466f4d9c6ba5','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',0,'Inhalt','{
+
+"openapi": "3.0.1",
+
+"info":
+
+{
+
+"title": "Baufplo API EVU",
+
+"description": "Die Baufplo API stellt Baufplo-Informationen für EVUs bereit",
+
+"contact":
+
+{
+
+"name": "Team BSV",
+
+"email": "[E-Mail-Adresse entfernt]"
+
+},
+
+"license":
+
+{
+
+"name": "DB Inner Source Lizenz Version 1.0",
+
+"url": "https://foss.gitpages.tech.rz.db.de/40_Inner%20Source/20_lizenz.html"
+
+},
+
+"version": "2.17.0"
+
+},
+
+"servers":
+
+[
+
+{
+
+"url": "/baufplo"
+
+}
+
+],
+
+"paths":
+
+{
+
+"/v2/baufplos":
+
+{
+
+"get":
+
+{
+
+"tags":
+
+[
+
+"BSV – Baufahrplan Service Veröffentlichung API Operations"
+
+],
+
+"summary": "EVU: API-Endpunkt",
+
+"description": "Liefert die von der Anwendung BSV veröffentlichten BauFplo gefiltert nach diversen Parametern.",
+
+"operationId": "getBaufplos",
+
+"parameters":
+
+[
+
+{
+
+"name": "verkehrstagVon",
+
+"in": "query",
+
+"description": "Datum des ersten Verkehrstags zur Einschränkung der abgefragten BauFplo",
+
+"required": true,
+
+"schema":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"example": "2023-01-01"
+
+}
+
+},
+
+{
+
+"name": "verkehrstagBis",
+
+"in": "query",
+
+"description": "Datum des letzten Verkehrstags zur Einschränkung der abgefragten BauFplo",
+
+"required": true,
+
+"schema":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"example": "2023-12-31"
+
+}
+
+},
+
+{
+
+"name": "zugnummer",
+
+"in": "query",
+
+"description": "Zugnummer des betroffenen Zuges zur Einschränkung der abgefragten BauFplo",
+
+"required": false,
+
+"schema":
+
+{
+
+"type": "string",
+
+"example": "18041"
+
+}
+
+},
+
+{
+
+"name": "startBetriebsstelle",
+
+"in": "query",
+
+"description": "Ril100 Kürzel des Abfahrtsbahnhofs zur Einschränkung der abgefragten BauFplo.\n\n_**Hinweis:** Im Falle eines Komplettausfalls eines Zuges bleibt dieses Attribut leer, damit entsprechende BauFplo mit ausgegeben werden._",
+
+"required": false,
+
+"schema":
+
+{
+
+"type": "string",',201,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','225234d0c2f3d202ac5ea114d8619e4ee126527890967e1f7ed418947cc08015');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_498c3a4ffff26e056bdd808a','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',1,'Inhalt','"example": "BEB"
+
+}
+
+},
+
+{
+
+"name": "zielBetriebsstelle",
+
+"in": "query",
+
+"description": "Ril100 Kürzel des Zielbahnhofs zur Einschränkung der abgefragten BauFplo.\n\n_**Hinweis:** Im Falle eines Komplettausfalls eines Zuges bleibt dieses Attribut leer, damit entsprechende BauFplo mit ausgegeben werden._",
+
+"required": false,
+
+"schema":
+
+{
+
+"type": "string",
+
+"example": "DH"
+
+}
+
+},
+
+{
+
+"name": "page",
+
+"in": "query",
+
+"description": "Einschränkung der Nummer Rückgabeseite (Pageable.page), wenn eine große Menge an BauFplo abgefragt wird.",
+
+"schema":
+
+{
+
+"type": "integer",
+
+"example": 0
+
+}
+
+},
+
+{
+
+"name": "size",
+
+"in": "query",
+
+"description": "Einschränkung der Menge der BauFplo pro Rückgabeseite (Pageable.size), wenn eine große Menge an BauFplo abgefragt wird.",
+
+"schema":
+
+{
+
+"type": "integer",
+
+"example": 50
+
+}
+
+},
+
+{
+
+"name": "sort",
+
+"in": "query",
+
+"description": "Sortierung der Ergebnisse mit Parameterübergabe als Array (Pageable.sort). Eine Sortierung nach allen enthaltenen Parametern in dem JSON ist möglich. <br>Example<br>verkehrstag,desc<br>zugnummer,desc",
+
+"schema":
+
+{
+
+"type": "string"
+
+}
+
+},
+
+{
+
+"name": "bizhubConsumerToken",
+
+"in": "header",
+
+"description": "Wird zur Autorisierung für den API-Zugriff verwendet und wird durch BSV auf Anfrage mitgeteilt.",
+
+"schema":
+
+{
+
+"type": "string",
+
+"example": "eyJhbGciOiJSUzI1NiJ9"
+
+}
+
+}
+
+],
+
+"responses":
+
+{
+
+"200":
+
+{
+
+"description": "OK",
+
+"content":
+
+{
+
+"application/xml":
+
+{
+
+"schema":
+
+{
+
+"$ref": "#/components/schemas/PageBaufplo"
+
+}
+
+},
+
+"application/json":
+
+{
+
+"schema":
+
+{
+
+"$ref": "#/components/schemas/PageBaufplo"
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+},
+
+"components":
+
+{
+
+"schemas":
+
+{
+
+"Allgemeines":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt den Abschnitt Allgemeines",
+
+"properties":
+
+{
+
+"textbausteine":
+
+{',210,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','c8f4c2ade3553b76e8c59087a5a4f9847600e707bde0b8d6d4ef807c0446997a');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f1936e926cbda4ef184925a2','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',2,'Inhalt','"type": "array",
+
+"description": "Beschreibt die Textbausteine",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Textbaustein"
+
+},
+
+"xml":
+
+{
+
+"name": "textbaustein"
+
+}
+
+}
+
+}
+
+},
+
+"AlternativeZugcharakteristik":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Alternativen Zugcharakteristik",
+
+"properties":
+
+{
+
+"id":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Eindeutige Identifikation der Zugcharakteristik innerhalb der BauFplo",
+
+"example": 1
+
+},
+
+"triebfahrzeuge":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften des Triebfahrzeugs",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Triebfahrzeug"
+
+},
+
+"minItems": 1,
+
+"xml":
+
+{
+
+"name": "triebfahrzeug"
+
+}
+
+},
+
+"gesamtzuglaenge":
+
+{
+
+"type": "number",
+
+"format": "double",
+
+"description": "Gesamtlänge des Zuges",
+
+"example": 98
+
+},
+
+"last":
+
+{
+
+"type": "number",
+
+"format": "double",
+
+"description": "Masse des Wagenzuges in Tonnen",
+
+"example": 186
+
+},
+
+"mindestbremshundertstel":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Mindestbremshundertstel, die für die Durchführung der Zugfahrt benötigt werden",
+
+"example": 130
+
+},
+
+"bremsstellung":
+
+{
+
+"type": "string",
+
+"description": "Wertemenge für Bremsstellung",
+
+"example": "R+Mg"
+
+},
+
+"hoechstgeschwindigkeit":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Höchstgeschwindigkeit des Zuges in km/h",
+
+"example": 160
+
+},
+
+"zuggattung":
+
+{
+
+"$ref": "#/components/schemas/Zuggattung",
+
+"description": "Produktbezeichnung der Zuggattung"
+
+},
+
+"befoerderungsanordnung":
+
+{
+
+"type": "string",
+
+"description": "Angabe der Nummer einer gültigen Beförderungsanordnung, mit der die Durchführung bestimmter Zugfahrten mit besonderen technischen Eigenschaften vorab geprüft wurde und genehmigt wird",
+
+"example": "M-1073"',183,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','0f6c95e3966deecff001fba5f7141006042d97f1c3637b9c9b55d1fc7094896c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b574f63610f10f5896f13b9d','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',3,'Inhalt','},
+
+"bzaNummern":
+
+{
+
+"type": "array",
+
+"description": "Bza ist die Abkürzung für „Betrieb Zugförderung außergewöhnlich“.",
+
+"example":
+
+[
+
+"A1-1301"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"bzaBedingung":
+
+{
+
+"type": "string",
+
+"description": "Hinweise zur besonderen Beachtung bei der Durchführung von Zugfahrten in Betriebsstellen oder Streckenabschnitten als Freitext, sofern die Bedingungen nicht in einer Dauer-Beförderungsanordnung hinterlegt sind.",
+
+"example": "FdlBfBad Schandau erteilt Befehl 12 (zweisprachig) Grund 41:\nZug 45315 fährt von Decin-Prostredni Zleb bis Decin vychod von km 458,900 bis km 457,700 mit höchstens 30 km/h"
+
+},
+
+"imGrenzlastBereich":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob die angegebenen Lasten bereits den Grenzlastbereich darstellen",
+
+"example": true
+
+},
+
+"gueterzugOhneNennenswertenGrenzaufenthalt":
+
+{
+
+"type": "boolean",
+
+"description": "Gibt an, dass für den Zug am Grenzübergang (in der Regel die Grenzbetriebsstelle) kein längerer Aufenthalt (z.B. wegen Zollabwicklung) erforderlich ist.",
+
+"example": true
+
+},
+
+"befoerderungsbesonderheiten":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Beförderungsbesonderheiten",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Befoerderungsbesonderheit"
+
+},
+
+"xml":
+
+{
+
+"name": "befoerderungsbesonderheit"
+
+}
+
+},
+
+"beladung":
+
+{
+
+"$ref": "#/components/schemas/Beladung",
+
+"description": "Beschreibt die Eigenschaften der Beladung"
+
+},
+
+"zugverband":
+
+{
+
+"$ref": "#/components/schemas/Zugverband",
+
+"description": "Beschreibt die Eigenschaften des Zugverbands"
+
+},
+
+"istRichtungswechselZugelassen":
+
+{
+
+"type": "boolean",',184,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','04ef5407a9ea31ba2b32bc951d8c42da62cfd1dd7bf97bdd64576097f96d7fbe');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1c732e63eedae8ca979cba1b','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',4,'Inhalt','"description": "Angabe, ob nicht bestellte, aber konstruktionsbedingte Richtungswechsel zugelassen sind",
+
+"example": true
+
+},
+
+"keinRichtungswechselZugelassenGrund":
+
+{
+
+"type": "string",
+
+"description": "Wenn Attribut „istRichtungswechselZugelassen“ = false, dann kann hier ein Grund für den nicht erlaubten Richtungswechsel angegeben werden",
+
+"example": "Baumschnitt"
+
+},
+
+"besonderheit":
+
+{
+
+"type": "string",
+
+"description": "Besonderheiten oder Hinweise aus der Fahrplankonstruktion für das Eisenbahnverkehrsunternehmen (EVU) bzw. den Triebfahrzeugführer (Tf) zur weiteren Beachtung.",
+
+"example": "Bei LZB-Führung gilt die bestellte Höchstgeschwindigkeit, es gelten die Buchfahrplanseiten und Spalten 1, 3a, 3b. Bei abgeschalteter LZB greifen die Angaben gem. Fahrplan bzgl. Buchfahrplan."
+
+}
+
+},
+
+"required":
+
+[
+
+"bremsstellung",
+
+"hoechstgeschwindigkeit",
+
+"mindestbremshundertstel",
+
+"zuggattung",
+
+"zugverband"
+
+]
+
+},
+
+"BasisZugcharakteristik":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Zugcharakteristik",
+
+"properties":
+
+{
+
+"id":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Eindeutige Identifikation der Zugcharakteristik innerhalb der BauFplo",
+
+"example": 1
+
+},
+
+"alternativeZugcharakteristiken":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Alternativen Zugcharakteristik",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/AlternativeZugcharakteristik"
+
+},
+
+"xml":
+
+{
+
+"name": "alternativeZugcharakteristik"
+
+}
+
+},
+
+"triebfahrzeuge":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften des Triebfahrzeugs",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Triebfahrzeug"
+
+},
+
+"minItems": 1,
+
+"xml":
+
+{
+
+"name": "triebfahrzeug"
+
+}
+
+},
+
+"gesamtzuglaenge":
+
+{
+
+"type": "number",
+
+"format": "double",',177,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','fa24cce8eac19e7c6ae59d0986f3cfe9f0f57a5aa1de1efe4915b0c3235b5d2d');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_021610eff0bce7e3e660349f','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',5,'Inhalt','"description": "Gesamtlänge des Zuges",
+
+"example": 98
+
+},
+
+"last":
+
+{
+
+"type": "number",
+
+"format": "double",
+
+"description": "Masse des Wagenzuges in Tonnen",
+
+"example": 186
+
+},
+
+"mindestbremshundertstel":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Mindestbremshundertstel, die für die Durchführung der Zugfahrt benötigt werden",
+
+"example": 130
+
+},
+
+"bremsstellung":
+
+{
+
+"type": "string",
+
+"description": "Wertemenge für Bremsstellung",
+
+"example": "R+Mg"
+
+},
+
+"hoechstgeschwindigkeit":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Höchstgeschwindigkeit des Zuges in km/h",
+
+"example": 160
+
+},
+
+"zuggattung":
+
+{
+
+"$ref": "#/components/schemas/Zuggattung",
+
+"description": "Produktbezeichnung der Zuggattung"
+
+},
+
+"befoerderungsanordnung":
+
+{
+
+"type": "string",
+
+"description": "Angabe der Nummer einer gültigen Beförderungsanordnung, mit der die Durchführung bestimmter Zugfahrten mit besonderen technischen Eigenschaften vorab geprüft wurde und genehmigt wird",
+
+"example": "M-1073"
+
+},
+
+"bzaNummern":
+
+{
+
+"type": "array",
+
+"description": "Bza ist die Abkürzung für „Betrieb Zugförderung außergewöhnlich“.",
+
+"example":
+
+[
+
+"A1-1301"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"imGrenzlastBereich":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob die angegebenen Lasten bereits den Grenzlastbereich darstellen",
+
+"example": true
+
+},
+
+"gueterzugOhneNennenswertenGrenzaufenthalt":
+
+{
+
+"type": "boolean",
+
+"description": "Gibt an, dass für den Zug am Grenzübergang (in der Regel die Grenzbetriebsstelle) kein längerer Aufenthalt (z.B. wegen Zollabwicklung) erforderlich ist.",
+
+"example": true
+
+},
+
+"befoerderungsbesonderheiten":
+
+{
+
+"type": "array",',189,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','894752a4b17a1c8778606a943335c4521f3c6ad27b30a2009d5fd9e6d12ecc14');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f7acba25f305077164d543e0','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',6,'Inhalt','"description": "Beschreibt die Eigenschaften der Beförderungsbesonderheiten",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Befoerderungsbesonderheit"
+
+},
+
+"xml":
+
+{
+
+"name": "befoerderungsbesonderheit"
+
+}
+
+},
+
+"beladung":
+
+{
+
+"$ref": "#/components/schemas/Beladung",
+
+"description": "Beschreibt die Eigenschaften der Beladung"
+
+},
+
+"zugverband":
+
+{
+
+"$ref": "#/components/schemas/Zugverband",
+
+"description": "Beschreibt die Eigenschaften des Zugverbands"
+
+},
+
+"istRichtungswechselZugelassen":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob nicht bestellte, aber konstruktionsbedingte Richtungswechsel zugelassen sind",
+
+"example": true
+
+},
+
+"keinRichtungswechselZugelassenGrund":
+
+{
+
+"type": "string",
+
+"description": "Wenn Attribut „istRichtungswechselZugelassen“ = false, dann kann hier ein Grund für den nicht erlaubten Richtungswechsel angegeben werden",
+
+"example": "Baumschnitt"
+
+},
+
+"bzaBedingung":
+
+{
+
+"type": "string",
+
+"description": "Hinweise zur besonderen Beachtung bei der Durchführung von Zugfahrten in Betriebsstellen oder Streckenabschnitten als Freitext, sofern die Bedingungen nicht in einer Dauer-Beförderungsanordnung hinterlegt sind.",
+
+"example": "FdlBfBad Schandau erteilt Befehl 12 (zweisprachig) Grund 41:\nZug 45315 fährt von Decin-Prostredni Zleb bis Decin vychod von km 458,900 bis km 457,700 mit höchstens 30 km/h"
+
+},
+
+"besonderheit":
+
+{
+
+"type": "string",
+
+"description": "Besonderheiten oder Hinweise aus der Fahrplankonstruktion für das Eisenbahnverkehrsunternehmen (EVU) bzw. den Triebfahrzeugführer (Tf) zur weiteren Beachtung.",
+
+"example": "Bei LZB-Führung gilt die bestellte Höchstgeschwindigkeit, es gelten die Buchfahrplanseiten und Spalten 1, 3a, 3b. Bei abgeschalteter LZB greifen die Angaben gem. Fahrplan bzgl. Buchfahrplan."
+
+}
+
+},
+
+"required":
+
+[',190,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','d4b77a42ca60855ca34b9f705622fca61765c606397e1aa1b97b589274f86e8b');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d999974ac044529e4ae92877','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',7,'Inhalt','"bremsstellung",
+
+"hoechstgeschwindigkeit",
+
+"mindestbremshundertstel",
+
+"zuggattung",
+
+"zugverband"
+
+]
+
+},
+
+"Baufplo":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"disclaimer":
+
+{
+
+"type": "string",
+
+"description": "Wenn das Feld gefüllt ist, handelt es sich um Testdaten",
+
+"example": "TESTDATEN - DARF NICHT PRODUKTIV GENUTZT WERDEN"
+
+},
+
+"zugnummer":
+
+{
+
+"type": "string",
+
+"description": "Fachlicher Schlüssel des Zuges",
+
+"example": "18039"
+
+},
+
+"verkehrstag":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Verkehrstag des Zuges",
+
+"example": "2023-01-31"
+
+},
+
+"abfahrtstag":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Abfahrtstag des Zuges",
+
+"example": "2023-01-31"
+
+},
+
+"ankunftstag":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Ankunftstag des Zuges",
+
+"example": "2023-02-01"
+
+},
+
+"fploVersion":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Version der Baufplo",
+
+"example": 1
+
+},
+
+"vorgaenger":
+
+{
+
+"$ref": "#/components/schemas/Vorgaenger",
+
+"description": "Zuvor veröffentlichte Baufplo"
+
+},
+
+"veroeffentlichungsart":
+
+{
+
+"type": "string",
+
+"description": "Definiert, ob es sich um eine Erstveröffentlichung, einen Nachtrag oder eine Rücknahme handelt",
+
+"enum":
+
+[
+
+"ERSTVEROEFFENTLICHUNG",
+
+"NACHTRAG",
+
+"RUECKNAHME"
+
+],
+
+"example": "ERSTVEROEFFENTLICHUNG"
+
+},
+
+"veroeffentlichung":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Tag der Veröffentlichung",
+
+"example": "2023-01-10"
+
+},
+
+"regionenabfolge":
+
+{
+
+"type": "array",
+
+"description": "Abfolge der Regionen, die der Zug verkehrt",
+
+"example":
+
+[
+
+"MITTE",
+
+"SUEDWEST",
+
+"MITTE"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"enum":
+
+[
+
+"OST",
+
+"NORD",
+
+"WEST",
+
+"SUEDOST",
+
+"MITTE",
+
+"SUEDWEST",
+
+"SUED"
+
+]
+
+},
+
+"minItems": 1
+
+},
+
+"freigaben":
+
+{
+
+"type": "array",',190,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','45129f47c0f44a27b906c7642458777a266e917bcc758f08c68bc15d4d486a5c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0cd1d397da7eba36f476a828','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',8,'Inhalt','"description": "Region und Kontaktdaten der Freigebenden der BauFplo",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Freigabe"
+
+},
+
+"maxItems": 7,
+
+"minItems": 1,
+
+"uniqueItems": true,
+
+"xml":
+
+{
+
+"name": "freigabe"
+
+}
+
+},
+
+"rahmendaten":
+
+{
+
+"$ref": "#/components/schemas/Rahmendaten"
+
+},
+
+"baumassnahmen":
+
+{
+
+"type": "array",
+
+"deprecated": true,
+
+"description": "Beschreibt den Abschnitt der Bauvorgänge\n\n_**Hinweis:** Das Attribut \"baumassnahmen\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Baumassnahme"
+
+},
+
+"xml":
+
+{
+
+"name": "baumassnahme"
+
+}
+
+},
+
+"allgemeines":
+
+{
+
+"$ref": "#/components/schemas/Allgemeines"
+
+},
+
+"fahrplan":
+
+{
+
+"$ref": "#/components/schemas/Fahrplan"
+
+},
+
+"ergaenzungen":
+
+{
+
+"type": "array",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Ergaenzung"
+
+},
+
+"xml":
+
+{
+
+"name": "ergaenzung"
+
+}
+
+},
+
+"konzeptSchaetzung":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe für Konzeptschätzung",
+
+"example": true
+
+},
+
+"qualifizierteSchaetzung":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe für qualifizierte Schätzung",
+
+"example": true
+
+}
+
+},
+
+"required":
+
+[
+
+"abfahrtstag",
+
+"allgemeines",
+
+"ankunftstag",
+
+"fahrplan",
+
+"fploVersion",
+
+"rahmendaten",
+
+"verkehrstag",
+
+"zugnummer"
+
+]
+
+},
+
+"Baumassnahme":
+
+{
+
+"type": "object",
+
+"deprecated": true,
+
+"description": "Beschreibt den Abschnitt der Bauvorgänge\n\n_**Hinweis:** Das Attribut \"Baumassnahme\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._",
+
+"properties":
+
+{
+
+"nummer":
+
+{
+
+"type": "string",
+
+"deprecated": true,',172,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','9fd8ced853b68c0a568ce684d666b371048dd0faeb149ffb8320a3d6136561f1');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d32c2a144c17da7402f8a8a3','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',9,'Inhalt','"description": "Vorgangs-Nr des betrachteten Bauvorgangs\n\n_**Hinweis:** Das Attribut \"nummer\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._",
+
+"example": "52345"
+
+},
+
+"zeitraum":
+
+{
+
+"$ref": "#/components/schemas/Zeitraum",
+
+"deprecated": true,
+
+"description": "Beschreibt den Zeitraum des Bauvorgangs\n\n_**Hinweis:** Das Attribut \"zeitraum\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._",
+
+"example":
+
+{
+
+"start": "2023-01-01",
+
+"ende": "2023-01-15"
+
+}
+
+},
+
+"artDerArbeiten":
+
+{
+
+"type": "array",
+
+"deprecated": true,
+
+"description": "Beschreibung der Arbeiten, die in diesem Bauvorgang durchgeführt werden\n\n_**Hinweis:** Das Attribut \"artDerArbeiten\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._",
+
+"example":
+
+[
+
+"Brückeneinschub"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"deprecated": true,
+
+"xml":
+
+{
+
+"name": "artDerArbeit"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "artDerArbeit"
+
+}
+
+}
+
+},
+
+"required":
+
+[
+
+"nummer",
+
+"zeitraum"
+
+]
+
+},
+
+"Befoerderungsbesonderheit":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Beförderungsbesonderheiten",
+
+"properties":
+
+{
+
+"schluessel":
+
+{
+
+"type": "string",
+
+"description": "Schluessel der Beförderungsbesonderheit",
+
+"example": "AK"
+
+},
+
+"text":
+
+{
+
+"type": "string",
+
+"description": "Wert der Beförderungsbesonderheit",
+
+"example": "automatische Kupplung"
+
+}
+
+}
+
+},
+
+"Beladung":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"lueLeitziffer":
+
+{
+
+"type": "string",
+
+"description": "Für die Durchführung von Lü-Sendungen mit einheitlichen Umrissen werden Dauerl-Lü-Anordnungen-E (DLA-E) genutzt.",
+
+"example": "A"
+
+},
+
+"ladegut":
+
+{
+
+"type": "string",
+
+"description": "Angaben zum Ladegut im Zug",',201,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','cd74d4b4402ccab4d6248a8714085c961ffd008158626b4a6fceb88f81776a9b');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_06f1065d972b6035cd1c38da','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',10,'Inhalt','"example": "diverse Gefahrgüter"
+
+},
+
+"gefahrgueter":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften des Gefahrguts",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Gefahrgut"
+
+},
+
+"xml":
+
+{
+
+"name": "gefahrgut"
+
+}
+
+}
+
+}
+
+},
+
+"Betriebsname":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"bezeichnung":
+
+{
+
+"type": "string",
+
+"description": "Betrieblicher Name zu einem Gleis oder einer Strecke"
+
+},
+
+"position":
+
+{
+
+"type": "string",
+
+"description": "Kennzeichnet die Position des angegebenen Betriebsnamen. gueltigAb: der Startpunkt zum Betriebsnamen liegt an selber Kilometrierung wie die Betriebsstelle. gueltigNach: der Startpunkt zum Betriebsnamen liegt in Fahrtrichtung hinter der Betriebsstelle."
+
+}
+
+}
+
+},
+
+"Betriebsstelle":
+
+{
+
+"type": "object",
+
+"description": "Betriebsstelle eines Zuglaufs",
+
+"properties":
+
+{
+
+"ril100":
+
+{
+
+"type": "string",
+
+"description": "RIL 100-Code der Betriebsstelle (ds100-Code)",
+
+"example": "BEB"
+
+},
+
+"name":
+
+{
+
+"type": "string",
+
+"description": "Kurzname der Betriebsstelle",
+
+"example": "Elsterw-Biehla"
+
+}
+
+},
+
+"required":
+
+[
+
+"name",
+
+"ril100"
+
+]
+
+},
+
+"Buchfahrplanverweis":
+
+{
+
+"allOf":
+
+[
+
+{
+
+"$ref": "#/components/schemas/Verweis"
+
+},
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"heftnummer":
+
+{
+
+"type": "string",
+
+"description": "Heftnummer des zugehörigen Ersatzfahrplanheftverweises",
+
+"example": "4997"
+
+},
+
+"seite":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Seite des zugehörigen Ersatzfahrplanheftverweises",
+
+"example": 362
+
+},
+
+"geschwindigkeitsbezeichnung":
+
+{
+
+"type": "string",
+
+"description": "Geschwindigkeitsbezeichnung des zugehörigen Verweises",
+
+"example": "C"
+
+},
+
+"mbr":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Mindesbremshundertstel des zugehörigen Verweises",
+
+"example": 144
+
+},',190,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','b0c37eca346c1672023cba59ae30ed2fa73d4e79f7b1e19471556e6b43e2b448');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_dcfda510bdb7dff21d5d8f6c','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',11,'Inhalt','"betriebsname":
+
+{
+
+"type": "string",
+
+"deprecated": true
+
+}
+
+}
+
+}
+
+],
+
+"description": "Beschreibt die Eigenschaften der Verweise"
+
+},
+
+"Ebulaverweis":
+
+{
+
+"allOf":
+
+[
+
+{
+
+"$ref": "#/components/schemas/Verweis"
+
+}
+
+]
+
+},
+
+"Ergaenzung":
+
+{
+
+"type": "object",
+
+"additionalProperties": false,
+
+"description": "Dieser Abschnitt enthält Ergänzungen zu der BauFplo"
+
+},
+
+"Fahrplan":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt den Abschnitt Fahrplan",
+
+"properties":
+
+{
+
+"zugcharakteristik":
+
+{
+
+"$ref": "#/components/schemas/BasisZugcharakteristik"
+
+},
+
+"laufwegaenderungen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt den Abschnitt Laufwegänderungen",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Laufwegaenderung"
+
+},
+
+"xml":
+
+{
+
+"name": "laufwegaenderung"
+
+}
+
+},
+
+"laufwegregelungsarten":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt den Abschnitt Laufwegregelungsart",
+
+"items":
+
+{
+
+"oneOf":
+
+[
+
+{
+
+"$ref": "#/components/schemas/Laufwegregelungsart"
+
+},
+
+{
+
+"$ref": "#/components/schemas/Umleitungregelungsart"
+
+}
+
+],
+
+"xml":
+
+{
+
+"name": "laufwegregelungsart"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "laufwegregelungsart"
+
+}
+
+},
+
+"besonderheiten":
+
+{
+
+"type": "array",
+
+"description": "Besonderheiten oder Hinweise aus der Fahrplankonstruktion für das Eisenbahnverkehrsunternehmen (EVU) bzw. den Triebfahrzeugführer (Tf) zur weiteren Beachtung.",
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "besonderheit"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "besonderheit"
+
+}
+
+},
+
+"laufweg":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt den Abschnitt Laufweg",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Laufwegpunkt"
+
+},
+
+"minItems": 2
+
+},
+
+"keineangaben":
+
+{
+
+"type": "array",
+
+"description": "Enthält Informationen zu Teilen des Laufwegs, bei denen keine Fahrplanangaben erfolgen",
+
+"items":
+
+{',185,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','ddaae04da2fa6b8d704b9c3229c3596a7789732af4f3aba5a663e4b27b60cc13');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_082bd4c0e348023f5fd58b8b','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',12,'Inhalt','"$ref": "#/components/schemas/KeineAngabe"
+
+},
+
+"xml":
+
+{
+
+"name": "keineangabe"
+
+}
+
+}
+
+}
+
+},
+
+"Freigabe":
+
+{
+
+"type": "object",
+
+"description": "Region und Kontaktdaten der Freigebenden der BauFplo",
+
+"properties":
+
+{
+
+"region":
+
+{
+
+"type": "string",
+
+"description": "Region des Freigebenden der Baufplo",
+
+"enum":
+
+[
+
+"OST",
+
+"NORD",
+
+"WEST",
+
+"SUEDOST",
+
+"MITTE",
+
+"SUEDWEST",
+
+"SUED"
+
+]
+
+},
+
+"unterzeichner":
+
+{
+
+"$ref": "#/components/schemas/Unterzeichner",
+
+"description": "Beschreibt die Eigenschaften des Freigebenden der Baufplo"
+
+}
+
+},
+
+"required":
+
+[
+
+"region",
+
+"unterzeichner"
+
+],
+
+"xml":
+
+{
+
+"name": "freigabe"
+
+}
+
+},
+
+"Gefahrgut":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"ridKlasse":
+
+{
+
+"type": "string",
+
+"description": "RID-Klasse des Gefahrenguts",
+
+"example": "3"
+
+},
+
+"ggveNummer":
+
+{
+
+"type": "string",
+
+"description": "Gefahrengut-Nummer",
+
+"example": "30"
+
+},
+
+"ggveUnternummer":
+
+{
+
+"type": "string",
+
+"description": "Gefahrengut-Unternummer",
+
+"example": "23"
+
+},
+
+"verpackungsgruppe":
+
+{
+
+"type": "string",
+
+"description": "Gefahrengut-Verpackungsgruppe",
+
+"example": "I"
+
+}
+
+}
+
+},
+
+"Hinweis":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"betreff":
+
+{
+
+"type": "string",
+
+"description": "Schlüssel des Hinweises oder der Regelung"
+
+},
+
+"text":
+
+{
+
+"type": "string",
+
+"description": "Inhalt des Hinweises oder der Regelung"
+
+}
+
+}
+
+},
+
+"KeineAngabe":
+
+{
+
+"type": "object",
+
+"description": "Enthält Informationen zu Teilen des Laufwegs, bei denen keine Fahrplanangaben erfolgen",
+
+"properties":
+
+{
+
+"betriebsstelleStart":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Betriebsstelle, ab der die Information zur Laufwegsunterbrechung gilt"
+
+},
+
+"betriebsstelleEnde":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",',185,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','bdeb150d6bc652e179242480900378603501aefd83fd1f9883cc9c99ca91d764');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e98a4d91284c3c331d1eae13','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',13,'Inhalt','"description": "Betriebsstelle, bis zu der die Information zur Laufwegsunterbrechung gilt"
+
+},
+
+"einreihungNetzVon":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Laufende Nummer (Einreihung) des Startpunkts im Laufweg",
+
+"example": 24
+
+},
+
+"einreihungNetzBis":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Laufende Nummer (Einreihung) des Endpunkts im Laufweg",
+
+"example": 26
+
+},
+
+"art":
+
+{
+
+"type": "string",
+
+"description": "Art der Laufwegsunterbrechung",
+
+"example": "Fremdnetzfahrt"
+
+},
+
+"beschreibung":
+
+{
+
+"type": "string",
+
+"description": "Beschreibung der Laufwegsunterbrechung",
+
+"example": "Unterbrechung des Fahrplans durch externe Infrastruktur von A bis B"
+
+}
+
+},
+
+"required":
+
+[
+
+"betriebsstelleEnde",
+
+"betriebsstelleStart"
+
+]
+
+},
+
+"Kunde":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"nummer":
+
+{
+
+"type": "string",
+
+"description": "Kundennummer des bestellenden EVU",
+
+"example": "B1259"
+
+},
+
+"name":
+
+{
+
+"type": "string",
+
+"description": "Name des bestellenden EVU",
+
+"example": "DB Regio NO Elbe-Elster"
+
+}
+
+},
+
+"required":
+
+[
+
+"nummer"
+
+]
+
+},
+
+"Laufwegaenderung":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt den Abschnitt Laufwegänderungen",
+
+"properties":
+
+{
+
+"betriebsstelle":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Erste Bestriebsstelle, ab der die Charakteristik gilt"
+
+},
+
+"zugcharakteristik":
+
+{
+
+"$ref": "#/components/schemas/BasisZugcharakteristik",
+
+"description": "Zugcharakteristik, die ab der zugehörigen Bestriebsstelle gilt"
+
+}
+
+},
+
+"required":
+
+[
+
+"betriebsstelle"
+
+]
+
+},
+
+"Laufwegpunkt":
+
+{
+
+"type": "object",
+
+"description": "Detailinformation zum Laufweg",
+
+"properties":
+
+{
+
+"id":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Laufende Nummer startend bei 1",
+
+"example": 1
+
+},',190,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','83b476daed5ced76656b7e476a7979c043457e109e0946df721821c89bef0eef');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0bd5d9a4a396cf40695466c8','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',14,'Inhalt','"betriebsstelle":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Beschreibt die Betriebsstelle"
+
+},
+
+"ausfallKennzeichen":
+
+{
+
+"type": "boolean",
+
+"description": "Kennzeichnet, ob dieser Trassenlaufpunkt ausfällt",
+
+"example": false
+
+},
+
+"istUmleitung":
+
+{
+
+"type": "boolean",
+
+"description": "Kennzeichnet, ob dieser Trassenlaufpunkt Teil einer Umleitung ist",
+
+"example": false
+
+},
+
+"ankunftzeit":
+
+{
+
+"type": "string",
+
+"format": "date-time",
+
+"deprecated": true,
+
+"description": "Ankunftszeit bei dieser Betriebsstelle. Im Falle einer Durchfahrt oder bei der Startbetriebsstelle entfällt dieses Attribut.\n\n_**Hinweis:** Das Attribut \"ankunftzeit\" ist veraltet und wird nicht mehr unterstützt. Bitte verwenden Sie stattdessen das neue Attribut \"ankunftuhrzeit\"._",
+
+"example": "2025-03-12T22:05:00Z"
+
+},
+
+"ankunftuhrzeit":
+
+{
+
+"type": "string",
+
+"description": "Ankunftszeit des Fahrplans (ohne Zeitumstellung) bei dieser Betriebsstelle. Im Falle einer Durchfahrt oder bei der Startbetriebsstelle entfällt dieses Attribut.\n\n_**Hinweis:** Das Attribut \"abfahrtzeit\" ist veraltet und wird nicht mehr unterstützt. Bitte verwenden Sie stattdessen das neue Attribut \"abfahrtuhrzeit\"._",
+
+"example": "22:05:00"
+
+},
+
+"ankunftDifferenz":
+
+{
+
+"type": "string",
+
+"format": "duration",
+
+"description": "Gibt an, welche zeitliche Differenz zum ursprünglichen Fahrplan besteht",
+
+"example": "PT1H5M25S"
+
+},
+
+"abfahrtzeit":
+
+{
+
+"type": "string",
+
+"format": "date-time",
+
+"deprecated": true,
+
+"description": "Abfahrtszeit bei dieser Betriebsstelle. Im Falle der Zielbetriebsstelle entfällt dieses Attribut",
+
+"example": "2025-03-12T22:06:54Z"
+
+},
+
+"abfahrtuhrzeit":
+
+{
+
+"type": "string",',174,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','769dd51f0fab5bb4af3b8a8d7c0a693de806e4bc4e5cbd87d5f31ee7cca1a180');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_0d8131f09bc72178d26907b0','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',15,'Inhalt','"description": "Abfahrtszeit des Fahrplans (ohne Zeitumstellung) bei dieser Betriebsstelle. Im Falle der Zielbetriebsstelle entfällt dieses Attribut",
+
+"example": "22:05:00"
+
+},
+
+"abfahrtDifferenz":
+
+{
+
+"type": "string",
+
+"format": "duration",
+
+"description": "Gibt an, welche zeitliche Differenz zum ursprünglichen Fahrplan besteht",
+
+"example": "PT1H5M25S"
+
+},
+
+"strecke":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Angabe der Streckennummer der bis zum nächsten Zugtrassenlaufpunkt konstruierten Strecke",
+
+"example": 1733
+
+},
+
+"haltart":
+
+{
+
+"type": "string",
+
+"description": "Art des Haltes H für Verkehrshalt , +TM für Betriebshalt, X für Bedarfshalt",
+
+"example": "H"
+
+},
+
+"hatRichtungswechsel":
+
+{
+
+"type": "boolean",
+
+"description": "Information darüber, ob an dieser Betriebsstelle ein Richtungswechsel vorliegt",
+
+"example": true
+
+},
+
+"verweise":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Verweise",
+
+"items":
+
+{
+
+"oneOf":
+
+[
+
+{
+
+"$ref": "#/components/schemas/Buchfahrplanverweis"
+
+},
+
+{
+
+"$ref": "#/components/schemas/Ebulaverweis"
+
+}
+
+],
+
+"xml":
+
+{
+
+"name": "verweis"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "verweis"
+
+}
+
+},
+
+"hinweise":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Hinweise",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Hinweis"
+
+},
+
+"xml":
+
+{
+
+"name": "hinweis"
+
+}
+
+},
+
+"regelungen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Regelungen",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Hinweis"
+
+},
+
+"xml":
+
+{
+
+"name": "regelung"
+
+}
+
+},
+
+"betriebsnamen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Eigenschaften der Betriebsnamen",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Betriebsname"
+
+},
+
+"xml":
+
+{
+
+"name": "betriebsname"
+
+}
+
+}
+
+}
+
+},
+
+"Laufwegregelungsart":
+
+{',198,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','bd4c78cadf4c048e644c65d5bae242bf13e78503751223e104a887d5e6543fb9');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d2c1f9939fc81f31901c6ea6','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',16,'Inhalt','"type": "object",
+
+"description": "Beschreibt den Abschnitt Laufwegregelungsart",
+
+"discriminator":
+
+{
+
+"propertyName": "regelungsart"
+
+},
+
+"properties":
+
+{
+
+"betriebsstelleStart":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Betriebsstelle, ab der die Regelung gilt"
+
+},
+
+"betriebsstelleEnde":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Betriebsstelle, bis zu der die Regelung gilt. Bei Entfall gilt die Regelung aus dem Feld \"betriebsstelleStart\" bis zum Laufwegsende"
+
+},
+
+"regelungsart":
+
+{
+
+"type": "string",
+
+"description": "Die geltende Regelungsart"
+
+}
+
+},
+
+"required":
+
+[
+
+"regelungsart"
+
+]
+
+},
+
+"PageBaufplo":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"totalElements":
+
+{
+
+"type": "integer",
+
+"format": "int64"
+
+},
+
+"totalPages":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"pageable":
+
+{
+
+"$ref": "#/components/schemas/PageableObject"
+
+},
+
+"sort":
+
+{
+
+"$ref": "#/components/schemas/SortObject"
+
+},
+
+"first":
+
+{
+
+"type": "boolean"
+
+},
+
+"last":
+
+{
+
+"type": "boolean"
+
+},
+
+"size":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"content":
+
+{
+
+"type": "array",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Baufplo"
+
+}
+
+},
+
+"number":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"numberOfElements":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"empty":
+
+{
+
+"type": "boolean"
+
+}
+
+}
+
+},
+
+"PageableObject":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"paged":
+
+{
+
+"type": "boolean"
+
+},
+
+"pageNumber":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"pageSize":
+
+{
+
+"type": "integer",
+
+"format": "int32"
+
+},
+
+"sort":
+
+{
+
+"$ref": "#/components/schemas/SortObject"
+
+},
+
+"offset":
+
+{
+
+"type": "integer",
+
+"format": "int64"
+
+},
+
+"unpaged":
+
+{
+
+"type": "boolean"
+
+}
+
+}
+
+},
+
+"Rahmendaten":
+
+{
+
+"type": "object",',192,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','abf5b68f2c5e86c3e0d0b6ec5e17dfc97287f9b769ba272082a52d1c34090706');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d40dee1ee02d3bd17b52d098','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',17,'Inhalt','"description": "Der Abschnitt Rahmendaten gibt einen umfassenden Überblick über zentrale Informationen der BauFplo. In den Rahmendaten sind aggregierte Werte der BauFplo zusammengefasst.",
+
+"properties":
+
+{
+
+"kunde":
+
+{
+
+"$ref": "#/components/schemas/Kunde",
+
+"description": "Beschreibt die Eigenschaften des bestellenden EVU"
+
+},
+
+"zug":
+
+{
+
+"$ref": "#/components/schemas/Zug",
+
+"description": "Beschreibt die Eigenschaften des Zuges"
+
+},
+
+"startBetriebsstelleRoute":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Erste Betriebsstelle der Gesamtzugroute (weicht von startBetriebsstelle ab, wenn der Zug im Fremdnetz beginnt)"
+
+},
+
+"zielBetriebsstelleRoute":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Letzte Betriebsstelle der Gesamtzugroute (weicht von zielBetriebsstelle ab, wenn der Zug im Fremdnetz endet)"
+
+},
+
+"startBetriebsstelle":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Erste Betriebsstelle des Zuglaufs"
+
+},
+
+"zielBetriebsstelle":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle",
+
+"description": "Letzte Betriebsstelle des Zuglaufs"
+
+},
+
+"bpolMeldepflichtig":
+
+{
+
+"type": "boolean",
+
+"description": "Gibt an, ob die Zugtrasse an die Bundespolizei gemeldet werden muss",
+
+"example": true
+
+},
+
+"zugcharakteristik":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenZugcharakteristik",
+
+"description": "Beschreibt die Eigenschaften der Zugcharakteristik"
+
+},
+
+"regelungen":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenRegelungen"
+
+}
+
+},
+
+"required":
+
+[
+
+"kunde",
+
+"startBetriebsstelle",
+
+"zielBetriebsstelle",
+
+"zug",
+
+"zugcharakteristik"
+
+]
+
+},
+
+"RahmendatenBefoerderungsbesonderheiten":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Befoerderungsbesonderheiten",
+
+"properties":
+
+{',164,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','e0f3810168e3f34563de7f80bb1e32faf5ae16a4d2cbc213519ff13d1fe9a393');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ef8b3b83637e3e3dfd635105','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',18,'Inhalt','"radMeterlastbeschraenkungen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Beförderungsbesonderheit Rad- Meterlastbeschränkung",
+
+"example":
+
+[
+
+"D4",
+
+"22,5"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "radMeterlastbeschraenkung"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "radMeterlastbeschraenkung"
+
+}
+
+},
+
+"niederflurwagen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Beförderungsbesonderheit Niederflurwagen ",
+
+"example":
+
+[
+
+"NT 70/396"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "niederflurwagen"
+
+}
+
+}
+
+},
+
+"schwerlastwagen":
+
+{
+
+"type": "boolean",
+
+"description": "Beschreibt die Beförderungsbesonderheit Schwerlastwagen",
+
+"example": true
+
+},
+
+"automatischeKupplung":
+
+{
+
+"type": "boolean",
+
+"description": "Beschreibt die Beförderungsbesonderheit Automatische Kupplung",
+
+"example": true
+
+},
+
+"frontstellung":
+
+{
+
+"type": "boolean",
+
+"description": "Beschreibt die Beförderungsbesonderheit Frontstellung",
+
+"example": true
+
+},
+
+"laermzuege":
+
+{
+
+"type": "array",
+
+"description": "Hinweis auf mindestestens einen eingestellten lauten Güterwagen in einen Güterzug.",
+
+"example":
+
+[
+
+"LAUT",
+
+"LAUTMB"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "laermzug"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "laermzug"
+
+}
+
+},
+
+"unNummern":
+
+{
+
+"type": "array",
+
+"description": "Vierstellige Nummer des Gefahrenguts",
+
+"example":
+
+[
+
+"2794",
+
+"3990"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "unNummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "unNummer"
+
+}
+
+},
+
+"freieTexte":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Beförderungsbesonderheit Freitextfeld",
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "freierText"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "freierText"
+
+}
+
+},
+
+"etcsTbvs":
+
+{
+
+"type": "array",',189,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','1a8f4fec51862407876d3d5f2f1491ade3e7fbff5c895773f1221ff46c0fa05a');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_7a3fbfe1184242f12726ce82','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',19,'Inhalt','"description": "Beschreibt die Beförderungsbesonderheit ETCS TBV Nummer",
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "etcsTbv"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "etcsTbv"
+
+}
+
+}
+
+}
+
+},
+
+"RahmendatenBeladung":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Beladung",
+
+"properties":
+
+{
+
+"lueLeitziffern":
+
+{
+
+"type": "array",
+
+"description": "Für die Durchführung von Lü-Sendungen mit einheitlichen Umrissen werden Dauerl-Lü-Anordnungen-E (DLA-E) genutzt.",
+
+"example":
+
+[
+
+"A",
+
+"B",
+
+"C"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "lueLeitziffer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "lueLeitziffer"
+
+}
+
+},
+
+"ladegueter":
+
+{
+
+"type": "array",
+
+"description": "Angaben zum Ladegut im Zug",
+
+"example":
+
+[
+
+"diverse Gefahrgüter"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "ladegut"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "ladegut"
+
+}
+
+},
+
+"gefahrgut":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenGefahrgut"
+
+}
+
+}
+
+},
+
+"RahmendatenGefahrgut":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften des Gefahrguts",
+
+"properties":
+
+{
+
+"ridKlassen":
+
+{
+
+"type": "array",
+
+"description": "RID-Klasse des Gefahrenguts",
+
+"example":
+
+[
+
+"2",
+
+"3",
+
+"4",
+
+"5"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "ridKlasse"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "ridKlasse"
+
+}
+
+},
+
+"ggveNummern":
+
+{
+
+"type": "array",
+
+"description": "Gefahrengut-Nummer",
+
+"example":
+
+[
+
+"30",
+
+"40"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "ggveNummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "ggveNummer"
+
+}
+
+},
+
+"ggveUnternummern":
+
+{
+
+"type": "array",
+
+"description": "Gefahrengut-Unternummer",
+
+"example":
+
+[
+
+"1268",
+
+"1269"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "ggveUnternummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "ggveUnternummer"
+
+}
+
+},
+
+"verpackungsgruppen":
+
+{',213,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','e5beefc28b729cedd3bbaead302fc4306e8c946f7be433311d60632e26c2a70c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_830dbb68539bc0982fd42166','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',20,'Inhalt','"type": "array",
+
+"description": "Gefahrengut-Verpackungsgruppe",
+
+"example":
+
+[
+
+"I",
+
+"II"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "verpackungsgruppe"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "verpackungsgruppe"
+
+}
+
+}
+
+}
+
+},
+
+"RahmendatenRegelungen":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Regelungen",
+
+"properties":
+
+{
+
+"zugbegleitungen":
+
+{
+
+"type": "array",
+
+"description": "Angabe für Zugbegleitung",
+
+"example":
+
+[
+
+"Zub erforderlich"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "zugbegleitung"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "zugbegleitung"
+
+}
+
+},
+
+"notbremsueberbrueckung":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob eine NBÜ erforderlich ist",
+
+"example": true
+
+}
+
+}
+
+},
+
+"RahmendatenZugcharakteristik":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"befoerderungsanordnungen":
+
+{
+
+"type": "array",
+
+"description": "Angabe der Nummer einer gültigen Beförderungsanordnung, mit der die Durchführung bestimmter Zugfahrten mit besonderen technischen Eigenschaften vorab geprüft wurde und genehmigt wird",
+
+"example":
+
+[
+
+"1073",
+
+"1008",
+
+"1022",
+
+"1172"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "befoerderungsanordnung"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "befoerderungsanordnung"
+
+}
+
+},
+
+"bzaNummern":
+
+{
+
+"type": "array",
+
+"description": "Bza ist die Abkürzung für „Betrieb Zugförderung außergewöhnlich“.",
+
+"example":
+
+[
+
+"A1-1301"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "bzaNummer"
+
+}
+
+},
+
+"bzaBedingungen":
+
+{
+
+"type": "array",
+
+"description": "Hinweise zur besonderen Beachtung bei der Durchführung von Zugfahrten in Betriebsstellen oder Streckenabschnitten als Freitext, sofern die Bedingungen nicht in einer Dauer-Beförderungsanordnung hinterlegt sind.",
+
+"example":
+
+[',204,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','0826c9e48f358a7df962eb73d5fd355b717f48a5582129fe1cc5087baf1915a8');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_6ff97bca67eb418f9c2e03fe','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',21,'Inhalt','"FdlBfBad Schandau erteilt Befehl 12 (zweisprachig) Grund 41:Zug 45315 fährt von Decin-Prostredni Zleb bis Decin vychod von km 458,900 bis km 457,700 mit höchstens 30 km/h"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "bzaBedingung"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "bzaBedingung"
+
+}
+
+},
+
+"imGrenzlastBereich":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob die angegebenen Lasten bereits den Grenzlastbereich darstellen",
+
+"example": true
+
+},
+
+"gueterzugOhneNennenswertenGrenzaufenthalt":
+
+{
+
+"type": "boolean",
+
+"description": "Gibt an, dass für den Zug am Grenzübergang (in der Regel die Grenzbetriebsstelle) kein längerer Aufenthalt (z.B. wegen Zollabwicklung) erforderlich ist.",
+
+"example": true
+
+},
+
+"istRichtungswechselZugelassen":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob nicht bestellte, aber konstruktionsbedingte Richtungswechsel zugelassen sind",
+
+"example": true
+
+},
+
+"keinRichtungswechselZugelassenGrund":
+
+{
+
+"type": "string",
+
+"description": "Wenn Attribut „istRichtungswechselZugelassen“ = false, dann kann hier ein Grund für den nicht erlaubten Richtungswechsel angegeben werden",
+
+"example": "Baumschnitt"
+
+},
+
+"leichterNahverkehrstriebwagen":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob es sich um einen leichten Nahverkehrstriebwagen handelt.",
+
+"example": true
+
+},
+
+"befoerderungsbesonderheiten":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenBefoerderungsbesonderheiten",
+
+"description": "Beschreibt die Eigenschaften der Befoerderungsbesonderheiten"
+
+},
+
+"beladung":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenBeladung"
+
+},
+
+"zugverband":
+
+{
+
+"$ref": "#/components/schemas/RahmendatenZugverband"
+
+}
+
+},
+
+"required":
+
+[
+
+"zugverband"
+
+]
+
+},
+
+"RahmendatenZugverband":
+
+{
+
+"type": "object",',179,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','2c83901754e2e367e816ab5e84b6ca13c5cfc193de233842683cb0eda78290a3');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_82e4d2c230f72e289c6eeb29','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',22,'Inhalt','"description": "Beschreibt die Eigenschaften des Zugverbands",
+
+"properties":
+
+{
+
+"streckenklasseGefordert":
+
+{
+
+"type": "string",
+
+"description": "Angabe geforderter Streckenklassen",
+
+"example": "D4"
+
+},
+
+"hatTrailer":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob ein Wagenzug einen Trailer hat",
+
+"example": true
+
+},
+
+"kvProfile":
+
+{
+
+"type": "array",
+
+"description": "Liste der KV-Profile",
+
+"example":
+
+[
+
+"70",
+
+"400",
+
+"P/C 70 P/C 400"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "kvProfil"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "kvProfil"
+
+}
+
+},
+
+"cirAusruestungen":
+
+{
+
+"type": "array",
+
+"description": "Beschreibt die Ausrüstung mit CIR (CIR-ELKE (Abk. Computer Integrated Railroading – Erhöhung der Leistungsfähigkeit im Kernnetz))",
+
+"example":
+
+[
+
+"CIR-ELKE I",
+
+"CIR-ELKE I+II",
+
+"CIR-ELKE II"
+
+],
+
+"items":
+
+{
+
+"type": "string",
+
+"xml":
+
+{
+
+"name": "cirAusruestung"
+
+}
+
+},
+
+"xml":
+
+{
+
+"name": "cirAusruestung"
+
+}
+
+},
+
+"hatNotbremsueberbrueckung":
+
+{
+
+"type": "boolean",
+
+"deprecated": true,
+
+"description": "Beschreibt, ob Notbremsüberbrückung vorhanden ist.<br/>\n<b>Hinweis:</b> Das Attribut \"hatNotbremsueberbrueckung\" ist veraltet und wird nicht mehr unterstützt. Bitte verwenden Sie stattdessen das neue Attribut \"notbremsueberbrueckung\"",
+
+"example": true
+
+}
+
+}
+
+},
+
+"SortObject":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"sorted":
+
+{
+
+"type": "boolean"
+
+},
+
+"empty":
+
+{
+
+"type": "boolean"
+
+},
+
+"unsorted":
+
+{
+
+"type": "boolean"
+
+}
+
+}
+
+},
+
+"Textbaustein":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Textbausteine",
+
+"properties":
+
+{
+
+"key":
+
+{
+
+"type": "string",
+
+"description": "Identifikation des Textbausteins",
+
+"example": "MIND_1ZUG_EBULA"
+
+},
+
+"value":
+
+{
+
+"type": "string",
+
+"description": "Beschreibung der Textbausteine",',200,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','8829f2d4ff8aba523043379f78193fd7f6303963fdd19aa76749bd1f425eca0f');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_176974c7a5f69b8798799c8c','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',23,'Inhalt','"example": "Fplo gilt als Fahrplanmitteilung auf Streckenabschnitten mit Bfpl-Angaben."
+
+}
+
+}
+
+},
+
+"Triebfahrzeug":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"tfzBrNummer":
+
+{
+
+"type": "string",
+
+"description": "Bezeichnung der Baureihe",
+
+"example": "6112"
+
+},
+
+"tfzStellungsart":
+
+{
+
+"type": "string",
+
+"description": "Wertemenge für die Stellung des Triebfahrzeugs",
+
+"example": "Zuglok Vorne"
+
+},
+
+"tfzStellungsartkey":
+
+{
+
+"type": "string",
+
+"description": "Schlüssel der Stellungsart des Triebfahrzeugs",
+
+"example": "SP"
+
+}
+
+},
+
+"required":
+
+[
+
+"tfzBrNummer",
+
+"tfzStellungsart"
+
+]
+
+},
+
+"Umleitungregelungsart":
+
+{
+
+"allOf":
+
+[
+
+{
+
+"$ref": "#/components/schemas/Laufwegregelungsart"
+
+},
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"betriebsstelleStartId":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Start der Regelungsart"
+
+},
+
+"betriebsstelleEndeId":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Ende der Regelungsart"
+
+},
+
+"entfalleneBetriebsstellen":
+
+{
+
+"type": "array",
+
+"description": "Es werden die Betriebsstellen aufgelistet, die durch eine Umleitung betroffen sind und somit ausfallen",
+
+"items":
+
+{
+
+"$ref": "#/components/schemas/Betriebsstelle"
+
+},
+
+"xml":
+
+{
+
+"name": "entfalleneBetriebsstelle"
+
+}
+
+}
+
+}
+
+}
+
+],
+
+"description": "Beschreibt den Abschnitt Umleitung",
+
+"required":
+
+[
+
+"regelungsart"
+
+]
+
+},
+
+"Unterzeichner":
+
+{
+
+"type": "object",
+
+"description": "Kontaktdaten des Freigebenden der Baufplo",
+
+"properties":
+
+{
+
+"nachname":
+
+{
+
+"type": "string",
+
+"description": "Nachname des Freigebenden",
+
+"example": "Sommer"
+
+},
+
+"vorname":
+
+{
+
+"type": "string",
+
+"description": "Vorname des Freigebenden",
+
+"example": "Ludwig"
+
+},
+
+"abteilung":
+
+{
+
+"type": "string",
+
+"description": "Abteilung des Freigebenden",
+
+"example": "I.NM-SO-L 4"
+
+},',188,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','8c0ee5048ca63ac6f2419e4f020ed2097b9c2bdbf4c020798b5141ca32c112df');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_41e089681a795181280a4b05','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',24,'Inhalt','"rufnummer":
+
+{
+
+"type": "string",
+
+"description": "Rufnummer des Freigebenden",
+
+"example": "0341 1337"
+
+}
+
+},
+
+"required":
+
+[
+
+"abteilung",
+
+"nachname"
+
+]
+
+},
+
+"Verweis":
+
+{
+
+"type": "object",
+
+"discriminator":
+
+{
+
+"propertyName": "ebula"
+
+},
+
+"properties":
+
+{
+
+"ebula":
+
+{
+
+"type": "boolean",
+
+"description": "Information darüber, ob nach EBuLa gefahren werden kann"
+
+},
+
+"zugcharakteristikId":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Referenz auf Zugcharakteristik",
+
+"example": 1
+
+}
+
+}
+
+},
+
+"Vorgaenger":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"veroeffentlichung":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Tag der Veröffentlichung der vorherigen Version der BauFplo"
+
+}
+
+},
+
+"required":
+
+[
+
+"veroeffentlichung"
+
+]
+
+},
+
+"Zeitraum":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"start":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Startdatum des Zeitraumes",
+
+"example": "2023-01-20"
+
+},
+
+"ende":
+
+{
+
+"type": "string",
+
+"format": "date",
+
+"description": "Enddatum des Zeitraumes",
+
+"example": "2023-01-30"
+
+}
+
+}
+
+},
+
+"Zug":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"nummer":
+
+{
+
+"type": "string",
+
+"description": "Zugnummer des Zuges",
+
+"example": "18039"
+
+},
+
+"zuggattung":
+
+{
+
+"$ref": "#/components/schemas/Zuggattung",
+
+"description": "Beschreibt die Eigenschaften der Zuggattung"
+
+},
+
+"zugart":
+
+{
+
+"type": "string",
+
+"description": "Kennzeichen für die Zugart",
+
+"example": "B"
+
+}
+
+},
+
+"required":
+
+[
+
+"nummer",
+
+"zugart",
+
+"zuggattung"
+
+]
+
+},
+
+"Zuggattung":
+
+{
+
+"type": "object",
+
+"description": "Beschreibt die Eigenschaften der Zuggattung",
+
+"properties":
+
+{
+
+"produktBezeichnung":
+
+{
+
+"type": "string",
+
+"description": "Produktbezeichnung der Zuggattung",
+
+"example": "RB-D"
+
+},
+
+"hauptnummer":
+
+{
+
+"type": "integer",
+
+"format": "int32",',198,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','c2b43cadd33c7626e1add30247ff97d3431fb81c52db665cfc8f1dc32576b1da');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_716046b32d4d146ddae80e02','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',25,'Inhalt','"description": "Hauptnummer der Zuggattung",
+
+"example": 41
+
+},
+
+"unternummer":
+
+{
+
+"type": "integer",
+
+"format": "int32",
+
+"description": "Unternummer der Zuggattung",
+
+"example": 1
+
+}
+
+}
+
+},
+
+"Zugverband":
+
+{
+
+"type": "object",
+
+"properties":
+
+{
+
+"streckenklasseGefordert":
+
+{
+
+"type": "string",
+
+"description": "Angabe geforderter Streckenklassen",
+
+"example": "C2"
+
+},
+
+"hatTrailer":
+
+{
+
+"type": "boolean",
+
+"description": "Angabe, ob der Wagenzug einen Trailer hat",
+
+"example": true
+
+},
+
+"kvProfilC2":
+
+{
+
+"type": "string",
+
+"description": "Erste Eckhöhen-Kodierung für Wechselbehälter; zweistellige Zahl",
+
+"example": "70"
+
+},
+
+"kvProfilC3":
+
+{
+
+"type": "string",
+
+"description": "Zweite Eckhöhen-Kodierung für Wechselbehälter; dreistellige Zahl",
+
+"example": "400"
+
+},
+
+"kvProfilP2":
+
+{
+
+"type": "string",
+
+"description": "Erste Eckhöhen-Kodierung für Sattelanhänger; zweistellige Zahl",
+
+"example": "70"
+
+},
+
+"kvProfilP3":
+
+{
+
+"type": "string",
+
+"description": "Zweite Eckhöhen-Kodierung für Sattelanhänger; dreistellige Zahl",
+
+"example": "400"
+
+},
+
+"cirAusruestung":
+
+{
+
+"type": "string",
+
+"description": "Beschreibt die Ausrüstung mit CIR (CIR-ELKE (Abk. Computer Integrated Railroading – Erhöhung der Leistungsfähigkeit im Kernnetz))",
+
+"example": "CIR-ELKE I+II"
+
+},
+
+"hatLZB":
+
+{
+
+"type": "boolean",
+
+"description": "Beschreibt, ob LZB (Linienzugbeeinflussung) vorhanden ist",
+
+"example": true
+
+},
+
+"hatNotbremsueberbrueckung":
+
+{
+
+"type": "boolean",
+
+"deprecated": true,
+
+"description": "Beschreibt, ob Notbremsüberbrückung vorhanden ist.<br/>\n<b>Hinweis:</b> Das Attribut \"hatNotbremsueberbrueckung\" ist veraltet und wird nicht mehr unterstützt. Bitte verwenden Sie stattdessen das neue Attribut \"notbremsueberbrueckung\"",
+
+"example": true
+
+},
+
+"etcsAusruestung":
+
+{',184,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','db7f699bca62d3c09333ee9313b1f30fa22ce5af0c6405cd3fb7b9687a056829');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2250790c569711f28778b702','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data.md',26,'Inhalt','"type": "string",
+
+"description": "Beschreibt die Ausrüstung mit ETCS (european traffic control system)",
+
+"example": "ETCS SRS 3"
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}',22,'{"canonical_url":null,"normalized_sha256":"1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4","page":null,"source_id":"src_a8fc6bb3e8b7db7a8077","source_sha256":"beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8","source_version_id":"sv_4d9deecdfe44da586bc04290"}','cdfe58aef861c8a421834c9dfc5626c8907c2ec8e15080c1abf6a80ab9921f7e');
+--> statement-breakpoint
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_c4db283f6617a89c2018','file','Schnittstellenbeschreibung BauFplo API EVU Test 2 8 0 im xsd Format',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
+--> statement-breakpoint
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_aa3457828c7cc06b65f8cfa2','src_c4db283f6617a89c2018','bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7','148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8',70074,'application/xml','Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml','sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data/sv_aa3457828c7cc06b65f8cfa2.md','identity-structured-text','1','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","converter":{"name":"identity-structured-text","profile":"bootstrap-markdown-v2","version":"1"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_aa3457828c7cc06b65f8cfa2.json","media_type":"application/xml","normalized_repo_path":"sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data/sv_aa3457828c7cc06b65f8cfa2.md","normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","origin_page_url":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml","page_count":null,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":70074,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2","supersedes_source_version_id":null,"title":"Schnittstellenbeschreibung BauFplo API EVU Test 2 8 0 im xsd Format","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7','src_c4db283f6617a89c2018','sv_aa3457828c7cc06b65f8cfa2','{"content_duplicate_group":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8','src_c4db283f6617a89c2018',NULL,'{"content_duplicate_group":null,"original_filename":"Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+UPDATE sources SET current_version_id='sv_aa3457828c7cc06b65f8cfa2' WHERE id='src_c4db283f6617a89c2018';
+--> statement-breakpoint
+INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md','Schnittstellenbeschreibung BauFplo API EVU Test 2 8 0 im xsd Format','<?xml version="1.0" encoding="utf-8"?> <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="PageBaufplo" type="PageBaufplo"/> <xs:complexType name="Allgemeines"> <xs:annotation> <xs:documentation>Beschreibt den Abschnitt Allgemeines</xs:documentation> </xs:annotation> <xs:sequence> <xs:element minOccurs="0" maxOccurs="unbounded" name="tex','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','12e33747647a9226d35611a5c66ce862d43e38e9a777187af42ddb00d603a739','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_c4db283f6617a89c2018","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+DELETE FROM wiki_chunks WHERE page_path='wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md';
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c11b6d152c8d6df84f531d31','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',0,'Inhalt','<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="PageBaufplo" type="PageBaufplo"/>
+
+<xs:complexType name="Allgemeines">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt den Abschnitt Allgemeines</xs:documentation>
+
+</xs:annotation>
+
+<xs:sequence>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="textbaustein" type="Textbaustein">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Textbausteine</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+</xs:sequence>
+
+</xs:complexType>
+
+<xs:complexType name="AlternativeZugcharakteristik">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Alternativen Zugcharakteristik</xs:documentation>
+
+</xs:annotation>
+
+<xs:sequence>
+
+<xs:element minOccurs="0" name="id" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Eindeutige Identifikation der Zugcharakteristik innerhalb der BauFplo</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" maxOccurs="unbounded" name="triebfahrzeug" type="Triebfahrzeug">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften des Triebfahrzeugs</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="gesamtzuglaenge" type="xs:double">
+
+<xs:annotation>
+
+<xs:documentation>Gesamtlänge des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="last" type="xs:double">
+
+<xs:annotation>
+
+<xs:documentation>Masse des Wagenzuges in Tonnen</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="mindestbremshundertstel" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Mindestbremshundertstel, die für die Durchführung der Zugfahrt benötigt werden</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>',105,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','c9e9f3cf2fefd156ab3904ab0b48367e3f199c7155fc175e8b8fc3fadc56ef94');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_57c88272cede2c61ef0fed0e','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',1,'Inhalt','<xs:element minOccurs="1" name="bremsstellung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Wertemenge für Bremsstellung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="hoechstgeschwindigkeit" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Höchstgeschwindigkeit des Zuges in km/h</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="zuggattung" type="Zuggattung">
+
+<xs:annotation>
+
+<xs:documentation>Produktbezeichnung der Zuggattung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="befoerderungsanordnung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Angabe der Nummer einer gültigen Beförderungsanordnung, mit der die Durchführung bestimmter Zugfahrten mit besonderen technischen Eigenschaften vorab geprüft wurde und genehmigt wird</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="bzaNummer" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Bza ist die Abkürzung für „Betrieb Zugförderung außergewöhnlich“.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="bzaBedingung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Hinweise zur besonderen Beachtung bei der Durchführung von Zugfahrten in Betriebsstellen oder Streckenabschnitten als Freitext, sofern die Bedingungen nicht in einer Dauer-Beförderungsanordnung hinterlegt sind.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="imGrenzlastBereich" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe, ob die angegebenen Lasten bereits den Grenzlastbereich darstellen</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>',124,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','fe0bb78de09675dfc1875cfccf5a44f24caa657520dfd01d8ecad95ebca1e615');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f2d474b2da6bfc904bd12315','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',2,'Inhalt','<xs:element minOccurs="0" name="gueterzugOhneNennenswertenGrenzaufenthalt" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Gibt an, dass für den Zug am Grenzübergang (in der Regel die Grenzbetriebsstelle) kein längerer Aufenthalt (z.B. wegen Zollabwicklung) erforderlich ist.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="befoerderungsbesonderheit" type="Befoerderungsbesonderheit">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Beförderungsbesonderheiten</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="beladung" type="Beladung">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Beladung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="zugverband" type="Zugverband">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften des Zugverbands</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="istRichtungswechselZugelassen" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe, ob nicht bestellte, aber konstruktionsbedingte Richtungswechsel zugelassen sind</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="keinRichtungswechselZugelassenGrund" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Wenn Attribut „istRichtungswechselZugelassen“ = false, dann kann hier ein Grund für den nicht erlaubten Richtungswechsel angegeben werden</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="besonderheit" type="xs:string">
+
+<xs:annotation>',110,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','c3199f3d2162a65771b0b7736c21993681199480a6bdfe0590e7c9ff3ce2034c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1114aad4799cb4c16a3a28e2','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',3,'Inhalt','<xs:documentation>Besonderheiten oder Hinweise aus der Fahrplankonstruktion für das Eisenbahnverkehrsunternehmen (EVU) bzw. den Triebfahrzeugführer (Tf) zur weiteren Beachtung.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+</xs:sequence>
+
+</xs:complexType>
+
+<xs:complexType name="BasisZugcharakteristik">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Zugcharakteristik</xs:documentation>
+
+</xs:annotation>
+
+<xs:sequence>
+
+<xs:element minOccurs="0" name="id" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Eindeutige Identifikation der Zugcharakteristik innerhalb der BauFplo</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="alternativeZugcharakteristik" type="AlternativeZugcharakteristik">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Alternativen Zugcharakteristik</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" maxOccurs="unbounded" name="triebfahrzeug" type="Triebfahrzeug">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften des Triebfahrzeugs</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="gesamtzuglaenge" type="xs:double">
+
+<xs:annotation>
+
+<xs:documentation>Gesamtlänge des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="last" type="xs:double">
+
+<xs:annotation>
+
+<xs:documentation>Masse des Wagenzuges in Tonnen</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="mindestbremshundertstel" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Mindestbremshundertstel, die für die Durchführung der Zugfahrt benötigt werden</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>',110,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','f292cd83de1807d7cfcc7693661be968baf008db5cb64e909bf537e45ef41aae');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e08b113fdc26b3e6ac24a0a9','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',4,'Inhalt','<xs:element minOccurs="1" name="bremsstellung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Wertemenge für Bremsstellung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="hoechstgeschwindigkeit" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Höchstgeschwindigkeit des Zuges in km/h</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="zuggattung" type="Zuggattung">
+
+<xs:annotation>
+
+<xs:documentation>Produktbezeichnung der Zuggattung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="befoerderungsanordnung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Angabe der Nummer einer gültigen Beförderungsanordnung, mit der die Durchführung bestimmter Zugfahrten mit besonderen technischen Eigenschaften vorab geprüft wurde und genehmigt wird</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="bzaNummer" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Bza ist die Abkürzung für „Betrieb Zugförderung außergewöhnlich“.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="imGrenzlastBereich" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe, ob die angegebenen Lasten bereits den Grenzlastbereich darstellen</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="gueterzugOhneNennenswertenGrenzaufenthalt" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Gibt an, dass für den Zug am Grenzübergang (in der Regel die Grenzbetriebsstelle) kein längerer Aufenthalt (z.B. wegen Zollabwicklung) erforderlich ist.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>',121,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','f09f1fa4b2738044ac7ca86af7af9c4592c34ad3cb5251a96282ee402d533989');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_5cdae58b54bed86ecd23faa6','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',5,'Inhalt','<xs:element minOccurs="0" maxOccurs="unbounded" name="befoerderungsbesonderheit" type="Befoerderungsbesonderheit">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Beförderungsbesonderheiten</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="beladung" type="Beladung">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften der Beladung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="zugverband" type="Zugverband">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt die Eigenschaften des Zugverbands</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="istRichtungswechselZugelassen" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe, ob nicht bestellte, aber konstruktionsbedingte Richtungswechsel zugelassen sind</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="keinRichtungswechselZugelassenGrund" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Wenn Attribut „istRichtungswechselZugelassen“ = false, dann kann hier ein Grund für den nicht erlaubten Richtungswechsel angegeben werden</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="bzaBedingung" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Hinweise zur besonderen Beachtung bei der Durchführung von Zugfahrten in Betriebsstellen oder Streckenabschnitten als Freitext, sofern die Bedingungen nicht in einer Dauer-Beförderungsanordnung hinterlegt sind.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="besonderheit" type="xs:string">
+
+<xs:annotation>',113,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','16b115478da0f701ab7739f2fc466250b2c9e7b7db3d0a4add2d7cfc7617d60a');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8623ab2c330df99b7d6c7072','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',6,'Inhalt','<xs:documentation>Besonderheiten oder Hinweise aus der Fahrplankonstruktion für das Eisenbahnverkehrsunternehmen (EVU) bzw. den Triebfahrzeugführer (Tf) zur weiteren Beachtung.</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+</xs:sequence>
+
+</xs:complexType>
+
+<xs:complexType name="Baufplo">
+
+<xs:sequence>
+
+<xs:element minOccurs="0" name="disclaimer" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Wenn das Feld gefüllt ist, handelt es sich um Testdaten</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="zugnummer" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Fachlicher Schlüssel des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="verkehrstag" type="xs:date">
+
+<xs:annotation>
+
+<xs:documentation>Verkehrstag des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="abfahrtstag" type="xs:date">
+
+<xs:annotation>
+
+<xs:documentation>Abfahrtstag des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="ankunftstag" type="xs:date">
+
+<xs:annotation>
+
+<xs:documentation>Ankunftstag des Zuges</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="fploVersion" type="xs:integer">
+
+<xs:annotation>
+
+<xs:documentation>Version der Baufplo</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="vorgaenger" type="Vorgaenger">
+
+<xs:annotation>
+
+<xs:documentation>Zuvor veröffentlichte Baufplo</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="veroeffentlichungsart" type="Veroeffentlichungsart">
+
+<xs:annotation>',107,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','21fd3db95659e5b70c76279770f84f05d4d12da50f787f91c0fea3c45a62151d');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2e0f8ec26082e96e67930c10','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',7,'Inhalt','<xs:documentation>Definiert, ob es sich um eine Erstveröffentlichung, einen Nachtrag oder eine Rücknahme handelt</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="veroeffentlichung" type="xs:date">
+
+<xs:annotation>
+
+<xs:documentation>Tag der Veröffentlichung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" maxOccurs="unbounded" name="regionenabfolge" type="xs:string">
+
+<xs:annotation>
+
+<xs:documentation>Abfolge der Regionen, die der Zug verkehrt</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" maxOccurs="7" name="freigabe" type="Freigabe">
+
+<xs:annotation>
+
+<xs:documentation>Region und Kontaktdaten der Freigebenden der BauFplo</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="rahmendaten" type="Rahmendaten"/>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="baumassnahme" type="Baumassnahme">
+
+<xs:annotation>
+
+<xs:documentation>Beschreibt den Abschnitt der Bauvorgänge _**Hinweis:** Das Attribut \"baumassnahmen\" ist nur noch für den Fahrplanjahr 2026 relevant und wird ab Fahrplanjahr 2027 nicht mehr befüllt._</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="1" name="allgemeines" type="Allgemeines"/>
+
+<xs:element minOccurs="1" name="fahrplan" type="Fahrplan"/>
+
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ergaenzung" type="xs:string"/>
+
+<xs:element minOccurs="0" name="konzeptSchaetzung" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe für Konzeptschätzung</xs:documentation>
+
+</xs:annotation>
+
+</xs:element>
+
+<xs:element minOccurs="0" name="qualifizierteSchaetzung" type="xs:boolean">
+
+<xs:annotation>
+
+<xs:documentation>Angabe für qualifizierte Schätzung</xs:documentation>
+
+</xs:annotation>',125,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','2adfa10029c569acbf095a7e1fa7c5560bc3b9792df22e5d7d47ff46360d7bff');
+--> statement-breakpoint
 INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2429adf266fe67fb1231c5c5','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',8,'Inhalt','</xs:element>
 
 </xs:sequence>
@@ -1641,1524 +7595,4 @@ INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,sour
 </xs:element>
 
 <xs:element minOccurs="0" name="betriebsstelleEndeId" type="xs:integer">',112,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','ea16709de813ceb6b39965eb9c670678b6ab141b2063f16ad97937c7926d65c0');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_74fb73cd059fc04fde8ebe42','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',28,'Inhalt','<xs:annotation>
-
-<xs:documentation>Ende der Regelungsart</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" maxOccurs="unbounded" name="entfalleneBetriebsstelle" type="Betriebsstelle">
-
-<xs:annotation>
-
-<xs:documentation>Es werden die Betriebsstellen aufgelistet, die durch eine Umleitung betroffen sind und somit ausfallen</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Unterzeichner">
-
-<xs:annotation>
-
-<xs:documentation>Kontaktdaten des Freigebenden der Baufplo</xs:documentation>
-
-</xs:annotation>
-
-<xs:sequence>
-
-<xs:element minOccurs="1" name="nachname" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Nachname des Freigebenden</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="vorname" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Vorname des Freigebenden</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="1" name="abteilung" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Abteilung des Freigebenden</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="rufnummer" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Rufnummer des Freigebenden</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Verweis">
-
-<xs:sequence>
-
-<xs:element minOccurs="0" name="ebula" type="xs:boolean">
-
-<xs:annotation>
-
-<xs:documentation>Information darüber, ob nach EBuLa gefahren werden kann</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="zugcharakteristikId" type="xs:integer">
-
-<xs:annotation>
-
-<xs:documentation>Referenz auf Zugcharakteristik</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>',110,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','84a09f34f819673d403467ece4b80f079ab7e6dcd743d2677b34f007a02e5ffe');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_162cb49cf175e35e15b211e9','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',29,'Inhalt','</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Vorgaenger">
-
-<xs:sequence>
-
-<xs:element minOccurs="1" name="veroeffentlichung" type="xs:date">
-
-<xs:annotation>
-
-<xs:documentation>Tag der Veröffentlichung der vorherigen Version der BauFplo</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Zeitraum">
-
-<xs:sequence>
-
-<xs:element minOccurs="0" name="start" type="xs:date">
-
-<xs:annotation>
-
-<xs:documentation>Startdatum des Zeitraumes</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="ende" type="xs:date">
-
-<xs:annotation>
-
-<xs:documentation>Enddatum des Zeitraumes</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Zug">
-
-<xs:sequence>
-
-<xs:element minOccurs="1" name="nummer" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Zugnummer des Zuges</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="1" name="zuggattung" type="Zuggattung">
-
-<xs:annotation>
-
-<xs:documentation>Beschreibt die Eigenschaften der Zuggattung</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="1" name="zugart" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Kennzeichen für die Zugart</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Zuggattung">
-
-<xs:annotation>
-
-<xs:documentation>Beschreibt die Eigenschaften der Zuggattung</xs:documentation>
-
-</xs:annotation>
-
-<xs:sequence>
-
-<xs:element minOccurs="0" name="produktBezeichnung" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Produktbezeichnung der Zuggattung</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="hauptnummer" type="xs:integer">',109,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','6c9bf0e14fbc3f9e0930b37d2f466bd2b2cbeb98d2d7ef17fd4c753201610554');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_116c14284ae0dfde517377fc','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',30,'Inhalt','<xs:annotation>
-
-<xs:documentation>Hauptnummer der Zuggattung</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="unternummer" type="xs:integer">
-
-<xs:annotation>
-
-<xs:documentation>Unternummer der Zuggattung</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:complexType name="Zugverband">
-
-<xs:sequence>
-
-<xs:element minOccurs="0" name="streckenklasseGefordert" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Angabe geforderter Streckenklassen</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="hatTrailer" type="xs:boolean">
-
-<xs:annotation>
-
-<xs:documentation>Angabe, ob der Wagenzug einen Trailer hat</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="kvProfilC2" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Erste Eckhöhen-Kodierung für Wechselbehälter; zweistellige Zahl</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="kvProfilC3" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Zweite Eckhöhen-Kodierung für Wechselbehälter; dreistellige Zahl</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="kvProfilP2" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Erste Eckhöhen-Kodierung für Sattelanhänger; zweistellige Zahl</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="kvProfilP3" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Zweite Eckhöhen-Kodierung für Sattelanhänger; dreistellige Zahl</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="cirAusruestung" type="xs:string">
-
-<xs:annotation>',102,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','b4729a98ebf02d8f852f3f4fd4c861e8c516d3db1c91fcc973669bbe42d46fd2');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_956d7966a1608f99865412a1','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',31,'Inhalt','<xs:documentation>Beschreibt die Ausrüstung mit CIR (CIR-ELKE (Abk. Computer Integrated Railroading – Erhöhung der Leistungsfähigkeit im Kernnetz))</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="hatLZB" type="xs:boolean">
-
-<xs:annotation>
-
-<xs:documentation>Beschreibt, ob LZB (Linienzugbeeinflussung) vorhanden ist</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="hatNotbremsueberbrueckung" type="xs:boolean">
-
-<xs:annotation>
-
-<xs:documentation>Beschreibt, ob Notbremsüberbrückung vorhanden ist.&lt;br/&gt; &lt;b&gt;Hinweis:&lt;/b&gt; Das Attribut \"hatNotbremsueberbrueckung\" ist veraltet und wird nicht mehr unterstützt. Bitte verwenden Sie stattdessen das neue Attribut \"notbremsueberbrueckung\"</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-<xs:element minOccurs="0" name="etcsAusruestung" type="xs:string">
-
-<xs:annotation>
-
-<xs:documentation>Beschreibt die Ausrüstung mit ETCS (european traffic control system)</xs:documentation>
-
-</xs:annotation>
-
-</xs:element>
-
-</xs:sequence>
-
-</xs:complexType>
-
-<xs:simpleType name="Veroeffentlichungsart">
-
-<xs:annotation>
-
-<xs:documentation>Definiert, ob es sich um eine Erstveröffentlichung, einen Nachtrag oder eine Rücknahme handelt</xs:documentation>
-
-</xs:annotation>
-
-<xs:restriction base="xs:string">
-
-<xs:enumeration value="ERSTVEROEFFENTLICHUNG"/>
-
-<xs:enumeration value="NACHTRAG"/>
-
-<xs:enumeration value="RUECKNAHME"/>
-
-</xs:restriction>
-
-</xs:simpleType>
-
-<xs:simpleType name="Regionenabfolge">
-
-<xs:annotation>
-
-<xs:documentation>Abfolge der Regionen, die der Zug verkehrt</xs:documentation>
-
-</xs:annotation>
-
-<xs:restriction base="xs:string">
-
-<xs:enumeration value="OST"/>
-
-<xs:enumeration value="NORD"/>
-
-<xs:enumeration value="WEST"/>',126,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','4e039d4d736362d9611b1a5d0ed9294a662356f079da1cda84146dee711e9803');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_bf5b389ee02e4117d492ab2c','wiki/sources/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data.md',32,'Inhalt','<xs:enumeration value="SUEDOST"/>
-
-<xs:enumeration value="MITTE"/>
-
-<xs:enumeration value="SUEDWEST"/>
-
-<xs:enumeration value="SUED"/>
-
-</xs:restriction>
-
-</xs:simpleType>
-
-<xs:simpleType name="Region">
-
-<xs:annotation>
-
-<xs:documentation>Region des Freigebenden der Baufplo</xs:documentation>
-
-</xs:annotation>
-
-<xs:restriction base="xs:string">
-
-<xs:enumeration value="OST"/>
-
-<xs:enumeration value="NORD"/>
-
-<xs:enumeration value="WEST"/>
-
-<xs:enumeration value="SUEDOST"/>
-
-<xs:enumeration value="MITTE"/>
-
-<xs:enumeration value="SUEDWEST"/>
-
-<xs:enumeration value="SUED"/>
-
-</xs:restriction>
-
-</xs:simpleType>
-
-</xs:schema>',38,'{"canonical_url":null,"normalized_sha256":"148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8","page":null,"source_id":"src_c4db283f6617a89c2018","source_sha256":"bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7","source_version_id":"sv_aa3457828c7cc06b65f8cfa2"}','4b81ff153d7019c3a50efea865bb8beb4a49c162621e823d5061c8e88e5f47a1');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_fd6211533b1f4da5f776','file','TAF/TAP TSI Dialog 21 Mai 2026 Antworten und offene Punkte',NULL,'de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_7c053a98498b96504a8dc7de','src_fd6211533b1f4da5f776','7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a','ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6',625224,'application/pdf','TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf','sources/normalized/bootstrap/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf","page_count":16,"raw_binary_committed":false,"schema_version":1,"size_bytes":625224,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de","title":"TAF/TAP TSI Dialog 21 Mai 2026 Antworten und offene Punkte","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a','src_fd6211533b1f4da5f776','sv_7c053a98498b96504a8dc7de','{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6','src_fd6211533b1f4da5f776',NULL,'{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_7c053a98498b96504a8dc7de' WHERE id='src_fd6211533b1f4da5f776';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md','TAF/TAP TSI Dialog 21 Mai 2026 Antworten und offene Punkte','Follow-up 15. TAF/TAP TSI-Dialog Fragen und Antworten Versand im Nachgang','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','604ce591973f19250fa34971738706cf3d93f3582bd107a6e3962fa701674980','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_fd6211533b1f4da5f776","source_version_id":"sv_7c053a98498b96504a8dc7de"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_7cf9d0587381445f2f5777b8','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',0,'Seite 1','Follow-up 15. TAF/TAP TSI-Dialog
-
-Fragen und Antworten
-
-Versand im Nachgang',10,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":1,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','f19d7715227c9069c94e6e67549c0663db3d430b6e999691271c9652905f6b51');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a572bf5c80b80fb1afa456e2','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',1,'Seite 2','Agenda
-
-1. Informationen zu ujBau Prozessen
-
-1. Informationen zu ujBau Prozessen
-
-2. Baubedingte Zusatzleistungen bei Anlagen
-
-2. Baubedingte Zusatzleistungen bei Anlagen
-
-3. Baubedingte Zusatzleistungen
-
-3. Baubedingte Zusatzleistungen
-
-4. Baubedingte Stornierungen
-
-4. Baubedingte Stornierungen
-
-5. Umgang mit >24 h verspäteten einbrechenden Zügen
-
-5. Umgang mit >24 h verspäteten einbrechenden Zügen
-
-6. Nicht-baubedingte netzausgelöste Änderung (NAÄ)
-
-6. Nicht-baubedingte netzausgelöste Änderung (NAÄ)
-
-7. pathOS Push-Benachrichtigungen
-
-7. pathOS Push-Benachrichtigungen
-
-8. Information zur Schnittstellenaktualisierung NEP1 2028
-
-8. Information zur Schnittstellenaktualisierung NEP1 2028
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 2',88,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":2,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','42837209e47254be59cdfc1c9337c2808f7a082548bff3a10f1e5d03a4b765e3');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b28e022169031a24a40f9ecd','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',2,'Seite 3','1. Informationen zu ujBau Prozessen (1/5)
-
-Frage Antwort DB InfraGO
-
-Wie werden Umläufe und wann in Auszug RiL 402.0305, §8 Vierte Konsultationsphase, Absatz (8) ZB-Ressourcenplanung:
-
-welcher Detaillierung kommuniziert?
-
-„Sofern die Fahrplanregelungen Auswirkungen auf die Ressourcenplanung von ZB haben, werden
-
-diese durch die DB InfraGO AG bei der Erarbeitung des FPE mit berücksichtigt. Hierfür ist es
-
-erforderlich, dass die ZB ihre geänderte Ressourcenplanung mit der Stellungnahme zum GPE der DB
-
-InfraGO AG vorlegen.“
-
-DB InfraGO wird im nächsten TTT-Dialog detailliert vorstellen, welche Umlaufinformationen benötigt
-
-werden.
-
-Der E-Mailversand zwischen GPE und Auszug aus Ril 402.0305 siehe vorherige Zeile. Darin ist das Medium nicht festgelegt.
-
-FPE war neu für mich. Ich dachte, Für detaillierte Umlaufinformation wird das Medium E-Mail sein.
-
-alles was Einfluss auf die FPE nimmt, DB InfraGO wird im nächsten TTT-Dialog detailliert darauf eingehen.
-
-muss zwingend über die SST und
-
-vorgegebene Formate erfolgen. Steht
-
-das im Regelwerk auch so drin?
-
-Rückfrage, Umläufe per Mail oder per Das ist situationsabhängig. Aufschlüsselung der Fälle erfolgt im nächsten TTT-Dialog. Wenn es eine
-
-TrainActivity verschicken? Ist das kleine Menge an betroffenen Folgezügen ist, erfolgt die Angabe über die SN direkt. Dort wird der
-
-eine neue Normatik? Der Versand entsprechende Zug mit einem TrainActivityCode (TAC) dargestellt, mit dem Hinweis der Bitte um
-
-kann per E-Mail erfolgen, muss aber Ausfall.
-
-nicht, richtig? Wenn es sich um eine große Menge von betroffenen Folgezügen handelt, bitte Umlaufliste senden.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 3',240,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":3,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','05d678e4803d6eeb042cdda968677178ea3d986ce67d709227749f5af5bba21a');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b6f17baac67deb27a10029aa','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',3,'Seite 4','1. Informationen zu ujBau Prozessen (2/5)
-
-Frage Antwort DB InfraGO
-
-Wenn ich die Rückmeldefrist auf GPE Eine baubedingte Zusatzleistung kann bis z-5 über PathOS bestellt werden.
-
-schon abgeschickt habe und dann Siehe auch Agendapunkt 2 dieser Präsentation.
-
-feststelle, dass ich die Leerfahrt
-
-vergessen habe. Muss ich dann alles
-
-nochmal schicken, wenn ich die Leerfahrt
-
-als baubedingte Zusatzleistung nochmal
-
-schicke?
-
-Lässt sich diese Information, dass DB InfraGO wird über die in dieser Präsentation enthaltenen Antworten hinaus diesen Punkt im
-
-Umlaufkonzepte per Mail versendet nächsten TTT-Dialog darstellen.
-
-werden können, irgendwo
-
-verschriftlichen? Das ist eine
-
-Information, die sich bis dato auf keiner
-
-Präsentation wiederfindet.
-
-Das Thema mit dem Versand von Die Information über Umläufe ist mandatorisch. Ohne diese Information können keine Folgezüge
-
-Umläufen ging jetzt zu schnell. Können mitgeplant werden.
-
-Sie das bitte nochmal erklären, DB InfraGO wird über die in dieser Präsentation enthaltenen Antworten hinaus diesen Punkt im
-
-insbesondere ob das optional oder nächsten TTT-Dialog darstellen.
-
-mandatorisch ist.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 4',167,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":4,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','8069ddb7b36ea3d980ea1babefb0cb5f07eb29d1db5edf2144fb7686be104f8f');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8c0165c73a6c207462b8af9f','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',4,'Seite 5','1. Informationen zu ujBau Prozessen (3/5)
-
-Frage Antwort DB InfraGO
-
-Wie würde es sich in folgendem Beispiel verhalten: Wir Die Umläufe müssen bis z-21 vorliegen.
-
-geben eine Stellungnahme auf ein GPE -> Im Rahmen der
-
-SN-Frist versenden Umläufe mit -> im FPE erfahren wir,
-
-dass die SN nicht eingearbeitet werden konnte und wir auf
-
-das GPE zurückfallen.
-
-Wie und bis zu welcher Frist müssen dann die Umläufe
-
-übersendet werden? Dies kann zu einem erheblichen
-
-Mehraufwand bei den EVU führen, da Umläufe mehrfach zu
-
-verschiedenen Zuständen (GPE / FPE) geplant werden
-
-müssen und nicht erst zum finalen Zustand (FPE).
-
-Wer kümmert sich um Trassen, die grundsätzlich nicht Das ist situationsabhängig. Aufschlüsselung der Fälle erfolgt im nächsten TTTbaubetroffen sind, aufgrund der Baubetroffenheit einer Dialog. Wenn es eine kleine Menge an betroffenen Folgezügen ist, erfolgt die
-
-anderen Trasse aber umlaufbedingt angepasst werden Angabe über die SN direkt. Dort wird der entsprechende Zug mit einem
-
-müssen? Wie gelangt diese Information vom EVU an das TrainActivityCode (TAC) dargestellt, mit dem Hinweis der Bitte um Ausfall.
-
-EIU? Wenn es sich um eine große Menge von betroffenen Folgezügen handelt, bitte
-
-Umlaufliste senden.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 5',196,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":5,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','a3d25ca6234dda2c2d5ea6cc23bc0fadeb9f763b24caca8f95393154269c7986');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_67a99aa9b6ba9e11e6dc9f4b','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',5,'Seite 6','1. Informationen zu ujBau Prozessen (4/5)
-
-Frage Antwort DB InfraGO
-
-Wäre es nicht sinnvoller, wenn der Kunde die Die Referenz mittels PathID ist eine genauere Angabe als die auf eine
-
-Baumaßnahmennummer angibt bei einer baubedingten Baumaßnahme. Für die Bearbeitung ist keine räumliche Angabe
-
-Zusatzleistung, damit Sie wissen welche Baumaßnahme es ist, statt notwendig.
-
-eine PathID, die u.U. einen Verlauf über ganz Deutschland hat und
-
-zig Baumaßnahmen trifft?
-
-Wie werden Trassen aus der NEP2 behandelt, für die noch kein Die Fristen der NEP 2 wurden so vorgezogen, dass sie immer vor der
-
-Trassenvertrag vorliegt, wenn das GPE bereits auf Grundlage der FPE-Frist liegen und in der NEP2 können nur Neubestellungen
-
-NEP1 VNP versendet wurde? vorgenommen werden. Daher kann es keine NEP 2 -Trassen geben, für
-
-die bereits ein NEP1-GPE vorliegt und damit existiert dieser Fall nicht.
-
-Ich verstehe nicht ganz die Notwendigkeit eines kompletten DB InfraGO wird im nächsten TTT-Dialog detailliert vorstellen, welche
-
-Umlaufs im Rahmen der Stellungnahme zum GPE. Umlaufinformationen benötigt werden.
-
-Nachvollziehbar wäre wenn Verschiebungen auf Folgezügen
-
-angegeben werden
-
-Kompletter Umlauf bedeutet, dass alle Umläufe schon fertig sein
-
-müssten. Bezug ist ja auch auf das ganze Netz nicht nur ein
-
-einzelnes GPE. Am Ende weiß ich erst ob der Umlauf aufgeht,
-
-wenn ich ein FPE habe. Da gehen sehr viele Fragezeichen auf.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 6',224,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":6,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','0225204647c8862b3ab20e2c9ad4e24059b58ea8e8b5f469972e3f499438ac8a');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_516a704b89c44354f34f8ba2','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',6,'Seite 7','1. Informationen zu ujBau Prozessen (5/5)
-
-Frage Antwort DB InfraGO
-
-Gegebenenfalls ist dies an mir vorbei gegangen aber Das ist situationsabhängig. Aufschlüsselung der Fälle erfolgt im nächsten TTTin welcher Form/Format hat die Übermittlung der Dialog. Wenn es eine kleine Menge an betroffenen Folgezügen ist, erfolgt die
-
-Umläufe (per Mail) zu erfolgen? Angabe über die SN direkt. Dort wird der entsprechende Zug mit einem
-
-TrainActivityCode (TAC) dargestellt, mit dem Hinweis der Bitte um Ausfall.
-
-Wenn es sich um eine große Menge von betroffenen Folgezügen handelt, bitte
-
-Umlaufliste senden.
-
-Es gab zuletzt in verschiedenen Runden Mit TTT sind in vielen Fällen bereits die Vertragstrassen an Mo-Fr und Sa-So
-
-unterschiedliche Aussagen dazu, ob nach der unterschiedlich. Daher versenden wir in diesen bereits mindestens zwei GPE, eins
-
-Stellungnahme zum GPE auch mehrere FPE erstellt für Mo-Fr und eins für Sa-So, sollte die Ausregelung es zulassen. Eine tagesscharfe
-
-werden können. Hier bitte ich nochmal um Stellungnahme auf ein GPE ist aktuell nicht möglich.
-
-Klarstellung ob dies möglich ist.
-
-Bspw. GPE mit tgl betroffener Trasse - Umlaufbedingt
-
-aber unterschiedliche Stellungnahmen Mo-Fr
-
-(Zustimmung) und Sa-So (Anpassung GPE->FPE
-
-notwendig) und damit einhergehend verschiedene
-
-FPE/NAÄ notwendig.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 7',198,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":7,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','076d78fac6c27896646e4d30f2c0510ec90a57358143cec87fffa88398ec30b4');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f6658aae91f5a8b3c6c48ea0','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',7,'Seite 8','2. Baubedingte Zusatzleistungen bei Anlagen
-
-Frage Antwort DB InfraGO
-
-Wie werden Baubedingte DB InfraGO befindet sich hierzu aktuell in der fachlichen Klärung. Im nächsten TTT-Dialog wird DB
-
-Zusatzleistungen für BAEn bestellt? InfraGO den aktuellen Stand sowie das weitere Vorgehen zur Bestellung baubedingter
-
-Welche Angaben sind notwendig, Zusatzleistungen für BAEn vorstellen.
-
-damit diese kostenfrei sind?
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 8',65,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":8,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','5d9696448ff2b8f83ab8ed5ac87907dbd57c475e3da950d4d6b29b16787fd0de');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_201bb9f49477759ab1b93d0e','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',8,'Seite 9','3. Baubedingte Zusatzleistungen (1/2)
-
-Frage Antwort DB InfraGO
-
-Übersicht Baubedingte Ril 402.0305 „Baubedingte Fahrplanregelungen abstimmen und kommunizieren “
-
-Zusatzleistungen
-
-11 Trassenanmeldungen baubedingter zusätzlicher Leistungen
-
-(1) Sind im Rahmen der vierten Konsultationsphase seitens der ZB in den unter Absatz (2) genannten Fällen
-
-baubedingte zusätzliche Trassen erforderlich, so melden diese die erforderlichen Trassen im Bestellportal mit
-
-Referenzbezug auf die baubetroffene Trasse, kommuniziert durch GPE/FPE spätestens fünf Wochen vor
-
-Beginn der maßgebenden Bauwoche bei der DB InfraGO AG, Gelegenheitsverkehr an.
-
-Basis der Abstimmung und Voraussetzung für die Anmeldung ist das FPE.
-
-(2) Hierunter fallen insbesondere zusätzliche baubedingte Anmeldungen für
-
-− Zu- und Abführungsfahrten zu einem Schienenersatzverkehr,
-
-− Drehfahrten,
-
-− Zu- und Abführungsfahrten zu einer anderen als der gewöhnlichen Abstell- oder Tankanlage,
-
-− Zu- und Abführungsfahrten von Triebfahrzeugen oder
-
-− zusätzliche Verkehre auf Grund einer Änderung der Zugcharakteristik (z.B. Ablasten auf Grund
-
-geringerer Grenzlast einer Umleitungsstrecke).
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 9',153,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":9,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','e4e69e7905ab1424c2da040b2ff9c66762ee210ba2ac165039459af31b2786d4');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_58bafefb8ed6a9ec43502a42','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',9,'Seite 10','3. Baubedingte Zusatzleistungen (2/2)
-
-Frage Antwort DB InfraGO
-
-Bestellung baubedingte Ablauf und Kennzeichnung baubedingter Zusatzleistungen
-
-Zusatzleistung:
-
-Bei der Bestellung wird ein Verweis des EVUs auf die PathID der Bautrasse erforderlich sein. Dieser
-
-Wäre toll wenn sie bei so was ein
-
-wird als „RelatedPlannedTransportID“ angegeben. Zusätzlich muss beim NSP*
-
-Beispiel mit in ihre Folien einfügen
-
-„verkehrsArtKundeZusatz“ die Ausprägung „BaubedingteZusatzleistung“ angegeben werden.
-
-könnten – Für Bestellung auf Folie in
-
-TTT-Dialog
-
-Beispiel pathOS
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 10',81,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":10,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','f070c21d1bffdbc56d4766b4574f98ec020001de95fd5f04f1c62eec9de79bae');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_244f38b72b74b5edb9d132a4','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',10,'Seite 11','4. Baubedingte Stornierungen
-
-Frage Antwort DB InfraGO
-
-Bitte in der schriftlichen Die Stornoquote bezieht sich ausschließlich auf kundenausgelöste Stornierungen. Eine netzausgelöste
-
-Rückmeldung noch einmal genau Stornierung (NAS) bei baubedingten Ausfällen ist daher nicht enthalten.
-
-aufzeigen, wie sich die Stornoquote
-
-bei Baubedingten Ausfällen sowie in Eine netzausgelöste Änderung (NAÄ) gilt nach Versand direkt als angenommen. Für ZB besteht jedoch
-
-Folge von nicht abgestimmten NAÄ die Möglichkeit, die Trasse innerhalb von drei Arbeitstagen (Montag bis Freitag, ausgenommen
-
-verhält. bundeseinheitliche Feiertage) kostenfrei zu stornieren.
-
-Die DB InfraGO AG stellt sicher, dass eine Stornierung binnen der Frist von 3 Arbeitstagen nach Erhalt
-
-einer NAÄ für den Kunden kostenlos bleibt. Bautrassen, die innerhalb von drei Tagen storniert
-
-werden, zählen nicht in die Stornoquote.
-
-Wird die Stornierung der Eine baubedingt erforderliche Stornierung ist grundsätzlich im Rahmen der GPE Stellungnahme
-
-Gegenrichtungsleistung automatisch anzugeben und wird dann im Rahmen einer netzausgelösten Stornierung umgesetzt. Darüber ist die
-
-erfolgen, weil die Verknüpfung über kostenfreie Stornierung gewährleistet.
-
-die TrainActivities verstanden wird?
-
-Wie bestelle ich einen baubedingten Eine baubedingt erforderliche Stornierung ist grundsätzlich im Rahmen der GPE Stellungnahme
-
-Ausfall einer indirekt baubetroffenen anzugeben und wird dann im Rahmen einer netzausgelösten Stornierung umgesetzt. Darüber ist die
-
-Trasse, damit dieser kostenfrei kostenfreie Stornierung gewährleistet.
-
-erfolgt?
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 11',212,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":11,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','2a60d2ddbca7c0a6c2f1ce2e14d34e7f6d37a013df9499d1e4d8746ecaf1b119');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2d36a0cddf9406e224d5371e','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',11,'Seite 12','5. Umgang mit >24 h verspäteten einbrechenden Zügen
-
-Frage Antwort DB InfraGO
-
-Wie wird umgegangen wenn ein Zug Erklärung des Sonderfalls eines täglich verkehrenden Zuges, der bei Einbruch ins Netz der DB InfraGO
-
-mit 24h Verspätung fährt im Bezug etwa 24h verspätet ist:
-
-auf TAF-Identifier und Trasse?
-
-Mündlich nachgeschärfte Frage: Wie In diesem Falle ist es aus fahrplanerischer Sicht möglich, dass die Trasse der ursprünglichen Zugfahrt
-
-erfolgt die Umbuchung, wenn eine storniert wird und der Zug auf der Trasse des aktuellen Tages verkehrt. Da im Fahrplan keinerlei
-
-Trasse, die für gestern bestellt wurde tagesscharfe Identifikatoren verwendet werden, ist dies unschädlich.
-
-ausfällt (wg. Verspätung) und mit der Für die betrieblichen Meldungen ist zu beachten, dass der Zug einen Wechsel der tagesscharfen
-
-ReferenceTrainID von heute (einen Identifikatoren benötigt, da sich der Tag der Zugfahrt um den einen Tag verändert.
-
-Tag später) fährt.
-
-Inwiefern dies zu ihren internen Abläufen und IT-Systemen passt, ist durch Sie zu prüfen.
-
-Wie im TTT-Dialog kommuniziert, wird es zeitnah eine Übersicht zum Verfahren mit "großen"
-
-Verspätungen, Stichwort 20h-Zug, geben.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 12',182,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":12,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','c42124f140f4331f5e4a4ceb6aa7117d91643ddfd5cfe29ee79be7db1de91f2a');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_77b1aea47a4b3c2b60cb2759','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',12,'Seite 13','6. Nicht-baubedingte netzausgelöste Änderung (NAÄ)
-
-Frage Antwort DB InfraGO
-
-NAÄ auch außerhalb des Ja, Sie haben danach 3 Tage Zeit, um die netzausgelöste Änderung kostenlos zu stornieren.
-
-Bauprozesses erfolgen ohne
-
-Zustimmung des EVU.
-
-Danach kann bis zu 3 Tage storniert
-
-werden.
-
-Die Frist für eine NAÄ ist mit z-8 Die Frist z-8 bezieht sich auf das NAÄ aus dem unterjährigen Bau, nicht auf das allgemeine NAÄ.
-
-benannt. Verstehe ich es richtig, dass
-
-bei der NAÄ (ohne Baubezug) zu
-
-einer ENP-Trasse, die vom
-
-13.12.2026 bis 11.12.2027 gültig ist,
-
-somit der 13.10.2026 der
-
-Kommunikationspunkt ist und
-
-danach keine Änderung (ohne
-
-Baubezug) mehr erfolgen kann?
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 13',113,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":13,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','10495d3fa2a5902e09dee762ce4dba3e0e25acbe21b5231d7190ffc57e0d404f');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_024130620b23c110c2b1b388','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',13,'Seite 14','7. pathOS Push-Benachrichtigungen
-
-Frage Antwort DB InfraGO
-
-Wie werden EVU über Angebote und Ein Push-Mechanismus innerhalb des pathOS Webportals, der über neue Angebote und
-
-Netzausgelöste Änderungen Netzausgelöste Änderungen informiert, ist auf Basis des aktuellen Nutzer- und Berechtigungskonzepts
-
-benachrichtigt? (Z.B. durch Push- im pathOS Portal nicht kurzfristig umsetzbar.
-
-Nachrichten aus pathOS?) DB InfraGO prüft, welche Optionen zur proaktiven Benachrichtigung möglich sind und gibt Feedback
-
-im nächsten TTT-Dialog.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 14',77,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":14,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','eec798a7fb95d103ad9163f40e7e97f0fbf671f56a02529860c9a08fc11d5a57');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_13176d6003107a1f25a963b7','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-antworten-und-offene-punkte-data.md',14,'Seite 15','8. Information zur Schnittstellenaktualisierung NEP1 2028
-
-Frage Antwort DB InfraGO
-
-Ab wann ist eine aktualisierte SST- Es war vorgesehen, das nächste Update der Schnittstellendokumentation mit Inkrafttreten zur
-
-Beschreibung für NEP1 2028 zu Anmeldephase für die NEP 2028 zu veröffentlichen. Hierin werden gefundenen Unklarheiten und
-
-erwarten? notwendigen Anpassungen aus der NEP 2027 und den Tests zum unterjährigen Bau aufgenommen.
-
-Ebenfalls werden Verbesserungen hinsichtlich der Lesbarkeit und Übersichtlichkeit basierend auf
-
-Feedback von Schnittstellenpartnern durchgeführt. Die Veröffentlichung wird zeitlich so gestaltet,
-
-dass wir Rückmeldungen Ihrerseits bis Ende August einarbeiten und veröffentlichen können.
-
-Vorher wird es eine einzelne Anpassung der Anlage 1 geben, damit diese zum Fahrplanwechsel am
-
-13.12.2026 wirksam werden kann. Die Veröffentlichung ist spätestens am 11. Juni geplant. Auf eine
-
-Anpassung der weiteren Dokumente wird in diesem Rahmen verzichtet.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 21.05.2026 ​ 15',138,'{"canonical_url":null,"normalized_sha256":"ffa96e961e48e0c6ef77df54deb2e3beaaf1dfa905ff64f11f06a3e780a159c6","page":15,"source_id":"src_fd6211533b1f4da5f776","source_sha256":"7c053a98498b96504a8dc7dec9aaa6e9db2e203c76fa161d39538d449ad65e2a","source_version_id":"sv_7c053a98498b96504a8dc7de"}','63b0b18d7b4ce80e30bffa518bf2519325c7c41b341e6c46647940e04f4795e2');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_1f6c2d00fd116ecf0611','file','TAF/TAP TSI Dialog 21 Mai 2026 Terminunterlage',NULL,'de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_12227c0c6672e3e4736d2c8b','src_1f6c2d00fd116ecf0611','12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3','ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e',679668,'application/pdf','TAF-TAP-TSI-Dialog-21-Mai-2026-Terminunterlage-data.pdf','sources/normalized/bootstrap/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Terminunterlage-data.pdf","page_count":22,"raw_binary_committed":false,"schema_version":1,"size_bytes":679668,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b","title":"TAF/TAP TSI Dialog 21 Mai 2026 Terminunterlage","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3','src_1f6c2d00fd116ecf0611','sv_12227c0c6672e3e4736d2c8b','{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Terminunterlage-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e','src_1f6c2d00fd116ecf0611',NULL,'{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-21-Mai-2026-Terminunterlage-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_12227c0c6672e3e4736d2c8b' WHERE id='src_1f6c2d00fd116ecf0611';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md','TAF/TAP TSI Dialog 21 Mai 2026 Terminunterlage','15. TAF/TAP TSI-Dialog der DB InfraGO Austausch mit dem Markt 21.05.2026 – virtuell','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','6cc7ea5b1931cecd8405048ffc24581032c91fdb8241de877b992664ae0f25a7','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_1f6c2d00fd116ecf0611","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ad9fdf0d74cccf6a993d4871','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',0,'Seite 1','15. TAF/TAP TSI-Dialog der DB InfraGO
-
-Austausch mit dem Markt
-
-21.05.2026 – virtuell',13,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":1,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','7287506d87bb2a4046215873a3a4aa29c7985fe0a50d8847a6486e47e08f4061');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_aba1e2cc127f8b5468e8f469','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',1,'Seite 2','Agenda
-
-1. Begrüßung
-
-2. Status TTT Einführung
-
-3. Update pathOS
-
-4. Click & Ride mit TTT
-
-5. Fragen & Antworten
-
-6. Zum Nachlesen: Nächste Termine
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 2',34,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":2,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','3a4f2fa7e96722377aff736d16a875bf1025c1b39681519114cb1ab707cadd5f');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_55684be8d5f69310ec083380','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',2,'Seite 3','Wir wollen mit Ihnen in den Dialog treten – Welche Fragen
-
-haben Sie? Schreiben Sie diese bitte in den Chat
-
-So können Sie eine Frage platzieren:
-
-Bitte wählen Sie in MS Teams in der Menüleiste
-
-das Icon „Chat“ aus und schreiben Ihre Frage
-
-in das sich öffnende Fenster.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 3',57,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":3,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','2a02700b8dcb52a8d25e8ba5debb7e6e0effdefce745901ea97055a073ad4cac');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e0b9e02b716fe489169b0327','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',3,'Seite 4','2. Status TTT Einführung
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 4',13,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":4,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','deef74fd570cfd53ddce30965e3370bbd3de490b23849bdbf34f084bb2a3d891');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8fe290687c7734d00249262e','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',4,'Seite 5','Status TTT
-
-Ergebnisse seit letztem TTT-Dialog
-
-✓ Lieferung GelV Funktionalitäten vollständig im Markttest (letzte Lieferung ergänzte u.a.
-
-Anmeldung mit Annahmeverzicht = Anmeldung mit Annahmeerklärung)
-
-✓ Mittiger Teilausfall im Markttest mit Testeinschränkung zum Versand NAÄ
-
-✓ Informationsveranstaltungen zu unterjährigem Bau mit Fokus auf Digitale Bau Fplo (20.5.)
-
-✓ Stammdaten für Trassenbestellung aktualisiert und als Ordnungsrahmen Jahresfahrplan 2027.3
-
-bereitgestellt: Es wurden ausländische Betriebsstellen ergänzt und die Strecke 6814 korrigiert
-
-▪ Netzfahrplanerstellung läuft
-
-Nächste Schritte
-
-• Markttests für Trassenanmeldung/ujBau und Defect-Behebung kontinuierlich fortsetzen
-
-• Markttest TTT mit Identifiern im Betrieb fortsetzen;
-
-weiterer Testzeitraum für EVU, die aktuell noch nicht testfähig sind, wird geplant
-
-• Maßnahmen basierend auf Feedback zu KOMBau Kundentests, Schulungsmaterial und Planung
-
-definieren und umsetzen
-
-• Nächster TTT-Dialog am 24.06.2026
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 5',128,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":5,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','2056033145202678b8f772cfb98f33574dbc51b136c7089eb59d719e9e94e1bc');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_7ac64c2e8b77eb91d4809b27','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',5,'Seite 6','3. Update pathOS
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 6',12,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":6,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','f811958e0cd33721fabdb3e587569f836843e2332fb4366bfb55f2206f7a01c8');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_7aa9176e4f00b52461de1e48','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',6,'Seite 7','Weiterhin Schulungen und Sprechstunden
-
-Informationen & Schulungen Sprechstunden
-
-• Web-based-Trainings (WBT) • Für die Einführungsphase GelV sind wieder
-
-Sprechstunden geplant
-
-• Erklärvideos zur Vertiefung einzelner
-
-Wissen teilen. • Die Frequenz der Sprechstunden wird durch die
-
-Anwendungsfälle
-
-Fragen klären.
-
-Teilnahme gesteuert
-
-• Handbuch mit umfangreichem Detailwissen Erfolg
-
-gemeinsam
-
-• Vertiefungsworkshops
-
-gestalten.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 7',59,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":7,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','0b0815f16722571af31907d9485972a62d319a42d816272a7372c18c2b316f22');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_303ee321dc9ebc8b34c3af06','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',7,'Seite 8','Supportkanäle und Hinweis zu VNP
-
-E-Mail Kontaktformular Telefon Fragen zu einem
-
-konkreten Angebot?
-
-[E-Mail-Adresse entfernt] Kontaktformular pathOS [Telefonnummer entfernt] Bitte nutzen Sie direkt die im
-
-jeweiligen Angebot
-
-Homepage DB InfraGO
-
-hinterlegten Kontaktdaten.
-
-Support
-
-→ Aktuelle Informationen zur Anwendung sind im Infraportal unter Aktuelles zu den Tools zu finden.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 8',57,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":8,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','2f789156851af42cf2651c094e5883d5a1924a61f39a8e1f4a6b85912f638e31');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b7f0078da45caab814473408','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',8,'Seite 9','Onboarding dauert im Mittel 5 Wochen! Sehr viele unterschiedliche
-
-(Minimum 2 Wochen, Maximum 12 Wochen) Herausforderungen bei den
-
-Kundensystemen
-
-Wenn Sie planen per IT-Schnittstelle (Common Interface – CI) zu bestellen, d.h. eine
-
-eigene Software zur Bestellung zu nutzen und noch nicht ongeboardet sind,
-
-kommen Sie möglichst bald auf uns zu.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 9',59,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":9,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','f84837ea1ec3bacb61697c855a0b2a34913c4b87f9c2451fc8da6491c8bfaf7c');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ddcea4bd4b0c74e95c08fa87','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',9,'Seite 10','4. Click & Ride mit TTT
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 10',15,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":10,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','fe0c4113cf37bba8b4ade8fb61a5e8a4a4b89342833aa907b5beaea3f8878609');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_eff9f1254d1334b3d6563d11','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',10,'Seite 11','Was ändert sich in Click & Ride mit TTT?
-
-• Click&Ride unterstützt ab Fahrplanjahr 2027 TTT
-
-• TTT-Identifier sind eingebbar (siehe Screenshot)
-
-• Erfolgt keine Vergabe durch das bestellende EVU,
-
-vergibt DB InfraGO im Namen des EVU hilfsweise
-
-die Identifier
-
-• Stornierung und Änderung von Trassen erfolgen in
-
-pathOS
-
-• Nach Buchung zeigt Click&Ride die TTT-Identifier in der
-
-Oberfläche und in der Bestätigungs-E-Mail
-
-• Eingabeoptionen ansonsten weitgehend unverändert
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 11',77,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":11,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','6bff70482db90664ab4803b2d22e7268bc4dd79dc13e5972542daa15d18a98fe');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_bbe2e01e7e6eba2fc1ef664f','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',11,'Seite 12','5. Fragen & Antworten
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 12',13,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":12,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','90fff194be71a14c006697261f07774ce6a92f0e5694fd3ed8c1f55133b87273');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f9f4fd9cdc4db19aca7b8684','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',12,'Seite 13','Information „Kanalzwang“ (GPE/FPE vs. Trassenanmeldung)
-
-Prozess Prozessbeginn Prozessende Mögliche Kanäle Kanalzwang Hinweise
-
-(ja/nein)
-
-Trassenerst- Abgabe der Trassen- Bestätigung einer neuen Web-Oberfläche Jede Trasse wird
-
-bestellungen bestellung bei InfraGO Trasse, Nichtkonstruier- pathOS oder separat behandelt
-
-Ja
-
-barkeit oder Abbruch Click&Ride
-
-durch Kunden
-
-Kunden- IT & Ja
-
-Common Interface
-
-Trassen- Abgabe der Änderung Geänderte Trasse, Web-Oberfläche Ja Jede Trasse wird
-
-änderungen* bei InfraGO Nichtkonstruierbarkeit pathOS separat behandelt
-
-durch Besteller /Erhalt Bestand,
-
-Abbruch durch Kunden
-
-Kunden- IT & Ja
-
-Common Interface
-
-Trassen- Bereitstellung der Geänderte Trasse, Web-Oberfläche siehe Hinweise Kanalzwang entsteht
-
-änderungen* Änderung Nichtkonstruierbarkeit pathOS durch Wahl des
-
-InfraGO /Erhalt Bestand, Kanals durch den
-
-Kunden-IT &
-
-Abbruch durch Kunden Kunden
-
-Common Interface
-
-ujBau Bereitstellung GPE Bereitstellung FPE KOMBau nein
-
-Kunden- IT & nein
-
-Common Interface
-
-* Subsummiert Änderungen und Stornierungen inkl. Folgeaktivitäten aus ujBau
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 13',140,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":13,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','cc397bc1e7ba176fff1bdeb4cd301aef5f35f74fd4df8c74c0ad470e8138d4e3');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_75a2934a28de0d61de751406','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',13,'Seite 14','Information zur Trassenkommunikation 2026: VNP, GPE und
-
-NAÄ/NAS
-
-Vorläufiger Netzfahrplan (VNP):
-
-• Hinweis: Technisch wird der VNP nicht „auf einmal“ versendet, sondern der Versand wird durch
-
-die Konstrukteure durch entsprechende Auswahl von Trassen ausgelöst. Daher wird der Empfang
-
-nicht auf genau einem Zeitpunkt liegen sondern etwas verteilt sein.
-
-Versand GPE:
-
-• Es wird prozessual sichergestellt, dass das GPE erst nach dem VNP versandt wird. Der VNP ist
-
-Basis der ersten GPE, damit kann das GPE nicht vor dem VNP verschickt werden.
-
-Start Versand Netzausgelöste Änderung & Stornierung (NAÄ & NAS):
-
-• Es liegt aktuell eine Testeinschränkung vor, weil die automatische Annahme des NAÄ noch nicht
-
-vollständig korrekt implementiert ist. ​
-
-• Die Lieferung in den Kundentest ist für spätestens 29. Juli geplant.
-
-• DB InfraGO AG wird diese Lücke vor der Versendung der ersten NAÄ schließen. Es ist nicht
-
-notwendig sich auf Seiten der EVU auf alternative Prozesse einzustellen.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 14',158,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":14,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','8537158d3b0f6af751a512f4521ce180839796fbbb27b7c8043c43b85973f81d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_fd00e6ac3d281acc4f531fd2','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',14,'Seite 15','Änderungen an Rechnungsinhalten im Kontext TTT
-
-Auswirkungen von TTT auf Rechnungsinhalte
-
-DB InfraGO wird im August 2026 die genauen Rechnungsinhalte mit TTT
-
-veröffentlichen. Eine Ergänzung der Rechnungsdokumente mit TTT-Attributen
-
-ist geplant. Die Rechnung wird weiterhin die OTN enthalten.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 15',47,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":15,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','b8ff650a82f0e6ea6d474d48b3c36cef8d719a28c8dcce3a755dd3dc52edcac6');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f9399215acf627857057bfe1','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',15,'Seite 16','Prozess zur baubedingten Zusatzleistung im Kontext TTT
-
-Ablauf und Kennzeichnung baubedingter Zusatzleistungen
-
-Bei der Bestellung wird ein Verweis des EVUs auf die PathID der Bautrasse
-
-erforderlich sein. Dieser wird als „RelatedPlannedTransportID“ angegeben.
-
-Zusätzlich muss beim NSP* „verkehrsArtKundeZusatz“ die Ausprägung
-
-„BaubedingteZusatzleistung“ angegeben werden.
-
-* NSP: network specific parameter
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 16',56,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":16,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','00b0aad3d1825ab772caca93f1c1de77a2d960f009e3cab603a2813e2580940d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8c481ab6871d37df29241fd8','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',16,'Seite 17','Zeit für Ihre Fragen!
-
-Gerne beantworten wir Ihnen
-
-Ihre Fragen direkt im Termin.
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 17',22,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":17,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','d05be6edc486c9469a182d166ec9634c04ab4c4a531ffb858f715d445aae9e47');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_5c68f1f22f29a23159955753','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',17,'Seite 18','6. Zum Nachlesen:
-
-Nächste Termine
-
-Alle Informationen immer aktuell unter:
-
-www.dbinfrago.com/taf-tap-tsi
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 18',20,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":18,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','aaa8cb94e9a7f380a02ce8acfc35ad844a139e4deb40754a914b93023d80368d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_12930f8f00cbf6d9c1654863','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',18,'Seite 19','Nächster TTT-Dialog: 24.06., 12:30-14:30 Uhr
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 19',14,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":19,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','5f0d482887dbcd5097ad3d479bbf521ed0ab59dffb1543dce0daddd78b4e53e0');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_3365d44be991b837d6c8b4fd','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',19,'Seite 20','Übersicht TAF/TAP TSI-Kommunikation
-
-Arbeitsweise (A)/Turnus (T)
-
-Teilnehmer: Management & Experten aller EVU u. deren IT-Partner A: online
-
-TAF/TAP TSI
-
-1 Ziel: Überblick für GF-Ebene, allg. Infos (Betrieb + Fahrplan), zzgl. Vertiefung T: ca. monatlich
-
--Dialog
-
-aktueller Fokusthemen in Entwicklung/Testing Nächster Termin: 24.06.
-
-TAF/TAP TSI –
-
-2 Teilnehmer: Schnittstellenpartner Fahrplan, die bereits mit uns testen A: online
-
-Schnittstellen-
-
-Ziel: Aktuelle Informationen/Entwicklungen; Sprechstunde, Updates T: nach Bedarf
-
-partner Fahrplan
-
-Teilnehmer: Alle künftigen Anwendenden von pathOS A: online
-
-pathOS -
-
-3 Ziel: Erklärung der Grundlagen und wesentlichen Inhalte von pathOS in einzelnen T: seit 23.10.2025 – Termine auf
-
-Schulungen
-
-Terminen pathOS-Homepage (unter Kapitel 2.4)
-
-TAF/TAP TSI - Teilnehmer: Gesamtmarkt inkl. EIU A: online / in Präsenz
-
-e 4
-
-g Sektormeeting Ziel: nationale Spiegelgruppe TTT (Infos zu TTT, Verordnungen, ...) T: 4x jährlich, Nächster Termin: 11.06.
-
-o
-
-la
-
-i
-
-D A: in Präsenz
-
-Runder Tisch Bau Teilnehmer: 35 Mitglieder aus SPNV, SPV, SGV, BNetzA, Verbände, AT
-
-5 T: 4x p.a.
-
-(RTB) AG 3 Ziel: Beratung DB InfraGO bei Erarbeitung und Entwicklung für ujBau
-
-Nächster Termin: 01.09.
-
-EVU-Informations- Teilnehmer: Gesamtmarkt
-
-A: online
-
-6 veranstaltung unter- Ziel: Information zum neuen unterjährigen Baufahrplanprozess mit neuen
-
-T: nach Bedarf
-
-jähriger Bau Fahrplanprodukten und der digitalen BauFplo
-
-Teilnehmer: Geschäftspartner mit G-INV A: online
-
-7 BDV
-
-Ziel: Informationen, To-Dos vermitteln Nächster Termin: in Planung
-
-o Homepage + Teilnehmer: für alle zugängliches Format, KI an Verteiler (inkl. IT-Partner, nicht alle EVU) A: Homepage',232,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":20,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','2787912e244c9df507710d4a24a96ac96567cfb12a86e9099d827421627ec8fa');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4a7484f76e1c8c4f8af4413f','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',20,'Seite 20','f n 8 Newsletter (KI) Ziel: aktuelle Informationen zum Nachlesen: Testing-Zugang, Ansprechpartner, Updates T: kontinuierlich
-
-I
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 20',25,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":20,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','4c3e5351320ee4f54827d35b9d2fc1e74b1b1aa8e038dc9851568f4fec23ada5');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e6ea23ffe2112ef421590776','wiki/sources/taf-tap-tsi-dialog-21-mai-2026-terminunterlage-data.md',21,'Seite 21','Übersicht KOMBau-Kommunikation
-
-Arbeitsweise (A)/Turnus (T)
-
-Einweisungstermin Teilnehmer: Gesamtmarkt inkl. EIU
-
-A: online
-
-1 4. Konsultationsphase Ziel: Teilnehmenden die Funktionen, Prozesse und Anwendungsmöglichkeiten der KOMBau
-
-T: 29.04.2026 + 07.05.2026
-
-(KP) Thema BKE/BAE in der 4. KP anschaulich zu vermitteln
-
-Kundentesttage
-
-A: online*
-
-Frontend 4. Teilnehmer: Fachexperten und Anwender der EVU, Verkehrsarten repräsentativ abgedeckt
-
-2 T: 11.05.2026, 13.05.2026 +
-
-Konsultationsphase Ziel: Verproben des Workflows 4. KP GPE bis FPE und Feedback
-
-18.05.2026
-
-(GPE bis FPE)
-
-Einweisungstermin
-
-Teilnehmer: Gesamtmarkt A: online*
-
-4. Konsultationsphase
-
-3 Ziel: Teilnehmenden die Funktionen, Prozesse und Anwendungsmöglichkeiten der KOMBau T: 12.06.2026, 19.06.2026 +
-
-(KP) Thema GPE/
-
-in der 4. KP anschaulich zu vermitteln 26.06.2026
-
-GPEnS/FPE
-
-*Kund:inneninformationen und Einladungen werden in den kommenden Wochen versendet
-
-DB InfraGO AG | TAF/TAP TSI-Dialog am 21.05.2026 21',124,'{"canonical_url":null,"normalized_sha256":"ae6fb1592120714ce20618e6d58b112f1d0c662a71dda57469141b3f82e7068e","page":21,"source_id":"src_1f6c2d00fd116ecf0611","source_sha256":"12227c0c6672e3e4736d2c8bd72098d8868235b0b8e150df5a2295ae171901e3","source_version_id":"sv_12227c0c6672e3e4736d2c8b"}','108a3c2ce79d9206563c95e504ffc8aada8631d2c46cd2ba0f0a6693d6e128a4');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_8b2e5ffa1f464bee18cf','file','TAF/TAP TSI Dialog 22 April 2026 Antworten und offene Punkte',NULL,'de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_abacab26d0837e86a436bb01','src_8b2e5ffa1f464bee18cf','abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703','0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7',231431,'application/pdf','TAF-TAP-TSI-Dialog-22-April-2026-Antworten-und-offene-Punkte-data.pdf','sources/normalized/bootstrap/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"TAF-TAP-TSI-Dialog-22-April-2026-Antworten-und-offene-Punkte-data.pdf","page_count":7,"raw_binary_committed":false,"schema_version":1,"size_bytes":231431,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01","title":"TAF/TAP TSI Dialog 22 April 2026 Antworten und offene Punkte","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703','src_8b2e5ffa1f464bee18cf','sv_abacab26d0837e86a436bb01','{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-22-April-2026-Antworten-und-offene-Punkte-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7','src_8b2e5ffa1f464bee18cf',NULL,'{"content_duplicate_group":null,"original_filename":"TAF-TAP-TSI-Dialog-22-April-2026-Antworten-und-offene-Punkte-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_abacab26d0837e86a436bb01' WHERE id='src_8b2e5ffa1f464bee18cf';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md','TAF/TAP TSI Dialog 22 April 2026 Antworten und offene Punkte','14. TAF/TAP TSI-Dialog der DB InfraGO Follow-up: Ausgewählte Antworten aus dem Termin 22.04.2026 Versand im Nachgang','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','c79119c1695cbf077ffa336c7cb4a9553fc3d7d1c548000c145408dbd036fa38','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_8b2e5ffa1f464bee18cf","source_version_id":"sv_abacab26d0837e86a436bb01"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_88b72f48231ad531d58302e7','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',0,'Seite 1','14. TAF/TAP TSI-Dialog der DB InfraGO
-
-Follow-up: Ausgewählte Antworten aus dem Termin
-
-22.04.2026 Versand im
-
-Nachgang',16,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":1,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','a7b1617c3b716deb5196d815c3ba791cbbb691a35e76fb7bfc455accabdabbfe');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d1cc1bcc58ca6ac0393f762f','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',1,'Seite 2','Offene Punkte und Antworten (1/5)
-
-Frage Antwort DB InfraGO
-
-Ist für die Nutzung der Schnittstelle zur Nein. EVU, die das Onboarding für NEP bereits erfolgreich absolviert haben, sind auf Produktion
-
-Trassenanmeldung im GelV ein angebunden und müssen kein weiteres Onboarding für GelV durchlaufen.
-
-erneutes Onboarding erforderlich,
-
-wenn das Onboarding für NEP bereits
-
-erfolgt ist?
-
-Ob und wann werden die TTT- Click&Ride wird für die Nutzung um Fahrplan 2027 mit TAF/TAF ertüchtigt. Die zugehörige
-
-Komponenten / ID''s bei Click and Ride Entwicklung ist bereits in Vorbereitung. Die zugehörigen Meilensteine mit Fokus auf Schulungen und
-
-implementiert. Gibt es hierzu auch Testmöglichkeiten werden im nächsten TTT-Dialog vorgestellt.
-
-Schulungsunterlagen/ Möglichkeiten
-
-oder eine Testplattform?
-
-Rückfrage zur genannten Frist für Eine NAÄ gilt nach Versand direkt als angenommen. Für ZB besteht jedoch die Möglichkeit, die
-
-kostenlose Stornierung nach NAÄ: Sind Trasse innerhalb von drei Arbeitstagen (Montag bis Freitag, ausgenommen bundeseinheitliche
-
-3 Arbeitstage oder 3 Werktage hier Feiertage) kostenfrei zu stornieren.
-
-gemeint?
-
-Wenn wir die NAÄ bzw. Trassenvertrag Die DB InfraGO AG stellt sicher, dass eine Stornierung binnen der Frist von 3 Arbeitstagen nach Erhalt
-
-ablehnen, dann sorgt DB InfraGO für einer netzausgelösten Änderung für den Kunden kostenlos bleibt.
-
-Kostenlose Stornierung. Wird die Bautrassen, die innerhalb von drei Tagen storniert werden, zählen nicht in die Stornoquote.
-
-wird auch aus Stornierungsquote
-
-rausgenommen.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 22.04.2026 ​ 2',225,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":2,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','486bb799fe9f8e4bb7963b4fd96156cb99e86e821fafd8d672c9637fab723fe9');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4c9b3f73c970920cdf0872a0','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',2,'Seite 3','Offene Punkte und Antworten (2/5)
-
-Frage Antwort DB InfraGO
-
-Muss man fest entscheiden, ob Stellungnahmen zu GPE können sowohl über die KOMBau als auch das Common Interface abgegeben
-
-Stellungnahmen zum GPE über werden, jedoch wird nur die zuletzt abgegebene Stellungnahme verwendet.
-
-KOMBau oder CI erfolgen, oder kann Das GPE selbst sowie GPEnS, FPE und NAÄ werden sowohl in der KOMBau angezeigt als auch über
-
-man das auch parallel nutzen? das Common Interface bereitgestellt.
-
-Verhält sich dies anders als pathOS und Beim Trassenmanagement (Bestellung, Änderung, Stornierung) muss jeder einzelne Vorgang in dem
-
-das CI bei der Trassenanmeldung? gewählten Kanal – via Common Interface CI oder pathOS Webportal – bis zum Abschluss des
-
-Prozesses bearbeitet werden. D.h. die Reaktion auf ein Angebot muss im gleichen Kanal erfolgen wie
-
-die Trassenanmeldung.
-
-Das ist ein anderes Verhalten als die Abgabe von Stellungnahmen zum GPE.
-
-Gerne kommen wir dem Wunsch aus dem Termin nach und bringen dieses Thema im nächsten TTT-
-
-Dialog nochmals im Detail mit.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 22.04.2026 ​ 3',172,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":3,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','dcc3ca2110e320b3eaf093de744ec29c23bc192d9f7adfed2d418f3c7271ad9e');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1f8265c94c9d927544c6aa02','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',3,'Seite 4','Offene Punkte und Antworten (3/5)
-
-Frage Antwort DB InfraGO
-
-Wenn aufgrund einer NAÄ nicht nur die Ziffer 5.6.4 der INB:
-
-direkt betroffene Trasse storniert wird "Einschränkungen, die aus der Sphäre des Infrastrukturbetreibers stammen, erfolgt abweichend von
-
-sondern auch eine abhängige Trasse, den folgenden Regelungen keine Bepreisung der dadurch verursachten Stornierung sowie keine
-
-weil z.B. der Umlauf nicht mehr Bepreisung der Stornierung eines davon betroffenen Umlaufs."
-
-möglich ist, ist dann diese Stornierung
-
-ebenfalls kostenfrei?
-
-Vorhin gab es eine Frage zu Ziffer 5.6.2.2 der INB:
-
-Stornierungen von nicht Für Zugtrassen, die aufgrund nicht im ENV berücksichtigter Baumaßnahmen zusätzlich notwendig
-
-baubetroffenen Trassen, die werden, ist kein Trassenentgelt zu entrichten. Zu diesen Zugtrassen zählen u. a. Zu- und
-
-erforderlich werden, wenn Umläufe Abführungsfahrten zu einem Schienenersatzverkehr, Drehfahrten aufgrund baubedingter
-
-aufgrund von FPE/NAÄ, die nicht zu Einschränkungen, Zu- und Abführungsfahrten zu einer anderen als der gewöhnlichen Abstell- oder
-
-den Stellungnahmen der EVU passen, Tankanlage, Zu- und Abführungsfahrten von Triebfahrzeugen oder zusätzliche Verkehre aufgrund
-
-nicht mehr aufgehen. Folge solcher einer Änderung der Zugcharakteristik (z. B. Ablasten aufgrund geringerer Grenzlast einer
-
-Abweichungen könnten aber auch Umleitungsstrecke). Die genauen Voraussetzungen entnehmen Sie bitte der Ziffer 5.6.2.2 der INB.
-
-Bestellungen weiterer Trassen sein.
-
-Wie wird hier sichergestellt, dass dies
-
-für EVUs kostenneutral erfolgt?
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 22.04.2026 ​ 4',215,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":4,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','3452740402d995e8000f3e3f2dd4c08a4a379a264fb03f3755d05ce5779b6d59');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_23b4b5551b060378f8164c02','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',4,'Seite 5','Offene Punkte und Antworten (4/5)
-
-Frage Antwort DB InfraGO
-
-Der Prozess zum NAÄ ist aktuell – und Es liegt aktuell eine Testeinschränkung vor, weil die automatische Annahme des NAÄ noch nicht
-
-seit längerem – nicht vollständig korrekt implementiert ist.
-
-testbar, da die automatische Annahme Die Lieferung in den Kundentest ist für 29. Juli vorgesehen.
-
-nicht funktioniert.
-
-DB InfraGO wird diese Lücke vor der Versendung der ersten NAÄ schließen. Es ist nicht notwendig
-
-Bis wann wird der blockierende Fehler sich auf Seiten der EVU auf alternative Prozesse einzustellen.
-
-behoben und wie stabil ist die Planung?
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 22.04.2026 ​ 5',105,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":5,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','ba47d7624d49b021a9c5be2693592cde15e29ebef1feb427f218927ec51fbb75');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_dee7a47548a07192f9047619','wiki/sources/taf-tap-tsi-dialog-22-april-2026-antworten-und-offene-punkte-data.md',5,'Seite 6','Offene Punkte und Antworten (5/5)
-
-Frage Antwort DB InfraGO
-
-Oh, das ist ein guter Punkt, der Zug Im Fall eines mittigen Teilausfalls (Schienenersatzverkehr) muss das EVU eine Änderungsbestellung
-
-würde ja ggf. im Planungssystem des vornehmen, um dem zweiten Trassenteil eine neue ReferenceTrainID zu geben. Dabei dürfen keine
-
-EVU bereits geändert sein! Dann anderen Änderungen vorgenommen werden.
-
-werden zwangsweise neue Daten
-
-übertragen. Muss man sich den also Umgang mit geändertem Fremdinfrastrukturanteil:
-
-"wegspeichern" unverändert? Und was Geänderte/vertragsgeschlossene Anteile auf Fremdnetzen dürfen „korrekt“ angegeben werden. Diese
-
-ist mit Änderungen auf haben auf unsere Konstruktion und die Durchführung der Änderungsbestellung keine Auswirkung und
-
-Fremdinfrastruktur, die halt auch in der sind genauso in unserem Angebot enthalten. Etwaige Änderungen an diesen Anteilen in der
-
-Trasse liegen? Zwischenzeit werden nicht berücksichtigt.
-
-DB InfraGO AG | Follow-up: TAF/TAP TSI-Dialog am 22.04.2026 ​ 6',135,'{"canonical_url":null,"normalized_sha256":"0629a1f4df3af0861459be12aad8be05d74e88666f80dab4353848fabc5e63e7","page":6,"source_id":"src_8b2e5ffa1f464bee18cf","source_sha256":"abacab26d0837e86a436bb01429fc0431caffc556ac17a01fa1a0bd5ac1a0703","source_version_id":"sv_abacab26d0837e86a436bb01"}','406421042db260046663daa5894c31ab20341d04f03f73fbbf471615826cfd48');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_ea6d92cb2a3f2e4138ef','file','TAF/TAP TSI Dialog 22 April 2026 Terminunterlage',NULL,'de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
 --> statement-breakpoint

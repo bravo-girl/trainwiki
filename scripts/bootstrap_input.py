@@ -1248,10 +1248,12 @@ def write_seed(
                 ordinal += 1
                 chunk_count += 1
 
-    for start in range(0, len(term_rows), 100):
+    # Keep multi-row inserts below the stricter compound-select limit used by
+    # the hosted D1 migration runner.
+    for start in range(0, len(term_rows), 20):
         values = ",".join(
             f"({sql_string(chunk_id)},{sql_string(term)},{frequency})"
-            for chunk_id, term, frequency in term_rows[start : start + 100]
+            for chunk_id, term, frequency in term_rows[start : start + 20]
         )
         statements.append(
             "INSERT INTO wiki_terms (chunk_id,term,frequency) VALUES " + values + ";"

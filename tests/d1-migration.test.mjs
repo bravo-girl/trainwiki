@@ -31,7 +31,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
     createHash("sha256").update(immutableBootstrapMigration).digest("hex"),
     "d9417d94251400f2e334463d2b5eab06a2092bd158a1833f99d908ea2e19f367",
   );
-  assert.equal(bootstrapInputMigrations.length, 14);
+  assert.equal(bootstrapInputMigrations.length, 28);
   const initialInputHash = createHash("sha256");
   for (const filename of bootstrapInputMigrations) {
     initialInputHash.update(
@@ -40,7 +40,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
   }
   assert.equal(
     initialInputHash.digest("hex"),
-    "d3a300ad06fe004713ef09f7a27a9cf59c1b001797f82935b83e761e25bb98b5",
+    "a3c1a014c8f2629d750cd8030b2f09ce39b823d33537a3496bb4f4c5cbf5f6e1",
   );
 
   const db = new DatabaseSync(":memory:");

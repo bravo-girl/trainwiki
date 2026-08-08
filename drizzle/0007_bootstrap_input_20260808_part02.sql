@@ -1,3 +1,179 @@
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_6dfa6ab185d7b13bde7c1fcc','wiki/sources/download-taf-tap-glossar-data.md',3,'Seite 2','Begriff Beschreibung
+
+PLC Diese Abkürzung steht für Primary Location Code. Mit dem Primary Location Code werden
+
+Betriebsstellen eindeutig und in einem einheitlichen, standardisierten europäischen Format codiert.
+
+Somit identifiziert ein Primary Location Code eine Örtlichkeit auf dem Schienennetzwerk. Primary
+
+Location Codes werden zukünftig bei jeder Art von TAF/TAP-Kommunikation verwendet. Daneben
+
+wird es auch weiterhin die Ril100 Codes geben (z.B. im Trassenbestellsystem).
+
+Primary Location Eine Primary Location ist ein Ort innerhalb des Schienennetzes, an dem eine Zugfahrt beginnt, endet,
+
+anhält, durchfährt oder die Strecke wechselt. Dieser Ort muss von einem Infrastrukturbetreiber, der
+
+durch einen Company Code identifiziert wird, verwaltet werden. Beispiele für Primary Locations sind
+
+Bahnhöfe, Haltepunkte oder Grenzpunkte.
+
+PRM bzw. Path Request Abkürzung für die Path Request Message, eine Pflichtnachricht in der Trassenanmeldung, mit der ein
+
+Path erstmalig bestellt wird. Diese Nachricht wird vom EVU an das EIU geschickt
+
+RA Die Abkürzung für den "Responsible Applicant", das vertragsbindende Unternehmen. Es kann sein,
+
+dass ein und dasselbe EVU die Rollen des LeadRU, RA und ResponsibleRU einnimmt.
+
+ReferenceTrain Familie von Zügen (Trains) bzw. Zugfamilie. Objekt im Kontext des TAF/TAP-Modells. Darunter werden
+
+verschiedene zueinander gehörige Züge (Trains) zusammengefasst. Dies können z.B. Züge mit
+
+abweichenden Zugläufen werktags und am Wochenende sein. Wird durch eine ReferenceTrainID
+
+identifiziert
+
+ResponsibleIM Das für die Bereitstellung einer Trasse (Path) und die betriebliche Durchführung der Zugfahrt auf
+
+Infrastrukturseite verantwortliche EIU. Analog zum ResponsibleRU.',222,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','b2773faca825eba224bc4dda0fecde0e5ca300d969c8085fd3d3bc275a7e87da');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_691eecbef550448fc3f31beb','wiki/sources/download-taf-tap-glossar-data.md',4,'Seite 2','ResponsibleRU, auch RRU Das für die Durchführung einer Zugfahrt verantwortliche EVU, also der "Eigner der Trasse". Dieses EVU
+
+ist gemäß TAF/TAP der Partner für den Datenaustausch mit dem EIU in der Betriebsphase. Dies behält
+
+auch seine Gültigkeit, falls das ResponsibleRU einen Subunternehmer mit der Durchführung der
+
+Zugfahrt beauftragt. Es kann sein, dass ein und dasselbe EVU die Rollen des LeadRU, RA und
+
+ResponsibleRU einnimmt.
+
+RNE RNE ist die Rail Net Europe, ein europäischer Verband der Eisenbahninfrastrukturunternehmen. Sie ist
+
+einer der Hauptakteure bei der Umsetzung von TAF/TAP TSI. Die RNE gibt es seit 2004 und hat zum
+
+übergreifenden Ziel die Herausforderungen des europäischen Eisenbahnsektors anzugehen und zu
+
+vereinfachen. Die RNE versucht, die europäische Vernetzung seiner Mitglieder zu unterstützen und z.B.
+
+auch bei rechtlichen Fragestellungen innerhalb der EU zu vermitteln. Mit Stand 2022 hat die RNE 38
+
+Vollmitglieder aus über 30 Ländern.
+
+Route Objekt im Kontext des TAF/TAP-Modells. Beinhaltet den groben Zuglauf (Start, Ziel, Grenzübergänge
+
+sowie Informationen zu Tageswechseln) durch Europa.
+
+Wird durch eine RouteID identifiziert
+
+RU Die englische Bezeichnung für ein EVU (Eisenbahnverkehrsunternehmen), also ein "Railway
+
+Undertaking"
+
+SLC Ein Subsidiary Location Code identifiziert eindeutig eine Subsidiary Location innerhalb einer
+
+bestehenden Primary Location. Mit dem SLC werden Subsidiary Locations in einem einheitlichen,
+
+standardisierten europäischen Format codiert. Mit Hilfe der Subsidiary Location Codes kann ein
+
+Nachrichtenaustausch zwischen Unternehmen stattfinden, die in einer geschäftlichen Beziehung
+
+stehen.
+
+Subsidiary Location Eine Subsidiary Location ist immer mit einer Primary Location verknüpft und beschreibt Teile,',237,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','6ad1b77340cbbb64f9c59095157320e8a87b6f65378b68b54566cb4302da9460');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f4c2966b7573656c83d6ee68','wiki/sources/download-taf-tap-glossar-data.md',5,'Seite 2','Attribute von Primary Locations oder die Verwendung von Primary Locations näher. Es kann sich auch
+
+um einen nicht-schienengebundenen oder schienengebundenen Punkt handeln, der nicht von einem
+
+Infrastrukturbetreiber (IM) betrieben wird. Beispiele für Subsidiary Locations sind Gleise, Tankanlagen
+
+oder Ladepunkte.
+
+TAF TSI Telematics Applications for Freight Services - Technical Specification for Interoperability (Telematische
+
+Anwendungen für den Güterverkehr - Technische Spezifikation für Interoperabilität)
+
+TAP TSI Telematics Applications for Passenger Services - Technical Specification for Interoperability
+
+(Telematische Anwendungen für den Personenverkehr - Technische Spezifikation für Interoperabilität)
+
+TCM/PTCM Train Composition Message (Güterverkehr) bzw. Passenger Train Composition Message
+
+(Personenverkehr): Die beiden künftig verbindlichen Nachrichtentypen von TAF/TAP im Betrieb
+
+werden vom EVU an das EIU gesendet. Sie geben Auskunft über die aktuellen Zuginhaltsdaten (Länge,
+
+Gewicht, Angaben zu Bremsen, etc.) und sind nicht gleichzusetzen mit der heutigen Wagenliste.
+
+Einführung erfolgt vsl. in 09/2023, eine Verpflichtung zu Abgabe in NBN ist grundsätzlich geplant -
+
+genauere Termine hierzu werden separat kommuniziert, sobald bekannt.
+
+TPN Trassen Portal Netz, also das bisherige System zur Trassenanmeldung bei der DB InfraGO. Dieses wird
+
+mit Einführung von TAF/TAP durch das neue Bestellsystem ersetzt. Aus heutiger Sicht bleibt TPN bis
+
+einschließlich Fahrplanjahr 2025 führend, ab Fahrplanjahr 2026 gilt das neue System
+
+Train Zug. Objekt im Kontext des TAF/TAP-Modells. Beinhaltet Informationen zum Zug und dessen
+
+Eigenschaften. Wird durch eine TrainID identifiziert.
+
+Glossar zu TAF/TAP TSI, Stand Dezember 2023 Seite 2 von 3',226,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":2,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','f32b15911d72bd0f7aa87a0526042c697a1908e12a6d6841ab7f40df1e828c5d');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f8dc47de8f9f289558f4aa3a','wiki/sources/download-taf-tap-glossar-data.md',6,'Seite 3','Begriff Beschreibung
+
+Train Activity Ein Feld innerhalb einiger Nachrichten, u.a. in der Trassenanmeldung für den Fahrplan oder der
+
+Information zu Abhängigkeiten zwischen Zügen im Betrieb. Hiermit wird die Zugaktivität an einem
+
+bestimmten Laufwegspunkt beschrieben. Dies sind z.B. gebräuchliche Aktivitäten wie der
+
+Verkehrshalt, Anschluss-/Umlaufinformationen oder das Zusammenführen von Zügen oder weniger
+
+oft genutzte wie Lokführererholungshalt, Fotohalt etc.
+
+UIC Die International Union of Railways mit der Mission: "Promote rail transport globally with the
+
+objective of responding effectively to current and future challenges relating to mobility and
+
+sustainable development; Develop and facilitate all forms of international cooperation among
+
+members and promote sharing of best practice" (Auszug zitiert von der UIC-Homepage). Die UIC
+
+vergibt u.a. die Company Codes
+
+UIC-Telegramme Bestehendes international standardisiertes Datenaustauschformat im Betrieb. Einige Telegramme sind
+
+analog zu den entsprechenden TAF/TAP-Meldungen (z.B. Zugstandort, Prognose). Gegenüber den
+
+TAF/TAP-Meldungen decken die UIC-Telegramme jedoch weniger Geschäftsfälle ab und bieten
+
+weniger Umfang
+
+xsd XML Schema Definition: Das Dateiformat, in dem z.B. die RNE ihre Schnittstellenbeschreibungen
+
+veröffentlicht
+
+Zugnummer Die heute im Betrieb verwandte Zugnummer, mit der auch Passagiere im Aushangfahrplan ihren Zug
+
+erkennen können
+
+Glossar zu TAF/TAP TSI, Stand Dezember 2023 Seite 3 von 3',188,'{"canonical_url":null,"normalized_sha256":"daa4d8e870f689a51764d980e10aa769e347a381d3d4a1cc30e57d7898bfd51e","page":3,"source_id":"src_660bf8039cf0527ee7b6","source_sha256":"51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2","source_version_id":"sv_51fb412fc4f0d41650cb55bf"}','458d76a4c10481f2b76f1de5bce7f735b39b8e0c6f12975d073419534732b310');
+--> statement-breakpoint
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_b5fb8ccb80d176b38310','file','FAQ Infoveranstaltung Netzfahrplan 2027',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
+--> statement-breakpoint
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_4fbe32d73c5618c02a183f43','src_b5fb8ccb80d176b38310','79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689','ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c',91280,'application/pdf','FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf','sources/normalized/bootstrap/faq-infoveranstaltung-netzfahrplan-2027-data/sv_4fbe32d73c5618c02a183f43.md','pdfplumber','0.11.9','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","converter":{"name":"pdfplumber","profile":"bootstrap-markdown-v2","version":"0.11.9"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_4fbe32d73c5618c02a183f43.json","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/faq-infoveranstaltung-netzfahrplan-2027-data/sv_4fbe32d73c5618c02a183f43.md","normalized_sha256":"ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c","origin_page_url":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf","page_count":6,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":91280,"source_id":"src_b5fb8ccb80d176b38310","source_sha256":"79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689","source_version_id":"sv_4fbe32d73c5618c02a183f43","supersedes_source_version_id":null,"title":"FAQ Infoveranstaltung Netzfahrplan 2027","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689','src_b5fb8ccb80d176b38310','sv_4fbe32d73c5618c02a183f43','{"content_duplicate_group":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c','src_b5fb8ccb80d176b38310',NULL,'{"content_duplicate_group":null,"original_filename":"FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
+UPDATE sources SET current_version_id='sv_4fbe32d73c5618c02a183f43' WHERE id='src_b5fb8ccb80d176b38310';
+--> statement-breakpoint
+INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md','FAQ Infoveranstaltung Netzfahrplan 2027','Fragen / Antworten Kundenveranstaltung „Teilzuweisungen, Storno- und Annahmequote und E-Mailtypen“ Termin 15.04.2026 1. Warum werden die Jahre 2023/2024 bei der AQ und SQ berücksichtigt? es war doch nicht bekannt bei den Bestellungen in diesen Jahren, dass das EVU 3 Jahre später zu einem nicht verlässlichem EVU wird Hierzu gab es in der Zwischenzeit für die ','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','37561f38c1148d07edd9772d0577f5d40f32d01065cc6366ed3b3b45a55a4a27','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_b5fb8ccb80d176b38310","source_version_id":"sv_4fbe32d73c5618c02a183f43"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
 DELETE FROM wiki_chunks WHERE page_path='wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md';
 --> statement-breakpoint
 INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b0884b3a3a90c7d64ae50b20','wiki/sources/faq-infoveranstaltung-netzfahrplan-2027-data.md',0,'Seite 1','Fragen / Antworten Kundenveranstaltung „Teilzuweisungen, Storno- und
@@ -937,320 +1113,4 @@ UPDATE sources SET current_version_id='sv_c88a5b74e140e9fe73443e98' WHERE id='sr
 INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-taf-tap-identifikatoren-data.md','Flyer TAF/TAP Identifikatoren','Informationen zu den neuen TAF/TAP- TSI-Objekten und ihren Identifikatoren Ein Kernanliegen von TAF/TAP-TSI ist die Schaffung von eindeutig zu zuordnenden Elementen zu ihren Eigentümern. Dafür wurden für den Austausch zwischen EIU und EVU die Objekte ReferenceTrain, Route sowie Path(-Request) mit zugehörigen Identifikatoren geschaffen. Züge und Routen sind P','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','680c9ebe395455e2436774b12973fef30987a6903bf3ed2d9d073851bebd6518','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_f99e066f37874620df4e","source_version_id":"sv_c88a5b74e140e9fe73443e98"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
 DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-taf-tap-identifikatoren-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_907e99d75b2b31cd7568b7ea','wiki/sources/flyer-taf-tap-identifikatoren-data.md',0,'Seite 1','Informationen zu den neuen TAF/TAP-
-
-TSI-Objekten und ihren Identifikatoren
-
-Ein Kernanliegen von TAF/TAP-TSI ist die Schaffung von eindeutig zu
-
-zuordnenden Elementen zu ihren Eigentümern. Dafür wurden für den Austausch
-
-zwischen EIU und EVU die Objekte ReferenceTrain, Route sowie Path(-Request)
-
-mit zugehörigen Identifikatoren geschaffen. Züge und Routen sind
-
-Planungselemente der EVU. Die Trassen gehören zur Infrastruktur.
-
-ReferenceTrain (Identifikator: TRID) Path (PAID)
-
-• Beschreibt die Zugfamilie für eine geplante • Ist das EIU-Angebot zur Bestellung und
-
-Verkehrsdienstleistung Grundlage des Trassennutzungsvertrags
-
-• Fahrplan: Enthält den Kalender der • Enthält alle notwendigen Informationen
-
-Verkehrstage, an jedem Tag des Kalenders für die Buchung der Trasse
-
-kann ein Zug aus der Zugfamilie fahren • Verfahren mit Kalender für Fahrplanung
-
-und tagesscharfer-ID für Betrieb analog
-
-• Betrieb: Bezeichnet als tagesscharfe ID
-
-zu ReferenceTrain
-
-europaweit genau einen Zug an einem Tag
-
-• Ein Attribut des Path ist die Zugnummer
-
-• Der Identifikator wird bei interoperablen
-
-(OTN = Operational Train Number)
-
-Zügen vom führenden EVU (LeadRU)
-
-vergeben & von beteiligten EVU genutzt
-
-PathRequest (PRID), nur für
-
-Fahrplanung
-
-Route (ROID), nur für Fahrplanung
-
-• Ist vom durchführenden EVU zu
-
-• Beschreibt den globalen Laufweg des Zuges
-
-erstellen
-
-über EIU-Grenzen hinweg
-
-• Beschreibt die konkrete
-
-• Dient allen beteiligten EVU zur Planung &
-
-Trassenbestellung ggü. dem EIU und
-
-groben Beschreibung der Strecke
-
-enthält die Details zum genutzten Zug &
-
-• Mehrere Routen können zu einem der gewünschten Fahrlage
-
-ReferenceTrain definiert werden
-
-dbinfrago.com/taf-tap-tsi Identifikatoren | Seite 1 von 2',237,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf","normalized_sha256":"e78666ffc6c51fcf488e8a18d3a827bdb6a63564bc3f3bbd875c2294cfdd2c2d","page":1,"source_id":"src_f99e066f37874620df4e","source_sha256":"c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b","source_version_id":"sv_c88a5b74e140e9fe73443e98"}','ccaf47d2f55a4e79d9bfc5d93822b2df5d44625068fdcda6b3cd4996735d6aee');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_68d7e82bdc919f7376c57581','wiki/sources/flyer-taf-tap-identifikatoren-data.md',1,'Seite 2','Struktur Identifikatoren (immer gleiche Abfolge)
-
-• Objekttyp: TR, RO, PR, PA (2-Stellen)
-
-• CompanyCode (4-Stellig)
-
-• Core-Element (frei wählbar, 12-Stellen)
-
-• Variant (frei wählbar, 2-Stellen)
-
-• Fahrplanjahr (4-Stellen)
-
-• Nur im Betrieb: Startdatum am Ursprungsbahnhof (10-Stellen: dann tagesscharfe ID
-
-analog Tagesfahrplan) – Dieser kann im Bereich eines anderen EIU liegen
-
-ReferenceTrain-ID 1
-
-(Zugfamilie, Variant immer v00)
-
-n Ersteller: Führendes EVU (LeadRU)
-
-e
-
-r
-
-o
-
-t Train-ID 1 Train-ID 2 Siehe
-
-a
-
-k Hinweis
-
-i (Ein Zug der Familie, Variant nie v00) (Ein Zug der Familie, Variant nie v00)
-
-f
-
-i t Ersteller: Führendes EVU (LeadRU) Ersteller: Führendes EVU (LeadRU) unten
-
-n
-
-e
-
-d
-
-I Route-ID 1 Route-ID 2
-
-&
-
-(Grober Laufweg des Zuges über alle Netze) (Grober Laufweg des Zuges über alle Netze)
-
-e
-
-t Ersteller: Führendes EVU (LeadRU) Ersteller: Führendes EVU (LeadRU)
-
-k
-
-e
-
-j
-
-b
-
-O
-
-- PathRequest-ID 1
-
-P
-
-A
-
-(Genauer gewünschter Laufweg des Zuges in einem Netz)
-
-T
-
-/ Ersteller: Anmelder (ResponsibleApplicant)
-
-F
-
-A
-
-T
-
-Path-ID 1 Path-ID 2
-
-(Genauer Laufweg des Zuges in einem Netz) (Genauer Laufweg des Zuges in einem Netz)
-
-Ersteller: EIU Ersteller: EIU
-
-t h
-
-u t OTN 1 OTN 2
-
-b a
-
-P
-
-i r (Zugnr.) (Zugnr.)
-
-t s
-
-t e Ersteller: EIU Ersteller: EIU
-
-A
-
-d
-
-Beispielhafter Aufbau aller Identifikatoren
-
-Fahrplanungsphase TR/0001/AB12345TFRLH/00/2023 + Kalender
-
-Betriebsphase TR/0001/AB12345TFRLH/00/2023/2023-11-05
-
-Hinweis zur Train-ID
-
-Das Zugobjekt mit der Train-ID wird nur im Datenaustausch zwischen den EVU genutzt, es
-
-ist für das EIU nicht sichtbar oder relevant.
-
-dbinfrago.com/taf-tap-tsi Identifikatoren | Seite 2 von 2',248,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089294/6a4b5990c9ce96a7a1bb71efa5c48f16/Flyer-TAF-TAP-Identifikatoren-data.pdf","normalized_sha256":"e78666ffc6c51fcf488e8a18d3a827bdb6a63564bc3f3bbd875c2294cfdd2c2d","page":2,"source_id":"src_f99e066f37874620df4e","source_sha256":"c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b","source_version_id":"sv_c88a5b74e140e9fe73443e98"}','56ab36d6006d005216d9d06130662f8efceee799d091c56bd55795b847ade766');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_a731ecf1b5573c6eba01','file','Flyer TCM PTCM','https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_c7063d63a8af5e6fac38fb2c','src_a731ecf1b5573c6eba01','c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47','5b2099e9c62191e2e6ff25602bfe83452aad24027ee6189565cf8a6402606123',193928,'application/pdf','Flyer-TCM-PTCM-data.pdf','sources/normalized/bootstrap/flyer-tcm-ptcm-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-tcm-ptcm-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-TCM-PTCM-data.pdf","page_count":2,"raw_binary_committed":false,"schema_version":1,"size_bytes":193928,"source_id":"src_a731ecf1b5573c6eba01","source_sha256":"c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47","source_version_id":"sv_c7063d63a8af5e6fac38fb2c","title":"Flyer TCM PTCM","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47','src_a731ecf1b5573c6eba01','sv_c7063d63a8af5e6fac38fb2c','{"content_duplicate_group":null,"original_filename":"Flyer-TCM-PTCM-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','5b2099e9c62191e2e6ff25602bfe83452aad24027ee6189565cf8a6402606123','src_a731ecf1b5573c6eba01',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-TCM-PTCM-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','6ea600bb078f32c2c0efa960fc40afb41b36bc6c1a496abae9a6124a9528dd29','src_a731ecf1b5573c6eba01',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_c7063d63a8af5e6fac38fb2c' WHERE id='src_a731ecf1b5573c6eba01';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-tcm-ptcm-data.md','Flyer TCM PTCM','Versand von Ist-Zugdaten an DB InfraGO AG mit TAF/TAP TSI: TCM und PTCM (Passenger) Train Composition Message Die DB InfraGO AG möchte durch die Berücksichtigung aktueller Zugdaten, wie z.B. Länge und Gewicht des Gesamtzuges, eine erhöhte Prognosequalität sowie eine verbesserte digitale Unterstützung der Zusammenarbeit zwischen den Mitarbeiter:innen der EVU ','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','c00440040f8dc81f9d1445f89907ba4a337daa7f3823877fd432baa2e9fbe9bd','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_a731ecf1b5573c6eba01","source_version_id":"sv_c7063d63a8af5e6fac38fb2c"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-tcm-ptcm-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_65e92140483521ddcf31e6e4','wiki/sources/flyer-tcm-ptcm-data.md',0,'Seite 1','Versand von Ist-Zugdaten an DB InfraGO
-
-AG mit TAF/TAP TSI: TCM und PTCM
-
-(Passenger) Train Composition Message
-
-Die DB InfraGO AG möchte durch die Berücksichtigung aktueller Zugdaten, wie
-
-z.B. Länge und Gewicht des Gesamtzuges, eine erhöhte Prognosequalität sowie
-
-eine verbesserte digitale Unterstützung der Zusammenarbeit zwischen den
-
-Mitarbeiter:innen der EVU und den Betriebszentralen erreichen.
-
-Motivation
-
-Die Kenntnis der aktuelle Zugcharakteristik ermöglicht in den Dispositionssystemen der
-
-DB InfraGO AG durch die Berücksichtigung der aktuellen fahrdynamischen Eigenschaften
-
-des Zuges eine akkuratere Prognoserechnung. Diese wirkt direkt auf die
-
-Prognosedatensätze, welche die DB InfraGO AG den EVU bereitstellt. Des weiteren bietet
-
-die verbesserte Prognose und Angaben wie etwa die Zuglänge für die Mitarbeiter:innen in
-
-der Disposition eine bessere Informationsbasis z.B. für Überholungen und Einfädelungen.
-
-Auch wirkt die verbesserte Prognose auf Prognosedatensätze, welche die DB InfraGO AG
-
-ihren Kunden bereitstellt.
-
-Aufgrund dieses hohen Mehrwerts für alle Verkehre auf unserem Netz, haben wir uns
-
-entschlossen, die Abgabe der Train Composition Message / Passenger Train Composition
-
-Message gemäß TAF/TAP TSI bereits zum Fahrplanwechsel im Dezember 2025
-
-verpflichtend zu machen (zunächst noch auf Basis OTN/Zugnr.). Die Einführung auf Basis
-
-TAF/TAP-Identifikatoren folgt dann zum Fahrplanwechsel im Dezember 2026. Wir als DB
-
-InfraGO AG werden eine Weboberfläche zur manuellen Eingabe der Zugcharakteristika
-
-oder deren Upload als csv-/xml-Datei als Alternative zum Meldungsversand
-
-bereitzustellen.
-
-dbinfrago.com/taf-tap-tsi TCM/PTCM | Seite 1 von 2',218,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf","normalized_sha256":"5b2099e9c62191e2e6ff25602bfe83452aad24027ee6189565cf8a6402606123","page":1,"source_id":"src_a731ecf1b5573c6eba01","source_sha256":"c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47","source_version_id":"sv_c7063d63a8af5e6fac38fb2c"}','94a8b9880a2f57d4df20e236cf6b4a9f009bbcc6aad650065607cc6b1d05e389');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_44658b23d28b71ab8ad3ac15','wiki/sources/flyer-tcm-ptcm-data.md',1,'Seite 2','Versand von Ist-Zugdaten an DB InfraGO
-
-AG mit TAF/TAP TSI: TCM und PTCM
-
-Zeitachse Weitere Funktionen
-
-‒ Bereits jetzt kann die PTCM/TCM mit Mit Inbetriebnahme sind auch die
-
-der DB InfraGO AG getestet werden folgenden optionalen Funktionen
-
-verfügbar:
-
-− Alle EVU können künftig die Meldung
-
-selbst oder über einen Dienstleister − Zulieferung Wagenliste im Rahmen
-
-freiwillig senden (genaue Schienenlärmschutzgesetz
-
-Zeitplanung aktuell in Arbeit)
-
-− Übermittlung verminderter
-
-− Eine Verpflichtung via INB ist für Bremshundertstel mit automatischer
-
-Dezember 2025 (also zum Ausgabe neuer Fahrzeiten
-
-Fahrplanjahr 2026) auf Basis
-
-OTN/Zugnummer vorgesehen
-
-− Verwendung auf Basis TAF/TAP-
-
-Identifikatoren folgt dann zum
-
-Fahrplanjahr 2027
-
-dbinfrago.com/taf-tap-tsi TCM/PTCM | Seite 2 von 2',107,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089298/4e18e826234c994109813595aeb14eec/Flyer-TCM-PTCM-data.pdf","normalized_sha256":"5b2099e9c62191e2e6ff25602bfe83452aad24027ee6189565cf8a6402606123","page":2,"source_id":"src_a731ecf1b5573c6eba01","source_sha256":"c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47","source_version_id":"sv_c7063d63a8af5e6fac38fb2c"}','dfb802d58d40650ae32a648715ee59ae85275c11cbf966c4b598212314c4f817');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_154242f98906f347d53b','file','Flyer Umsetzungscheckliste TAF/TAP TSI fuer EVU','https://www.dbinfrago.com/resource/blob/11089304/748022c34b79d03bdd3e6ae0e5914836/Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf','de','unknown','public','active','bootstrap','2026-08-02T10:25:48Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_1eeb0a97a58e3ea642480851','src_154242f98906f347d53b','1eeb0a97a58e3ea6424808511dea54b1fdd13f3355b02dedd05eaab6f0fed061','9f98e995f66cec9d6f71a50e824d0ccdde3e78cc35f739192e74958a961b2a41',219407,'application/pdf','Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf','sources/normalized/bootstrap/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md','pdfplumber','0.11.9','2026-08-02T10:25:48Z','2026-08-02T10:25:48Z',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089304/748022c34b79d03bdd3e6ae0e5914836/Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf","contact_redaction":"email_phone_identified_contact_names_and_contact_address","converter":{"name":"pdfplumber","version":"0.11.9"},"imported_at":"2026-08-02T10:25:48Z","language":"de","license":"unknown","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","original_filename":"Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf","page_count":2,"raw_binary_committed":false,"schema_version":1,"size_bytes":219407,"source_id":"src_154242f98906f347d53b","source_sha256":"1eeb0a97a58e3ea6424808511dea54b1fdd13f3355b02dedd05eaab6f0fed061","source_version_id":"sv_1eeb0a97a58e3ea642480851","title":"Flyer Umsetzungscheckliste TAF/TAP TSI fuer EVU","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','1eeb0a97a58e3ea6424808511dea54b1fdd13f3355b02dedd05eaab6f0fed061','src_154242f98906f347d53b','sv_1eeb0a97a58e3ea642480851','{"content_duplicate_group":null,"original_filename":"Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','9f98e995f66cec9d6f71a50e824d0ccdde3e78cc35f739192e74958a961b2a41','src_154242f98906f347d53b',NULL,'{"content_duplicate_group":null,"original_filename":"Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('canonical_url','31ef22f7f38a67d6a17242230cd46d2f69fb9c8f0b46d2a14e4a4cc61757b1a7','src_154242f98906f347d53b',NULL,'{"canonical_url":"https://www.dbinfrago.com/resource/blob/11089304/748022c34b79d03bdd3e6ae0e5914836/Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf"}','2026-08-02T10:25:48Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_1eeb0a97a58e3ea642480851' WHERE id='src_154242f98906f347d53b';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md','Flyer Umsetzungscheckliste TAF/TAP TSI fuer EVU','TAF/TAP TSI kommt. Einführung bei der DB InfraGO AG zum Fahrplanjahr 2027 Ihre Checkliste für die Umsetzung von TAF/TAP Allgemeines und Grundlagen  Kontakt zur DB InfraGO suchen, z.B. Informationsplattform besuchen, Kundenberater:in ansprechen, an NCP Sektorgruppe teilnehmen, Kundenveranstaltungen und Workshops besuchen, Verbände ansprechen, Kundeninformati','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','9a5eee71fa1a2a81968e3ac9c713259e48a07c9d5dadbd98d3145e4e5cf31423','2026-08-02T10:25:48Z','{"bootstrap":true,"canonical_url":"https://www.dbinfrago.com/resource/blob/11089304/748022c34b79d03bdd3e6ae0e5914836/Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf","license":"unknown","origin_page_url":"https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206","source_id":"src_154242f98906f347d53b","source_version_id":"sv_1eeb0a97a58e3ea642480851"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/flyer-umsetzungscheckliste-taf-tap-tsi-fuer-evu-data.md';
 --> statement-breakpoint

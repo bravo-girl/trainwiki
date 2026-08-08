@@ -1,3 +1,791 @@
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_959b0b06a1479fd56b708616','wiki/sources/fragenkatalog-annex-vii-data.md',38,'Seite 20','1.8 Wird in dem Zusammenhang darüber nachgedacht die OIM zum Zeitpunkt z-29 wieder/doch einzuführen, um Seitens DB InfraGO über die Baubetroffenheit zu informieren?
+
+Für den Migrationszeitraum keine Umsetzung der OIM geplant. Die OIM kommt nicht vor der
+
+vollständigen Einführung TTT.
+
+1.9 Schließt DB InfraGO netzausgelöste Änderungen (unabhängig von Bau) im Zeitraum
+
+z-29 bis z-8 generell aus? Wenn nicht, welche Regelung/Prozess gibt es dazu?
+
+Nein, es kann nicht ausgeschlossen werden, dass während der Bearbeitungszeit im unterjährigen Bau, keine weiteren netzausgelösten Änderungen verarbeitet und gesendet werden.
+
+1.10 Wenn wir Änderungsbestellungen von baubetroffenen Trassen nicht zulassen, dann
+
+sind sie diskriminiert gegenüber denen, die einfach im GelV Trassen bestellen.
+
+Es gelten die Regelungen der INB. Jedes EVU hat die Möglichkeit über den GelV Trassen zu
+
+bestellen.
+
+1.11 In der Stellungnahme aufs GPE können Wünsche zu Änderungen mit angegeben
+
+werden: Sind für diese Änderungswünsche beim GPE alle notwendigen Attribute in der
+
+KOMBau vorhanden?
+
+In der KOMBau sind für die PRM (PathRequestMessage) alle in Anlage 10 aufgeführten Attribute nutzbar.
+
+https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-taptsi/evu_schnittstelle-11089208#
+
+Siehe Anlage 1 und Anlage 10.
+
+1.12 Was passiert bei Prozessabbruch? Welche Trasse, Vertrag oder Änderungsbestellung erhält das EVU zurück (wenn bei GPE mit angegeben)?
+
+Bei Prozessabbruch gilt die ursprüngliche Vertragstrasse. Eine erneute Änderungsbestellung ist
+
+in diesem Fall notwendig.
+
+V.IWF 41 Fragenkatalog 20',207,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":20,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','e25688466efe3efff9677045f1aba83a720cbf295bc5e2f884a54fc5cff5ac3e');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_e4008ad8f67cbdc64b5f8146','wiki/sources/fragenkatalog-annex-vii-data.md',39,'Seite 21','1.13 Wie läuft der Prozess bei einer Maßnahme nach „Nr. 14“ ANNEX VII?
+
+Sobald eine Trasse baubetroffen ist, ist eine Änderungsbestellung nicht möglich.
+
+1.14 Was passiert, wenn die Fristen FPE nicht gehalten werden (beachte auch Widerspruch zu Ril 402.0305 Abschnitt 8 z-5/z-8), sind dadurch bei Änderungsbestellung wöchentlich rollierende Zeitscheiben erforderlich (Mehraufwand?), momentan gibt es hier
+
+unterschiedliche Fristen.
+
+Ja, es müssen dann neue Änderungsbestellungen ausgelöst werden.
+
+1.15 Sind Änderungsbestellungen während der Bearbeitungsfrist naÄ(3 WT) wieder möglich?
+
+Wir beabsichtigen eine Änderung der INB 2027 Ril. 402.305 Abs. 8 (6). Es gibt keinen Ablehnen Button, sondern die Stornierung erfolgt im Regelprozess. Eine NAÄ gilt als neuer Vertragszustand. Die neue Vertragstrasse kann innerhalb von 3 Arbeitstagen kostenfrei storniert werden. Dadurch besteht die beschriebene Problemstellung nicht.
+
+1.16 Wir gehen davon aus, dass Änderungsbestellungen, die einen baubetroffenen Zeitraum tangieren technisch zurückgewiesen werden.
+
+Es gibt eine Rückmeldung nach Bearbeitung der Änderungsbestellung. Hier erkennt man, an
+
+welchen Tagen die Änderungsbestellung umgesetzt werden kann und an welchen eine Bautrasse angelegt wird. Für den Zeitraum der Bautrasse wird eine „Nichtkonstruierbarkeit“ gesendet.
+
+Die Nichtkonstruierbarkeit auf Änderungsbestellung wird im Hauptschnittstellendokument auf
+
+Seite 44 im Schaubild des Trassenänderungsprozess beschrieben. (Versand dieser Nichtkonstruierbarkeit ist innerhalb von 5 Arbeitstagen)
+
+1.17 Wie kann das EVU im Zeitraum z-29 bis z-24 erkennen das eine Änderungsbestellung nicht zulässig ist?
+
+Die technische Umsetzung erfolgt. Für den Zeitraum der Bautrasse wird eine „Nichtkonstruierbarkeit“ gesendet.',224,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":21,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','b3fc027295919e1d8f8d74551737a9566e678267b37361ee23804e96233a3987');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_cc000bd937ae045c3b2afe01','wiki/sources/fragenkatalog-annex-vii-data.md',40,'Seite 21','Die Nichtkonstruierbarkeit auf Änderungsbestellung wird im Hauptschnittstellendokument auf
+
+Seite 44 im Schaubild des Trassenänderungsprozess beschrieben. Versand dieser Nichtkonstruierbarkeit ist innerhalb von 5 Arbeitstagen)
+
+1.18 Trifft die Bearbeitungsphase z-29 bis z-8 auch für Züge die in der NEP 2 und im Gelegenheitsfahrplan bestellt wurden zu? Konkret: Die NEP 2 endet für den Fahrplan am
+
+13.07.26 und die ENP werden am 28.09. versandt. Wenn nach ENP NEP 2 eine Änderungsbestellung durchgeführt wird, trifft der Absatz 10, Abschnitt 6 dann zu? Gleiche
+
+Frage für den Gelegenheitsverkehr: Es werden Züge nach dem 13.07. bestellt, dann erhalten wir nach Abschluss ENP NEP 2 (28.09.26) die ersten Angebote. Wenn nach Annahme der Angebote im GelV Änderungen vorgenommen werden, trifft dann ebenfalls
+
+der Absatz 10, Abschnitt 6 dann zu?
+
+Alle Trassenverträge nach z-29 können nur bei einer nicht Baubetroffenheit eine Änderungsbestellung erhalten.
+
+1.19 Was ist mit einer Änderungsbestellung im Güterverkehr (SGV), wenn diese zwischen
+
+z-8 und z-5 eingeht?
+
+Die INB 2027 werden dafür angepasst. Nach Versand des FPE/NAÄ ist eine Änderungsbestellung wieder möglich.
+
+V.IWF 41 Fragenkatalog 21',170,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":21,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','b97c91d1ac462d83140fa456b727964dba3d51eeb5c44f1a2f379d12fc0fa299');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_3858e54d4b9eb400eb2606c3','wiki/sources/fragenkatalog-annex-vii-data.md',41,'Seite 22','1.20 Wie und mit welchem Vorlauf erfolgt die Umbestellung der Zugcharakteristik von Regeltrassen, die sich aufgrund von Baumaßnahmen ergeben? z.B. außerplanmäßige Doppeltraktionen oder abweichender Fahrzeugeinsatz, um Ausfälle auszugleichen.
+
+Wird während der Konsultations-Stellungnahmephase zu einem GPE umlaufbedingt eine Anpassung der Zugcharakteristik erforderlich und hierzu Stellungnahme vom ZB abgegeben, wird
+
+lediglich das GPE bzw. in das GPEnS sowie ggf. das FPE die geänderte Zugcharakteristik aufgenommen, sofern diese umsetzbar ist angepasst. Wird eine berechtigte Änderung nach dem
+
+Versand des FPE ausgelöst dieser Konsultationsphase notwendig, wird eine neue FPE, NAÄ
+
+und digitale BauFplo mit der geänderten Zugcharakteristik ausgestellt, sofern umsetzbar. Alternativ kann eine Änderungsbestellung getätigt werden. Es wird auf Abschnitt 10 Abs. 7 der
+
+Richtlinie 402.0305 verwiesen.
+
+V.IWF 41 Fragenkatalog 22',117,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":22,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','97ca1d3700c66ee42eeafc16ab18fadf1a6d032c4ac3d5be5971c56ba0c4d777');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_bd47d311df81d839eb4a79f7','wiki/sources/fragenkatalog-annex-vii-data.md',42,'Seite 23','International
+
+1.1 Wie läuft die Abstimmung mit anderen EIU, die noch klassisch in Baumaßnahmen
+
+ausregeln? (z.B. ÖBB Infra)
+
+Da der ANNEX VII nur überjährig die Internationale Koordination fordert, abgeleitet sind folgenden Fristen nach Ril 402.0305 - zu x-39, x-31 ,x-27(1.Konsultationsphase)und x-19, x-15
+
+(2.Konsultationsphase) , werden wir dieses Thema derzeit nicht priorisieren können. Daher gibt
+
+es vorerst keine Veränderung zum bisherigen Vorgehen. Siehe dazu auch Ril 402.0305 in Abschnitt 15. Ein Workshop hat stattgefunden.
+
+1.2 Wird es bei der GPE/FPE- Bearbeitung ein Masterprinzip geben, insbesondere bei
+
+langlaufenden Fernlagen wie beispielsweise Taulov( DK) - Gallarate (I) weil viele DB I RB
+
+`en tangiert sind?
+
+Da der ANNEX VII nur überjährig die Internationale Koordination fordert, abgeleitet sind folgenden Fristen nach Ril 402.0305 - zu x-39, x-31 ,x-27(1.Konsultationsphase)und x-19, x-15
+
+(2.Konsultationsphase) , werden wir dieses Thema derzeit nicht priorisieren können. Daher gibt
+
+es vorerst keine Veränderung zum bisherigen Vorgehen. Siehe dazu auch Ril 402.0305 in Abschnitt 15. Ein Workshop hat stattgefunden.
+
+V.IWF 41 Fragenkatalog 23',161,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":23,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','ac6679af20ba6436eeba3f3b98c0b8ddd8127541f7dd4613e1bbf468773b9bb0');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_423d6c56c0ac3646dc3c09aa','wiki/sources/fragenkatalog-annex-vii-data.md',43,'Seite 24','Mittiger Teilausfall SEV (Schienenersatzverkehr)
+
+1.1 Wie verhält es sich mit Teilausfällen am Anfang und am Ende, gibt es dann einen
+
+neuen TrainActivityCode oder eine verkürzte PathDetailsMessage?
+
+Bei Teilausfällen am Anfang und Ende der Trasse wird eine verkürzte PDM versendet.
+
+1.2 Es gibt Umfangreiche Zugnummernregeln im Jahresfahrplan. Wenn andere Regeln
+
+greifen bzgl. Zugnummernänderung gilt das Gezeigte nicht?
+
+Die Umnummerung gilt bei einem beliebigen Zugteil. Ansonsten gelten die bisherigen Zugnummernregelungen nach Ril 402.0209. Das Hauptschnittstellendokument wurde entsprechend angepasst.
+
+1.3 Die Information der Zugnummer wird bei einem mittigen Teilausfall SEV im GPE benötigt. Behält das Zugnummernkontingent das EVU?
+
+Im GPE wird eine Trasse gesendet, mit einer betrieblichen Zugnummer. Im GPE werden die
+
+ausfallenden Betriebsstellen markiert. Die Aufteilung erfolgt erst im nächsten Produkt, wodurch
+
+es dann die zweite Zugnummer erhält. Es ändert sich nichts an der bisherigen Zugnummernvergabe.
+
+V.IWF 41 Fragenkatalog 24',138,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":24,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','f0995689f7b749ce0a9e28d1c75351344acd6782b5845f4514ecab0c5eb01c29');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_adee17246b5d46df0c42cdb6','wiki/sources/fragenkatalog-annex-vii-data.md',44,'Seite 25','Digitale BauFplo
+
+1.1 Wir als EVU würden dann idealerweise wie folgt arbeiten: Alles, was mit Trasse und
+
+Fahrplan zu tun hat immer aus den NAÄ/ PDM nehmen. Da gibt es fertige Adapter.
+
+Die NAÄ ist ein vertragliches Dokument und enthält nicht alle relevanten betrieblichen Regelungen für eine Zugfahrt. Das Fahrplanprodukt BauFplo ist auch im Annex VII Prozess die offizielle
+
+BauFahrplananordnung.
+
+1.2 Wenn eine neue BauFplo kommt, gibt es dann auch die Möglichkeit, zeitgleich dazu
+
+eine netzausgelöste Änderung (NAÄ) zu versenden?
+
+Nach Versand der NAÄ wird es zu z-3 eine gültige BauFplo in PDF-Format geben, da diese betrieblich relevante Regelungen enthält.
+
+1.3 Ist die NAÄ als Resultat des Bauprozesses vollständig im EBuLa Fahrplan abgebildet? Sind damit die zusätzlichen Fplo ́en obsolet?
+
+Die NAÄ ist ein vertragliches Dokument und enthält nicht alle relevanten betrieblichen Regelungen für eine Zugfahrt. Das Fahrplanprodukt BauFplo ist die offizielle BauFahrplananordnung
+
+(BauFplo).
+
+1.4 Wir haben verstanden, dass FPLOen mit der Einführung von Annex und TTT planerisch nicht mehr relevant sind und damit in unseren Planungssystemen künftig nicht verarbeitet werden müssen, weil durch InfraGO für den Bauprozess (Konsultationsphase 4.
+
+KP - Annex) immer eine NAÄ/FPE identisch zur folgenden FPLO versandt wird.
+
+Die NAÄ ist ein vertragliches Dokument und enthält nicht alle relevanten betrieblichen Regelungen für eine Zugfahrt. Das Fahrplanprodukt BauFplo ist die offizielle Baufahrplananordnung.
+
+1.5 Wird mit Einführung der digitalen BauFplo auch die Qualität dieses Dokuments erhöht (keine räumlichen + zeitlichen Inkonsistenzen mehr; konkretes Ausweisen von Behandlungshalten an Betriebsstellen, z.B. zwingend Richtungswechsel)?',243,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":25,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','3d82977edfbb0eae2fe5f5b36237943a485ec76c9912fba383b1fd297e44ad8c');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_6a7357da2c1b5fc79df5aa66','wiki/sources/fragenkatalog-annex-vii-data.md',45,'Seite 25','Die Qualität des Dokuments wird auf Grund der automatisierten Erstellung erhöht. Mit der Einführung von TAF/TAP-TSI und Annex VII wird es im FPE keine räumlichen Inkonsistenzen mehr
+
+geben und somit würden sie auch nicht in der BauFplo ersichtlich sein. Zeitliche Inkonsistenzen
+
+können wir aktuell leider nicht ausschließen. An dieser Thematik arbeiten wir weiterhin.
+
+1.6 Wird ein genauer Zeitpunkt festgelegt, in welcher Frist die Bau-Fplos versendet werden? Aktuell erhalten wir immer wieder Fplos, die sehr kurzfristig sind. Teilweise kommen sie sogar erst Freitagnachmittag.
+
+Es gelten die im Prozess definierten Fristen.
+
+1.7 Können bei einer BauFplo Inkonsistenzen (räumlich und zeitlich) ausgeschlossen
+
+werden oder wird es In-konsistenzen noch geben. Wenn, ja wie werden sie dargestellt?
+
+Die Qualität des Dokuments wird auf Grund der automatisierten Erstellung erhöht. Mit der Einführung von TAF/TAP-TSI und Annex VII wird es im FPE keine räumlichen Inkonsistenzen mehr
+
+geben und somit würden sie auch nicht in der BauFplo ersichtlich sein. Zeitliche Inkonsistenzen
+
+können wir aktuell leider nicht ausschließen. An dieser Thematik arbeiten wir weiterhin.
+
+1.8 Werden mit der BauFplo zeitlich und räumlich konsistente Zugläufe erzeugt und übergeben?
+
+Die Qualität des Dokuments wird auf Grund der automatisierten Erstellung erhöht. Mit der Einführung von TAF/TAP-TSI und Annex VII wird es im FPE keine räumlichen Inkonsistenzen mehr
+
+geben und somit würden sie auch nicht in der BauFplo ersichtlich sein. Zeitliche Inkonsistenzen
+
+können wir aktuell leider nicht ausschließen. An dieser Thematik arbeiten wir weiterhin.
+
+V.IWF 41 Fragenkatalog 25',235,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":25,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','e7e11aec06e5f7760be2e1df191d9030ddc5dad884515e2e2d85c88adba1b1d1');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_98c7488ca2988790b1a8f5dd','wiki/sources/fragenkatalog-annex-vii-data.md',46,'Seite 26','1.9 Wenn jeder Regionalbereich sauber konstruieren muss, müssen also künftig doch
+
+auch Regionalbereiche Teile erstellen, in die die Züge einfach mit einer Verfrühung/-
+
+spätung eingebrochen sind. Was passiert bei fehlenden Kapazitäten bei verschobenen
+
+Lagen? Resultierende Teilausfälle denkbar?
+
+Die Qualität des Dokuments wird auf Grund der automatisierten Erstellung erhöht. Mit der Einführung von TAF/TAP-TSI und Annex VII wird es im FPE keine räumlichen Inkonsistenzen mehr
+
+geben und somit würden sie auch nicht in der BauFplo ersichtlich sein. Zeitliche Inkonsistenzen
+
+können wir aktuell leider nicht ausschließen. An dieser Thematik arbeiten wir weiterhin.
+
+1.10 Stehen zukünftig die Informationen aus der BauFplo auch in einem TAF/TAP TSI-
+
+Format und mit den TAF/TAP TSI Identifier (Path- und TrainIDs, PLC, etc?) zu Verfügung?
+
+Auf der BauFplo wird es zum aktuellen Kenntnisstand keine TTT-Identifier geben, da die Spezifikation zu TTT keine Vorgaben zur BauFplo macht.
+
+1.11 Sind weitere Endpunkte in der API geplant, z.B. um Einsprüche zu eine NAÄ abzugeben?
+
+Im Kontext der digitalen BauFplo fokussieren wir uns auf den automatisierten Versand der Bau-
+
+Fplo an das EVU und den Betrieb, insbesondere dem Triebfahrzeugführenden. Die BauFplo hat
+
+den Fokus auf der betrieblichen Durchführung. Die GPE/FPE und netzausgelöste Änderung erfolgen im Rahmen des vorgelagerten Prozesses.
+
+1.12 Gibt es im Hochlauf für BauFploen auch ZvFen?
+
+ZvFen wird es auch im Fahrplanjahr 2026 im aktuellen Format weiterhin geben. Für jeden Zug,
+
+der in einer ZvF geregelt ist, wird es eine BauFplo geben. Ab Einführung von Annex7, wird es',238,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":26,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','29c332f9a585c156cf3df2bb79f5b0e816519677a11ee576244780e28e62f74b');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_2170360a931c29a289ca6e5e','wiki/sources/fragenkatalog-annex-vii-data.md',47,'Seite 26','keine ZvFen mehr geben, sondern GPE (Grobplanungsergebnis) und FPE (Feinplanungsergebnis) - diese sind auch zugbezogen. Sobald es ein FPE gibt, gibt es dann auch eine BauFplo.
+
+1.13 Wird die ZvF noch auf der Maßnahmenebene geregelt oder gibt es auch eine Zvf pro
+
+Zug/Tag?
+
+ZvFen wird es auch im Fahrplanjahr 2026 im aktuellen Format weiterhin geben. Für jeden Zug,
+
+der in einer ZvF geregelt ist, wird es eine BauFplo geben. Ab Einführung von Annex7, wird es
+
+keine ZvFen mehr geben, sondern GPE (Grobplanungsergebnis) und FPE (Feinplanungsergebnis) - diese sind auch zugbezogen. Sobald es ein FPE gibt, gibt es dann auch eine BauFplo.
+
+1.14 Wie wird sich das ZvF-Verfahren ändern? Wird ein ZvF auf Zugnummer und Datum
+
+bezogen sein oder weiterhin auf eine Baumaßnahmenummer?
+
+Ab dem Fahrplanjahr 2027 wird es aufgrund des Annex VII keine ZvF für eine Baumaßnahme
+
+mit allen betroffenen Zügen geben, sondern pro Zug, der durch die Baumaßnahme fährt, ein
+
+GPE und ein FPE.
+
+1.15 Worin unterscheiden sich die Inhalte einer BauFplo und einem Feinplanungs Ergebnis (FPE)?
+
+Das FPE enthält die trassenbezogene Sicht eines baubetroffenen Zuges. Der Unterschied ist,
+
+dass die digitale BauFplo ein betriebliches Dokument ist und Informationen enthält, die nicht auf
+
+dem FPE sind.
+
+1.16 Wird es Zeitsprünge geben innerhalb eines Fahrplanes? (Teilausregelung)
+
+Mit der Einführung von TAF/TAP-TSI und gemäß Richtlinie 402.0305 der INB 2027 (Annex VII
+
+Prozess) wird es keine räumlichen Inkonsistenzen mehr geben und somit würden sie auch nicht
+
+in der BauFplo sichtbar sein. Zeitliche Inkonsistenzen (positive und negative Zeitsprünge) können wir bei Teilausregelungen aktuell leider nicht ausschließen und weisen diese am Laufweg
+
+auf der BauFplo aus. An dieser Thematik arbeiten wir weiterhin.',268,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":26,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','748a0af96ff2dec5a35642469109060fbf2f5470b0db417d53aa5892d502146e');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_7ce18a5bdaa62468f57f9b6c','wiki/sources/fragenkatalog-annex-vii-data.md',48,'Seite 26','V.IWF 41 Fragenkatalog 26',4,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":26,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','288717789c3d3bb6bc82a21e8ecdc0ce8c9afdf9c4bd6fd4690922792553c377');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c4518f2dd2a89ee145cd24f7','wiki/sources/fragenkatalog-annex-vii-data.md',49,'Seite 27','1.17 Muss weiterhin das Excel-Formular für baubedingte Zusatzleistungen ausgefüllt
+
+werden oder erfolgt das zukünftig auch über ein digitales Tool?
+
+Bis zur Einführung von TAF/TAP-TSI muss weiterhin via Excel-Liste bestellt werden.
+
+1.18 Mit der Herausgabe tagesscharf, das dann sicherlich auch EBula, werden wir arbeiten können. Ich prüfe ja auch den Regelfahrplan nicht jeden Tag. Wie sehe ich aber, dass
+
+die Baumaßnahme korrekt verarbeitet wurde. Denn dafür müsste es ja sowas wie ein Angebot geben (ggf. auch tabellarisch).
+
+Der Prozess für die Abstimmung und Konsultation von Baumaßnahmen findet sich in der Richtlinie 402.0305 (Umsetzung Annex VII Prozess).
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.19 Was bedeutet der Zeitraum z-3? Bedeutet dies, dass ein EVU erst drei Tage vor der
+
+entsprechenden netzbedingten Einschränkung über diese Einschränkung informiert
+
+wird? Oder bedeutet dies, dass erst drei Tage vor der Einschränkung ein Fahrplan versendet wird? Oder handelt es sich hier nicht um Tage, sondern um Monate?
+
+Die Richtlinie 402.0305 (Umsetzung Annex VII Prozess) definiert Zeitpunkte, an denen sogenannte Verfügbarkeitseinschränkungen an die EVU kommuniziert werden müssen. Wie weit im
+
+Voraus eine Verfügbarkeitseinschränkung kommuniziert werden muss, hängt von verschiedenen Faktoren ab. Das "z" bedeutet immer "Wochen vor Baubeginn". Das bedeutet, "z-3" heißt
+
+"3 Wochen vor Baubeginn" wird der Zug am Verkehrstag mittels digitaler Baufplo versendet.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512',217,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":27,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','d198482f7348da06112f3237bbb2ff7a7d3572fcfa15e87bc1e852f27cf7b662');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ea0e6ba977e921b71f4b3110','wiki/sources/fragenkatalog-annex-vii-data.md',50,'Seite 27','1.20 Wie ist das Zusammenspiel und die Übermittlung der BauFplo-Fahrplaninformationen über die anderen Fahrplanschnittstellen der DB InfraGo (NSS mit GFD und BZD und
+
+zukünftig TAF/TAP TSI) vorgesehen? – Sind weiterhin Konstellationen möglich, wo Informationen zum nicht mehr gültigen Regelfahrplan erst nach der übermittelten BauFplo bei
+
+uns eintreffen?
+
+Die Richtlinie 402.0305 (Umsetzung Annex VII Prozess) sieht eine vorgegebene Reihenfolge
+
+der Veröffentlichung von Fahrplandokumenten vor, die den Regelprozess darstellt.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.21 Was genau wird unter einer netzausgelösten Änderung verstanden? Worin besteht
+
+der Unterschied zu einer BauFplo? In welchem Format erhalten wir die NAÄ?
+
+In Abschnitt 8 Absatz 6 der Richtlinie 402.0305 der INB 2027 sind Regelungen zur BauFplo und
+
+netzausgelösten Änderung (NAÄ) enthalten. Mit der NÄA werden die vertragsrelevanten Vorgaben aus der FPE umgesetzt, deswegen löst die DB InfraGO AG mit der Bereitstellung des FPE
+
+zeitgleich die NAÄ aus. Im Gegensatz dazu ist die BauFplo ein betriebliches Informationsdokument. Sie informiert die Triebfahrzeugführenden und den Betrieb über alle baubedingten Auswirkungen auf den Zuglauf. Die NAÄ wird über das TPN an das EVU übermittelt. Die BauFplo
+
+kann im digitalen Datenformat (XML, JSON) über eine Schnittstelle abgerufen werden, wird
+
+aber gleichzeitig auch noch als PDF-Format per E-Mail versendet.
+
+V.IWF 41 Fragenkatalog 27',204,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":27,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','4e87673bc84606adeb075691efe6cbcd05cd84719bb220cea9438caf3b80e93d');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_b8ea77da011e9bad4c8cf2c6','wiki/sources/fragenkatalog-annex-vii-data.md',51,'Seite 28','1.22 Damit RNE eindeutige IST-Zeiten liefern kann, bedarf es einer Übereinstimmung der
+
+gelieferten und der gefahrenen Ortsverläufe. Werden Informationen zu Fahrzeiten und
+
+Ortsverläufen aus der BauFplo auch in der Datenlieferung an die RNE enthalten sein und
+
+damit im RNE TIS abrufbar?
+
+Auf der BauFplo wird es zum aktuellen Kenntnisstand keine TAF/TAP-TSI-Identifier geben, da
+
+die Spezifikation zu TAF/TAP-TSI keine Vorgaben zur BauFplo macht.
+
+1.23 Wie wird sichergestellt, dass alle Verkehre einen Fahrplan bekommt, wo heute nur
+
+mit Trickserei (keine konfliktfreie Planung oder weiter +XX) überhaupt was möglich ist?
+
+Der Prozess für die Abstimmung und Konsultation von Baumaßnahmen findet sich in der Richtlinie 402.0305 (Umsetzung Annex VII Prozess).
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.24 Gibt es eine "deadline", ab wann es keine Änderungen zur Fplo mehr gibt bzw geben
+
+darf?
+
+Die Richtlinie 402.0305 (Umsetzung Annex VII Prozess) definiert Zeitpunkte, an denen sogenannte Verfügbarkeitseinschränkungen an die EVU kommuniziert werden müssen. Wie weit im
+
+Voraus eine Verfügbarkeitseinschränkung kommuniziert werden muss, hängt von verschiedenen Faktoren ab. Das "z" bedeutet immer "Wochen vor Baubeginn". Das bedeutet, "z-3" heißt
+
+"3 Wochen vor Baubeginn" wird der Zug am Verkehrstag mittels digitaler Baufplo versendet.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.25 Wenn mehrere Baumaßnahmen in unterschiedlichen Regionen durchfahren werden,
+
+ist die zeitliche Konsistenz sichergestellt?',210,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":28,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','df0054a051638913be990a4b980215fcf09daedae44866ebdaaf896f0f44802e');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_12129e18cc50c8cb7d9b644d','wiki/sources/fragenkatalog-annex-vii-data.md',52,'Seite 28','Mit der Einführung von TAF/TAP-TSI und gemäß der Richtlinie 402.0305 der INB 2027 (Umsetzung Annex VII Prozess) wird es im FPE keine räumlichen Inkonsistenzen mehr geben und somit würden sie auch nicht in der BauFplo sichtbar sein. Zeitliche Inkonsistenzen können wir aktuell leider nicht ausschließen. An dieser Thematik arbeiten wir weiterhin.
+
+1.26 Mit welchem Vorlauf wird die digitale BauFplo versendet?
+
+Die Richtlinie 402.0305 (Umsetzung Annex VII Prozess) definiert Zeitpunkte, an denen sogenannte Verfügbarkeitseinschränkungen an die EVU kommuniziert werden müssen. Wie weit im
+
+Voraus eine Verfügbarkeitseinschränkung kommuniziert werden muss, hängt von verschiedenen Faktoren ab. Das "z" bedeutet immer "Wochen vor Baubeginn". Das bedeutet, "z-3" heißt
+
+"3 Wochen vor Baubeginn" wird der Zug am Verkehrstag mittels digitaler Baufplo versendet.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.27 Identifikatoren für Betriebsstellen im Zuglauf: Alle Datenelemente, die eine Betriebsstelle referenzieren (z.B. /content/fahrplan/laufwegänderung/betriebsstelle), verwenden in
+
+der digitale BauFplo weiterhin den herkömmlichen RL100-Code zur Identifikation der Betriebsstelle. Künftig mit TAF/TAP TSI werden jedoch die PrimaryLocationCodes (PLC) der
+
+führende und alleinige Identifikator für Betriebsstellen sein. Beabsichtigen Sie, die digitale BauFplo auf die PLC-Systematik umzustellen (spätestens mit Einführung von TTT im
+
+Bereich Fahrplan der DB InfraGO ab JFpl 2027)? Hinweis: Die Verwendung von PLC/SLC
+
+V.IWF 41 Fragenkatalog 28',201,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":28,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','d0d523d6115eb8f5a63b7978f7c132c300a951e1ccdfdf932a15acbff536b262');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_00b00ecdb56d761432a77f4d','wiki/sources/fragenkatalog-annex-vii-data.md',53,'Seite 29','zur Identifikation von Betriebsstellen ist ein europäischer Standard/Vorgabe gemäß
+
+TAF/TAP TSI.
+
+Wir werden auch die Veröffentlichungsdokumente, wie die BauFplo, in einen TAF/TAP-TSI-konformen Zustand überführen. Allerdings werden weiterhin RL 100-Codes für die Betriebsstellen
+
+angezeigt.
+
+1.28 Datentypen und Validierungen: Sie verwenden vielfach den Datentyp „String“ für Attribute, die eigentlich eine wohlbekannte Wertemenge darstellen und deshalb nach Stand
+
+der Technik als Enumeration definiert werden sollten – Beispiel: Bremsstellung – oder
+
+für die man auf andere Art eine Einschränkung der erlaubten Wertemenge vornehmen
+
+sollte – Beispiel: statt die KV-Profile einfach nur als „String“ zu definieren wäre der Stand
+
+der Technik, auf diesem String eine Einschränkung wie <pattern value="\d{3}"/> zu definieren. Aus meiner Sicht entspricht die aktuelle Vorgabe nicht dem Stand der Technik,
+
+und die wesentlichen Vorgaben hätten leicht aus dem TAF/TAP TSI-Standard übernommen werden können.
+
+Um die Schnittstelle flexibel nutzbar zu halten, wurde zunächst auf generische Typen gesetzt.
+
+Zudem ist die BauFplo nicht unmittelbar an den TAF/TAP-TSI-Standard gebunden, da es sich
+
+um Dokumente für die Durchführung der Zugfahrt handelt, deren Einführung zeitlich versetzt zu
+
+den TAF/TAP-TSI-Vorgaben erfolgt.
+
+1.29 Zugnummer, OTN und TrainID: Sie verwenden die generische Bezeichnung „Zugnummer“ (z.B. /content/zug/nummer). Ist damit gemeint:
+
+- die „klassische“ Zugnummer heutiger Prägung gemeint
+
+- die betriebliche Zugnummer nach TAF/TAP TSI Standard, die sog. OTN
+
+- die planerische Zugnummer nach TAF/TAP TSI Standard, die sog. TrainID
+
+(jetzt und auch nach Einführung von TAF/TAP TSI in Fahrplan und Betrieb ab JFpl 2027)',233,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":29,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','d4ff5caf5b14e5cdbc749de9c42477ff4074d7ae552770d629410a68fdbf333f');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_fd8c081927afb7f6ba1e65a1','wiki/sources/fragenkatalog-annex-vii-data.md',54,'Seite 29','Mit „Zugnummer“ ist im Kontext der BauFplo die betriebliche Zugnummer (OTN) nach TAF/TAP
+
+TSI gemeint.
+
+1.30 Technische Abstimmung mit "Fahrplan" und "Betrieb" bei DB InfraGO
+
+Gibt es an irgendeiner andere Stelle Abstimmungen mit den Datenformaten und den Datenstrukturen, die die TAF/TAP TSI kompatiblen Systeme der DB InfraGO verwenden (PathOS, BDV Betriebsdatenverteiler, etc.)?
+
+Mein erster Eindruck ist, dass das Format der „digitalen BauFplo“ von diesen Standards
+
+komplett losgelöst definiert ist.
+
+Für Mitte 2026 ist vorgesehen, die Veröffentlichungsdokumente – einschließlich der BauFplo –
+
+in einen TAF/TAP TSI-konformen Zustand zu überführen.
+
+Aktuell ist die BauFplo noch losgelöst von den TAF/TAP TSI-Strukturen, da diese Vorgaben
+
+sich nicht auf die Fahrplandokumente beziehen.
+
+1.31 Frage zur Einführung der digitalen FPLO: Mein Verständnis ist, das mit der Einführung TAP-TSI / Annex VII zum Fahrplan 2027 komplett auf die digitale FPLO umgestellt
+
+wird. Meine Frage bezieht sich auf den Einführungspfad: Was bedeutet das für den Hochlauf ab ca. 08/26? Werden alle Dokumente, die sich auf den Fpl 2027 beziehen automatisch im neuen Format versendet? Dokumente mit Bezug bis zum Datum des Fpl-Wechsels (also noch der komplette Fahrplan 2026) werden über den alten Weg und Formate
+
+kommuniziert?
+
+V.IWF 41 Fragenkatalog 29',192,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":29,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','0c0ce5c2178f68abd49e59739fcf803646160068663b99cd6dac7dce9cc23512');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_81aabd7a6f990bb27d2a7553','wiki/sources/fragenkatalog-annex-vii-data.md',55,'Seite 30','Wird eine Bautrasse nach Richtlinie 402.0305 (Umsetzung Annex VII Prozess) konsultiert und
+
+mit einem GPE, FPE und NAÄ veröffentlicht, wird es nur im neuen Format möglich sein die
+
+BauFplo zu versenden. Ab Oktober 2026 muss mit dem Format gerechnet werden.
+
+1.32 Inwiefern ist die Einführung der digitalen BauFplo mit der Einführung von Taf/Tap
+
+TSI zusammenhängend? Welche technischen Gründe liegen für einen Zusammenhang
+
+der Einführung von Taf/Tap TSI und der digitalen BauFplo vor?
+
+Generell ist die Einführung der digitalen BauFplo nicht von TAF/TAP-TSI abhängig. Die DVO
+
+2017/2075 (Umsetzung Annex VII Prozess) schreibt aber einen Zugbezug vor. Mit dem FPE
+
+und GPE veröffentlichen wir zugbezogen, daher brauchen wir aber auch eine neue Form der
+
+BauFplo.
+
+1.33 Wir schreiben das Fahrplanjahr 2027. TTT ist erfolgreich eingeführt. Dann erhalten
+
+wir für jede Veränderung an der Trasse, egal mit welchem Vorlauf immer eine PDM durch
+
+InfraGO mit dem letzten gültigen laufweg und Zeiten. Wird dann für jede dieser Versionen
+
+auch immer automatisch ein Dokument in BSV angestoßen?
+
+Wenn es nach der Richtlinie 402.0305 der INB 2027 (Umsetzung Annex VII Prozess) ein FPE
+
+und ein NAÄ gibt, dann gibt es auch eine BauFplo aus BSV. Zu einer anderen PDM, die es aus
+
+anderen Fahrplanphasen oder vom Betrieb geben kann, wird es keine BauFplo aus BSV geben.
+
+1.34 Wenn ein Zuglauf unterbrochen wird, z.B. Zug 18412 verkehrt nicht von A bis Z sondern nur von A bis B, dann Ausfall und dann wieder von X bis Z. Der ''hintere'' Zug
+
+braucht eine neue Zugnummer. Die wird von InfraGO vergeben und nicht von mir als
+
+EVU. Erkennt man den Zusammenhang zwischen diesen Zügen?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer',282,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":30,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','f61b33b10d3f6b89e3799ff1fb337f0692b4ac2b9c72fc25000b0ba70d524115');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_fc1fbea1626def80ed4c45c6','wiki/sources/fragenkatalog-annex-vii-data.md',56,'Seite 30','auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.35 Ist aus der BauFplo bei Bauzugnummern der Bezug zur ursprünglichen Zugnummer
+
+ersichtlich?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.36 Ist in den digitalen FPLOen bei einem Ersatzzug der ursprüngliche Zug (Originalzug)
+
+ersichtlich?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.',246,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":30,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','f025e0e34fdde66c0e5a7549a51a75ef0c56fb8da71ec9fabb4121f7683071ab');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_59a5581936c58745142cabce','wiki/sources/fragenkatalog-annex-vii-data.md',57,'Seite 30','Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+V.IWF 41 Fragenkatalog 30',53,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":30,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','c27ce662666d0ee69db9148c85a68f48da49f2993a6ccc6e37c0ac2646175ba3');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_4f3dd2f537d880ddb724e505','wiki/sources/fragenkatalog-annex-vii-data.md',58,'Seite 31','1.37 (Wo/Wie) Ist bei baubedingten Zusatz-/Ersatzleistungen der Zusammenhang zur Ursprungsleistung erkennbar?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.38 Ist bei Bauzugnummern (z.B. Ersatzzug nach Ausfall mitten im Regelzuglauf) der Bezug zum ursprünglichen Zug erkennbar, bzw. umgekehrt, das eine neue Zugnummern
+
+nach der Baustelle verkehrt?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.39 Ist die folgende Annahme richtig? Ein Ausfall ist in BSV X für Zug 1 geregelt, in BSV',246,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":31,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','14d464df97ff10dc92d8b37f5a9c5fde070d2d1e2f5966025a52bd4184beb15b');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f682e290df2833dd54dc958e','wiki/sources/fragenkatalog-annex-vii-data.md',59,'Seite 31','Y ist dann der Ersatzzug für Zug 1 aus BSV X als zusätzlicher Zug abgebildet. Diese Verknüpfung ist auch in BSV Y erkennbar.
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.40 In dem zu Verfügung gestellten xml Dokument sehe ich kein Attribut, welches auf
+
+einen Verweis zu einem anderen Zug schließen lässt. Ist es sichergestellt, dass Züge, die
+
+aufgrund von Baumaßnahmen ausfallen und aufgrund derer ein neuer (Ersatz)zug hinzu
+
+kommt, diese Verknüpfung sichtbar ist? Nicht SEV.
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).',259,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":31,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','1d0ca2e418c60e275f4fe738a05441af12416c21bae9ab8dbca0a5157a1a4a59');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_359a5e11a30df0ed00de1b32','wiki/sources/fragenkatalog-annex-vii-data.md',60,'Seite 31','1.41 Wo / wie erfolgt die Zuordnung einer Bau-Zugnummer zur Regelzugnummer?
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+herge-stellt werden kann.
+
+V.IWF 41 Fragenkatalog 31',61,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":31,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','4544430246acdc07e44374af3b11127a5a542183577bd0d353a5267ad704e722');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_bb299b4d387fabcfe935748a','wiki/sources/fragenkatalog-annex-vii-data.md',61,'Seite 32','Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.42 Wie werden die Ersatzzugnummern abgebildet/vergeben auf dem Streckenabschnitt
+
+an dem der Zug weiterhin verkehren kann? Paradebeispiel hier wäre, wenn Züge durch
+
+vorzeitige Abfahrt am Startbahnhof einen Tagwechsel -1 bekommen.
+
+In der digitalen BauFplo ist in diesem Fall kein Bezug bei der Trasse mit der neuen Zugnummer
+
+auf die Originaltrasse ersichtlich. Dieser kann aus dem dazugehörigen FPE ermittelt werden.
+
+Das FPE enthält das Attribut pathIdOld aus TTT, über dieses die Referenz zur Originaltrasse
+
+hergestellt werden kann.
+
+Wenn über das Bestellportal pathOS eine baubedingte Zusatzleistung bestellt wird, so ist die
+
+PathId, auf die sich die zusätzliche Trasse bezieht, dort anzugeben (z.B. baubetroffene Trasse
+
+enthält Teilausfall, die baubedingte Zusatzleistung ist die Leerfahrt in die Abstellung, in diesem
+
+Fall wird auf die pathId der baubetroffenen Trasse (FPE) referenziert).
+
+1.43 Was passiert dann mit kurzfristigen Baustellen, die nach den neuen Fristen für die
+
+FPLO ja dann viele Wochen sind? Wie soll das dann gelöst werden? Heute laufen wir den
+
+fehlerbehafteten FPLO bis zu einen Tag vor Gültigkeit hinterher.
+
+Die Richtlinie 402.0305 (Umsetzung Annex VII Prozess) definiert Zeitpunkte, an denen sogenannte Verfügbarkeitseinschränkungen an die ZB kommuniziert werden müssen. Wie weit im',235,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":32,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','40495b91fb31042e50515e6b0f37ffd1b12a09c1db462410f6812ece3e197458');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_3e2c0d412f952897e5a178b7','wiki/sources/fragenkatalog-annex-vii-data.md',62,'Seite 32','Voraus eine Verfügbarkeitseinschränkung kommuniziert werden muss, hängt von verschiedenen Faktoren ab. Das "z" bedeutet immer "Wochen vor Baubeginn". Das bedeutet, "z-3" heißt
+
+"3 Wochen vor Baubeginn" wird der Zug am Verkehrstag mittels digitaler Baufplo versendet.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+1.44 Kann man davon ausgehen, dass es also für jede digitale BauFplo einen Vertragszustand in Path OS (NAE) geben wird? Für alle BKE Kategorien?
+
+Zu jeder BauFplo wird es auch eine NAÄ geben. Dies gilt ebenfalls für verschiedene Kategorien
+
+der BKE. Allerdings werden BKEn auch bei der Erstellung des Netzfahrplan berücksichtigt.
+
+Diese bekommen entsprechend keine BauFplo, sondern werden im Rahmen des Netzfahrplanes veröffentlicht.
+
+1.45 Wie wird sichergestellt dass die aktuellen vorhandenen Trassen Konstruktionsgrenzen ,innerhalb von InfraGO, nicht mehr vorhanden sind?
+
+Der Arbeitsprozess zur überregionalen Bearbeitung basiert auf der in der Richtlinie 402.0305
+
+(Umsetzung Annex VII Prozess) enthaltenen Zugsicht der Trasse. Wir stellen die überregionale
+
+Bearbeitung mithilfe geeigneter IT-Unterstützung sicher.
+
+1.46 Wie wird mit einer kurzfristigen Rücknahme einer Fplo umgegangen, wenn bspw.
+
+eine Baustelle abgesagt wird, aber schon die Fplo veröffentlicht wurde? Wird für diesen
+
+Fall eine neue Tages/Zugscharfe Fplo versendet und was passiert mit ggf. vorhandenen
+
+Fahrzeitverlängerungen?
+
+Gemäß Richtlinie 402.0305 (Umsetzung Annex VII Prozess) ist eine Rücknahme der BauFplo
+
+künftig nicht mehr vorgesehen. Ab z-8 Wochen sind Änderungen an der Bautrasse nicht mehr',216,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":32,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','aea6480d0288afe57779385a6e9de3909f2684b98defc87f0141bb87474eac77');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_dcf7660777dd94fef02997f9','wiki/sources/fragenkatalog-annex-vii-data.md',63,'Seite 32','möglich. Die FPE-Trasse bleibt bestehen, da die Bautrasse bereits als Regeltrasse geführt wird.
+
+Weitere Informationen finden Sie auf folgender Internetseite:
+
+https://www.dbinfrago.com/web/schienennetz/fahren_und_bauen/annex-vii-richtlinie-2012-34eu-11857512
+
+V.IWF 41 Fragenkatalog 32',25,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":32,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','bf043a5c882dda759651e892a002c05a045eb44b456c957f731307a0d1fe3835');
+--> statement-breakpoint
+INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_08ea21a82a4d8abb0dd3c0e2','wiki/sources/fragenkatalog-annex-vii-data.md',64,'Seite 33','1.47 Aus nachvollziehbaren Gründen kann es ja vorkommen, dass DB InfragGO an den
+
+Fahrzeiten und/oder Laufweg zwischen FPE/NAÄ und BauFplo Änderungen vornehmen
+
+muss oder es aktualisierte Versionen zu einer bestehenden BauFplo gibt. In diesen beiden Fällen müsste das EVU doch auch zusätzlich eine NAÄ bekommen (FPE wahrscheinlich wegen Fristablauf nicht). Nur das EVU kann ja beurteilen, ob mit den vorhandenen
+
+Produktionsressourcen die geänderte Fahrlage auch produziert werden kann. Bekommen wir in solchen Fällen (entweder Unterschiede zwischen FPE/NAÄ und BauFplo oder
+
+mit aktualisierten Versionen einer BauFplo) auch parallel immer eine NAÄ?
+
+Zu einer BauFplo gibt es immer das entsprechende NAÄ dazu.
+
+1.48 Was ist, wenn wir umlaufbedingt die Zugcharakteristik später ändern müssen?
+
+Wird während der Konsultations-Stellungnahmephase zu einem GPE umlaufbedingt eine Anpassung der Zugcharakteristik erforderlich und hierzu Stellungnahme vom ZB abgegeben, wird
+
+lediglich das GPE bzw. in das GPEnS sowie ggf. das FPE die geänderte Zugcharakteristik aufgenommen, sofern diese umsetzbar ist angepasst. Wird eine berechtigte Änderung nach dem
+
+Versand des FPE ausgelöst dieser Konsultationsphase notwendig, wird eine neue FPE, NAÄ
+
+und digitale BauFplo mit der geänderten Zugcharakteristik ausgestellt, sofern umsetzbar. Alternativ kann eine Änderungsbestellung getätigt werden. Es wird auf Abschnitt 10 Abs. 7 der
+
+Richtlinie 402.0305 verwiesen.
+
+V.IWF 41 Fragenkatalog 33',200,'{"canonical_url":null,"normalized_sha256":"964d24cd41f50e75b8bb1d06f76d9cc47af41a110c36b4bb8a20597a3a823500","page":33,"source_id":"src_49e6bd4a29f18c068815","source_sha256":"ad7a22df2cd5529c685aa7d10d878783f41dcf2902c4bb7c1a233c97810359ca","source_version_id":"sv_ad7a22df2cd5529c685aa7d1"}','6ac942fa11d12b98dba50ea1580339e3b6d29a426816ce39117f787e8dd09c68');
+--> statement-breakpoint
+INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_c2cbe5f5c740b62f994d','file','Informationsveranstaltung Vertiefung ujBau vom 20 05 2026',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
+--> statement-breakpoint
+INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_64747c1009b8c053966a8940','src_c2cbe5f5c740b62f994d','ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2','d0cb958c05947116684430ae0560c742b54db3575d06994e5af0893cc8409a15',1473329,'application/pdf','Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf','sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-20-05-2026-data/sv_64747c1009b8c053966a8940.md','pdfplumber','0.11.9','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2","converter":{"name":"pdfplumber","profile":"bootstrap-markdown-v2","version":"0.11.9"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_64747c1009b8c053966a8940.json","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-20-05-2026-data/sv_64747c1009b8c053966a8940.md","normalized_sha256":"d0cb958c05947116684430ae0560c742b54db3575d06994e5af0893cc8409a15","origin_page_url":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf","page_count":27,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":1473329,"source_id":"src_c2cbe5f5c740b62f994d","source_sha256":"ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2","source_version_id":"sv_64747c1009b8c053966a8940","supersedes_source_version_id":null,"title":"Informationsveranstaltung Vertiefung ujBau vom 20 05 2026","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
+--> statement-breakpoint
+INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2','src_c2cbe5f5c740b62f994d','sv_64747c1009b8c053966a8940','{"content_duplicate_group":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
+--> statement-breakpoint
 INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','d0cb958c05947116684430ae0560c742b54db3575d06994e5af0893cc8409a15','src_c2cbe5f5c740b62f994d',NULL,'{"content_duplicate_group":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
 --> statement-breakpoint
 UPDATE sources SET current_version_id='sv_64747c1009b8c053966a8940' WHERE id='src_c2cbe5f5c740b62f994d';
@@ -1307,1014 +2095,4 @@ Weitere, auch komplexere Anwendungsfälle können mit uns in der
 Betriebserprobung/Hochlauf getestet werden Neues EVU nimmt an Betriebserprobung teil
 
 DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 12',269,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":12,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','25d9713f42905c573e339ea5809d73dede36cb36b9289deafd62f10929c89811');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_6253bf4bb4df1bf6fc028977','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',12,'Seite 13','2026 steht im Zeichen des kontrollierten Hochlaufs – mit
-
-Betriebserprobung digitale BauFplo als zentraler Enabler
-
-Betriebserprobung bis
-
-auf weiteres verlängert
-
-Rollout digitale BauFplo 2026-2027
-
-2026 2027
-
-Wichtig:
-
-Jan. Febr. März Apr. Mai Juni Juli Aug. Sept. Okt. Nov. Dez. Jan. Febr.
-
-• Da es sich bei der BauFplo um ein
-
-Betriebserprobung
-
-100% sicherheitsrelevantes Fahrplanprodukt
-
-digitale handelt, darf ein Zug nur in einem Format
-
-BauFplo
-
-kommuniziert werden – Hierdurch wahren
-
-Hochlauf möglich
-
-wir die Datenkonsistenz und damit die
-
-Sicherheit
-
-Oktober 2026
-
-• Im Prozess der Bereitstellung der neuen
-
-Schnittstellen- Hochlauf digitale Fahrplandokumente unter TTT / Annex VII
-
-Finale
-
-Spezifikation steht BauFplo in wird automatisiert zu jedem FPE1 und NAÄ2
-
-Umstellung
-
-zur Verfügung: Abstimmung mit
-
-FplJ 2027 eine digitale BauFplo veröffentlicht
-
-EVU-seitige Region und EVU
-
-Entwicklung möglich
-
-möglich
-
-(1) Feinplanungsergebnis (2) Netzausgelöste Änderung
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 13',142,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":13,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','b13f3b7b14854e5cbac8a1adceaa1056afa91afe9e7b0443896cd059bc0fa373');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_25f0a09b3e798cf240ce86a9','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',13,'Seite 14','Mit einer Teilnahme am Hochlauf sind Sie ideal auf die
-
-Einführung der digitalen BauFplo vorbereitet
-
-Einladung zur Teilnahme am Hochlauf der digitalen BauFplo Ihre Vorteile auf einem Blick
-
-• Schrittweise Skalierung von regionalen und
-
-Sie erhalten hochlaufend alle Fälle, die im neuen überregionalen Trassen
-
-Format möglich sind – direkt als digitale BauFplo
-
-• Früher Zugang zu neuen Funktionen und
-
-Praxiswissen
-
-Was technisch bisher nicht abbildbar
-
-• Mitgestaltung durch Ihr Feedback
-
-ist, liefern wir im bisherigen Format
-
-So funktioniert die Teilnahme
-
-Kontakt aufnehmen über [E-Mail-Adresse entfernt]
-
-Sie können jederzeit und ohne Nachteile aus dem
-
-Hochlauf aussteigen; wir setzen die Trassenbearbeitung
-
-Vereinbarung eines Info-Termins und Besprechung
-
-dann nahtlos im bisherigen Format fort
-
-des weiteren Vorgehens
-
-Zusätzlich sind auch Abstufungen möglich (z.B. Alle von
-
-Festlegen von Leitplanken zur Umstellung auf
-
-einer spezifischen Baumaßnahme betroffenen Züge)
-
-digital BauFplo (z.B. einzelne Kundenummern)
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 14',148,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":14,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','f7839d2ac221d4df748fcaf89b8c95cb53851890f81abbe053b24e8cf2614ac6');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8c21e469aa73e00884fb9afa','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',14,'Seite 15','Mit dem Readiness-Check für die digitale BauFplo
-
-können Sie selbständig ihre Prozesse prüfen
-
-Der BauFplo-Readiness-Check...
-
-... ist ein kompakter Selbsteinschätzungs-Check zur Prüfung,
-
-wie gut Sie auf die digitale BauFplo vorbereitet sind
-
-... bringt Transparenz über den eigenen Reifegrad, von
-
-Empfang und Ablage bis zur operativen Nutzung
-
-... hilft, Prozesslücken zu schließen und sicherzustellen, dass
-
-BauFplo zuverlässig verarbeitet werden können
-
-... ist bewusst pragmatisch gehalten und in wenigen Minuten
-
-durchführbar
-
-... ist als Download auf unserer Webseite verfügbar
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 15',88,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":15,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','c86b6bbaee742ebca82bd386169c0c45d136645f26e380700d80c7fd90449173');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d95732dd80574c5181a975ea','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',15,'Seite 16','So bleiben Sie mit uns in Kontakt
-
-Annex VII KOMBau Digitale BauFplo TAF/TAP TSI
-
-Hier geht‘s zur Website Hier geht‘s zur Website Hier geht‘s zur Website Hier geht‘s zur Website
-
-• Informationen zum neuen • Informationen zur • Neuerungen auf einen Blick • Tools zur
-
-Prozess Baukommunikation Webanwendung, inkl. Trassenanmeldung (z. B.
-
-• Beschreibung Testzugang
-
-Direktlink pathOS)
-
-• Zusammenhang mit auf BauFplo API
-
-KOMBau • Bedienungsanleitung • Schnittstellen &
-
-• Beispieldokumente in xml-
-
-Meldungsservices
-
-• FAQ • FAQ und json-Format
-
-• Informationsangebote
-
-• FAQ
-
-(FAQ, Events,
-
-• Readiness Check
-
-Ansprechpartner)
-
-Sie erhalten die gezeigte Unterlage im Anschluss an diese Veranstaltung.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 16',111,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":16,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','1eee6933682928c6005a6b7657c88a3b793a48f898cb00caa9b086fcbe7fe4d5');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_816bc0ed8b5a7f940bfec6cf','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',16,'Seite 17','Fragen und Hinweise
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 17',14,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":17,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','fa16b5f20f77a36f3c6126ce1ebc2af5d0d2d0ea83af288e65f1425c671d7569');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_070f7e63f2785d5fd2eb9915','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',17,'Seite 18','Häufig gestellte Fragen – FAQ 1
-
-Thema: Annex VII
-
-Wenn man ein GPE, GPEnS oder FPE ablehnt, erfolgt die netzseitige Stornierung
-
-F
-
-der Trasse. Anschließend kann man im Rahmen des GelV eine neue Trasse
-
-bestellen. Wie ist in diesem Fall der Ablauf des nachgelagerten Prozesses? Wie
-
-sind die zeitlichen Eckpunkte zur Bearbeitung und späteren Veröffentlichung
-
-dieser Trasse? Ist die Anmeldung einer neuen Trasse im GelV direkt nach
-
-Ablehnung möglich oder erst ab z-8 vor der relevanten Baumaßnahme? Was ist
-
-der späteste Zeitpunkt, zu dem eine Bestellung einer neuen Trasse im GelV in
-
-diesen Fällen möglich ist?
-
-A
-
-Gemäß der INB 2027 Ziffer 4.2.2.4 gelten zum Fahrplan 2027 die
-
-entsprechenden Fristen im Gelegenheitsverkehr. Siehe Abschnitt in
-
-den genannten INB.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 18',129,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":18,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','2c2f18b5b8957e456c853082c9be2d723fc1646c0645382ac2eca9fdb58a6fbc');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_f9d534244649a258a426bb41','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',18,'Seite 19','Häufig gestellte Fragen – FAQ 2
-
-Thema: Annex
-
-F
-
-Kann auf eine bereits abgestimmte BKE 7 aus der 1. und 2.
-
-Konsultationsphase in der 3. Konsultationsphase noch ein BKE 2
-
-folgen?
-
-A
-
-Der konsultierte Stand der 2.KP geht in den Netzfahrplan und bildet
-
-die Grundlage für die Fpl.-Konzepte der 3.KP. D. h., abgestimmte BKE
-
-der 2.KP können mit BKE der 3.KP in der 3.KP bzw. BKE der 4.KP in
-
-der 4.KP nochmal zusätzlich koordiniert werden.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 19',86,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":19,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','934ed04a3bfcd101d139489a6a28b3fcced46df27fa2c269fc9c1c0dd405bb94');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_648f49e39933458cf2055a5e','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',19,'Seite 20','Häufig gestellte Fragen – FAQ 3
-
-Thema: IT
-
-F
-
-Wie erfolgt die Übermittlung des Zeitraumes, wenn durch eine zusätzliche
-
-Baumaßnahme die Verkehrstage innerhalb eines GPE geteilt werden? Erhalten wir
-
-für jede Nachricht einen Gültigkeitszeitraum von 7 Tagen oder ist auch ein
-
-verkürzter Zeitraum möglich?
-
-A
-
-Die Bautrasse des ursprünglichen GPE wird im Folgeprodukt um die
-
-baubetroffenen Tage der neuen BKE eingekürzt. Für die
-
-baubetroffenen Tage der neuen BKE versenden wir ebenfalls ein
-
-fristabhängiges Fahrplanprodukt.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 20',85,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":20,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','50e0c4f31c8c995f4756ec03fd1d24ab907450b0706d0334fa2f50b8df378cc6');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_97346e67b5c8ef15cc5a7362','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',20,'Seite 21','Häufig gestellte Fragen – FAQ 4
-
-Thema: Digitale BauFplo
-
-F
-
-Was passiert, wenn nach FPE (z-8) die Baumaßnahme abgesagt wird
-
-und anschließend das EVU über den Regelfahrplan-Prozess eine
-
-Änderungsbestellung veranlasst? Werden dann Daten über die
-
-Schnittstelle der digitalen BauFplo gesendet?
-
-A
-
-Für Fahrplanjahr 2027 wird es über die BauFplo-Schnittstelle nur die
-
-BauFplo Daten geben. Bei einer Änderungsbestellung wird es wie im
-
-aktuellen Fahrplanjahr eine Fplo (Netzfahrplan oder Sonderzug)
-
-geben.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 21',80,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":21,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','c689d9f0992cb16b50019a4329d72cbfc7b2b4c671c9dad1a18cb86ce3356b1d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a196f1ace9db4181eff13201','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',21,'Seite 22','Häufig gestellte Fragen – FAQ 5
-
-Thema: Digitale BauFplo
-
-F Im Fahrplanjahr 2026 können laut FAQ eine Fplo entweder mit Baustellen- oder
-
-Zugsicht veröffentlicht werden. Können wir davon ausgehen, dass, sollte im Fpl.
-
-2027 TTT nicht eingeführt werden, es diese zwei Möglichkeiten auch weiterhin
-
-geben wird? Wird in diesem Fall an dem bestehenden Prozess mit ZvF, ÜB und
-
-Fplo mit den heutigen Fristen festgehalten? Wovon ist es abhängig, ob eine
-
-Zugsicht oder eine Baustellensicht verwendet wird, und welchen Einfluss bzw.
-
-Auswahlmöglichkeiten haben wir als EVU ?
-
-A
-
-Während der Betriebserprobung in Fplj26 wird im direkten
-
-Austausch mit den ZB entschieden welche Züge in welchem Format
-
-veröffentlicht werden.
-
-Das aktuelle System zur Fplo–Erstellung muss aus verschiedenen
-
-Gründen zum Fplj-Wechsel 27 abgeschaltet werden, weshalb es ab
-
-diesem Zeitpunkt nur das neue Format der digitalen BauFplo geben
-
-wird.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 22',146,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":22,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','42d1dd11ce8d6775267145cf71977ec549e2d2f1eea678308df47466d7b3409b');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a540abda1b9fecf26461fb00','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',22,'Seite 23','Häufig gestellte Fragen – FAQ 6
-
-Thema: Digitale BauFplo
-
-F
-
-Gibt es feste Zeitpunkte für die Updates an der API für die digitale
-
-BauFplo? Bzw. wird man ev. sogar über eine E-Mail über anstehende
-
-Änderungen informiert?
-
-A
-
-Auf unserer Homepage und in den EVU-
-
-Kundeninformationsveranstaltungen informieren wir über
-
-Änderungen an der Schnittstelle. Link zur Website: Digitale
-
-Baufahrplananordnung
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 23',68,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":23,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','a57d0237e6ab83432b48c614d8c9da1f00923098915a262920a438d16ef4a8ee');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_42f19898dfc92070199b7e44','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data.md',23,'Seite 24','Zeit für Ihre Fragen
-
-30 Min.
-
-Bitte stellen Sie ihre Fragen über die
-
-F&A-Funktion in Teams und voten Sie
-
-interessante Fragen nach oben
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 25.06.2026 24',34,'{"canonical_url":null,"normalized_sha256":"04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219","page":24,"source_id":"src_ddd38c74e487946a0af2","source_sha256":"e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342","source_version_id":"sv_945698ce989da35cc526b067"}','0b6b6341028c5fbb40f40500558e6cf050306c64d01076a03891e1a223323b8c');
---> statement-breakpoint
-INSERT INTO sources (id,kind,title,canonical_url,language,license,visibility,status,created_by,created_at,current_version_id) VALUES ('src_55f12bc0f78e6465ec63','file','Informationsveranstaltung Vertiefung ujBau vom 31 07 2026',NULL,'de','unknown','public','active','bootstrap','2026-08-08T12:35:15Z',NULL) ON CONFLICT(id) DO UPDATE SET title=excluded.title,canonical_url=excluded.canonical_url,language=excluded.language,license=excluded.license,visibility=excluded.visibility,status=excluded.status;
---> statement-breakpoint
-INSERT INTO source_versions (id,source_id,sha256,normalized_sha256,size_bytes,media_type,original_filename,normalized_repo_path,converter_name,converter_version,fetch_time,created_at,supersedes_version_id,manifest_json) VALUES ('sv_fc73716a3f57a7991ffa7db4','src_55f12bc0f78e6465ec63','18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf','eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618',1448608,'application/pdf','Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf','sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data/sv_fc73716a3f57a7991ffa7db4.md','pdfplumber','0.11.9','2026-08-08T12:35:15Z','2026-08-08T12:35:15Z',NULL,'{"aliases":[],"canonical_url":null,"contact_redaction":"email_phone_identified_contact_names_and_contact_address","content_duplicate_group":null,"content_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","converter":{"name":"pdfplumber","profile":"bootstrap-markdown-v2","version":"0.11.9"},"final_url":null,"import_status":"imported","imported_at":"2026-08-08T12:35:15Z","language":"de","license":"unknown","manifest_repo_path":"sources/manifests/bootstrap/by-version/sv_fc73716a3f57a7991ffa7db4.json","media_type":"application/pdf","normalized_repo_path":"sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data/sv_fc73716a3f57a7991ffa7db4.md","normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","origin_page_url":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf","page_count":25,"raw_binary_committed":false,"requested_url":null,"schema_version":2,"size_bytes":1448608,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4","supersedes_source_version_id":null,"title":"Informationsveranstaltung Vertiefung ujBau vom 31 07 2026","visibility":"public"}') ON CONFLICT(id) DO UPDATE SET sha256=excluded.sha256,normalized_sha256=excluded.normalized_sha256,size_bytes=excluded.size_bytes,media_type=excluded.media_type,original_filename=excluded.original_filename,normalized_repo_path=excluded.normalized_repo_path,converter_name=excluded.converter_name,converter_version=excluded.converter_version,fetch_time=excluded.fetch_time,supersedes_version_id=excluded.supersedes_version_id,manifest_json=excluded.manifest_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('raw_sha256','18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf','src_55f12bc0f78e6465ec63','sv_fc73716a3f57a7991ffa7db4','{"content_duplicate_group":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-INSERT INTO source_identities (identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES ('normalized_sha256','eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618','src_55f12bc0f78e6465ec63',NULL,'{"content_duplicate_group":null,"original_filename":"Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf"}','2026-08-08T12:35:15Z') ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,source_id=excluded.source_id,source_version_id=excluded.source_version_id,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-UPDATE sources SET current_version_id='sv_fc73716a3f57a7991ffa7db4' WHERE id='src_55f12bc0f78e6465ec63';
---> statement-breakpoint
-INSERT INTO wiki_pages (path,title,summary,commit_sha,content_sha,updated_at,metadata_json) VALUES ('wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md','Informationsveranstaltung Vertiefung ujBau vom 31 07 2026','EVU-Informationsveranstaltung Vertiefung Unterjähriger Baufahrplan 31.07.2026 | Frankfurt am Main','bootstrap:f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff','f03d9809cabe04b46369c0cd1b6da9b15c8ba6b2a1b80ea22b22153d1fefc390','2026-08-08T12:35:15Z','{"bootstrap":true,"canonical_url":null,"license":"unknown","origin_page_url":null,"source_id":"src_55f12bc0f78e6465ec63","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}') ON CONFLICT(path) DO UPDATE SET title=excluded.title,summary=excluded.summary,commit_sha=excluded.commit_sha,content_sha=excluded.content_sha,updated_at=excluded.updated_at,metadata_json=excluded.metadata_json;
---> statement-breakpoint
-DELETE FROM wiki_chunks WHERE page_path='wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md';
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_605a5f4b1c0cf9c62f8b7a4a','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',0,'Seite 1','EVU-Informationsveranstaltung
-
-Vertiefung Unterjähriger Baufahrplan
-
-31.07.2026 | Frankfurt am Main',9,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":1,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','0dbdf70484df6ca52c1d01d9e62e9a6c525b267def739eb8cc56d2cf8c700ef5');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1117b472368d1d3aa34bc6d6','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',1,'Seite 2','Agenda
-
-Begrüßung & Einleitung Willkommen! 5 min
-
-Unterjährige Fahrplanprodukte unter Annex VII 10 min
-
-Überblick Annex VII
-
-Digitale BauFplo 10 min
-
-Ihre Fragen und
-
-Beantwortung Ihrer Fragen 30 min
-
-Hinweise
-
-Abschluss Nächste Schritte 5 min
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 2',46,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":2,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','a637b61a5587ed34df1fa59c251af0e267459d39dc82a17d857ed6b125a4eff1');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_89c1660b5ede0cfe45f323c8','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',2,'Seite 3','Hinweise
-
-für den heutigen
-
-Teams Fragen & Antworten
-
-Termin
-
-Fragen & Kommentare jederzeit während der Präsentation im Bereich „F&A“ in
-
-Teams schriftlich stellen
-
-kurz & auf den Punkt hilft uns beim späteren Beantworten
-
-Voice-Beiträge (Hand heben)
-
-Wir freuen uns
-
-In der Q&A-Phase am Ende des Termins
-
-über eine aktive
-
-Wir rufen auf; max. ~1 Minute pro Frage, damit viele zu Wort kommen
-
-Teilnahme. Ihre
-
-Gedanken und
-
-Wann antworten wir?
-
-Fragen sind
-
-ausdrücklich Am Ende des Termins in einer gebündelten Q&A-Runde
-
-Wir sammeln und priorisieren währenddessen im Hintergrund
-
-willkommen!
-
-Ziel:
-
-Möglichst viele Fragen, möglichst klare Antworten – fair & respektvoll für alle.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 3',112,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":3,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','e986dbbe97b3091ed7bc2df5eaa4559ce73f9abdbc0487ac511bae56640817f6');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_98133948ae4bcefdf0ad15da','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',3,'Seite 4','Unterjährige Fahrplanprodukte
-
-unter Annex VII
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 4',16,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":4,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','17779eafbc9463be3d8156452acafcac142c9661e53f32d7d76fc5c969b6cf2d');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ec26595425f441ada5855a25','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',4,'Seite 5','DB InfraGO bietet verschiedene Informationsformate rund um
-
-die Einführung von Annex VII und TTT im unterjährigen Bau an
-
-Die unterschiedlichen Termine haben einen jeweils klaren Fokus und ergänzen sich.
-
-Bedienen Sie sich gerne passend aus unserem Angebot:
-
-Einweisung 4. KP GPE/FPE ujBau Vertiefung
-
-(KOMBau)
-
-• Fokus: neue Prozesse im
-
-• Fokus: Bedienung des Tools unterjährigen Bau
-
-KOMBau rund um GPE/FPE
-
-• nächster Termin vsl.
-
-21.08.2026
-
-Heutiger Termin
-
-Sprechstunden zu 4. KP TTT-Dialog
-
-GPE/FPE
-
-• Fokus: Gesamtblick über alle
-
-• Fokus: Beantwortung von Fahrplanphasen,
-
-Fragen zu Bedienung Projektmeilensteine
-
-KOMBau u. neuem Prozess
-
-• nächster Termin 27.8.2026
-
-• seit 9.7.2026, wöchentlich 1h
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 5',111,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":5,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','5fb674d38203ef7b2fdf5ed7b6306101812a61416da89b67598d157a92f68ec5');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c5c5a7f11b808049acdf7463','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',5,'Seite 6','Fahrplan zum neuen unterjährigen Baufahrplan:
-
-Versandzeitpunkte der neuen Produkte rücken näher
-
-Nach Feedback
-
-aus dem Markt:
-
-31.08.2026 19.10.2026 22.11.2026
-
-Versand 1. GPE Möglicher Zeitrahmen für
-
-erfolgt erst zur Versand 1. GPE Frist 1. GPE (z-15) Frist 1. FPE (z-8)3 Frist 1. digitale
-
-Frist Ende August BauFplo (z-3)
-
-Frist 1. NAÄ (z-8)
-
-Jun. Jul. Aug. Sep. Okt. Nov. Dez.
-
-Ab Versand des FPE und
-
-06.07.2026 17.08.2026 14.12.2026
-
-NAÄ wird die BauFplo im
-
-VNP1 (TTT-konform) ENP2 (TTT-konform) 1. Montag nach dem
-
-neuen Format versendet
-
-Fahrplanwechsel
-
-1 Für die Fahrplandokumente für Sonntag nach Fahrplanwechsel (13.12.2026) gelten folgende Fristen:
-
-GPE: 24.08.2026, FPE (SPV): 12.10.2026, FPE (SGV) 02.11.2026
-
-2
-
-Die Stellungnahmefrist von 3 Wochen auf das GPE bleibt bestehen.
-
-3
-
-Es handelt sich jeweils um die spätesten Versandzeitpunkte, insb. die erste digitale BauFplo kann auch früher kommen.
-
-(1) Vorläufiger Netzplanentwurf (2) Endgültiger Netzfahrplan (3) z-8 gilt für den SPV. Für den SGV gilt die Frist z-5.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 6',162,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":6,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','4bbad0ca315510cbdc14e7b7139829aad4a2c48449db4f952935dd22fffc3250');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_749487b6ff9b732b2252446b','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',6,'Seite 7','DB InfraGO entwickelt die KOMBau bis zur ersten GPE-
-
-Konsultation gezielt weiter und stellt neue Funktionen bereit
-
-Bereits vorhandene Funktionalitäten KOMBau: Funktionserweiterungen bis erste GPE-Konsultation am 24.08.26:
-
-• Ist seit dem 22.06. für den Nutzer verfügbar • GPE (zukünftig auch GPEnS und FPE) kann mit der Vertragstrasse
-
-(aber noch keine GPE enthalten) aus dem Netzfahrplan auf der Übersichtsseite und im Laufweg
-
-verglichen werden
-
-• Die Anforderungen des Annex VII sind erfüllt
-
-• Es wird eine erste Version der Mehrfachstellungnahme geben:
-
-• Es wird im TTT-Format kommuniziert
-
-• GPE für die Stellungnahme kann selektiert werden
-
-• GPE, GPEnS, FPE werden kommuniziert
-
-• Mehrfachstellungnahme kann abgegeben werden
-
-• Es können Stellungnahmen zu GPE abgegeben
-
-werden und GPEnS abgelehnt oder angenommen • Verfristete GPE werden täglich gebündelt um 22:30 versandt
-
-werden
-
-• Alle Prozessschritte von GPE bis FPE sind
-
-nachvollziehbar
-
-• Es sind Filterfunktionen in der Übersichtsseite
-
-Für den Umgang mit diesen neuen Funktionen wird vsl.
-
-enthalten
-
-am 21.08.26 ein Einweisungstermin angeboten
-
-• Sortierfunktionen werden in der Übersichtsseite
-
-Die zugehörige Kundeninformation wird am 06.08.26
-
-bereitgestellt verschickt
-
-• Kontaktdaten können automatisiert befüllt werden
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 7',190,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":7,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','b42df693ef730f7ba9f6a930016e52f232f74cf8c939ed1dcc18ebe2cf4c46e7');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_8afeefd3b588851baf2f5096','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',7,'Seite 8','Digitale BauFplo
-
-Vorschau Hochlauf in 2026
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 8',17,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":8,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','bd3408c468d6d5a1cfc3b6082164883747cef883cf14fe8d380fc773ffcc49cf');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_03e7536a802e5c0b68b829d6','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',8,'Seite 9','Anforderungen von TTT / Annex VII für die neuen
-
-unterjährige Fahrplanprodukte im Regelprozess
-
-Migrationszeitraum Fplj 2027: Übersicht Fahrplanprodukte und zugehörige Prozesse
-
-BKE1 GPE2 GPEnS3 FPE4 NAÄ5 BauFplo6
-
-InfraGO
-
-z-29 z-24 z-15 z-87 z-8 bis z-3
-
-Webportal
-
-Webanwendung KOMBau PDF per Mail
-
-Systeme pathOS
-
-Common Interface pathOS (Schnittstelle zur Trassenmeldung) API (Schnittstelle)
-
-3 Wochen Stellungnahme, 1 Woche Annahme/ Kostenfreie Stornierung
-
-EVU Annahme/ Ablehnung innerhalb 3 AT8
-
-Ablehnung möglich
-
-z-21 z-14 z-8
-
-(1) Baubedingte Kapazitätseinschränkung (2) Grobplanungsergebnis (3) Grobplanungsergebnis nach Stellungnahme (4) Feinplanungsergebnis (5) Netzausgelöste Änderung
-
-(6) Baufahrplananordnung (7) Frist FPE im SGV z-5 (8) Arbeitstage
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 9',105,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":9,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','0d09ae8b9f35f7b6c8e4491dca18943d502a062d2186eff49b64a5ca71ba7c77');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_25851f7dd39c4f6415401829','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',9,'Seite 10','Mit der Einführung von TTT / Annex VII gibt es
-
-Änderungen in der Darstellung der BauFplo und an der API
-
-Änderungen an der BauFplo API Ausblick: Änderungen an der BauFplo mit TTT / Annex VII
-
-Changelog BauFplo API EVU
-
-Thema Darstellung unter TTT
-
-• Änderungsübersicht der
-
-Schnittstellenbeschreibung der digitalen Zugtrassen mit mehreren Ja
-
-BauFplo wird fortlaufend gepflegt Abschnitten
-
-• Dient zur Unterstützung bei Bewertung Zeitliche Inkonsistenz Ja
-
-möglicher Auswirkungen auf Ihre
-
-Übergänge zu Ja
-
-Systeme
-
-Fremdnetzanteilen
-
-Aktualisierte Beispieldateien PathID Nein
-
-Bauvorgangsnummer Entfällt
-
-• Zeigen mögliche Anwendungsfälle in
-
-jeweils drei verschiedenen Formaten Art der Baumaßnahme Entfällt
-
-(pdf, json, xml)
-
-Ort der Baumaßnahme Entfällt
-
-Alle aktuellen Änderungen an der API und Beispiele Auch zukünftig kann es zu Änderungen an der
-
-sind auf Homepage zur digitalen BauFplo zu finden. BauFplo kommen, über die wir informieren.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 10',143,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":10,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','37d24c4c348e780d328f680e1151f13b885c96f20d94b24981d0f74b3eaebb06');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_ffddabfdc271e4c62d307ed5','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',10,'Seite 11','Mit der Betriebserprobung bereiten wir sukzessive die
-
-Einführung der digitalen BauFplo in 2026 vor
-
-Die Betriebserprobung in Zahlen
-
-Stand 20.07.2026
-
-42
-
->118
-
->910
-
-EVU mit Kontaktaufnahme
-
-beantwortete Fragen &
-
-veröffentlichte BauFplon
-
-Veröffentlichung im FAQ2
-
-28
-
-aktiv beteiligt
-
-12
-
-kooperationsinteressiert1
-
-7 von 7 21
-
-6
-
-Regionen sind Teil der Erprobung verprobte Anwendungsfälle
-
-Anpassungsbedarfe EVU-seitig
-
-identifiziert
-
-(1) EVU in laufender Entscheidungsfindung oder mit noch nicht verprobbaren Anwendungsfällen
-
-(2) Reduzierte Zahl im Vgl. zu Vormonat durch Aufteilung des FAQ in Annex VII und Digitale BauFplo. Restliche Fragen in Annex VII FAQ aufgegangen
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 11',100,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":11,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','9bd57cf3ec7fd4c4519eea782808cda2387877bd2269979e7b605151adfb5c69');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_a3165de196006a01cc1221d8','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',11,'Seite 12','21 bereits erprobte Anwendungsfälle decken ca. 95% des
-
-zukünftigen Aufkommens an digitalen BauFplo ab
-
-21 Anwendungsfälle bereits erprobt In allen 7 Regionen bereits digitale BauFplo veröffentlicht:
-
-• Umleitung • Teilausfall hinten - auf Laufweg
-
-• Umleitung mit Ausfall von • Mittiger Teilausfall (SEV) mit Kumulierte Anzahl BauFplo
-
-Betriebsstellen baubedingter Neuleistung
-
-1.000
-
-• Umleitung mit zus. Betriebsstellen • Einfahrt in Stumpfgleis auf
-
-800
-
-Laufweg
-
-• Umleitung mit Ausfall von
-
-Betriebsstellen und mit • Zugcharakteristika Anpassung 600 Region Südwest
-
-zusätzlichen Betriebsstellen Region Ost
-
-• Halt für Personalwechsel
-
-400
-
-Region Süd
-
-• Verkehrstagswechsel
-
-• Zug fährt mit Verfahren ESF Region West
-
-200
-
-• Zielendpunkt im Ausland Region Nord
-
-• Zugfahrt mit Region Südost Region Mitte
-
-0
-
-• Hinweis auf den Ersatzfahrplan- Notbremsüberbrückung
-
-N D J F M A M J J A S O N D J F M A M J J
-
-heftverweis • Verspätung . v o . z e . n a . b e z r ä . r p i a i n u il u . g u . p e . t k . v o . z e . n a . b e z r ä . r p i a i n u il u
-
-• Vorplan
-
-• KV-Profil
-
-2024 2025 2026
-
-• Totalausfall
-
-• Rangierfahrt
-
-• Einfahrt in Frühhaltanzeiger auf
-
-• Zeitsprung Legende
-
-Laufweg
-
-Erste digitale BauFplo zu Trasse in Region x veröffentlicht
-
-Weitere, auch komplexere Anwendungsfälle können mit uns in der
-
-Neues EVU nimmt an Betriebserprobung teil
-
-Betriebserprobung/Hochlauf getestet werden
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 12',260,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":12,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','c77c6b1ee6d3d3c4322680ba2e14582f7adeb0a0c35872b944fd9534216f8de5');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_1e64b4d3804c890d969d8ada','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',12,'Seite 13','Mit dem Readiness-Check für die digitale BauFplo
-
-können Sie selbständig ihre Prozesse prüfen
-
-Der BauFplo-Readiness-Check...
-
-... ist ein kompakter Selbsteinschätzungs-Check zur Prüfung,
-
-wie gut Sie auf die digitale BauFplo vorbereitet sind
-
-... bringt Transparenz über den eigenen Reifegrad, von
-
-Empfang und Ablage bis zur operativen Nutzung
-
-... hilft, Prozesslücken zu schließen und sicherzustellen, dass
-
-BauFplo zuverlässig verarbeitet werden können
-
-... ist bewusst pragmatisch gehalten und in wenigen Minuten
-
-durchführbar
-
-... ist als Download auf unserer Webseite verfügbar
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 13',88,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":13,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','8645c64a9f7597bd51373e7549019a1f7bfce5146e3517bf80e3007ed539f4ad');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_d7cb53957eb66c744f2c3239','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',13,'Seite 14','So bleiben Sie mit uns in Kontakt
-
-Annex VII KOMBau Digitale BauFplo TAF/TAP TSI
-
-Hier geht‘s zur Website Hier geht‘s zur Website Hier geht‘s zur Website Hier geht‘s zur Website
-
-• Informationen zum neuen • Informationen zur • Neuerungen auf einen Blick • Tools zur
-
-Prozess Baukommunikation Webanwendung, inkl. Trassenanmeldung (z. B.
-
-• Beschreibung Testzugang
-
-Direktlink pathOS)
-
-• Zusammenhang mit auf BauFplo API
-
-KOMBau • Bedienungsanleitung • Schnittstellen &
-
-• Beispieldokumente in xml-
-
-Meldungsservices
-
-• FAQ • FAQ und json-Format
-
-• Informationsangebote
-
-• FAQ
-
-(FAQ, Events,
-
-• Readiness Check
-
-Ansprechpartner)
-
-Sie erhalten die gezeigte Unterlage im Anschluss an diese Veranstaltung.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 14',111,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":14,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','968b9c4e7a72997e5b2445528c5810c05cc5b742b332fc8a1cc6f0487d30294c');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_bb87b3b805a85899202b9a0a','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',14,'Seite 15','Fragen und Hinweise
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 15',14,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":15,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','6b52de21719d5981b8b77c3ba614f450eaea0222244b6579628db07dd11fe9ee');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_5b3e355a82160397b07fa87f','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',15,'Seite 16','Häufig gestellte Fragen – FAQ 1
-
-Thema: Annex VII
-
-F
-
-Wird eine Leertrasse den regulären GPE-Prozess durchlaufen oder erfolgt hierfür
-
-eine NAÄ zur Leertrasse?
-
-A
-
-Auch Leerzugtrassen können ein GPE erhalten, sofern sie vor Beginn
-
-der Bearbeitung der Maßnahme bekannt sind.
-
-Ist die Leerzugtrasse indirekt baubetroffen, wird in der
-
-Stellungnahme eine Rückmeldung des EVUs benötigt. Das EVU erhält
-
-im Anschluss für die indirekt betroffene Leerzugtrasse ein FPE.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 16',78,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":16,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','819b16232aff860f049053aebb41bafbf44e275fa795f2140f9d9a74ade94cfe');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_41063f0bd49c9655a29829bc','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',16,'Seite 17','Häufig gestellte Fragen – FAQ 2
-
-Thema: Annex VII
-
-F
-
-Wie werden kurzfristige Änderungen nach z-24 kommuniziert?
-
-Können EVU auf kurzfristige Kapazitätseinschränkungen nach GPE
-
-noch Rückmeldung abgeben?
-
-A
-
-INB 2027 Ril. 402.0305 Abschnitt 9 Absatz (3)
-
-Können bestehende Fristen nicht eingehalten werden – etwa, weil
-
-die BKE auf einer kurzfristig erforderlichen Baumaßnahme beruht -
-
-so konsultiert die DB InfraGO AG die ZB und EIU umgehend (sofern
-
-keine Gefahr in Verzug). Diese haben einen Arbeitstag Zeit, um eine
-
-Stellungnahme abzugeben.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 17',90,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":17,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','2e5a6da9472451c9d98114c0df455acadbf75250f87db9f55b43e561d783a6a2');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_92698ec85452c507f6d10360','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',17,'Seite 18','Häufig gestellte Fragen – FAQ 3
-
-Thema: KOMBau
-
-F
-
-Wie kann sichergestellt werden, dass Vorgaben vom Aufgabenträger
-
-(z.B. Anschlussverkehre, Schülerverkehre) berücksichtigt werden,
-
-sodass diese an bestimmten Betriebsstellen erreicht werden können.
-
-A
-
-Die EVU haben die Möglichkeit, an den relevanten Bst.
-
-(Betriebsstellen), an denen Anschlussverkehre vorhanden sind, eine
-
-früheste oder späteste Zeit anzugeben, inklusive eines Kommentars
-
-auf der Betriebsstellenebene, warum die Einhaltung wichtig ist. (z.B.
-
-Anschluss der Bus-Linie X muss erreicht werden)
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 18',82,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":18,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','1e5e2256234c99e29354f07c49d6158cd2ba0b1e4bab2262a50acba29fa81893');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_5e1f123589689d5df7576a60','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',18,'Seite 19','Häufig gestellte Fragen – FAQ 4
-
-Thema: GPE
-
-F
-
-Aufgrund der unterschiedlichen Fristen (z-15 vs. z-24) erhalten wir ab September
-
-10 Wochen lang jede Woche für 2 Planungswochen GPEs, ist das korrekt?
-
-A
-
-Ja das ist korrekt, es werden für 2 Planungswochen GPEs versendet.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 19',55,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":19,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','8ffbfe9400ea8015c4d66fecb0b207c097da1895443f4d28bd3679023aff5225');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_c83fe24ded06393ed6844dba','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',19,'Seite 20','Häufig gestellte Fragen – FAQ 5
-
-Thema: GPE
-
-F
-
-Wenn zwei Züge (z.B. SGV) an einer bestimmten Betriebsstelle ihren
-
-Wagenaustausch machen und eine gemeinsame Haltezeit von 30 Min.
-
-benötigen, jetzt bekommt Zug 1 ein GPE mit einer BKE von 60 Min.
-
-später in dieser Betriebsstelle an.
-
-Bekommt der Zug 2 auch ein GPE ab der gemeinsamen Betriebsstelle
-
-mit +60 Min. ?
-
-A
-
-Für den nicht baubetroffenen Zug erfolgt keine Bauausregelung. Hier
-
-ist eine Änderungsbestellung durch den Kunden notwendig.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 20',89,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":20,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','c01309224f57dd91a840e7dc6bc2f8cd3b8c976d830705c54879449d0d147ee0');
---> statement-breakpoint
-INSERT INTO wiki_chunks (id,page_path,ordinal,heading_path,text,token_count,source_refs_json,content_sha) VALUES ('chunk_3ecc4d68ba1d3e30b0482381','wiki/sources/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data.md',20,'Seite 21','Häufig gestellte Fragen – FAQ 6
-
-Thema: FPE
-
-F
-
-Es kommt die Information, dass die Baustelle ausfällt, nach der
-
-Stellungnahme aufs GPE und vor dem FPE. Wie gehen wir damit um?
-
-Bekommen wir eine Information, dass alle Regelungen zurückgezogen
-
-werden?
-
-A
-
-Sollte eine Baumaßnahme vor dem FPE-Versand abgesagt werden
-
-und ist die Trasse dadurch nicht mehr baubetroffen, wird durch uns
-
-eine Nachricht gesendet, dass der Prozess abgebrochen wurde. Die
-
-Vertragstrasse gilt unverändert, d.h. ohne Baubetroffenheit, fort. Wir
-
-schicken das letzte Fahrplanprodukt (GPE oder GPEnS) erneut, inkl.
-
-withdrawal-message.
-
-DB InfraGO AG | EVU-Informationsveranstaltung | Vertiefung uJBau | 31.07.2026 21',98,'{"canonical_url":null,"normalized_sha256":"eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618","page":21,"source_id":"src_55f12bc0f78e6465ec63","source_sha256":"18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf","source_version_id":"sv_fc73716a3f57a7991ffa7db4"}','93717e1b2c1e4a22020bf4fb1ee3c4264bc0297776b644f96480183cd4f49112');
 --> statement-breakpoint
