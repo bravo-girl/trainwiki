@@ -645,6 +645,29 @@ a {
   margin-bottom: 10px;
   overflow-x: auto;
   padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.suggestion-row::-webkit-scrollbar {
+  height: 0;
+}
+
+@media (hover: hover) {
+  .suggestion-row:hover,
+  .suggestion-row:focus-within {
+    scrollbar-color: var(--line-strong) transparent;
+    scrollbar-width: thin;
+  }
+
+  .suggestion-row:hover::-webkit-scrollbar,
+  .suggestion-row:focus-within::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .suggestion-row::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border-radius: 999px;
+  }
 }
 
 .suggestion-row button {

@@ -65,6 +65,9 @@ test("keeps the chat mobile-first and exposes pair and session exports", async (
   assert.match(source, /Dokumente anfügen/);
   assert.match(source, /repairCommonMojibake/);
   assert.match(css, /\.composer-actions/);
+  assert.match(css, /\.suggestion-row::-webkit-scrollbar/);
+  assert.match(css, /scrollbar-width: none/);
+  assert.match(css, /@media \(hover: hover\)/);
   assert.match(source, /useState\(true\)/);
   assert.match(source, /Zufällige Fragen/);
   assert.match(source, /Diese Antwort/);
