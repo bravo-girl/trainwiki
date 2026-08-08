@@ -10,12 +10,13 @@ Die Schlüsselwörter **MUSS**, **DARF NICHT**, **SOLL**, **SOLL NICHT** und **K
 - **SOLL / SOLL NICHT:** Standard, von dem nur mit dokumentierter Begründung abgewichen werden darf;
 - **KANN:** zulässige Option.
 
-Die Schema-Schicht besteht für dieses Projekt aus zwei versionierten Dokumenten:
+Die normative Projektdokumentation besteht aus drei versionierten Dokumenten mit getrennter Zuständigkeit:
 
 - `llm-wiki.md` definiert Wissensmodell, Provenienz, Lern-, Sicherheits- und Reviewregeln.
+- `schema.md` definiert die konkrete serialisierte Form von Quellen-, Wiki-, Index- und Logartefakten.
 - `spec.md` definiert die konkrete technische Umsetzung: APIs, Datenmodelle, Jobzustände, Komponenten, Deployment und Abnahmekriterien.
 
-Bei Widersprüchen gelten die strengere Sicherheitsregel und die Provenienzregeln dieses Dokuments. Eine technische Änderung in `spec.md` DARF diese Invarianten nicht abschwächen. Änderungen an einem der beiden Schema-Dokumente MÜSSEN wie Code geprüft und versioniert werden; sie dürfen nicht durch eine öffentliche Chatfrage ausgelöst oder automatisch gemergt werden.
+`AGENTS.md` setzt diese Verträge als Arbeitsregeln um; `CLAUDE.md` ist lediglich ein kurzer Adapter und keine zusätzliche Normquelle. Bei Widersprüchen gelten die strengere Sicherheitsregel und die Provenienzregeln dieses Dokuments. Eine Formatänderung in `schema.md` oder technische Änderung in `spec.md` DARF diese Invarianten nicht abschwächen. Andere Konflikte MÜSSEN als offene Architekturentscheidung dokumentiert und vor Veröffentlichung aufgelöst werden. Änderungen an einem normativen Dokument MÜSSEN wie Code geprüft und versioniert werden; sie dürfen nicht durch eine öffentliche Chatfrage ausgelöst oder automatisch gemergt werden.
 
 ## 2. Ziele und Nicht-Ziele
 
@@ -262,32 +263,11 @@ Konverterausgabe ist weiterhin untrusted data. Sie MUSS vor Speicherung normalis
 
 ## 8. Normatives Wiki-Seitenschema
 
-Jede Wiki-Seite MUSS YAML-Frontmatter besitzen. Mindestbeispiel:
+Das exakte Markdown-, Frontmatter-, Pfad-, Link-, Zitations-, Index- und Logformat steht ausschließlich in [`schema.md`](./schema.md). Die Trennung verhindert, dass dieselben Felddefinitionen in mehreren normativen Dokumenten auseinanderlaufen. `schema.md` MUSS mindestens die Seitentypen `entity`, `concept`, `source-summary`, `synthesis` und `question` abdecken und DARF die Provenienz-, Review- oder Sicherheitsinvarianten dieses Dokuments nicht abschwächen.
 
-```yaml
----
-id: concept:retrieval-augmented-generation
-title: Retrieval-Augmented Generation
-type: concept
-status: approved
-aliases: [RAG]
-tags: [retrieval, llm]
-created_at: 2026-08-02T10:00:00Z
-updated_at: 2026-08-02T10:30:00Z
-source_versions:
-  - src_01abc@sha256:0123...
-depends_on:
-  - source:src_01abc@sha256:0123...
-  - concept:language-model
-supersedes: []
-reviewed_by: admin-id
-reviewed_at: 2026-08-02T10:35:00Z
----
-```
+Jede nicht reservierte Wiki-Seite MUSS gültiges Frontmatter, eine stabile ID, einen zulässigen Typ, einen Publikationsstatus und strukturierte Quellenreferenzen besitzen. `status: approved` darf nur auf dem freigegebenen Branch und nur nach einem Review des tatsächlich veröffentlichten Commitstands vorkommen.
 
-Zulässige `type`-Werte MÜSSEN zentral in `spec.md` festgelegt werden und mindestens `entity`, `concept`, `source-summary`, `synthesis` und `question` abdecken. `status: approved` darf nur auf dem freigegebenen Branch vorkommen.
-
-Der Body SOLL in dieser Reihenfolge aufgebaut sein:
+Der Body SOLL gemäß `schema.md` in dieser Reihenfolge aufgebaut sein:
 
 ```markdown
 # Titel

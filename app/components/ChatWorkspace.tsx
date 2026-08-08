@@ -284,10 +284,11 @@ export function ChatWorkspace() {
     setIsLoading(true);
 
     try {
+      const turnId = crypto.randomUUID();
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, history }),
+        body: JSON.stringify({ question, history, turnId }),
       });
       const payload = (await response.json().catch(() => ({}))) as ChatResponse;
       const answer = payload.answer;
@@ -419,7 +420,10 @@ export function ChatWorkspace() {
               </button>
             </div>
           </form>
-          <small className="session-note">Die Unterhaltung bleibt in diesem Browserfenster.</small>
+          <small className="session-note">
+            Der Verlauf bleibt in diesem Browserfenster. Eine bereinigte Frage
+            und belegte Quell-IDs können als prüfbarer Lernhinweis gespeichert werden.
+          </small>
         </div>
       </section>
     </main>

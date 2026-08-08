@@ -1,10 +1,300 @@
 {
-  "corpus_sha256": "fc1ae193dc71eb162b39f9417842eeabf3fe897760e0b1ed64c8da7378775900",
-  "imported_at": "2026-08-02T10:25:48Z",
-  "imported_count": 21,
+  "content_duplicate_groups": [],
+  "corpus_sha256": "f8dfc1a873a48ca396ea046a5cc9add01212dc42661928708329bb77e6998fff",
+  "duplicate_count": 0,
+  "files": [
+    {
+      "filename": "CELEX_32017D2075_DE_TXT.pdf",
+      "source_id": "src_fb87aaf72d699df68d35",
+      "source_version_id": "sv_ee9fc6b3ca6f222446aef1bb",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Changelog-BauFplo-API-EVU-2-17-0-data.pdf",
+      "source_id": "src_9a8ac84849939f0108ef",
+      "source_version_id": "sv_9aacda759a56475d3f64f6e0",
+      "status": "imported"
+    },
+    {
+      "filename": "Click & Ride.md",
+      "source_id": "src_87a0d1da7ffe15350d9d",
+      "source_version_id": "sv_2e22d860175ac7f66366cbe9",
+      "status": "imported"
+    },
+    {
+      "filename": "clickandride_TPN_Infoflyer-data.pdf",
+      "source_id": "src_a12e612bd58a0ba3aa61",
+      "source_version_id": "sv_b65369e50e48687c06b48afd",
+      "status": "imported"
+    },
+    {
+      "filename": "code-of-conduct-netzfahrplan-data.pdf",
+      "source_id": "src_c5afa20ea56973906da4",
+      "source_version_id": "sv_eb5996835007d62cfc7ee534",
+      "status": "imported"
+    },
+    {
+      "filename": "Download-TAF-TAP-Glossar-data.pdf",
+      "source_id": "src_660bf8039cf0527ee7b6",
+      "source_version_id": "sv_51fb412fc4f0d41650cb55bf",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf",
+      "source_id": "src_b5fb8ccb80d176b38310",
+      "source_version_id": "sv_4fbe32d73c5618c02a183f43",
+      "status": "imported"
+    },
+    {
+      "filename": "Flyer-Common-Interface-data.pdf",
+      "source_id": "src_a17ac4dcb38672799aa4",
+      "source_version_id": "sv_e519d2e39261121ea3f27952",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-Company-Code-data.pdf",
+      "source_id": "src_d2976558d7a33946b943",
+      "source_version_id": "sv_c0cdd67495939c10345fbc12",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-Location-Coding-data.pdf",
+      "source_id": "src_b1e36372becf6e4cd12f",
+      "source_version_id": "sv_eea6b839bbd8c7cb46a03b73",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-National-Contact-Point-data.pdf",
+      "source_id": "src_ef37beb95dff453ad8f1",
+      "source_version_id": "sv_8b33fdc8de9e5fb970f80c2f",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-Neues-Bestellsystem-pathOS--data.pdf",
+      "source_id": "src_828f1b79362a62ea820f",
+      "source_version_id": "sv_66fe54f6cac1cc941df10fd8",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-TAF-TAP-Identifikatoren-data.pdf",
+      "source_id": "src_f99e066f37874620df4e",
+      "source_version_id": "sv_c88a5b74e140e9fe73443e98",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-TCM-PTCM-data.pdf",
+      "source_id": "src_a731ecf1b5573c6eba01",
+      "source_version_id": "sv_c7063d63a8af5e6fac38fb2c",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-Umsetzungscheckliste-TAF-TAP-TSI-fuer-EVU-data.pdf",
+      "source_id": "src_154242f98906f347d53b",
+      "source_version_id": "sv_1eeb0a97a58e3ea642480851",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Flyer-zur-Unterjaehrigen-Baukommunikation-nach-Annex-VII-data.pdf",
+      "source_id": "src_444523b5c3ad495650b5",
+      "source_version_id": "sv_4faec1ad62208a667b5fd534",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Fragenkatalog-Annex-VII-data.pdf",
+      "source_id": "src_49e6bd4a29f18c068815",
+      "source_version_id": "sv_ad7a22df2cd5529c685aa7d1",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf",
+      "source_id": "src_c2cbe5f5c740b62f994d",
+      "source_version_id": "sv_64747c1009b8c053966a8940",
+      "status": "imported"
+    },
+    {
+      "filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-25-06-2026-data.pdf",
+      "source_id": "src_ddd38c74e487946a0af2",
+      "source_version_id": "sv_945698ce989da35cc526b067",
+      "status": "imported"
+    },
+    {
+      "filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf",
+      "source_id": "src_55f12bc0f78e6465ec63",
+      "source_version_id": "sv_fc73716a3f57a7991ffa7db4",
+      "status": "imported"
+    },
+    {
+      "filename": "Infoveranstaltung-Vertiefung-20h-Zug-15-Juli-2026-Terminunterlage-data.pdf",
+      "source_id": "src_b1dc4ddce9e5b5a345e6",
+      "source_version_id": "sv_20848958c0b6e9f3ebfd7441",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Internationale Trassenanmeldung über das PCS - _Path Coordination System_.md",
+      "source_id": "src_1e82f73ce6a5ce5ccce9",
+      "source_version_id": "sv_a96e68d9b5a30593484c1ee0",
+      "status": "imported"
+    },
+    {
+      "decision": "excluded_from_public_import",
+      "filename": "Kickoff-Ende-zu-Ende-Kundentests-TTT-mit-Identifiern-data.pdf",
+      "page_count": 24,
+      "reasons": [
+        {
+          "detected_by": "visual_review",
+          "marker": "DB Intern / DB internal",
+          "pages": [
+            13
+          ]
+        }
+      ],
+      "sha256": "97504436bbb9c084e054648e4988ff62e02616b1a292226cbfdbe64d32f1a6a5",
+      "size_bytes": 1539640
+    },
+    {
+      "filename": "NBN_2024_Anlage_4-2-2_Nutzungsbedingungen-Click-Ride-data.pdf",
+      "source_id": "src_bda60942e2d392ff9207",
+      "source_version_id": "sv_c0a33d60eedb5a985aae5933",
+      "status": "imported"
+    },
+    {
+      "filename": "Ril-402-0202-INB-2027-data.pdf",
+      "source_id": "src_185a09c3daddf7c8a278",
+      "source_version_id": "sv_eaa9bd42fea1960a09060098",
+      "status": "imported"
+    },
+    {
+      "filename": "Ril-402-0202A01-INB-2027-data.pdf",
+      "source_id": "src_020acbee32d4681c346b",
+      "source_version_id": "sv_b97562496bb6bb640477c1e5",
+      "status": "imported"
+    },
+    {
+      "filename": "Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json",
+      "source_id": "src_a8fc6bb3e8b7db7a8077",
+      "source_version_id": "sv_4d9deecdfe44da586bc04290",
+      "status": "imported"
+    },
+    {
+      "filename": "Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml",
+      "source_id": "src_c4db283f6617a89c2018",
+      "source_version_id": "sv_aa3457828c7cc06b65f8cfa2",
+      "status": "imported"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-21-Mai-2026-Antworten-und-offene-Punkte-data.pdf",
+      "source_id": "src_fd6211533b1f4da5f776",
+      "source_version_id": "sv_7c053a98498b96504a8dc7de",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-21-Mai-2026-Terminunterlage-data.pdf",
+      "source_id": "src_1f6c2d00fd116ecf0611",
+      "source_version_id": "sv_12227c0c6672e3e4736d2c8b",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-22-April-2026-Antworten-und-offene-Punkte-data.pdf",
+      "source_id": "src_8b2e5ffa1f464bee18cf",
+      "source_version_id": "sv_abacab26d0837e86a436bb01",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-22-April-2026-Terminunterlage-data.pdf",
+      "source_id": "src_ea6d92cb2a3f2e4138ef",
+      "source_version_id": "sv_0c0b08c0adcc9c32c1dcad55",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-24-Juni-2026-Antworten-und-offene-Punkte-data.pdf",
+      "source_id": "src_fdf7048d9eb0f98e0a93",
+      "source_version_id": "sv_0194b5a78c0a2db74d1b0421",
+      "status": "retry_noop"
+    },
+    {
+      "decision": "excluded_from_public_import",
+      "filename": "TAF-TAP-TSI-Dialog-24-Juni-2026-Terminunterlage-data.pdf",
+      "page_count": 40,
+      "reasons": [
+        {
+          "detected_by": "visual_review",
+          "marker": "DB Vertraulich / DB confidential",
+          "pages": [
+            7
+          ]
+        }
+      ],
+      "sha256": "a2ccf12f1dcc1b80ad9598ae0576e7ba2387e15008b3f4bc1b775528684013e9",
+      "size_bytes": 1338699
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-26-Maerz-2026-Antworten-und-offene-Punkte-data.pdf",
+      "source_id": "src_19a7b48948c766db65df",
+      "source_version_id": "sv_edb2bc1e9f24d50e73b6b8c5",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF-TAP-TSI-Dialog-26-Maerz-2026-Terminunterlage-data.pdf",
+      "source_id": "src_3144bf05b4098f1b3f75",
+      "source_version_id": "sv_44fe2d3163612d9c0a1e9803",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "TAF_TAP TSI FAQ.md",
+      "source_id": "src_41228a549ad00f141eea",
+      "source_version_id": "sv_a6f59414e6ebc1e04ca2c673",
+      "status": "imported"
+    },
+    {
+      "filename": "Trassenanmeldung im Gelegenheitsverkehr.md",
+      "source_id": "src_a84dc841278f39fe70cc",
+      "source_version_id": "sv_778cf7ecc04d4171056d4583",
+      "status": "imported"
+    },
+    {
+      "filename": "Trassenanmeldung im Netzfahrplan.md",
+      "source_id": "src_55f3c19c14f539666c5f",
+      "source_version_id": "sv_5d5a297063e24f3830a5c3dc",
+      "status": "imported"
+    },
+    {
+      "filename": "Trassenanmeldung über das Trassenportal-Netz (TPN).md",
+      "source_id": "src_4189235db5c801f1cc06",
+      "source_version_id": "sv_40ae35c7249fd4a5720382ff",
+      "status": "imported"
+    },
+    {
+      "filename": "Unterlage-Infoveranstaltung-Netzfahrplan-2027-data.pdf",
+      "source_id": "src_5cbb3fe592ef3e699d7a",
+      "source_version_id": "sv_d4d4bc1ade38ec7d2950d4f6",
+      "status": "imported"
+    },
+    {
+      "filename": "Unterlage-Vertiefung-ujBau-27-11--data.pdf",
+      "source_id": "src_6564bb0ccae19080edd4",
+      "source_version_id": "sv_9911c8dfe35973048b5d6173",
+      "status": "imported"
+    },
+    {
+      "filename": "Über TAF_TAP TSI.md",
+      "source_id": "src_0ed972984c152ac37d60",
+      "source_version_id": "sv_7c633488c07b24cabd17e8b9",
+      "status": "retry_noop"
+    },
+    {
+      "filename": "Überblick - Trassenanmeldung zum Netzfahrplan und im Gelegenheitsverkehr.md",
+      "source_id": "src_15a62986bf5cb9217f1c",
+      "source_version_id": "sv_7b15f5b01728d3b71a6f9897",
+      "status": "imported"
+    }
+  ],
+  "imported_at": "2026-08-08T12:35:15Z",
+  "imported_count": 42,
   "input_directory": "../input",
+  "new_version_count": 0,
   "quarantined_count": 2,
-  "schema_version": 1,
+  "schema_version": 2,
+  "source_count": 42,
   "sources": [
     {
       "canonical_url": null,
@@ -31,6 +321,142 @@
       "visibility": "public"
     },
     {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_9aacda759a56475d3f64f6e0.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/changelog-baufplo-api-evu-2-17-0-data/sv_9aacda759a56475d3f64f6e0.md",
+      "normalized_sha256": "910e8db9cbe296cd124592f82fabbfe4ac780700209d436e5c31aa4de59cc428",
+      "origin_page_url": null,
+      "original_filename": "Changelog-BauFplo-API-EVU-2-17-0-data.pdf",
+      "page_count": 4,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 137463,
+      "source_id": "src_9a8ac84849939f0108ef",
+      "source_sha256": "c78844566eba2b02b0ca49e411141537e83f45f357a5682c0ae52f5858b99ccb",
+      "source_version_id": "sv_9aacda759a56475d3f64f6e0",
+      "supersedes_source_version_id": null,
+      "title": "Changelog BauFplo API EVU 2 17 0",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_2e22d860175ac7f66366cbe9.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/click-ride/sv_2e22d860175ac7f66366cbe9.md",
+      "normalized_sha256": "8d41ec8cb8e71bddb957af0f0b485d4120af7639a8996a6ff0c2021d1619e916",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236",
+      "original_filename": "Click & Ride.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/click_and_ride-10907236",
+      "schema_version": 2,
+      "size_bytes": 10091,
+      "source_id": "src_87a0d1da7ffe15350d9d",
+      "source_sha256": "a564b36a60a9e35982e72efd9cc2532b4b6399e780ae1be060c0104a5bf66e09",
+      "source_version_id": "sv_2e22d860175ac7f66366cbe9",
+      "supersedes_source_version_id": null,
+      "title": "Click & Ride",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "3a46c895ee9f6ae7dfedbee6b96550d08620c45f1e2bdc013398dae7af5e4f0b",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_b65369e50e48687c06b48afd.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/clickandride-tpn-infoflyer-data/sv_b65369e50e48687c06b48afd.md",
+      "normalized_sha256": "82d26b73e204325d7d39756adf1e9a92b595c6bc3ec677e568b479425adb19dd",
+      "origin_page_url": null,
+      "original_filename": "clickandride_TPN_Infoflyer-data.pdf",
+      "page_count": 2,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 275981,
+      "source_id": "src_a12e612bd58a0ba3aa61",
+      "source_sha256": "3a46c895ee9f6ae7dfedbee6b96550d08620c45f1e2bdc013398dae7af5e4f0b",
+      "source_version_id": "sv_b65369e50e48687c06b48afd",
+      "supersedes_source_version_id": null,
+      "title": "clickandride TPN Infoflyer",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "3d0b374d1fc6e56ea3c13a99524ac6f09f9ee5304577300702bd4a78c61c2578",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_eb5996835007d62cfc7ee534.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/code-of-conduct-netzfahrplan-data/sv_eb5996835007d62cfc7ee534.md",
+      "normalized_sha256": "8c7fc89d6cc0282642e4740caa000d3a73642da60daaca5e9028c8534039a28a",
+      "origin_page_url": null,
+      "original_filename": "code-of-conduct-netzfahrplan-data.pdf",
+      "page_count": 3,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 365594,
+      "source_id": "src_c5afa20ea56973906da4",
+      "source_sha256": "3d0b374d1fc6e56ea3c13a99524ac6f09f9ee5304577300702bd4a78c61c2578",
+      "source_version_id": "sv_eb5996835007d62cfc7ee534",
+      "supersedes_source_version_id": null,
+      "title": "code of conduct netzfahrplan",
+      "visibility": "public"
+    },
+    {
       "canonical_url": null,
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "converter": {
@@ -52,6 +478,40 @@
       "source_sha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2",
       "source_version_id": "sv_51fb412fc4f0d41650cb55bf",
       "title": "Download TAF/TAP Glossar",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_4fbe32d73c5618c02a183f43.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/faq-infoveranstaltung-netzfahrplan-2027-data/sv_4fbe32d73c5618c02a183f43.md",
+      "normalized_sha256": "ed30512850f332aa75a6d7613a11eae649d32185ed61605cba20a3f915743f4c",
+      "origin_page_url": null,
+      "original_filename": "FAQ-Infoveranstaltung-Netzfahrplan-2027-data.pdf",
+      "page_count": 6,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 91280,
+      "source_id": "src_b5fb8ccb80d176b38310",
+      "source_sha256": "79566a00d88605c85de851370659ba6afc4864e26c81d02fa2ffa254baebe689",
+      "source_version_id": "sv_4fbe32d73c5618c02a183f43",
+      "supersedes_source_version_id": null,
+      "title": "FAQ Infoveranstaltung Netzfahrplan 2027",
       "visibility": "public"
     },
     {
@@ -295,6 +755,108 @@
       "visibility": "public"
     },
     {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_64747c1009b8c053966a8940.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-20-05-2026-data/sv_64747c1009b8c053966a8940.md",
+      "normalized_sha256": "d0cb958c05947116684430ae0560c742b54db3575d06994e5af0893cc8409a15",
+      "origin_page_url": null,
+      "original_filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-20-05-2026-data.pdf",
+      "page_count": 27,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 1473329,
+      "source_id": "src_c2cbe5f5c740b62f994d",
+      "source_sha256": "ae1196f582f00718fd8357b517ce68ba5a5c7922ad24f2e0b3b9e4d0a50af0e2",
+      "source_version_id": "sv_64747c1009b8c053966a8940",
+      "supersedes_source_version_id": null,
+      "title": "Informationsveranstaltung Vertiefung ujBau vom 20 05 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_945698ce989da35cc526b067.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-25-06-2026-data/sv_945698ce989da35cc526b067.md",
+      "normalized_sha256": "04d45c67744bc2d469d1351ec1a38b5214d8edefbe8062174abea1aebfb3c219",
+      "origin_page_url": null,
+      "original_filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-25-06-2026-data.pdf",
+      "page_count": 24,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 1554596,
+      "source_id": "src_ddd38c74e487946a0af2",
+      "source_sha256": "e9e0a2f232ec0d5439cf916bb57c8fe191657c86e3f2dc38ada024bacbe0f342",
+      "source_version_id": "sv_945698ce989da35cc526b067",
+      "supersedes_source_version_id": null,
+      "title": "Informationsveranstaltung Vertiefung ujBau vom 25 06 2026",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_fc73716a3f57a7991ffa7db4.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/informationsveranstaltung-vertiefung-ujbau-vom-31-07-2026-data/sv_fc73716a3f57a7991ffa7db4.md",
+      "normalized_sha256": "eef5a3413f4bd077a678c695bba2facb8ff5c618bd310813e66f0e628dbaa618",
+      "origin_page_url": null,
+      "original_filename": "Informationsveranstaltung-Vertiefung-ujBau-vom-31-07-2026-data.pdf",
+      "page_count": 25,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 1448608,
+      "source_id": "src_55f12bc0f78e6465ec63",
+      "source_sha256": "18db5438ce86e06e01d7bc2da721c1ac26dbec8d9c61d8cea98165ac19f27baf",
+      "source_version_id": "sv_fc73716a3f57a7991ffa7db4",
+      "supersedes_source_version_id": null,
+      "title": "Informationsveranstaltung Vertiefung ujBau vom 31 07 2026",
+      "visibility": "public"
+    },
+    {
       "canonical_url": null,
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "converter": {
@@ -316,6 +878,210 @@
       "source_sha256": "20848958c0b6e9f3ebfd74418fcaa3031f0095f16c8e9c4ee2900eca13bf4971",
       "source_version_id": "sv_20848958c0b6e9f3ebfd7441",
       "title": "Infoveranstaltung Vertiefung 20h Zug 15 Juli 2026 Terminunterlage",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/path-coordination-system-11249694",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "6dba466a03d1ceb021c9954b4288a73fd7299fb223e7eda5a3a92506e1588e9e",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/path-coordination-system-11249694",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_a96e68d9b5a30593484c1ee0.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/internationale-trassenanmeldung-uber-das-pcs-path-coordination-system/sv_a96e68d9b5a30593484c1ee0.md",
+      "normalized_sha256": "4039a05de1d6ac757d5456ce5e264aa30d6ba5ece223710efb81c7563d871082",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/path-coordination-system-11249694",
+      "original_filename": "Internationale Trassenanmeldung über das PCS - _Path Coordination System_.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/path-coordination-system-11249694",
+      "schema_version": 2,
+      "size_bytes": 1548,
+      "source_id": "src_1e82f73ce6a5ce5ccce9",
+      "source_sha256": "6dba466a03d1ceb021c9954b4288a73fd7299fb223e7eda5a3a92506e1588e9e",
+      "source_version_id": "sv_a96e68d9b5a30593484c1ee0",
+      "supersedes_source_version_id": null,
+      "title": "Internationale Trassenanmeldung über das PCS - \\\"Path Coordination System\\",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "74d906b570aadeca32ba6c7bae3a4743b5304f098f92406c5b9d6bdb5675d399",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_c0a33d60eedb5a985aae5933.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/nbn-2024-anlage-4-2-2-nutzungsbedingungen-click-ride-data/sv_c0a33d60eedb5a985aae5933.md",
+      "normalized_sha256": "9d2e0d203eebd5c2d3c89066d98eeb669997e41368e25a84fd3f6454df4539b9",
+      "origin_page_url": null,
+      "original_filename": "NBN_2024_Anlage_4-2-2_Nutzungsbedingungen-Click-Ride-data.pdf",
+      "page_count": 6,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 176241,
+      "source_id": "src_bda60942e2d392ff9207",
+      "source_sha256": "74d906b570aadeca32ba6c7bae3a4743b5304f098f92406c5b9d6bdb5675d399",
+      "source_version_id": "sv_c0a33d60eedb5a985aae5933",
+      "supersedes_source_version_id": null,
+      "title": "NBN 2024 Anlage 4 2 2 Nutzungsbedingungen Click Ride",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/resource/blob/13699814/21ef89a8cc867ed4a02809b3c981bdf4/Ril-402-0202-INB-2027-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "eb5fbe913792a6714c1d9e8df82b2794b40dcb4b69b4eb47dbef6712dae5737a",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.dbinfrago.com/resource/blob/13699814/21ef89a8cc867ed4a02809b3c981bdf4/Ril-402-0202-INB-2027-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_eaa9bd42fea1960a09060098.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/ril-402-0202-inb-2027-data/sv_eaa9bd42fea1960a09060098.md",
+      "normalized_sha256": "ebf31d00f297d7678e3b05e1cb6d945c509edfd42f599db8331473176f8c37cb",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "original_filename": "Ril-402-0202-INB-2027-data.pdf",
+      "page_count": 21,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/resource/blob/13699814/21ef89a8cc867ed4a02809b3c981bdf4/Ril-402-0202-INB-2027-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 422183,
+      "source_id": "src_185a09c3daddf7c8a278",
+      "source_sha256": "eb5fbe913792a6714c1d9e8df82b2794b40dcb4b69b4eb47dbef6712dae5737a",
+      "source_version_id": "sv_eaa9bd42fea1960a09060098",
+      "supersedes_source_version_id": null,
+      "title": "Ril 402 0202 INB 2027",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": "https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_b97562496bb6bb640477c1e5.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/ril-402-0202a01-inb-2027-data/sv_b97562496bb6bb640477c1e5.md",
+      "normalized_sha256": "23ad98d621871006423cf15bef7eee4ad1a0ce9a7fbfa3247280ad6051bf085b",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "original_filename": "Ril-402-0202A01-INB-2027-data.pdf",
+      "page_count": 12,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/resource/blob/13699806/d3c759db4e70759c8340d3b0394a7f7a/Ril-402-0202A01-INB-2027-data.pdf",
+      "schema_version": 2,
+      "size_bytes": 1118371,
+      "source_id": "src_020acbee32d4681c346b",
+      "source_sha256": "7ed965dece88a853ca4665557c3facf4a6c825bb5ce3fee04de1970f6c8a2237",
+      "source_version_id": "sv_b97562496bb6bb640477c1e5",
+      "supersedes_source_version_id": null,
+      "title": "Ril 402 0202A01 INB 2027",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8",
+      "converter": {
+        "name": "identity-structured-text",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_4d9deecdfe44da586bc04290.json",
+      "media_type": "application/json",
+      "normalized_repo_path": "sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-17-0-im-json-format-data/sv_4d9deecdfe44da586bc04290.md",
+      "normalized_sha256": "1f271bc24ee202c6385dbccbe09ffd6211f1fdb72fe09ee335189141bdaf58f4",
+      "origin_page_url": null,
+      "original_filename": "Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-17-0-im-json-Format-data.json",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 96184,
+      "source_id": "src_a8fc6bb3e8b7db7a8077",
+      "source_sha256": "beed68d95308a25475618849c734fcab15e5cd1427119934456177d8efb458e8",
+      "source_version_id": "sv_4d9deecdfe44da586bc04290",
+      "supersedes_source_version_id": null,
+      "title": "Schnittstellenbeschreibung BauFplo API EVU Test 2 17 0 im json Format",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7",
+      "converter": {
+        "name": "identity-structured-text",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_aa3457828c7cc06b65f8cfa2.json",
+      "media_type": "application/xml",
+      "normalized_repo_path": "sources/normalized/bootstrap/schnittstellenbeschreibung-baufplo-api-evu-test-2-8-0-im-xsd-format-data/sv_aa3457828c7cc06b65f8cfa2.md",
+      "normalized_sha256": "148ee7b1e42debc308dc6d77c2d1757caaeac24c02e6fff9d6a25d48f47b68c8",
+      "origin_page_url": null,
+      "original_filename": "Schnittstellenbeschreibung-BauFplo-API-EVU-Test-2-8-0-im-xsd-Format-data.xml",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 70074,
+      "source_id": "src_c4db283f6617a89c2018",
+      "source_sha256": "bd118f3a8f159919ea58d1147b142bae7580293ea584d5c72262e98a347a4bb7",
+      "source_version_id": "sv_aa3457828c7cc06b65f8cfa2",
+      "supersedes_source_version_id": null,
+      "title": "Schnittstellenbeschreibung BauFplo API EVU Test 2 8 0 im xsd Format",
       "visibility": "public"
     },
     {
@@ -487,6 +1253,210 @@
       "visibility": "public"
     },
     {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/TAF-TAP-TSI-FAQ-13868920",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "001147e3eec4df3b47c092cac0b059cf11d3ef1aa86dbcd443f452d502fe8314",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/TAF-TAP-TSI-FAQ-13868920",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_a6f59414e6ebc1e04ca2c673.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/taf-tap-tsi-faq/sv_a6f59414e6ebc1e04ca2c673.md",
+      "normalized_sha256": "97bc3bb746068822730652b85d950b631a9901e1f53d4728d99bef285fb45739",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/TAF-TAP-TSI-FAQ-13868920",
+      "original_filename": "TAF_TAP TSI FAQ.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/TAF-TAP-TSI-FAQ-13868920",
+      "schema_version": 2,
+      "size_bytes": 14695,
+      "source_id": "src_41228a549ad00f141eea",
+      "source_sha256": "001147e3eec4df3b47c092cac0b059cf11d3ef1aa86dbcd443f452d502fe8314",
+      "source_version_id": "sv_a6f59414e6ebc1e04ca2c673",
+      "supersedes_source_version_id": null,
+      "title": "TAF/TAP TSI FAQ",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/gelegenheitsverkehr-10907274",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "e50d6d625061099073b4a3ed0a0f661a658aac0ab369daaeadca08b09775c4a7",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/gelegenheitsverkehr-10907274",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_778cf7ecc04d4171056d4583.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/trassenanmeldung-im-gelegenheitsverkehr/sv_778cf7ecc04d4171056d4583.md",
+      "normalized_sha256": "1f4ac919ba695429e938615de28752003e54d04b09802cfdd71f8cd019811c9d",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/gelegenheitsverkehr-10907274",
+      "original_filename": "Trassenanmeldung im Gelegenheitsverkehr.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/gelegenheitsverkehr-10907274",
+      "schema_version": 2,
+      "size_bytes": 3374,
+      "source_id": "src_a84dc841278f39fe70cc",
+      "source_sha256": "e50d6d625061099073b4a3ed0a0f661a658aac0ab369daaeadca08b09775c4a7",
+      "source_version_id": "sv_778cf7ecc04d4171056d4583",
+      "supersedes_source_version_id": null,
+      "title": "Trassenanmeldung im Gelegenheitsverkehr",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "2bbb0a1d9156b3b52057c4c9a5227ea83b4180ae65010634fe7333260185819c",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_5d5a297063e24f3830a5c3dc.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/trassenanmeldung-im-netzfahrplan/sv_5d5a297063e24f3830a5c3dc.md",
+      "normalized_sha256": "f9cac652f176673dedf0f4e6f85f4b0cd2a1c35ba85d27e97c4fb6efb4025caf",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "original_filename": "Trassenanmeldung im Netzfahrplan.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/netzfahrplan-11861526",
+      "schema_version": 2,
+      "size_bytes": 2986,
+      "source_id": "src_55f3c19c14f539666c5f",
+      "source_sha256": "2bbb0a1d9156b3b52057c4c9a5227ea83b4180ae65010634fe7333260185819c",
+      "source_version_id": "sv_5d5a297063e24f3830a5c3dc",
+      "supersedes_source_version_id": null,
+      "title": "Trassenanmeldung im Netzfahrplan",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/trassenportal-netz-11249618",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "6fea9e881dee67549dce2be1ff6a8a006e5c8ce23e005ecbe75b8facbf532860",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/trassenportal-netz-11249618",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_40ae35c7249fd4a5720382ff.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/trassenanmeldung-uber-das-trassenportal-netz-tpn/sv_40ae35c7249fd4a5720382ff.md",
+      "normalized_sha256": "78d68f0333d4bddedbfdb77051a27c238ff7c7f0dc1e870f003ff434e687c391",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/trassenportal-netz-11249618",
+      "original_filename": "Trassenanmeldung über das Trassenportal-Netz (TPN).md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/trassenportal-netz-11249618",
+      "schema_version": 2,
+      "size_bytes": 2447,
+      "source_id": "src_4189235db5c801f1cc06",
+      "source_sha256": "6fea9e881dee67549dce2be1ff6a8a006e5c8ce23e005ecbe75b8facbf532860",
+      "source_version_id": "sv_40ae35c7249fd4a5720382ff",
+      "supersedes_source_version_id": null,
+      "title": "Trassenanmeldung über das Trassenportal-Netz (TPN)",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "c18493521040304c96b57d131a1fc3f24a3912fa2d851db9c9686983fbd3baf9",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_d4d4bc1ade38ec7d2950d4f6.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/unterlage-infoveranstaltung-netzfahrplan-2027-data/sv_d4d4bc1ade38ec7d2950d4f6.md",
+      "normalized_sha256": "75f0ddd23c42a7e0fe931cb72276b13df197b1ad4dc7dcd3531341c6f869f5fa",
+      "origin_page_url": null,
+      "original_filename": "Unterlage-Infoveranstaltung-Netzfahrplan-2027-data.pdf",
+      "page_count": 21,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 4555991,
+      "source_id": "src_5cbb3fe592ef3e699d7a",
+      "source_sha256": "c18493521040304c96b57d131a1fc3f24a3912fa2d851db9c9686983fbd3baf9",
+      "source_version_id": "sv_d4d4bc1ade38ec7d2950d4f6",
+      "supersedes_source_version_id": null,
+      "title": "Unterlage Infoveranstaltung Netzfahrplan 2027",
+      "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": null,
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "61e0fd780a0643eded9510e89a8b1c4b4f982a6742e50fb2379ef7390cde57e3",
+      "converter": {
+        "name": "pdfplumber",
+        "profile": "bootstrap-markdown-v2",
+        "version": "0.11.9"
+      },
+      "final_url": null,
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_9911c8dfe35973048b5d6173.json",
+      "media_type": "application/pdf",
+      "normalized_repo_path": "sources/normalized/bootstrap/unterlage-vertiefung-ujbau-27-11-data/sv_9911c8dfe35973048b5d6173.md",
+      "normalized_sha256": "b8dac29882ca03410182ee1cc3877874bf2603fc3814432a56926812715f7939",
+      "origin_page_url": null,
+      "original_filename": "Unterlage-Vertiefung-ujBau-27-11--data.pdf",
+      "page_count": 41,
+      "raw_binary_committed": false,
+      "requested_url": null,
+      "schema_version": 2,
+      "size_bytes": 2663213,
+      "source_id": "src_6564bb0ccae19080edd4",
+      "source_sha256": "61e0fd780a0643eded9510e89a8b1c4b4f982a6742e50fb2379ef7390cde57e3",
+      "source_version_id": "sv_9911c8dfe35973048b5d6173",
+      "supersedes_source_version_id": null,
+      "title": "Unterlage Vertiefung ujBau 27 11",
+      "visibility": "public"
+    },
+    {
       "canonical_url": "https://www.dbinfrago.com/web/schienennetz/netzzugang-und-regulierung/taf-tap-tsi/allgemein-11089206",
       "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
       "converter": {
@@ -509,6 +1479,41 @@
       "source_version_id": "sv_7c633488c07b24cabd17e8b9",
       "title": "Über TAF/TAP TSI",
       "visibility": "public"
+    },
+    {
+      "aliases": [],
+      "canonical_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/ueberblick-10907392",
+      "contact_redaction": "email_phone_identified_contact_names_and_contact_address",
+      "content_duplicate_group": null,
+      "content_sha256": "d1d89d8b90a962ba16dce9b22ae218e7b0ccd766b71ff68a904b7006e4d94e4b",
+      "converter": {
+        "name": "identity-markdown",
+        "profile": "bootstrap-markdown-v2",
+        "version": "1"
+      },
+      "final_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/ueberblick-10907392",
+      "import_status": "imported",
+      "imported_at": "2026-08-08T12:35:15Z",
+      "language": "de",
+      "license": "unknown",
+      "manifest_repo_path": "sources/manifests/bootstrap/by-version/sv_7b15f5b01728d3b71a6f9897.json",
+      "media_type": "text/markdown",
+      "normalized_repo_path": "sources/normalized/bootstrap/uberblick-trassenanmeldung-zum-netzfahrplan-und-im-gelegenheitsverkehr/sv_7b15f5b01728d3b71a6f9897.md",
+      "normalized_sha256": "7fd9db8d5533ab30214d2ac05eff7c2c5c6bed0147989a4dff4a9d0e86d2a489",
+      "origin_page_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/ueberblick-10907392",
+      "original_filename": "Überblick - Trassenanmeldung zum Netzfahrplan und im Gelegenheitsverkehr.md",
+      "page_count": null,
+      "raw_binary_committed": false,
+      "requested_url": "https://www.dbinfrago.com/web/schienennetz/leistungen/trassen/trassenbestellung/trassenanmeldung/ueberblick-10907392",
+      "schema_version": 2,
+      "size_bytes": 3293,
+      "source_id": "src_15a62986bf5cb9217f1c",
+      "source_sha256": "d1d89d8b90a962ba16dce9b22ae218e7b0ccd766b71ff68a904b7006e4d94e4b",
+      "source_version_id": "sv_7b15f5b01728d3b71a6f9897",
+      "supersedes_source_version_id": null,
+      "title": "Überblick - Trassenanmeldung zum Netzfahrplan und im Gelegenheitsverkehr",
+      "visibility": "public"
     }
-  ]
+  ],
+  "unchanged_count": 21
 }

@@ -1,0 +1,41 @@
+{
+  "urls": [
+    {
+      "input": " HTTPS://BÜCHER.Example:443 ",
+      "normalized": "https://xn--bcher-kva.example/"
+    },
+    {
+      "input": "http://Example.COM:80/path?q=one%20two#section",
+      "normalized": "http://example.com/path?q=one%20two"
+    },
+    {
+      "input": "https://example.com/path/",
+      "normalized": "https://example.com/path/"
+    },
+    {
+      "input": "https://example.com/path?b=2&a=1",
+      "normalized": "https://example.com/path?b=2&a=1"
+    },
+    {
+      "input": "https://user:secret@example.com/path",
+      "normalized": null
+    },
+    {
+      "input": "https://example.com/a/../b",
+      "normalized": null
+    },
+    {
+      "input": "https://example.com/a\\b",
+      "normalized": null
+    },
+    {
+      "input": "file:///etc/passwd",
+      "normalized": null
+    }
+  ],
+  "markdown": {
+    "first": "---\r\ntitle: First\r\nsource_id: src_one\r\nimported_at: 2026-01-01T00:00:00Z\r\n---\r\n\r\n# Filename-derived title\r\n\r\n## Section\r\n\r\nSame body.   \r\n\r\n\r\n\r\nSecond paragraph.\r\n",
+    "equivalent": "---\ntitle: Other\nsource_id: src_two\nnormalized_sha256: ignored\n---\n# Another generated title\n\n## Section\n\nSame body.\n\n\nSecond paragraph.\n",
+    "different": "---\ntitle: Other\n---\n# Another generated title\n\n## Section\n\nDifferent body.\n"
+  }
+}

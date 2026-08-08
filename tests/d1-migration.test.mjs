@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { DatabaseSync } from "node:sqlite";
 import test from "node:test";
@@ -19,6 +20,21 @@ async function applyMigration(db, filename) {
 }
 
 test("D1 migrations preserve data and enforce TrainWiki invariants", async () => {
+  const immutableBootstrapMigration = await readFile(
+    new URL("../drizzle/0002_bootstrap_taf_tap.sql", import.meta.url),
+  );
+  assert.equal(
+    createHash("sha256").update(immutableBootstrapMigration).digest("hex"),
+    "d9417d94251400f2e334463d2b5eab06a2092bd158a1833f99d908ea2e19f367",
+  );
+  const initialInputMigration = await readFile(
+    new URL("../drizzle/0006_bootstrap_input_20260808.sql", import.meta.url),
+  );
+  assert.equal(
+    createHash("sha256").update(initialInputMigration).digest("hex"),
+    "2e246aca6cdb38a63a51fe05a54a55b969153757e957a5aed93225d956361c7c",
+  );
+
   const db = new DatabaseSync(":memory:");
   db.exec("PRAGMA foreign_keys=ON");
   await applyMigration(db, "0000_icy_solo.sql");
@@ -31,7 +47,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
       (id, source_id, sha256, size_bytes, media_type, converter_name,
        converter_version, manifest_json)
     VALUES
-      ('version-a', 'source-a', 'sha-a', 10, 'text/markdown', 'test', '1', '{}');
+      ('version-a', 'source-a', '${"a".repeat(64)}', 10, 'text/markdown', 'test', '1', '{}');
     UPDATE sources SET current_version_id = 'version-a' WHERE id = 'source-a';
   `);
 
@@ -55,7 +71,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
       (id, source_id, sha256, size_bytes, media_type, converter_name,
        converter_version, manifest_json)
     VALUES
-      ('version-b', 'source-b', 'sha-b', 10, 'text/markdown', 'test', '1', '{}');
+      ('version-b', 'source-b', '${"b".repeat(64)}', 10, 'text/markdown', 'test', '1', '{}');
   `);
 
   assert.throws(
@@ -68,7 +84,7 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
         (id, source_id, sha256, size_bytes, media_type, converter_name,
          converter_version, supersedes_version_id, manifest_json)
       VALUES
-        ('version-cross', 'source-a', 'sha-cross', 10, 'text/markdown',
+        ('version-cross', 'source-a', '${"c".repeat(64)}', 10, 'text/markdown',
          'test', '1', 'version-b', '{}');
     `),
     /same source/,
@@ -115,17 +131,39 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
   `);
 
   await applyMigration(db, "0002_bootstrap_taf_tap.sql");
+  await applyMigration(db, "0003_source_identities.sql");
+  await applyMigration(db, "0004_learning_observations.sql");
+  await applyMigration(db, "0005_source_import_dedupe.sql");
+  await applyMigration(db, "0006_bootstrap_input_20260808.sql");
 
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM sources WHERE created_by = 'bootstrap'").get().count,
-    21,
+    42,
   );
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM wiki_pages WHERE json_extract(metadata_json, '$.bootstrap') = 1").get().count,
-    21,
+    42,
   );
-  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_chunks").get().count, 282);
-  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_terms").get().count, 12_229);
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_chunks").get().count, 592);
+  assert.equal(db.prepare("SELECT count(*) AS count FROM wiki_terms").get().count, 26_340);
+  assert.equal(
+    db.prepare(
+      "SELECT count(*) AS count FROM source_versions WHERE normalized_sha256 IS NOT NULL",
+    ).get().count,
+    42,
+  );
+  assert.equal(
+    db.prepare(
+      "SELECT count(*) AS count FROM source_identities WHERE identity_type = 'canonical_url'",
+    ).get().count,
+    19,
+  );
+  assert.equal(
+    db.prepare(
+      "SELECT count(*) AS count FROM (SELECT identity_hash FROM source_identities WHERE identity_type = 'raw_sha256' GROUP BY identity_hash HAVING count(*) > 1)",
+    ).get().count,
+    0,
+  );
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM source_versions WHERE original_filename LIKE 'Kickoff-Ende-zu-Ende-%' OR original_filename = 'TAF-TAP-TSI-Dialog-24-Juni-2026-Terminunterlage-data.pdf'").get().count,
     0,

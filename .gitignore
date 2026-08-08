@@ -17,6 +17,7 @@
 /.wrangler/
 /outputs/
 /work/
+/.cache/
 
 # Secrets
 .env

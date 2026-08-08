@@ -7,6 +7,7 @@ import {
   real,
   sqliteTable,
   text,
+  primaryKey,
   uniqueIndex,
 } from "drizzle-orm/sqlite-core";
 
@@ -19,6 +20,11 @@ type JsonValue =
   | { [key: string]: JsonValue };
 
 export type UserRole = "reader" | "editor" | "admin" | "service";
+
+export type SourceIdentityType =
+  | "canonical_url"
+  | "normalized_sha256"
+  | "raw_sha256";
 
 export type JobType =
   | "bootstrap_inventory"
@@ -105,6 +111,7 @@ export const sourceVersions = sqliteTable(
       .notNull()
       .references(() => sources.id, { onDelete: "cascade" }),
     sha256: text("sha256").notNull(),
+    normalizedSha256: text("normalized_sha256"),
     sizeBytes: integer("size_bytes").notNull(),
     mediaType: text("media_type").notNull(),
     originalFilename: text("original_filename"),
@@ -133,7 +140,50 @@ export const sourceVersions = sqliteTable(
       table.sourceId,
       table.createdAt,
     ),
+    index("source_versions_normalized_sha_idx").on(table.normalizedSha256),
     check("source_versions_size_nonnegative", sql`${table.sizeBytes} >= 0`),
+  ],
+);
+
+export const sourceIdentities = sqliteTable(
+  "source_identities",
+  {
+    identityType: text("identity_type").$type<SourceIdentityType>().notNull(),
+    identityHash: text("identity_hash").notNull(),
+    sourceId: text("source_id")
+      .notNull()
+      .references(() => sources.id, { onDelete: "cascade" }),
+    sourceVersionId: text("source_version_id").references(
+      () => sourceVersions.id,
+      { onDelete: "cascade" },
+    ),
+    metadataJson: text("metadata_json", { mode: "json" })
+      .$type<JsonValue>()
+      .notNull()
+      .default(sql`'{}'`),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    primaryKey({
+      name: "source_identities_pk",
+      columns: [table.identityType, table.identityHash, table.sourceId],
+    }),
+    uniqueIndex("source_identities_canonical_url_unique")
+      .on(table.identityType, table.identityHash)
+      .where(sql`${table.identityType} = 'canonical_url'`),
+    uniqueIndex("source_identities_raw_sha_unique")
+      .on(table.identityType, table.identityHash)
+      .where(sql`${table.identityType} = 'raw_sha256'`),
+    index("source_identities_source_idx").on(table.sourceId),
+    index("source_identities_version_idx").on(table.sourceVersionId),
+    check(
+      "source_identities_type_allowed",
+      sql`${table.identityType} IN ('canonical_url', 'normalized_sha256', 'raw_sha256')`,
+    ),
+    check(
+      "source_identities_hash_format",
+      sql`length(${table.identityHash}) = 64 AND ${table.identityHash} = lower(${table.identityHash}) AND ${table.identityHash} NOT GLOB '*[^0-9a-f]*'`,
+    ),
   ],
 );
 
@@ -400,6 +450,60 @@ export const learningCandidates = sqliteTable(
     check(
       "learning_candidates_confidence_range",
       sql`${table.confidence} >= 0 AND ${table.confidence} <= 1`,
+    ),
+  ],
+);
+
+export const learningCandidateObservations = sqliteTable(
+  "learning_candidate_observations",
+  {
+    id: text("id").primaryKey(),
+    // No foreign key here: the AFTER INSERT trigger creates or updates the
+    // aggregate candidate after the immutable observation has been accepted.
+    candidateId: text("candidate_id").notNull(),
+    candidateType: text("candidate_type").notNull(),
+    normalizedTarget: text("normalized_target").notNull(),
+    questionFingerprint: text("question_fingerprint").notNull(),
+    proposalJson: text("proposal_json", { mode: "json" })
+      .$type<JsonValue>()
+      .notNull(),
+    evidenceRefsJson: text("evidence_refs_json", { mode: "json" })
+      .$type<JsonValue>()
+      .notNull(),
+    answerFingerprint: text("answer_fingerprint"),
+    answerStatus: text("answer_status")
+      .$type<"grounded" | "no_evidence">()
+      .notNull(),
+    programVersion: text("program_version"),
+    risk: text("risk").notNull(),
+    confidence: real("confidence").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    index("learning_observations_candidate_created_idx").on(
+      table.candidateId,
+      table.createdAt,
+    ),
+    index("learning_observations_fingerprint_idx").on(
+      table.candidateType,
+      table.normalizedTarget,
+      table.questionFingerprint,
+    ),
+    check(
+      "learning_observations_answer_status",
+      sql`${table.answerStatus} IN ('grounded', 'no_evidence')`,
+    ),
+    check(
+      "learning_observations_confidence_range",
+      sql`${table.confidence} >= 0 AND ${table.confidence} <= 1`,
+    ),
+    check(
+      "learning_observations_proposal_json",
+      sql`json_valid(${table.proposalJson})`,
+    ),
+    check(
+      "learning_observations_evidence_json",
+      sql`json_valid(${table.evidenceRefsJson})`,
     ),
   ],
 );

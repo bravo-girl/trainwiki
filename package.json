@@ -10,7 +10,8 @@
     "build": "vinext build",
     "start": "vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint app db lib tests worker eslint.config.mjs drizzle.config.ts next.config.ts postcss.config.mjs vite.config.ts --cache --cache-strategy content --cache-location .cache/eslint/",
+    "lint:ci": "eslint app db lib tests worker eslint.config.mjs drizzle.config.ts next.config.ts postcss.config.mjs vite.config.ts",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {

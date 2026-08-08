@@ -22,6 +22,34 @@
       "when": 1785666348000,
       "tag": "0002_bootstrap_taf_tap",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1785686400000,
+      "tag": "0003_source_identities",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1785686460000,
+      "tag": "0004_learning_observations",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1786194000000,
+      "tag": "0005_source_import_dedupe",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1786195200000,
+      "tag": "0006_bootstrap_input_20260808",
+      "breakpoints": true
     }
   ]
 }

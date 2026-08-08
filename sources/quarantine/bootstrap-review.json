@@ -33,7 +33,7 @@
       "size_bytes": 1338699
     }
   ],
-  "policy": "explicit internal/confidential labels are excluded from the public corpus",
-  "reviewed_at": "2026-08-02T10:25:48Z",
-  "schema_version": 1
+  "policy": "sensitive documents and identity conflicts remain outside the public corpus",
+  "reviewed_at": "2026-08-08T12:35:15Z",
+  "schema_version": 2
 }

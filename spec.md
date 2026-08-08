@@ -6,14 +6,16 @@
 
 ## 1. Zweck und normative Dokumente
 
-Diese Spezifikation konkretisiert das Produkt, die technische Architektur, die Schnittstellen und den Umsetzungsplan. Das Dokument [`llm-wiki.md`](./llm-wiki.md) ist die normative Grundlage für Aufbau, Pflegekonventionen und Arbeitsweise des Wikis. Seine konzeptionellen Inhalte werden hier nicht wiederholt.
+Diese Spezifikation konkretisiert das Produkt, die technische Architektur, die Schnittstellen und den Umsetzungsplan. [`llm-wiki.md`](./llm-wiki.md) ist die normative Grundlage für Wissensmodell, Provenienz, Sicherheit und Review; [`schema.md`](./schema.md) ist der normative Dateivertrag für Quellen- und Wiki-Artefakte. Deren Inhalte werden hier nicht wiederholt.
 
 Die Zuständigkeiten sind getrennt:
 
-- `llm-wiki.md` definiert, wie Quellen, Wiki-Seiten, Querverweise, Index, Protokoll und Pflegeoperationen fachlich behandelt werden.
+- `llm-wiki.md` definiert, wie Quellen, Wiki-Seiten und Pflegeoperationen fachlich, sicher und überprüfbar behandelt werden.
+- `schema.md` definiert Pfade, Frontmatter, Seitentypen, Querverweise, Zitationen, Index und Protokoll in serialisierter Form.
 - `spec.md` definiert Produktverhalten, Komponenten, Datenhaltung, APIs, Sicherheit, Qualität, Betrieb und Lieferphasen.
-- Implementierte Schemas, Migrationen und API-Typen müssen aus diesen beiden Dokumenten ableitbar sein.
-- Widersprechen sich beide Dokumente, darf die Software keine Seite stillschweigend bevorzugen. Der Konflikt wird als offene Architekturentscheidung dokumentiert und vor dem nächsten Release aufgelöst.
+- `AGENTS.md` setzt die Verträge als Arbeitsregeln um; `CLAUDE.md` ist nur ein Adapter und keine zusätzliche Normquelle.
+- Implementierte Schemas, Migrationen und API-Typen müssen aus diesen drei normativen Dokumenten ableitbar sein.
+- Widersprechen sich Dokumente, gelten unmittelbar die strengere Sicherheits- und Provenienzregel aus `llm-wiki.md`; jeder andere Konflikt wird als offene Architekturentscheidung dokumentiert und vor dem nächsten Release aufgelöst.
 
 ## 2. Leitentscheidungen
 
@@ -278,7 +280,7 @@ Der idempotente Schlüssel lautet mindestens `sha256(input) + converter_version 
 | JSON | deterministische Schlüsselreihenfolge beziehungsweise nachvollziehbare Originalreihenfolge; große Arrays segmentieren | Tiefe, Elementzahl und Größe begrenzen; mögliche Secrets markieren |
 | YAML | sichere, deterministische Darstellung und Dokumentgrenzen erhalten | ausschließlich Safe Loader; Aliase, Rekursion und Typ-Coercion begrenzen |
 
-Jedes normalisierte Dokument enthält logisch: Quell-ID, Versions-ID, Originalname oder URL, Inhalts-Hash, Empfangs- und Abrufzeit, Medientyp, Sprache, Konverterversion, Lizenzangabe, Warnungen sowie stabile Fundstellen. Die genaue Markdown-/Frontmatter-Konvention wird in `llm-wiki.md` festgelegt.
+Jedes normalisierte Dokument enthält logisch: Quell-ID, Versions-ID, Originalname oder URL, Inhalts-Hash, Empfangs- und Abrufzeit, Medientyp, Sprache, Konverterversion, Lizenzangabe, Warnungen sowie stabile Fundstellen. Die genaue Markdown-/Frontmatter-Konvention wird in `schema.md` festgelegt.
 
 ### 8.3 Erstinitialisierung
 
@@ -583,7 +585,7 @@ Alle Module verwenden typisierte Signaturen. Parserfehler, fehlende Quellen-IDs 
 - Der veröffentlichte Wiki-Index und die Seitenmetadaten bilden die erste Suchstufe.
 - D1 hält Seiten und überschaubare, überschriftenbasierte Chunks als abgeleiteten Index.
 - Keyword-/Volltextsuche liefert Kandidaten; DSPy rerankt höchstens eine kleine Kandidatenmenge.
-- Pro Antwort werden standardmäßig höchstens sechs Ausschnitte und ein begrenzter Gesprächskontext an das Modell gegeben.
+- Pro Antwort werden standardmäßig höchstens sechs Ausschnitte an das Modell gegeben. Das gesamte Evidenzpaket ist auf 12.000 Zeichen begrenzt; URLs bleiben in der serverseitigen Quellenliste statt im Modellkontext. Vom Verlauf gehen höchstens vier vollständige, zusammen höchstens 3.000 Zeichen lange Nachrichten ein. Die öffentliche Antwort ist auf 512 Ausgabetokens begrenzt. Änderungen an diesen Budgets benötigen denselben Recall-, Zitations- und Enthaltungstest wie Retrieval-Änderungen.
 - Direkte Rohquellen-Ausschnitte werden nur ergänzend geladen, wenn eine Wiki-Seite sie referenziert oder eine genaue Belegprüfung dies erfordert.
 - Die ausgegebenen URLs und Fundstellen stammen aus Server-Metadaten, nicht aus frei generiertem Modelltext.
 
@@ -678,7 +680,7 @@ Die tatsächlichen Werte sind konfigurierbar und werden an die kleinste externe 
 - Angemeldete Admins: maximal zwei parallele Jobs und ein inhaltsverändernder Wiki-Job zur selben Zeit.
 - Upload: standardmäßig 20 MiB pro Datei, höchstens 100 Dateien pro Bootstrap-Batch.
 - URL: eine Seite pro Auftrag, maximal 10 MiB Download, fünf Redirects, kein rekursives Crawling.
-- LLM-Kontext: maximal 12.000 Eingabetokens, 1.024 Ausgabetokens und sechs Evidenzausschnitte pro normaler Antwort.
+- LLM-Kontext: höchstens sechs Evidenzausschnitte in einem 12.000-Zeichen-Paket, höchstens vier vollständige Verlaufsnachrichten mit zusammen 3.000 Zeichen und 512 Ausgabetokens pro normaler Antwort. Provider-Tokens werden zusätzlich gemessen, weil Zeichen keine exakte Tokenzahl garantieren.
 - Tagesbudget: globaler harter Request-/Token-Cutoff unterhalb des tatsächlich verfügbaren Groq-Free-Limits.
 - Konvertierung: geringe Parallelität; rechenintensive OCR-Jobs werden serialisiert oder zur manuellen Planung zurückgestellt.
 

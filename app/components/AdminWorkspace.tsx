@@ -1,6 +1,12 @@
 "use client";
 
-import { ChangeEvent, DragEvent, FormEvent, useState } from "react";
+import { ChangeEvent, DragEvent, FormEvent, useRef, useState } from "react";
+import {
+  normalizeSourceUrl,
+  normalizedMarkdownSha256,
+  sha256Hex,
+  sourceIdentityHash,
+} from "@/lib/source-identity";
 
 type QueueItem = {
   id: number;
@@ -10,11 +16,27 @@ type QueueItem = {
   status: "Wartet" | "Konvertierung" | "Wiki-Prüfung" | "Veröffentlicht";
 };
 
-type ProposalState = "Offen" | "In Prüfung" | "Verworfen";
+export type AdminLearningProposal = {
+  id: string;
+  title: string;
+  recommendation: string;
+  typeLabel: string;
+  statusLabel: string;
+  frequency: number;
+  createdAtLabel: string;
+};
 
 type AdminWorkspaceProps = {
   adminName: string;
+  learningProposals: AdminLearningProposal[];
+  learningProposalCount: number;
 };
+
+type PreflightResponse =
+  | { status: "new" }
+  | { status: "duplicate"; sourceId: string; title: string }
+  | { status: "conflict"; error: string }
+  | { error: string };
 
 const MAX_UPLOAD_BYTES = 20 * 1024 * 1024;
 const SUPPORTED_EXTENSIONS = new Set([
@@ -62,29 +84,19 @@ const statusClass: Record<QueueItem["status"], string> = {
   Veröffentlicht: "status-published",
 };
 
-export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
+export function AdminWorkspace({
+  adminName,
+  learningProposals,
+  learningProposalCount,
+}: AdminWorkspaceProps) {
   const [queue, setQueue] = useState(initialQueue);
   const [url, setUrl] = useState("");
   const [dragging, setDragging] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const locallyQueuedIdentities = useRef(new Set<string>());
   const [notice, setNotice] = useState(
-    "Interaktiver Prototyp: Uploads werden lokal vorgemerkt, noch nicht übertragen.",
+    "Quellen werden vor dem Vormerken serverseitig auf Duplikate geprüft; Dateien werden noch nicht übertragen.",
   );
-  const [proposals, setProposals] = useState<
-    Array<{ id: number; title: string; source: string; state: ProposalState }>
-  >([
-    {
-      id: 1,
-      title: "Wissensbasis als geprüfte Antwortgrundlage",
-      source: "Unterhaltung · Wissensbasis und Suche",
-      state: "Offen",
-    },
-    {
-      id: 2,
-      title: "Vertrauensstufen für automatisch gelernte Aussagen",
-      source: "Unterhaltung · Quellenlage analysieren",
-      state: "Offen",
-    },
-  ]);
 
   const adminInitials = adminName
     .split(/\s+/)
@@ -93,7 +105,64 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
     .map((part) => part[0]?.toUpperCase())
     .join("") || "AD";
 
-  function addFiles(files: FileList | File[]) {
+  async function preflight(body: object): Promise<PreflightResponse> {
+    const response = await fetch("/api/admin/imports/preflight", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const result = (await response.json()) as PreflightResponse;
+    if (!response.ok && !("status" in result && result.status === "conflict")) {
+      throw new Error("error" in result ? result.error : "Quellenpruefung fehlgeschlagen.");
+    }
+    return result;
+  }
+
+  async function addFiles(files: FileList | File[]) {
+    const candidates = Array.from(files);
+    const newFiles: File[] = [];
+    let duplicates = 0;
+    let failures = 0;
+    setChecking(true);
+    for (const file of candidates) {
+      const extension = file.name.split(".").pop()?.toLowerCase() ?? "";
+      if (!SUPPORTED_EXTENSIONS.has(extension) || file.size > MAX_UPLOAD_BYTES) continue;
+      try {
+        const bytes = new Uint8Array(await file.arrayBuffer());
+        const rawSha256 = await sha256Hex(bytes);
+        const localKey = `raw_sha256:${rawSha256}`;
+        if (locallyQueuedIdentities.current.has(localKey)) {
+          duplicates += 1;
+          continue;
+        }
+        const result = await preflight({
+          kind: "file",
+          filename: file.name,
+          sizeBytes: file.size,
+          rawSha256,
+          ...(extension === "md" || extension === "markdown"
+            ? { normalizedSha256: await normalizedMarkdownSha256(new TextDecoder().decode(bytes)) }
+            : {}),
+        });
+        if (result.status !== "new") {
+          duplicates += 1;
+          continue;
+        }
+        locallyQueuedIdentities.current.add(localKey);
+        newFiles.push(file);
+      } catch {
+        failures += 1;
+      }
+    }
+    setChecking(false);
+    if (newFiles.length) queueFiles(newFiles);
+    const rejected = candidates.length - newFiles.length - duplicates - failures;
+    setNotice(
+      `${newFiles.length} neue Datei(en) vorgemerkt.${duplicates ? ` ${duplicates} Duplikat(e) nicht erneut aufgenommen.` : ""}${rejected ? ` ${rejected} Datei(en) wegen Format oder 20-MiB-Limit abgewiesen.` : ""}${failures ? ` ${failures} Pruefung(en) fehlgeschlagen.` : ""} Dateien wurden noch nicht uebertragen.`,
+    );
+  }
+
+  function queueFiles(files: FileList | File[]) {
     const candidates = Array.from(files);
     const accepted = candidates.filter((file) => {
       const extension = file.name.split(".").pop()?.toLowerCase() ?? "";
@@ -114,16 +183,17 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
   }
 
   function onFileChange(event: ChangeEvent<HTMLInputElement>) {
-    if (event.target.files?.length) addFiles(event.target.files);
+    if (event.target.files?.length) void addFiles(event.target.files);
+    event.target.value = "";
   }
 
   function onDrop(event: DragEvent<HTMLLabelElement>) {
     event.preventDefault();
     setDragging(false);
-    if (event.dataTransfer.files.length) addFiles(event.dataTransfer.files);
+    if (event.dataTransfer.files.length) void addFiles(event.dataTransfer.files);
   }
 
-  function addUrl(event: FormEvent) {
+  function queueUrl(event: FormEvent) {
     event.preventDefault();
     const value = url.trim();
     if (!value) return;
@@ -141,17 +211,32 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
     setNotice("Webquelle wurde für Abruf, Bereinigung und Markdown-Konvertierung vorgemerkt.");
   }
 
-  function decideProposal(id: number, decision: "In Prüfung" | "Verworfen") {
-    setProposals((current) =>
-      current.map((proposal) =>
-        proposal.id === id ? { ...proposal, state: decision } : proposal,
-      ),
-    );
-    setNotice(
-      decision === "In Prüfung"
-        ? "Prüfung vorgemerkt: Vor einer Freigabe müssen Änderung, Belege und exakte Version geprüft werden."
-        : "Lernvorschlag wurde verworfen und bleibt im Audit-Protokoll sichtbar.",
-    );
+  async function addUrl(event: FormEvent) {
+    event.preventDefault();
+    const value = normalizeSourceUrl(url);
+    if (!value) {
+      setNotice("Bitte eine gueltige oeffentliche HTTP- oder HTTPS-URL eingeben.");
+      return;
+    }
+    setChecking(true);
+    try {
+      const identity = await sourceIdentityHash("canonical_url", value);
+      const localKey = `canonical_url:${identity}`;
+      const result = locallyQueuedIdentities.current.has(localKey)
+        ? ({ status: "duplicate", sourceId: "local", title: value } as const)
+        : await preflight({ kind: "url", url: value });
+      if (result.status !== "new") {
+        setNotice("Diese Webquelle ist bereits vorhanden oder vorgemerkt und wurde nicht erneut aufgenommen.");
+        return;
+      }
+      locallyQueuedIdentities.current.add(localKey);
+      queueUrl(event);
+      setNotice("Neue Webquelle wurde nach der Duplikatpruefung vorgemerkt.");
+    } catch {
+      setNotice("Die Quellenpruefung ist fehlgeschlagen; die Webquelle wurde nicht vorgemerkt.");
+    } finally {
+      setChecking(false);
+    }
   }
 
   async function signOut() {
@@ -227,7 +312,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
           </article>
           <article>
             <span>Offene Lernvorschläge</span>
-            <strong>{proposals.filter((item) => item.state === "Offen").length}</strong>
+            <strong>{learningProposalCount}</strong>
             <small>menschliche Freigabe nötig</small>
           </article>
           <article>
@@ -257,6 +342,7 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
               <input
                 accept=".pdf,.docx,.xlsx,.xml,.json,.yaml,.yml,.html,.htm,.md,.markdown,text/html,text/markdown"
                 multiple
+                disabled={checking}
                 onChange={onFileChange}
                 type="file"
               />
@@ -277,12 +363,15 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
               <label htmlFor="source-url">Öffentliche URL</label>
               <input
                 id="source-url"
+                disabled={checking}
                 onChange={(event) => setUrl(event.target.value)}
                 placeholder="https://…"
                 type="url"
                 value={url}
               />
-              <button type="submit">Link vormerken</button>
+              <button disabled={checking} type="submit">
+                {checking ? "Pruefe..." : "Link vormerken"}
+              </button>
             </form>
           </div>
         </section>
@@ -341,28 +430,34 @@ export function AdminWorkspace({ adminName }: AdminWorkspaceProps) {
               </div>
             </div>
             <div className="proposal-list">
-              {proposals.map((proposal) => (
-                <article className="proposal-card" key={proposal.id}>
-                  <div>
-                    <span className="proposal-state">{proposal.state}</span>
-                    <h3>{proposal.title}</h3>
-                    <p>{proposal.source}</p>
-                  </div>
-                  {proposal.state === "Offen" ? (
-                    <div className="proposal-actions">
-                      <button onClick={() => decideProposal(proposal.id, "Verworfen")} type="button">
-                        Verwerfen
-                      </button>
-                      <button onClick={() => decideProposal(proposal.id, "In Prüfung")} type="button">
-                        Änderung &amp; Belege prüfen
-                      </button>
+              {learningProposals.length ? (
+                learningProposals.map((proposal) => (
+                  <article className="proposal-card" key={proposal.id}>
+                    <div>
+                      <span className="proposal-state">{proposal.typeLabel}</span>
+                      <h3>{proposal.title}</h3>
+                      <p>{proposal.recommendation}</p>
+                      <p>
+                        {formatObservationCount(proposal.frequency)} · erfasst am{" "}
+                        {proposal.createdAtLabel}
+                      </p>
                     </div>
-                  ) : (
-                    <strong className="decision-label">{proposal.state}</strong>
-                  )}
+                    <strong className="decision-label">{proposal.statusLabel}</strong>
+                  </article>
+                ))
+              ) : (
+                <article className="proposal-card">
+                  <div>
+                    <span className="proposal-state">Aktuell leer</span>
+                    <h3>Keine offenen Lernvorschläge</h3>
+                    <p>Neue, bereinigte Hinweise erscheinen hier nach der Erfassung.</p>
+                  </div>
                 </article>
-              ))}
+              )}
             </div>
+            <p className="demo-label">
+              Nur-Lese-Ansicht: Freigaben erfolgen erst im geprüften Wiki-Workflow.
+            </p>
           </section>
 
           <section className="admin-section health-panel" id="gesundheit">
@@ -399,4 +494,8 @@ function formatBytes(bytes: number) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1).replace(".", ",")} MB`;
+}
+
+function formatObservationCount(frequency: number) {
+  return frequency === 1 ? "1 Beobachtung" : `${frequency} Beobachtungen`;
 }

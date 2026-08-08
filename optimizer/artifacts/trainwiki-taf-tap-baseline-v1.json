@@ -1,0 +1,1189 @@
+{
+  "artifactId": "trainwiki-taf-tap-baseline-v1",
+  "artifactVersion": "1.0.0",
+  "build": {
+    "configDigest": "sha256:231e95ed9254bc97d8cd914d1c1f9095209f61f164c64a73ba3c2f1bdf87da6b",
+    "datasetDigest": "sha256:e319863e45a7821e92e4ca3408fd2a0633e1f37825ee3003e3920b1d7871b75c",
+    "networkUsed": false,
+    "optimizer": "none",
+    "programDigest": "sha256:4a75436e40f0ba1b09c8d5e2b7a311a47d43f86f51cb6dbfbb78f9c3c30d8615",
+    "randomSeed": 0
+  },
+  "corpus": {
+    "commit": "21d11a1b4b0c91e278d95b50557c0ea4d2ebb337",
+    "datasetVersion": "taf-tap-v1",
+    "repository": "bravo-girl/trainwiki",
+    "scope": "Initial DB InfraGO TAF/TAP Markdown corpus",
+    "sourceSnapshot": [
+      {
+        "path": "wiki/sources/download-taf-tap-glossar-data.md",
+        "sourceId": "src_660bf8039cf0527ee7b6",
+        "sourceSha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2",
+        "sourceVersionId": "sv_51fb412fc4f0d41650cb55bf"
+      },
+      {
+        "path": "wiki/sources/flyer-taf-tap-identifikatoren-data.md",
+        "sourceId": "src_f99e066f37874620df4e",
+        "sourceSha256": "c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b",
+        "sourceVersionId": "sv_c88a5b74e140e9fe73443e98"
+      },
+      {
+        "path": "wiki/sources/flyer-neues-bestellsystem-pathos-data.md",
+        "sourceId": "src_828f1b79362a62ea820f",
+        "sourceSha256": "66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52",
+        "sourceVersionId": "sv_66fe54f6cac1cc941df10fd8"
+      },
+      {
+        "path": "wiki/sources/flyer-company-code-data.md",
+        "sourceId": "src_d2976558d7a33946b943",
+        "sourceSha256": "c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861",
+        "sourceVersionId": "sv_c0cdd67495939c10345fbc12"
+      },
+      {
+        "path": "wiki/sources/flyer-common-interface-data.md",
+        "sourceId": "src_a17ac4dcb38672799aa4",
+        "sourceSha256": "e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d",
+        "sourceVersionId": "sv_e519d2e39261121ea3f27952"
+      },
+      {
+        "path": "wiki/sources/flyer-location-coding-data.md",
+        "sourceId": "src_b1e36372becf6e4cd12f",
+        "sourceSha256": "eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4",
+        "sourceVersionId": "sv_eea6b839bbd8c7cb46a03b73"
+      },
+      {
+        "path": "wiki/sources/flyer-tcm-ptcm-data.md",
+        "sourceId": "src_a731ecf1b5573c6eba01",
+        "sourceSha256": "c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47",
+        "sourceVersionId": "sv_c7063d63a8af5e6fac38fb2c"
+      },
+      {
+        "path": "wiki/sources/uber-taf-tap-tsi.md",
+        "sourceId": "src_0ed972984c152ac37d60",
+        "sourceSha256": "7c633488c07b24cabd17e8b90258c25559c2bfbe215c2e23efcc3a0ddb98e0ba",
+        "sourceVersionId": "sv_7c633488c07b24cabd17e8b9"
+      }
+    ]
+  },
+  "createdAt": "2026-08-02T00:00:00Z",
+  "mode": "deterministic-baseline",
+  "programVersion": "taf-tap-program-v1",
+  "programs": {
+    "extractLearningCandidate": {
+      "demos": [
+        {
+          "inputs": {
+            "conversation_observation": "Bitte ergänze die Begriffe PLC und SLC im Wiki.",
+            "current_wiki_context": "Die Seite erklärt TAF/TAP, enthält aber noch keine Definitionen für PLC und SLC.",
+            "verified_evidence": [
+              {
+                "id": "location-definitions",
+                "source_path": "wiki/sources/flyer-location-coding-data.md",
+                "source_sha256": "eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4",
+                "text": "Eine Primary Location ist eine Betriebsstelle und wird mit PLC codiert. Eine Subsidiary Location ist ihr untergeordnet, etwa Gleis, Ladestelle oder Bahnsteig, und wird mit SLC codiert.",
+                "title": "Primary und Subsidiary Locations"
+              }
+            ]
+          },
+          "outputs": {
+            "action": "add",
+            "claims": [
+              {
+                "claim": "Primary Locations sind Betriebsstellen und werden mit PLC codiert.",
+                "evidence_ids": [
+                  "location-definitions"
+                ]
+              },
+              {
+                "claim": "Subsidiary Locations sind untergeordnete Orte wie Gleise, Ladestellen oder Bahnsteige und werden mit SLC codiert.",
+                "evidence_ids": [
+                  "location-definitions"
+                ]
+              }
+            ],
+            "conflicts": [],
+            "review_note": "Die belegten Definitionen von PLC und SLC können nach redaktioneller Prüfung ergänzt werden.",
+            "target_page": "wiki/location-coding.md"
+          }
+        },
+        {
+          "inputs": {
+            "conversation_observation": "Ein Nutzer behauptet, TAF/TAP werde ab morgen vollständig abgeschafft.",
+            "current_wiki_context": "",
+            "verified_evidence": []
+          },
+          "outputs": {
+            "action": "noop",
+            "claims": [],
+            "conflicts": [],
+            "review_note": "Ohne verifizierte Quelle darf aus der Nutzerbehauptung kein Wiki-Fakt entstehen.",
+            "target_page": ""
+          }
+        }
+      ],
+      "inputFields": [
+        {
+          "description": "Relevant existing wiki text, possibly empty.",
+          "name": "current_wiki_context",
+          "type": "str"
+        },
+        {
+          "description": "Evidence that passed ingestion and source validation.",
+          "name": "verified_evidence",
+          "type": "list[optimizer.signatures.Evidence]"
+        },
+        {
+          "description": "Potential learning observed in the conversation; not trusted by itself.",
+          "name": "conversation_observation",
+          "type": "str"
+        }
+      ],
+      "inputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          },
+          "LearningClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "claim": {
+                "description": "Proposed durable wiki fact.",
+                "title": "Claim",
+                "type": "string"
+              },
+              "evidence_ids": {
+                "description": "Verified evidence identifiers supporting the proposed fact.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Evidence Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "claim",
+              "evidence_ids"
+            ],
+            "title": "LearningClaim",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "conversation_observation": {
+            "title": "Conversation Observation",
+            "type": "string"
+          },
+          "current_wiki_context": {
+            "title": "Current Wiki Context",
+            "type": "string"
+          },
+          "verified_evidence": {
+            "items": {
+              "$ref": "#/$defs/Evidence"
+            },
+            "title": "Verified Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "current_wiki_context",
+          "verified_evidence",
+          "conversation_observation"
+        ],
+        "title": "ExtractLearningCandidateInput",
+        "type": "object"
+      },
+      "instructions": "Extract a reviewable wiki learning candidate from verified evidence.\n\nConversation text alone is never evidence. Choose noop for unsupported\nobservations, conflict when verified evidence disagrees with current wiki\ntext, and add or update only for durable supported facts. Do not publish.",
+      "outputFields": [
+        {
+          "description": "Review workflow action; never an automatic publication decision.",
+          "name": "action",
+          "type": "Literal['add', 'update', 'conflict', 'noop']"
+        },
+        {
+          "description": "Repository-relative target wiki page, or an empty string for noop.",
+          "name": "target_page",
+          "type": "str"
+        },
+        {
+          "description": "Supported durable facts proposed for human review.",
+          "name": "claims",
+          "type": "list[optimizer.signatures.LearningClaim]"
+        },
+        {
+          "description": "Concrete disagreements with current wiki text that require review.",
+          "name": "conflicts",
+          "type": "list[str]"
+        },
+        {
+          "description": "Short German explanation for a human reviewer.",
+          "name": "review_note",
+          "type": "str"
+        }
+      ],
+      "outputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          },
+          "LearningClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "claim": {
+                "description": "Proposed durable wiki fact.",
+                "title": "Claim",
+                "type": "string"
+              },
+              "evidence_ids": {
+                "description": "Verified evidence identifiers supporting the proposed fact.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Evidence Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "claim",
+              "evidence_ids"
+            ],
+            "title": "LearningClaim",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "add",
+              "update",
+              "conflict",
+              "noop"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "claims": {
+            "items": {
+              "$ref": "#/$defs/LearningClaim"
+            },
+            "title": "Claims",
+            "type": "array"
+          },
+          "conflicts": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Conflicts",
+            "type": "array"
+          },
+          "review_note": {
+            "title": "Review Note",
+            "type": "string"
+          },
+          "target_page": {
+            "title": "Target Page",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "target_page",
+          "claims",
+          "conflicts",
+          "review_note"
+        ],
+        "title": "ExtractLearningCandidateOutput",
+        "type": "object"
+      },
+      "signatureName": "ExtractLearningCandidate",
+      "task": "extract_learning_candidate"
+    },
+    "groundedAnswer": {
+      "demos": [
+        {
+          "inputs": {
+            "evidence": [
+              {
+                "id": "company-transition",
+                "source_path": "wiki/sources/flyer-company-code-data.md",
+                "source_sha256": "c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861",
+                "text": "Bis zum 31.12.2025 wird der Company Code verwendet. Ab dem 01.01.2026 tritt der Organization Code an seine Stelle; beantragt werden soll ein gleichlautender Code.",
+                "title": "Umstellung auf Organization Code"
+              }
+            ],
+            "question": "Ab wann ersetzt der Organization Code den Company Code?"
+          },
+          "outputs": {
+            "abstain": false,
+            "answer": "Ab dem 1. Januar 2026 tritt der Organization Code an die Stelle des Company Code. Der neue Code soll gleichlautend beantragt werden.",
+            "claim_evidence": [
+              {
+                "claim": "Der Organization Code ersetzt den Company Code ab dem 1. Januar 2026.",
+                "evidence_ids": [
+                  "company-transition"
+                ]
+              },
+              {
+                "claim": "Der Organization Code soll gleichlautend zum bisherigen Company Code beantragt werden.",
+                "evidence_ids": [
+                  "company-transition"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "inputs": {
+            "evidence": [
+              {
+                "id": "pathos-access",
+                "source_path": "wiki/sources/flyer-neues-bestellsystem-pathos-data.md",
+                "source_sha256": "66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52",
+                "text": "Portal und Schnittstelle gehen 2026 für die Anmeldephase zum Jahresfahrplan 2027 live. Nutzer können das Portal oder eine TAF/TAP-konforme Schnittstelle verwenden; bei eigener IT ist die neue Schnittstelle umzusetzen.",
+                "title": "pathOS Einführung"
+              }
+            ],
+            "question": "Wann geht pathOS für den Jahresfahrplan 2027 live und welche Zugangswege gibt es?"
+          },
+          "outputs": {
+            "abstain": false,
+            "answer": "pathOS geht 2026 für die Anmeldephase des Jahresfahrplans 2027 live. Der Zugang ist über das Portal oder eine TAF/TAP-konforme Schnittstelle möglich; eigene IT muss die neue Schnittstelle umsetzen.",
+            "claim_evidence": [
+              {
+                "claim": "Portal und Schnittstelle von pathOS gehen 2026 für die Anmeldephase zum Jahresfahrplan 2027 live.",
+                "evidence_ids": [
+                  "pathos-access"
+                ]
+              },
+              {
+                "claim": "Der Zugang ist über Portal oder Schnittstelle möglich.",
+                "evidence_ids": [
+                  "pathos-access"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "inputFields": [
+        {
+          "description": "The user's question.",
+          "name": "question",
+          "type": "str"
+        },
+        {
+          "description": "The complete and exclusive evidence set available for this answer.",
+          "name": "evidence",
+          "type": "list[optimizer.signatures.Evidence]"
+        }
+      ],
+      "inputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          },
+          "GroundedClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "claim": {
+                "description": "One independently verifiable answer claim.",
+                "title": "Claim",
+                "type": "string"
+              },
+              "evidence_ids": {
+                "description": "Identifiers of evidence chunks that directly support the claim.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Evidence Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "claim",
+              "evidence_ids"
+            ],
+            "title": "GroundedClaim",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "$ref": "#/$defs/Evidence"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "evidence"
+        ],
+        "title": "GroundedAnswerInput",
+        "type": "object"
+      },
+      "instructions": "Answer in German using only the supplied evidence.\n\nEvery factual claim must name at least one supporting evidence identifier.\nIf the evidence is insufficient, abstain explicitly instead of filling gaps\nfrom model memory. Keep facts and recommendations clearly separated.",
+      "outputFields": [
+        {
+          "description": "Concise German answer, or a clear statement that evidence is insufficient.",
+          "name": "answer",
+          "type": "str"
+        },
+        {
+          "description": "Atomic answer claims paired with direct supporting evidence identifiers.",
+          "name": "claim_evidence",
+          "type": "list[optimizer.signatures.GroundedClaim]"
+        },
+        {
+          "description": "True exactly when the supplied evidence cannot support an answer.",
+          "name": "abstain",
+          "type": "bool"
+        }
+      ],
+      "outputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          },
+          "GroundedClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "claim": {
+                "description": "One independently verifiable answer claim.",
+                "title": "Claim",
+                "type": "string"
+              },
+              "evidence_ids": {
+                "description": "Identifiers of evidence chunks that directly support the claim.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Evidence Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "claim",
+              "evidence_ids"
+            ],
+            "title": "GroundedClaim",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "abstain": {
+            "title": "Abstain",
+            "type": "boolean"
+          },
+          "answer": {
+            "title": "Answer",
+            "type": "string"
+          },
+          "claim_evidence": {
+            "items": {
+              "$ref": "#/$defs/GroundedClaim"
+            },
+            "title": "Claim Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "answer",
+          "claim_evidence",
+          "abstain"
+        ],
+        "title": "GroundedAnswerOutput",
+        "type": "object"
+      },
+      "signatureName": "GroundedAnswer",
+      "task": "grounded_answer"
+    },
+    "queryPlan": {
+      "demos": [
+        {
+          "inputs": {
+            "conversation_context": "",
+            "known_exact_terms": [
+              "Company Code",
+              "Organization Code",
+              "TAF/TAP TSI"
+            ],
+            "question": "Wann wird der Company Code durch den Organization Code ersetzt?"
+          },
+          "outputs": {
+            "exact_terms": [
+              "Company Code",
+              "Organization Code",
+              "TAF/TAP TSI",
+              "01.01.2026"
+            ],
+            "needs_multihop": false,
+            "queries": [
+              "Company Code Organization Code Umstellung 01.01.2026",
+              "TAF/TAP TSI Company Code Organization Code"
+            ]
+          }
+        },
+        {
+          "inputs": {
+            "conversation_context": "Es geht um die TAF/TAP-Identifikatoren in der Planung.",
+            "known_exact_terms": [
+              "PRID",
+              "PAID"
+            ],
+            "question": "Wer vergibt PRID und PAID, und was identifizieren sie?"
+          },
+          "outputs": {
+            "exact_terms": [
+              "PRID",
+              "PAID",
+              "PathRequest",
+              "Path",
+              "Responsible Applicant",
+              "IM"
+            ],
+            "needs_multihop": true,
+            "queries": [
+              "PRID PathRequest Responsible Applicant",
+              "PAID Path Infrastructure Manager IM",
+              "TAF/TAP PRID PAID Unterschied"
+            ]
+          }
+        }
+      ],
+      "inputFields": [
+        {
+          "description": "The user's current question.",
+          "name": "question",
+          "type": "str"
+        },
+        {
+          "description": "Relevant preceding turns; empty when the question is standalone.",
+          "name": "conversation_context",
+          "type": "str"
+        },
+        {
+          "description": "Already detected identifiers or abbreviations that must be preserved.",
+          "name": "known_exact_terms",
+          "type": "list[str]"
+        }
+      ],
+      "inputSchema": {
+        "$defs": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "conversation_context": {
+            "title": "Conversation Context",
+            "type": "string"
+          },
+          "known_exact_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Known Exact Terms",
+            "type": "array"
+          },
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "conversation_context",
+          "known_exact_terms"
+        ],
+        "title": "QueryPlanInput",
+        "type": "object"
+      },
+      "instructions": "Plan retrieval for a German-language TrainWiki question.\n\nPreserve identifiers and domain abbreviations exactly. Produce a small set\nof complementary search queries, not an answer. Mark multi-hop only when\nevidence from more than one concept or source is needed.",
+      "outputFields": [
+        {
+          "description": "Deduplicated exact identifiers and domain terms for retrieval.",
+          "name": "exact_terms",
+          "type": "list[str]"
+        },
+        {
+          "description": "One to four concise retrieval queries ordered by usefulness.",
+          "name": "queries",
+          "type": "list[str]"
+        },
+        {
+          "description": "Whether the question needs evidence across multiple concepts or sources.",
+          "name": "needs_multihop",
+          "type": "bool"
+        }
+      ],
+      "outputSchema": {
+        "$defs": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "exact_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Exact Terms",
+            "type": "array"
+          },
+          "needs_multihop": {
+            "title": "Needs Multihop",
+            "type": "boolean"
+          },
+          "queries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Queries",
+            "type": "array"
+          }
+        },
+        "required": [
+          "exact_terms",
+          "queries",
+          "needs_multihop"
+        ],
+        "title": "QueryPlanOutput",
+        "type": "object"
+      },
+      "signatureName": "QueryPlan",
+      "task": "query_plan"
+    },
+    "rankEvidence": {
+      "demos": [
+        {
+          "inputs": {
+            "candidate_evidence": [
+              {
+                "id": "ci-own-software",
+                "source_path": "wiki/sources/flyer-common-interface-data.md",
+                "source_sha256": "e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d",
+                "text": "Wer eigene Software für den TAF/TAP-Nachrichtenaustausch einsetzt, benötigt grundsätzlich ein Common Interface; bei Nutzung angebotener Web-Portale ist kein eigenes CI zwingend.",
+                "title": "Common Interface"
+              },
+              {
+                "id": "glossary-ci",
+                "source_path": "wiki/sources/download-taf-tap-glossar-data.md",
+                "source_sha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2",
+                "text": "Das Common Interface übersetzt strukturierte lokale Datenformate in TAF/TAP-Formate und zurück; Web-Anwendungen können eine eigene Schnittstelle ersetzen.",
+                "title": "Glossar: Common Interface"
+              },
+              {
+                "id": "pathos-2027",
+                "source_path": "wiki/sources/flyer-neues-bestellsystem-pathos-data.md",
+                "source_sha256": "66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52",
+                "text": "pathOS wird für den Jahresfahrplan 2027 eingeführt.",
+                "title": "pathOS"
+              }
+            ],
+            "question": "Braucht jedes EVU ein eigenes Common Interface?"
+          },
+          "outputs": {
+            "ranked_evidence_ids": [
+              "ci-own-software",
+              "glossary-ci"
+            ]
+          }
+        },
+        {
+          "inputs": {
+            "candidate_evidence": [
+              {
+                "id": "tcm-content",
+                "source_path": "wiki/sources/flyer-tcm-ptcm-data.md",
+                "source_sha256": "c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47",
+                "text": "TCM und PTCM übermitteln aktuelle Zugdaten wie Zuglänge, Zuggewicht und Bremsangaben vom EVU an den EIU.",
+                "title": "TCM/PTCM"
+              },
+              {
+                "id": "glossary-tcm",
+                "source_path": "wiki/sources/download-taf-tap-glossar-data.md",
+                "source_sha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2",
+                "text": "Train Composition Message und Passenger Train Composition Message enthalten unter anderem Länge, Gewicht und Bremsdaten; sie sind nicht mit einer Wagenliste gleichzusetzen.",
+                "title": "Glossar: TCM/PTCM"
+              },
+              {
+                "id": "location-plc",
+                "source_path": "wiki/sources/flyer-location-coding-data.md",
+                "source_sha256": "eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4",
+                "text": "Betriebsstellen erhalten einen Primary Location Code.",
+                "title": "Primary Location"
+              }
+            ],
+            "question": "Welche Angaben transportieren TCM und PTCM?"
+          },
+          "outputs": {
+            "ranked_evidence_ids": [
+              "tcm-content",
+              "glossary-tcm"
+            ]
+          }
+        }
+      ],
+      "inputFields": [
+        {
+          "description": "The user's question.",
+          "name": "question",
+          "type": "str"
+        },
+        {
+          "description": "Candidate chunks returned by deterministic retrieval.",
+          "name": "candidate_evidence",
+          "type": "list[optimizer.signatures.Evidence]"
+        }
+      ],
+      "inputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "candidate_evidence": {
+            "items": {
+              "$ref": "#/$defs/Evidence"
+            },
+            "title": "Candidate Evidence",
+            "type": "array"
+          },
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "candidate_evidence"
+        ],
+        "title": "RankEvidenceInput",
+        "type": "object"
+      },
+      "instructions": "Rank only the supplied evidence for answering the question.\n\nPrefer direct, current, specific passages. Never invent an identifier and\nnever return an identifier that is absent from candidate_evidence.",
+      "outputFields": [
+        {
+          "description": "Candidate identifiers in descending relevance; omit irrelevant chunks.",
+          "name": "ranked_evidence_ids",
+          "type": "list[str]"
+        }
+      ],
+      "outputSchema": {
+        "$defs": {
+          "Evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "description": "Stable identifier of this evidence chunk.",
+                "title": "Id",
+                "type": "string"
+              },
+              "locator": {
+                "default": "",
+                "description": "Precise page, heading, or structural locator within the source.",
+                "title": "Locator",
+                "type": "string"
+              },
+              "source_path": {
+                "description": "Repository-relative Markdown source path.",
+                "title": "Source Path",
+                "type": "string"
+              },
+              "source_sha256": {
+                "default": "",
+                "description": "Content hash from the source front matter, if known.",
+                "title": "Source Sha256",
+                "type": "string"
+              },
+              "source_version_id": {
+                "default": "",
+                "description": "Stable source version identifier used by provenance checks.",
+                "title": "Source Version Id",
+                "type": "string"
+              },
+              "text": {
+                "description": "Verbatim evidence text available to the model.",
+                "title": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "Human-readable source or section title.",
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_path",
+              "title",
+              "text"
+            ],
+            "title": "Evidence",
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "ranked_evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Ranked Evidence Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ranked_evidence_ids"
+        ],
+        "title": "RankEvidenceOutput",
+        "type": "object"
+      },
+      "signatureName": "RankEvidence",
+      "task": "rank_evidence"
+    }
+  },
+  "qualityGates": {
+    "grounding": {
+      "abstainWhenUnsupported": true,
+      "citationCoverageMinimum": 1.0,
+      "invalidReferenceRateMaximum": 0.0
+    },
+    "learning": {
+      "publishesAutomatically": false,
+      "requiresVerifiedEvidence": true
+    },
+    "retrieval": {
+      "metric": "recall_at_6",
+      "minimum": 0.9
+    }
+  },
+  "retrieval": {
+    "algorithm": "deterministic-lexical-v1",
+    "aliasExpansion": {
+      "CC": [
+        "Company Code",
+        "RICS-Code"
+      ],
+      "CI": [
+        "Common Interface"
+      ],
+      "EIU": [
+        "Eisenbahninfrastrukturunternehmen",
+        "IM"
+      ],
+      "EVU": [
+        "Eisenbahnverkehrsunternehmen",
+        "RU"
+      ],
+      "PAID": [
+        "Path",
+        "Path Identifier"
+      ],
+      "PLC": [
+        "Primary Location Code",
+        "Primary Location"
+      ],
+      "PRID": [
+        "PathRequest",
+        "Path Request Identifier"
+      ],
+      "PTCM": [
+        "Passenger Train Composition Message"
+      ],
+      "SLC": [
+        "Subsidiary Location Code",
+        "Subsidiary Location"
+      ],
+      "TAF": [
+        "TAF TSI",
+        "Telematics Applications for Freight Services",
+        "Güterverkehr"
+      ],
+      "TAP": [
+        "TAP TSI",
+        "Telematics Applications for Passenger Services",
+        "Personenverkehr"
+      ],
+      "TCM": [
+        "Train Composition Message"
+      ],
+      "TRID": [
+        "ReferenceTrain",
+        "Train Identifier"
+      ]
+    },
+    "maxCandidates": 24,
+    "maxEvidence": 6,
+    "maxQueryTerms": 12,
+    "minimumScore": 0.01,
+    "weights": {
+      "body": 1.0,
+      "exactPhrase": 4.0,
+      "heading": 2.0,
+      "sourceRecency": 0.0,
+      "title": 3.0
+    }
+  },
+  "runtime": {
+    "dspyModel": "groq/openai/gpt-oss-20b",
+    "dspyVersion": "3.2.1",
+    "model": "openai/gpt-oss-20b",
+    "provider": "groq"
+  },
+  "schemaVersion": 1
+}

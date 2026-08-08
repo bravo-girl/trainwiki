@@ -9,15 +9,29 @@ import {
   type D1DatabaseLike,
 } from "../../../lib/wiki-retrieval";
 import { validateAnswerCitations } from "../../../lib/citation-validation";
+import {
+  recordLearningObservation,
+  type LearningDatabaseLike,
+  type LearningEvidenceRef,
+} from "../../../lib/learning-candidates";
+import { parseDspyArtifact } from "../../../lib/dspy-artifact";
+import dspyArtifactJson from "../../../optimizer/artifacts/trainwiki-taf-tap-baseline-v1.json";
 
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = "openai/gpt-oss-20b";
+const DSPY_PROGRAM = parseDspyArtifact(dspyArtifactJson);
+const MODEL = DSPY_PROGRAM.runtime.model;
 const MAX_BODY_BYTES = 32_768;
 const MAX_QUESTION_CHARS = 3_000;
 const MAX_HISTORY_MESSAGES = 8;
 const MAX_HISTORY_MESSAGE_CHARS = 2_500;
 const MAX_TOTAL_INPUT_CHARS = 12_000;
+const MAX_MODEL_HISTORY_MESSAGES = 4;
+const MAX_MODEL_HISTORY_CHARS = 3_000;
+const MAX_COMPLETION_TOKENS = 512;
 const REQUEST_TIMEOUT_MS = 35_000;
+const TURN_ID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const PROGRAM_VERSION = DSPY_PROGRAM.programVersion;
 const RATE_LIMIT_HEADERS = {
   "X-RateLimit-Limit-Minute": "4",
   "X-RateLimit-Limit-Day": "20",
@@ -186,6 +200,12 @@ function parsePayload(payload: unknown) {
   }
 
   const candidate = payload as Record<string, unknown>;
+  if (
+    typeof candidate.turnId !== "string" ||
+    !TURN_ID_PATTERN.test(candidate.turnId)
+  ) {
+    throw new RequestError(400, "Die Anfrage enthält keine gültige Vorgangs-ID.");
+  }
   if (typeof candidate.question !== "string") {
     throw new RequestError(400, "Bitte gib eine Frage ein.");
   }
@@ -216,7 +236,45 @@ function parsePayload(payload: unknown) {
     throw new RequestError(400, "Der Gesprächsverlauf ist für eine Anfrage zu umfangreich.");
   }
 
-  return { question, history: validHistory };
+  return { question, history: validHistory, turnId: candidate.turnId };
+}
+
+function selectModelHistory(history: readonly ConversationMessage[]) {
+  const selected: ConversationMessage[] = [];
+  let characters = 0;
+
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const message = history[index];
+    if (
+      selected.length === MAX_MODEL_HISTORY_MESSAGES ||
+      characters + message.content.length > MAX_MODEL_HISTORY_CHARS
+    ) {
+      break;
+    }
+
+    selected.unshift(message);
+    characters += message.content.length;
+  }
+
+  // A detached assistant answer is less useful than a complete recent turn.
+  if (selected[0]?.role === "assistant") {
+    selected.shift();
+  }
+  return selected;
+}
+
+async function safelyRecordLearningObservation(
+  database: LearningDatabaseLike,
+  input: Parameters<typeof recordLearningObservation>[1],
+) {
+  try {
+    await recordLearningObservation(database, input);
+  } catch (error) {
+    console.error(
+      "Learning observation could not be recorded.",
+      error instanceof Error ? error.message : "Unknown error",
+    );
+  }
 }
 
 function extractGroqAnswer(payload: unknown) {
@@ -240,7 +298,7 @@ export async function POST(request: Request) {
     }
 
     await enforceRateLimit(request);
-    const { question, history } = parsePayload(await readLimitedJson(request));
+    const { question, history, turnId } = parsePayload(await readLimitedJson(request));
     const database = getRuntimeBinding<D1DatabaseLike>("DB");
     if (!database) {
       throw new RequestError(503, "Die Wissensbasis ist momentan nicht verfügbar.");
@@ -254,10 +312,27 @@ export async function POST(request: Request) {
     const evidence = await retrieveWikiEvidence(
       database,
       `${question} ${recentUserContext}`.trim(),
-      { maxTerms: 16, maxResults: 6 },
+      {
+        maxTerms: DSPY_PROGRAM.retrieval.maxQueryTerms,
+        maxCandidates: DSPY_PROGRAM.retrieval.maxCandidates,
+        maxResults: DSPY_PROGRAM.retrieval.maxEvidence,
+        minimumScore: DSPY_PROGRAM.retrieval.minimumScore,
+        aliasExpansion: DSPY_PROGRAM.retrieval.aliasExpansion,
+        weights: DSPY_PROGRAM.retrieval.weights,
+      },
     );
 
     if (evidence.chunks.length === 0) {
+      await safelyRecordLearningObservation(
+        database as unknown as LearningDatabaseLike,
+        {
+          turnId,
+          question,
+          answerStatus: "no_evidence",
+          evidenceRefs: [],
+          programVersion: PROGRAM_VERSION,
+        },
+      );
       return jsonResponse({ answer: NO_EVIDENCE_ANSWER, sources: [] });
     }
 
@@ -269,6 +344,7 @@ export async function POST(request: Request) {
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    const modelHistory = selectModelHistory(history);
     let groqResponse: Response;
 
     try {
@@ -284,6 +360,7 @@ export async function POST(request: Request) {
             {
               role: "system",
               content: [
+                DSPY_PROGRAM.programs.groundedAnswer.instructions,
                 "Du bist TrainWiki. Antworte auf Deutsch, knapp, klar und ausschließlich anhand der nummerierten Evidenz.",
                 "Belege jede wesentliche Tatsachenbehauptung unmittelbar mit [1], [2] usw. Verwende nur vorhandene Nummern.",
                 "Wenn die Evidenz die Frage nicht beantwortet, sage ausdrücklich, dass die Wissensbasis dafür keinen ausreichenden Beleg enthält.",
@@ -293,13 +370,13 @@ export async function POST(request: Request) {
                 evidence.evidenceBlock,
               ].join("\n"),
             },
-            ...history,
+            ...modelHistory,
             { role: "user", content: question },
           ],
           temperature: 0.2,
           reasoning_effort: "low",
           include_reasoning: false,
-          max_completion_tokens: 1_024,
+          max_completion_tokens: MAX_COMPLETION_TOKENS,
           stream: false,
         }),
         signal: controller.signal,
@@ -346,6 +423,22 @@ export async function POST(request: Request) {
     }
 
     const citedNumbers = new Set(citationValidation.citedNumbers);
+    const learningEvidenceRefs: LearningEvidenceRef[] = evidence.chunks
+      .flatMap((chunk, index) =>
+        citedNumbers.has(index + 1)
+          ? [
+              {
+                chunkId: chunk.id,
+                chunkContentSha: chunk.contentSha,
+                pagePath: chunk.path,
+                sourceId: chunk.sourceId,
+                sourceVersionId: chunk.sourceVersionId,
+                sourceSha256: chunk.sourceSha256,
+                ...(chunk.heading ? { heading: chunk.heading } : {}),
+              },
+            ]
+          : [],
+      );
     const publicSources = evidence.sources
       .filter((source) => citedNumbers.has(source.number))
       .map((source) => ({
@@ -354,6 +447,17 @@ export async function POST(request: Request) {
         heading: source.heading,
         ...(source.canonicalUrl ? { canonicalUrl: source.canonicalUrl } : {}),
       }));
+    await safelyRecordLearningObservation(
+      database as unknown as LearningDatabaseLike,
+      {
+        turnId,
+        question,
+        answer,
+        answerStatus: "grounded",
+        evidenceRefs: learningEvidenceRefs,
+        programVersion: PROGRAM_VERSION,
+      },
+    );
     return jsonResponse({ answer, sources: publicSources });
   } catch (error) {
     if (error instanceof RequestError) {

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "taf-tap-v1",
+  "releasedAt": "2026-08-02T00:00:00Z",
+  "corpus": {
+    "repository": "bravo-girl/trainwiki",
+    "commit": "21d11a1b4b0c91e278d95b50557c0ea4d2ebb337",
+    "scope": "Initial DB InfraGO TAF/TAP Markdown corpus"
+  },
+  "splits": {
+    "train": 8,
+    "dev": 5,
+    "test": 5
+  },
+  "tasks": [
+    "query_plan",
+    "rank_evidence",
+    "grounded_answer",
+    "extract_learning_candidate"
+  ],
+  "sourceSnapshot": [
+    {
+      "path": "wiki/sources/download-taf-tap-glossar-data.md",
+      "sourceId": "src_660bf8039cf0527ee7b6",
+      "sourceVersionId": "sv_51fb412fc4f0d41650cb55bf",
+      "sourceSha256": "51fb412fc4f0d41650cb55bfbd30199f90cdff881090b1f2af568d45ea8636e2"
+    },
+    {
+      "path": "wiki/sources/flyer-taf-tap-identifikatoren-data.md",
+      "sourceId": "src_f99e066f37874620df4e",
+      "sourceVersionId": "sv_c88a5b74e140e9fe73443e98",
+      "sourceSha256": "c88a5b74e140e9fe73443e9863972c19c7f111c996d24206262bf4ae2bfd373b"
+    },
+    {
+      "path": "wiki/sources/flyer-neues-bestellsystem-pathos-data.md",
+      "sourceId": "src_828f1b79362a62ea820f",
+      "sourceVersionId": "sv_66fe54f6cac1cc941df10fd8",
+      "sourceSha256": "66fe54f6cac1cc941df10fd8e3401328923950ade406817d754ed9cca872fb52"
+    },
+    {
+      "path": "wiki/sources/flyer-company-code-data.md",
+      "sourceId": "src_d2976558d7a33946b943",
+      "sourceVersionId": "sv_c0cdd67495939c10345fbc12",
+      "sourceSha256": "c0cdd67495939c10345fbc122514c4a42332ec0d1801c888943e96cc57039861"
+    },
+    {
+      "path": "wiki/sources/flyer-common-interface-data.md",
+      "sourceId": "src_a17ac4dcb38672799aa4",
+      "sourceVersionId": "sv_e519d2e39261121ea3f27952",
+      "sourceSha256": "e519d2e39261121ea3f27952b47e1d7f8d485c2d3721e6b48ddf52d9d1fa417d"
+    },
+    {
+      "path": "wiki/sources/flyer-location-coding-data.md",
+      "sourceId": "src_b1e36372becf6e4cd12f",
+      "sourceVersionId": "sv_eea6b839bbd8c7cb46a03b73",
+      "sourceSha256": "eea6b839bbd8c7cb46a03b73e72caa8b027e935dcf3f68d65504e188f65dcdd4"
+    },
+    {
+      "path": "wiki/sources/flyer-tcm-ptcm-data.md",
+      "sourceId": "src_a731ecf1b5573c6eba01",
+      "sourceVersionId": "sv_c7063d63a8af5e6fac38fb2c",
+      "sourceSha256": "c7063d63a8af5e6fac38fb2c81a6e9a8c5f177562f6bb484e43d10f1884b5e47"
+    },
+    {
+      "path": "wiki/sources/uber-taf-tap-tsi.md",
+      "sourceId": "src_0ed972984c152ac37d60",
+      "sourceVersionId": "sv_7c633488c07b24cabd17e8b9",
+      "sourceSha256": "7c633488c07b24cabd17e8b90258c25559c2bfbe215c2e23efcc3a0ddb98e0ba"
+    }
+  ]
+}

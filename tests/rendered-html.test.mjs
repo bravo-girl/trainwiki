@@ -5,6 +5,7 @@ import test from "node:test";
 
 const templateRoot = new URL("../", import.meta.url);
 const adminSecret = "test-only-admin-session-secret-32-characters";
+const testTurnId = "11111111-1111-4111-8111-111111111111";
 process.env.TRAINWIKI_ADMIN_GITHUB_LOGIN = "bravo-girl";
 process.env.TRAINWIKI_ADMIN_SESSION_SECRET = adminSecret;
 delete process.env.GROQ_API_KEY;
@@ -12,6 +13,7 @@ delete process.env.GROQ_API_KEY;
 const defaultWikiRows = [
   {
     id: "chunk-test",
+    content_sha: "a".repeat(64),
     page_path: "wiki/sources/test.md",
     ordinal: 0,
     heading_path: "Abschnitt 1",
@@ -19,6 +21,9 @@ const defaultWikiRows = [
     source_refs_json: "{}",
     title: "Testquelle",
     metadata_json: JSON.stringify({ canonical_url: "https://example.org/source" }),
+    source_id: "source-test",
+    source_version_id: "source-test-v1",
+    source_sha256: "b".repeat(64),
     score: 2,
     matched_terms: 1,
   },
@@ -36,6 +41,9 @@ function createD1Counter(value = 1, wikiRows = defaultWikiRows) {
         },
         async all() {
           return { results: wikiRows };
+        },
+        async run() {
+          return { meta: { changes: 1 } };
         },
       };
       return statement;
@@ -239,7 +247,11 @@ test("returns a safe configuration error when the Groq key is absent", async () 
       "content-type": "application/json",
       origin: "http://localhost",
     },
-    body: JSON.stringify({ question: "Was ist TrainWiki?", history: [] }),
+    body: JSON.stringify({
+      question: "Was ist TrainWiki?",
+      history: [],
+      turnId: testTurnId,
+    }),
   });
   assert.equal(response.status, 503);
   assert.match((await response.json()).error, /nicht konfiguriert/i);
@@ -267,7 +279,18 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
           "content-type": "application/json",
           origin: "http://localhost",
         },
-        body: JSON.stringify({ question: "Kurzer Test", history: [] }),
+        body: JSON.stringify({
+          question: "Kurzer Test",
+          history: [
+            { role: "user", content: `alt-1 ${"a".repeat(743)}` },
+            { role: "assistant", content: `alt-2 ${"b".repeat(743)}` },
+            { role: "user", content: `neu-1 ${"c".repeat(743)}` },
+            { role: "assistant", content: `neu-2 ${"d".repeat(743)}` },
+            { role: "user", content: `neu-3 ${"e".repeat(743)}` },
+            { role: "assistant", content: `neu-4 ${"f".repeat(743)}` },
+          ],
+          turnId: testTurnId,
+        }),
       },
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
@@ -279,13 +302,24 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-20b");
-    assert.equal(payload.max_completion_tokens, 1_024);
+    assert.equal(payload.max_completion_tokens, 512);
     assert.equal(payload.reasoning_effort, "low");
     assert.equal(payload.include_reasoning, false);
     assert.equal(payload.stream, false);
     assert.match(upstreamRequest.init.headers.Authorization, /^Bearer gsk_/);
     assert.match(payload.messages[0].content, /Nummerierte Evidenz/);
+    assert.match(payload.messages[0].content, /Every factual claim/i);
     assert.match(payload.messages[0].content, /ausschließlich anhand/);
+    assert.deepEqual(
+      payload.messages.slice(1, -1).map((message) => message.content.slice(0, 5)),
+      ["neu-1", "neu-2", "neu-3", "neu-4"],
+    );
+    assert.ok(
+      payload.messages.slice(1, -1).reduce(
+        (sum, message) => sum + message.content.length,
+        0,
+      ) <= 3_000,
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -311,7 +345,11 @@ test("does not expose an answer whose source citations are missing", async () =>
           "content-type": "application/json",
           origin: "http://localhost",
         },
-        body: JSON.stringify({ question: "Kurzer Test", history: [] }),
+        body: JSON.stringify({
+          question: "Kurzer Test",
+          history: [],
+          turnId: testTurnId,
+        }),
       },
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
@@ -342,7 +380,11 @@ test("abstains without evidence and does not call the answer service", async () 
           "content-type": "application/json",
           origin: "http://localhost",
         },
-        body: JSON.stringify({ question: "Unbelegte Frage", history: [] }),
+        body: JSON.stringify({
+          question: "Unbelegte Frage",
+          history: [],
+          turnId: testTurnId,
+        }),
       },
       {
         DB: createD1Counter(1, []),

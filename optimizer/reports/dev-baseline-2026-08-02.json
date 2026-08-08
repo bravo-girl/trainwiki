@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "evaluatedAt": "2026-08-02T12:12:38Z",
+  "artifactId": "trainwiki-taf-tap-baseline-v1",
+  "programVersion": "taf-tap-program-v1",
+  "datasetSplit": "dev",
+  "examplesPerTask": 1,
+  "callsUsed": 4,
+  "scoresPercent": {
+    "queryPlan": 65.91,
+    "rankEvidence": 100.0,
+    "groundedAnswer": 78.18,
+    "extractLearningCandidate": 26.76
+  },
+  "decision": "baseline-active-optimizer-candidate-not-yet-qualified",
+  "notes": [
+    "This is a small live smoke evaluation, not a release-quality statistical result.",
+    "The deterministic six-question retrieval gate is evaluated separately in the Node test suite.",
+    "No optimized candidate may replace the baseline until it passes the held-out test split and cost gates."
+  ]
+}
