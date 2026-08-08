@@ -72,8 +72,29 @@ function safeFileBase(value: string): string {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-zA-Z0-9_-]+/g, "-")
     .replace(/^-+|-+$/g, "")
-    .slice(0, 80);
+    .slice(0, 120);
   return safe || "chat-export";
+}
+
+function sortableTimestamp(isoTimestamp: string): string {
+  return isoTimestamp.slice(0, 19).replace(/[T:]/g, "-");
+}
+
+function exportFileBase(
+  exchanges: readonly ChatExchange[],
+  options: ChatExportOptions,
+  generatedAt: string,
+): string {
+  const normalized = normalizeExchanges(exchanges);
+  const firstQuestion = safeFileBase(normalized[0].question).slice(0, 42);
+  const lastQuestion = normalized.length > 1
+    ? safeFileBase(normalized.at(-1)?.question ?? "").slice(0, 32)
+    : "";
+  const questionPart = lastQuestion && lastQuestion !== firstQuestion
+    ? `${firstQuestion}--${lastQuestion}`
+    : firstQuestion;
+  const scope = options.fileName ? safeFileBase(options.fileName).slice(0, 24) : "trainwiki";
+  return safeFileBase(`${sortableTimestamp(generatedAt)}-${scope}-${questionPart}`);
 }
 
 function safeLinkTarget(value: string): string | null {
@@ -324,12 +345,14 @@ export function prepareChatExport(
   format: ChatExportFormat,
   options: ChatExportOptions = {},
 ): PreparedChatExport {
-  const baseName = safeFileBase(options.fileName || options.title || DEFAULT_TITLE);
+  const generatedAt = normalizeDate(options.generatedAt);
+  const resolvedOptions = { ...options, generatedAt };
+  const baseName = exportFileBase(exchanges, options, generatedAt);
 
   if (format === "md") {
     return {
       format,
-      content: createMarkdownExport(exchanges, options),
+      content: createMarkdownExport(exchanges, resolvedOptions),
       mimeType: "text/markdown;charset=utf-8",
       fileName: `${baseName}.md`,
     };
@@ -337,7 +360,7 @@ export function prepareChatExport(
   if (format === "html") {
     return {
       format,
-      content: createHtmlExport(exchanges, options),
+      content: createHtmlExport(exchanges, resolvedOptions),
       mimeType: "text/html;charset=utf-8",
       fileName: `${baseName}.html`,
     };

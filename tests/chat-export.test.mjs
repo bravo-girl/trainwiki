@@ -67,14 +67,20 @@ test("prepares deterministic filenames for downloadable exports", () => {
     fileName: "Meine Sitzung.md",
     generatedAt: timestamp,
   });
-  assert.equal(markdown.fileName, "Meine-Sitzung.md");
+  assert.equal(
+    markdown.fileName,
+    "2026-08-02-12-00-00-Meine-Sitzung-Was-ist-RAG--Ist-das-sicher.md",
+  );
   assert.equal(markdown.mimeType, "text/markdown;charset=utf-8");
 
   const html = prepareChatExport(conversation, "html", {
     fileName: "Antwort.html",
     generatedAt: timestamp,
   });
-  assert.equal(html.fileName, "Antwort.html");
+  assert.equal(
+    html.fileName,
+    "2026-08-02-12-00-00-Antwort-Was-ist-RAG--Ist-das-sicher.html",
+  );
   assert.equal(html.mimeType, "text/html;charset=utf-8");
 });
 
