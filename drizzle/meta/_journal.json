@@ -48,7 +48,28 @@
       "idx": 6,
       "version": "6",
       "when": 1786195200000,
-      "tag": "0006_bootstrap_input_20260808",
+      "tag": "0006_bootstrap_input_20260808_part1",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1786195260000,
+      "tag": "0007_bootstrap_input_20260808_part2",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1786195320000,
+      "tag": "0008_bootstrap_input_20260808_part3",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1786195380000,
+      "tag": "0009_bootstrap_input_20260808_part4",
       "breakpoints": true
     }
   ]

@@ -80,7 +80,10 @@ test("app preflight recognizes sources imported by the bootstrap path", async ()
     "0002_bootstrap_taf_tap.sql",
     "0003_source_identities.sql",
     "0005_source_import_dedupe.sql",
-    "0006_bootstrap_input_20260808.sql",
+    "0006_bootstrap_input_20260808_part1.sql",
+    "0007_bootstrap_input_20260808_part2.sql",
+    "0008_bootstrap_input_20260808_part3.sql",
+    "0009_bootstrap_input_20260808_part4.sql",
   ]) {
     await applyMigration(db, migration);
   }
