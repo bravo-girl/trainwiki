@@ -532,18 +532,32 @@ export async function POST(request: Request) {
           { "Retry-After": groqResponse.headers.get("retry-after") ?? "60" },
         );
       }
-      throw new RequestError(502, "Die Anfrage konnte momentan nicht beantwortet werden.");
+      throw new RequestError(
+        502,
+        "Die Anfrage konnte momentan nicht beantwortet werden.",
+        { "X-TrainWiki-Upstream-Status": String(groqResponse.status) },
+      );
     }
 
     let groqPayload: unknown;
     try {
       groqPayload = await groqResponse.json();
     } catch {
-      throw new RequestError(502, "Der Antwortdienst hat ungültige Daten geliefert.");
+      throw new RequestError(
+        502,
+        "Der Antwortdienst hat ungültige Daten geliefert.",
+        { "X-TrainWiki-Upstream-Status": "invalid-json" },
+      );
     }
 
     let answer = extractGroqAnswer(groqPayload);
-    if (!answer) throw new RequestError(502, "Der Antwortdienst hat keine Antwort geliefert.");
+    if (!answer) {
+      throw new RequestError(
+        502,
+        "Der Antwortdienst hat keine Antwort geliefert.",
+        { "X-TrainWiki-Upstream-Status": "empty-answer" },
+      );
+    }
 
     const availableCitationNumbers = [
       ...storedAttachments.map((_, index) => index + 1),
