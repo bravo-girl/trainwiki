@@ -242,7 +242,7 @@ test("rejects a cross-origin admin login before contacting GitHub", async () => 
   }
 });
 
-test("returns a safe configuration error when the Groq key is absent", async () => {
+test("returns grounded evidence when the Groq key is absent", async () => {
   const response = await call("/api/chat", {
     method: "POST",
     headers: {
@@ -255,8 +255,43 @@ test("returns a safe configuration error when the Groq key is absent", async () 
       turnId: testTurnId,
     }),
   });
-  assert.equal(response.status, 503);
-  assert.match((await response.json()).error, /nicht konfiguriert/i);
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  assert.match(payload.answer, /Belegte Fundstellen/i);
+  assert.equal(payload.sources[0].number, 1);
+});
+
+test("returns grounded evidence when Groq rejects a suggested ETCS question", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input, init) => {
+    if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
+      return Response.json({ error: "upstream fixture" }, { status: 400 });
+    }
+    return originalFetch(input, init);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", origin: "http://localhost" },
+        body: JSON.stringify({
+          question: "Was ändert sich bei ETCS?",
+          history: [],
+          turnId: testTurnId,
+        }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const payload = await response.json();
+    assert.match(payload.answer, /Belegte Fundstellen/i);
+    assert.equal(payload.sources[0].number, 1);
+    assert.doesNotMatch(payload.answer, /konnte momentan nicht beantwortet werden/i);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("proxies chat only to the fixed Groq GPT-OSS model", async () => {

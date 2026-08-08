@@ -620,13 +620,6 @@ export async function POST(request: Request) {
     }
 
     const apiKey = getApiKey();
-    if (!apiKey) {
-      console.error("GROQ_API_KEY is not configured.");
-      throw new RequestError(503, "Der Chat ist momentan nicht konfiguriert.");
-    }
-
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
     const modelHistory = selectModelHistory(history);
     const systemPrompt = [
       DSPY_PROGRAM.programs.groundedAnswer.instructions,
@@ -650,77 +643,66 @@ export async function POST(request: Request) {
         ),
       ].filter(Boolean).join("\n\n"),
     ].join("\n");
-    let groqResponse: Response;
+    let answer = buildExtractiveFallbackAnswer(storedAttachments, wikiEvidence);
 
-    try {
-      groqResponse = await fetch(GROQ_ENDPOINT, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          messages: [
-            {
-              role: "system",
-              content: systemPrompt,
-            },
-            ...modelHistory,
-            { role: "user", content: question },
-          ],
-          temperature: 0.2,
-          reasoning_effort: "medium",
-          include_reasoning: false,
-          max_completion_tokens: MAX_COMPLETION_TOKENS,
-          stream: false,
-        }),
-        signal: controller.signal,
-      });
-    } catch (error) {
-      if (error instanceof DOMException && error.name === "AbortError") {
-        throw new RequestError(504, "Die Antwort hat zu lange gedauert. Bitte versuche es erneut.");
-      }
-      console.error("Groq request failed.", error instanceof Error ? error.message : "Unknown error");
-      throw new RequestError(502, "Der Chat ist momentan nicht erreichbar. Bitte versuche es später erneut.");
-    } finally {
-      clearTimeout(timeout);
-    }
+    if (!apiKey) {
+      console.error("GROQ_API_KEY is not configured; returning grounded evidence.");
+    } else {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+      try {
+        const groqResponse = await fetch(GROQ_ENDPOINT, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: MODEL,
+            messages: [
+              {
+                role: "system",
+                content: systemPrompt,
+              },
+              ...modelHistory,
+              { role: "user", content: question },
+            ],
+            temperature: 0.2,
+            reasoning_effort: "medium",
+            include_reasoning: false,
+            max_completion_tokens: MAX_COMPLETION_TOKENS,
+            stream: false,
+          }),
+          signal: controller.signal,
+        });
 
-    if (!groqResponse.ok) {
-      console.error("Groq returned an error status.", groqResponse.status);
-      if (groqResponse.status === 429) {
-        throw new RequestError(
-          429,
-          "Das kostenlose Gesamtkontingent ist momentan ausgelastet.",
-          { "Retry-After": groqResponse.headers.get("retry-after") ?? "60" },
+        if (!groqResponse.ok) {
+          console.error(
+            "Groq returned an error status; returning grounded evidence.",
+            groqResponse.status,
+          );
+        } else {
+          try {
+            const modelAnswer = extractGroqAnswer(await groqResponse.json());
+            if (modelAnswer) {
+              answer = modelAnswer;
+            } else {
+              console.error("Groq returned an empty answer; returning grounded evidence.");
+            }
+          } catch {
+            console.error("Groq returned invalid JSON; returning grounded evidence.");
+          }
+        }
+      } catch (error) {
+        console.error(
+          error instanceof DOMException && error.name === "AbortError"
+            ? "Groq request timed out; returning grounded evidence."
+            : "Groq request failed; returning grounded evidence.",
+          error instanceof Error ? error.message : "Unknown error",
         );
+      } finally {
+        clearTimeout(timeout);
       }
-      throw new RequestError(
-        502,
-        "Die Anfrage konnte momentan nicht beantwortet werden.",
-        { "X-TrainWiki-Upstream-Status": String(groqResponse.status) },
-      );
-    }
-
-    let groqPayload: unknown;
-    try {
-      groqPayload = await groqResponse.json();
-    } catch {
-      throw new RequestError(
-        502,
-        "Der Antwortdienst hat ungültige Daten geliefert.",
-        { "X-TrainWiki-Upstream-Status": "invalid-json" },
-      );
-    }
-
-    let answer = extractGroqAnswer(groqPayload);
-    if (!answer) {
-      throw new RequestError(
-        502,
-        "Der Antwortdienst hat keine Antwort geliefert.",
-        { "X-TrainWiki-Upstream-Status": "empty-answer" },
-      );
     }
 
     const availableCitationNumbers = [
