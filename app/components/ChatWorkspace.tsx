@@ -14,6 +14,7 @@ import {
   MAX_CHAT_ATTACHMENTS,
   type ExtractedChatAttachment,
 } from "../../lib/client-document-extraction";
+import { repairCommonMojibake } from "../../lib/text-encoding";
 
 const MAX_QUESTION_CHARS = 3_000;
 const MAX_HISTORY_MESSAGES = 8;
@@ -100,7 +101,7 @@ function collectExchanges(messages: readonly Message[]): ChatExchange[] {
 }
 
 function cleanPublicLabel(value: string) {
-  return value
+  return repairCommonMojibake(value)
     .normalize("NFKC")
     .replace(/[\u0000-\u001f\u007f]/g, " ")
     .replace(/\s+/g, " ")
@@ -437,7 +438,17 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
                 ))}
               </div>
             )}
-            <div className="attachment-controls">
+            {attachments.length > 0 && (
+              <label className="learn-toggle">
+                <input
+                  checked={addAttachmentsToWiki}
+                  onChange={(event) => setAddAttachmentsToWiki(event.target.checked)}
+                  type="checkbox"
+                />
+                Zur Wissensbasis hinzufügen
+              </label>
+            )}
+            <div className="composer-actions">
               <input
                 accept=".md,.pdf,.html,.htm,.docx,.xlsx"
                 disabled={isLoading || isExtracting || attachments.length >= MAX_CHAT_ATTACHMENTS}
@@ -453,21 +464,15 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
                 onClick={() => fileInputRef.current?.click()}
                 type="button"
               >
-                {isExtracting ? "Lese Dokumente …" : `Dokumente (${attachments.length}/5)`}
+                {isExtracting
+                  ? "Dokumente werden gelesen …"
+                  : `Dokumente anfügen${attachments.length > 0 ? ` (${attachments.length}/5)` : ""}`}
               </button>
-              {attachments.length > 0 && (
-                <label className="learn-toggle">
-                  <input
-                    checked={addAttachmentsToWiki}
-                    onChange={(event) => setAddAttachmentsToWiki(event.target.checked)}
-                    type="checkbox"
-                  />
-                  Zur Wissensbasis hinzufügen
-                </label>
-              )}
-            </div>
-            <div className="composer-footer">
-              <button disabled={isLoading || isExtracting || !draft.trim()} type="submit">
+              <button
+                className="send-button"
+                disabled={isLoading || isExtracting || !draft.trim()}
+                type="submit"
+              >
                 {isLoading ? "Warten …" : "Senden"}
               </button>
             </div>

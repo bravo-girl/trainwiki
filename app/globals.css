@@ -1847,12 +1847,13 @@ a {
   min-height: 52px;
 }
 
-.attachment-controls {
+.composer-actions {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  justify-content: space-between;
   margin-top: 7px;
+  width: 100%;
 }
 
 .attachment-button {
@@ -1862,8 +1863,15 @@ a {
   color: var(--ink);
   cursor: pointer;
   font-size: 11px;
-  min-height: 36px;
-  padding: 7px 10px;
+  min-height: 34px;
+  padding: 6px 9px;
+}
+
+.composer-actions .send-button {
+  margin-left: auto;
+  min-height: 34px;
+  min-width: 68px;
+  padding: 6px 12px;
 }
 
 .attachment-list {
@@ -1899,6 +1907,7 @@ a {
   display: inline-flex;
   font-size: 10px;
   gap: 5px;
+  margin-top: 7px;
 }
 
 .learn-toggle input {
@@ -1907,18 +1916,6 @@ a {
   width: 16px;
 }
 
-.chat-layout-lean .composer-footer {
-  justify-content: space-between;
-}
-
-.chat-layout-lean .composer-footer > span {
-  display: block;
-}
-
-.chat-layout-lean .composer-footer button {
-  min-height: 38px;
-  min-width: 76px;
-}
 
 .session-note {
   color: var(--muted);
