@@ -1248,15 +1248,17 @@ def write_seed(
                 ordinal += 1
                 chunk_count += 1
 
-    # Keep multi-row inserts below the stricter compound-select limit used by
-    # the hosted D1 migration runner.
-    for start in range(0, len(term_rows), 20):
-        values = ",".join(
-            f"({sql_string(chunk_id)},{sql_string(term)},{frequency})"
-            for chunk_id, term, frequency in term_rows[start : start + 20]
+    # json_each avoids D1's compound-SELECT limit for large multi-row VALUES
+    # clauses while keeping the number of migration statements bounded.
+    for start in range(0, len(term_rows), 100):
+        payload = json_text(
+            [list(row) for row in term_rows[start : start + 100]]
         )
         statements.append(
-            "INSERT INTO wiki_terms (chunk_id,term,frequency) VALUES " + values + ";"
+            "INSERT INTO wiki_terms (chunk_id,term,frequency) "
+            "SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),"
+            "json_extract(value,'$[2]') FROM json_each("
+            f"{sql_string(payload)});"
         )
 
     job_id = "job_bootstrap_" + corpus_sha[:20]
