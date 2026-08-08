@@ -4,7 +4,6 @@ import test from "node:test";
 import {
   createHtmlExport,
   createMarkdownExport,
-  createPdfPrintHtml,
   downloadChatExport,
   prepareChatExport,
 } from "../lib/chat-export.ts";
@@ -63,7 +62,7 @@ test("creates a standalone, readable HTML document without executing input HTML"
   assert.doesNotMatch(html, /openai|chatgpt|groq|gpt-oss/i);
 });
 
-test("prepares deterministic filenames and the lightweight PDF print document", () => {
+test("prepares deterministic filenames for downloadable exports", () => {
   const markdown = prepareChatExport(conversation, "md", {
     fileName: "Meine Sitzung.md",
     generatedAt: timestamp,
@@ -71,19 +70,12 @@ test("prepares deterministic filenames and the lightweight PDF print document", 
   assert.equal(markdown.fileName, "Meine-Sitzung.md");
   assert.equal(markdown.mimeType, "text/markdown;charset=utf-8");
 
-  const printable = prepareChatExport(conversation, "pdf", {
-    fileName: "Antwort.pdf",
+  const html = prepareChatExport(conversation, "html", {
+    fileName: "Antwort.html",
     generatedAt: timestamp,
   });
-  assert.equal(printable.fileName, "Antwort.pdf");
-  assert.equal(printable.mimeType, "text/html;charset=utf-8");
-  assert.match(printable.content, /<body data-purpose="print">/);
-  assert.match(printable.content, /@media print/);
-  assert.doesNotMatch(printable.content, /<script[\s>]/i);
-  assert.equal(
-    printable.content,
-    createPdfPrintHtml(conversation, { generatedAt: timestamp }),
-  );
+  assert.equal(html.fileName, "Antwort.html");
+  assert.equal(html.mimeType, "text/html;charset=utf-8");
 });
 
 test("rejects empty exports and keeps browser-only side effects out of SSR", () => {

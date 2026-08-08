@@ -60,8 +60,7 @@ test("keeps the chat mobile-first and exposes pair and session exports", async (
 
   assert.match(source, /downloadExchange/);
   assert.match(source, /downloadSession/);
-  assert.match(exportSource, /document\.createElement\("iframe"\)/);
-  assert.doesNotMatch(exportSource, /window\.open\(/);
+  assert.doesNotMatch(exportSource, /PDF|format === "pdf"/i);
   assert.match(source, /MAX_CHAT_ATTACHMENTS/);
   assert.match(source, /\.md,\.pdf,\.html,\.htm,\.docx,\.xlsx/);
   assert.match(source, /Zur Wissensbasis hinzufügen/);
@@ -70,14 +69,13 @@ test("keeps the chat mobile-first and exposes pair and session exports", async (
   assert.match(css, /\.composer-actions/);
   assert.match(css, /\.composer-actions \.send-button/);
   assert.match(css, /background: var\(--forest\)/);
-  assert.match(css, /\.suggestion-row::-webkit-scrollbar/);
-  assert.match(css, /scrollbar-width: none/);
-  assert.match(css, /@media \(hover: hover\)/);
+  assert.match(css, /\.suggestion-row \{[\s\S]*flex-wrap: wrap/);
+  assert.doesNotMatch(css, /\.suggestion-row::-webkit-scrollbar/);
   assert.match(source, /useState\(true\)/);
   assert.match(source, /Zufällige Fragen/);
   assert.match(source, /Diese Antwort/);
   assert.match(source, /Aktuelle Sitzung/);
-  assert.match(source, /\["md", "html", "pdf"\]/);
+  assert.match(source, /\["md", "html"\]/);
   assert.match(css, /\.chat-layout-lean/);
   assert.ok(
     css.indexOf(".chat-layout-lean") < css.indexOf("@media (min-width: 720px)"),

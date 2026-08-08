@@ -189,11 +189,10 @@ function ExportButtons({
         <div>
           <span>Diese Antwort</span>
           <div className="export-actions">
-            {(["md", "html", "pdf"] as const).map((format) => (
+            {(["md", "html"] as const).map((format) => (
               <button
                 key={format}
                 onClick={() => run("exchange", format)}
-                title={format === "pdf" ? "Als PDF über den Druckdialog speichern" : undefined}
                 type="button"
               >
                 {format.toUpperCase()}
@@ -204,11 +203,10 @@ function ExportButtons({
         <div>
           <span>Aktuelle Sitzung</span>
           <div className="export-actions">
-            {(["md", "html", "pdf"] as const).map((format) => (
+            {(["md", "html"] as const).map((format) => (
               <button
                 key={format}
                 onClick={() => run("session", format)}
-                title={format === "pdf" ? "Als PDF über den Druckdialog speichern" : undefined}
                 type="button"
               >
                 {format.toUpperCase()}

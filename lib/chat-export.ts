@@ -3,7 +3,7 @@ export interface ChatExchange {
   answer: string;
 }
 
-export type ChatExportFormat = "md" | "html" | "pdf";
+export type ChatExportFormat = "md" | "html";
 
 export interface ChatExportOptions {
   /** Visible document title. */
@@ -66,7 +66,7 @@ function normalizeDate(value: Date | string | undefined): string {
 }
 
 function safeFileBase(value: string): string {
-  const withoutKnownExtension = value.replace(/\.(?:md|html|pdf)$/i, "");
+  const withoutKnownExtension = value.replace(/\.(?:md|html)$/i, "");
   const safe = withoutKnownExtension
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -319,14 +319,6 @@ export function createHtmlExport(
   return createStandaloneDocument(exchanges, options, false);
 }
 
-/** HTML document intended for the browser print dialog's “Save as PDF” flow. */
-export function createPdfPrintHtml(
-  exchanges: readonly ChatExchange[],
-  options: ChatExportOptions = {},
-): string {
-  return createStandaloneDocument(exchanges, options, true);
-}
-
 export function prepareChatExport(
   exchanges: readonly ChatExchange[],
   format: ChatExportFormat,
@@ -350,20 +342,11 @@ export function prepareChatExport(
       fileName: `${baseName}.html`,
     };
   }
-  if (format === "pdf") {
-    return {
-      format,
-      content: createPdfPrintHtml(exchanges, options),
-      mimeType: "text/html;charset=utf-8",
-      fileName: `${baseName}.pdf`,
-    };
-  }
   throw new TypeError(`Nicht unterstütztes Exportformat: ${String(format)}`);
 }
 
 /**
- * Download Markdown/HTML, or open the native print dialog for PDF.
- * PDF printing uses an in-page frame because embedded browsers often block popups.
+ * Download a Markdown or standalone HTML export.
  */
 export function downloadChatExport(
   exchanges: readonly ChatExchange[],
@@ -373,36 +356,6 @@ export function downloadChatExport(
   const prepared = prepareChatExport(exchanges, format, options);
   if (typeof window === "undefined" || typeof document === "undefined") {
     throw new Error("Downloads sind nur im Browser verfügbar.");
-  }
-
-  if (format === "pdf") {
-    const printFrame = document.createElement("iframe");
-    printFrame.setAttribute("aria-hidden", "true");
-    printFrame.style.position = "fixed";
-    printFrame.style.inset = "0 auto auto 0";
-    printFrame.style.width = "1px";
-    printFrame.style.height = "1px";
-    printFrame.style.border = "0";
-    printFrame.style.opacity = "0";
-    document.body.append(printFrame);
-
-    const printWindow = printFrame.contentWindow;
-    if (!printWindow) {
-      printFrame.remove();
-      throw new Error("Der PDF-Druckdialog ist in diesem Browser nicht verfügbar.");
-    }
-    printWindow.document.open();
-    printWindow.document.write(prepared.content);
-    printWindow.document.close();
-
-    const cleanup = () => printFrame.remove();
-    printWindow.addEventListener("afterprint", cleanup, { once: true });
-    window.setTimeout(() => {
-      printWindow.focus();
-      printWindow.print();
-      window.setTimeout(cleanup, 60_000);
-    }, 0);
-    return prepared;
   }
 
   const blob = new Blob([prepared.content], { type: prepared.mimeType });
