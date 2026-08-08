@@ -17,6 +17,7 @@ import {
 
 const MAX_QUESTION_CHARS = 3_000;
 const MAX_HISTORY_MESSAGES = 8;
+const MAX_HISTORY_MESSAGE_CHARS = 2_500;
 type ChatSource = {
   number: number;
   title: string;
@@ -38,6 +39,15 @@ type ChatResponse = {
   error?: string;
   sources?: unknown;
 };
+
+function compactHistoryContent(content: string) {
+  if (content.length <= MAX_HISTORY_MESSAGE_CHARS) return content;
+  const separator = "\n\n[… längere Nachricht gekürzt …]\n\n";
+  const available = MAX_HISTORY_MESSAGE_CHARS - separator.length;
+  const headLength = Math.ceil(available / 2);
+  const tailLength = Math.floor(available / 2);
+  return `${content.slice(0, headLength)}${separator}${content.slice(-tailLength)}`;
+}
 
 function MarkdownAnswer({ children }: { children: string }) {
   return (
@@ -285,7 +295,10 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
     const history = messages
       .filter((message) => message.includeInContext)
       .slice(-MAX_HISTORY_MESSAGES)
-      .map((message) => ({ role: message.role, content: message.text }));
+      .map((message) => ({
+        role: message.role,
+        content: compactHistoryContent(message.text),
+      }));
 
     setMessages((current) => [...current, userMessage]);
     setDraft("");

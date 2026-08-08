@@ -330,6 +330,46 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
   }
 });
 
+test("safely compacts a long prior answer instead of rejecting the next question", async () => {
+  const originalFetch = globalThis.fetch;
+  let upstreamRequest;
+  globalThis.fetch = async (input, init) => {
+    if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
+      upstreamRequest = JSON.parse(init.body);
+      return Response.json({ choices: [{ message: { content: "BNetzA ist die Abkürzung [1]" } }] });
+    }
+    return originalFetch(input, init);
+  };
+
+  try {
+    const response = await call(
+      "/api/chat",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", origin: "http://localhost" },
+        body: JSON.stringify({
+          question: "BNetzA statt Benetza?",
+          history: [
+            { role: "user", content: "Erkläre das Trassenpreissystem detailliert." },
+            { role: "assistant", content: `Anfang der langen Antwort ${"x".repeat(4_000)} Ende der langen Antwort` },
+          ],
+          turnId: testTurnId,
+        }),
+      },
+      { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
+    );
+    assert.equal(response.status, 200);
+    const historyMessage = upstreamRequest.messages.at(-2);
+    assert.equal(historyMessage.role, "assistant");
+    assert.equal(historyMessage.content.length, 2_500);
+    assert.match(historyMessage.content, /längere Nachricht gekürzt/);
+    assert.match(historyMessage.content, /^Anfang der langen Antwort/);
+    assert.match(historyMessage.content, /Ende der langen Antwort$/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("prioritizes temporary chat documents without permanently importing them", async () => {
   const originalFetch = globalThis.fetch;
   let upstreamRequest;

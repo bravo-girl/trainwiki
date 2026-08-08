@@ -199,8 +199,19 @@ function parseMessage(value: unknown): ConversationMessage | null {
   if (typeof candidate.content !== "string") return null;
 
   const content = candidate.content.trim();
-  if (!content || content.length > MAX_HISTORY_MESSAGE_CHARS) return null;
-  return { role: candidate.role, content };
+  if (!content) return null;
+  if (content.length <= MAX_HISTORY_MESSAGE_CHARS) {
+    return { role: candidate.role, content };
+  }
+
+  const separator = "\n\n[… längere Nachricht gekürzt …]\n\n";
+  const available = MAX_HISTORY_MESSAGE_CHARS - separator.length;
+  const headLength = Math.ceil(available / 2);
+  const tailLength = Math.floor(available / 2);
+  return {
+    role: candidate.role,
+    content: `${content.slice(0, headLength)}${separator}${content.slice(-tailLength)}`,
+  };
 }
 
 function parsePayload(payload: unknown) {
