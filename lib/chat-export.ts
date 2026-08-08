@@ -363,7 +363,7 @@ export function prepareChatExport(
 
 /**
  * Download Markdown/HTML, or open the native print dialog for PDF.
- * Call this synchronously from a click handler so browsers allow the print tab.
+ * PDF printing uses an in-page frame because embedded browsers often block popups.
  */
 export function downloadChatExport(
   exchanges: readonly ChatExchange[],
@@ -376,16 +376,32 @@ export function downloadChatExport(
   }
 
   if (format === "pdf") {
-    const printWindow = window.open("about:blank", "_blank");
+    const printFrame = document.createElement("iframe");
+    printFrame.setAttribute("aria-hidden", "true");
+    printFrame.style.position = "fixed";
+    printFrame.style.inset = "0 auto auto 0";
+    printFrame.style.width = "1px";
+    printFrame.style.height = "1px";
+    printFrame.style.border = "0";
+    printFrame.style.opacity = "0";
+    document.body.append(printFrame);
+
+    const printWindow = printFrame.contentWindow;
     if (!printWindow) {
-      throw new Error("Das Druckfenster wurde vom Browser blockiert.");
+      printFrame.remove();
+      throw new Error("Der PDF-Druckdialog ist in diesem Browser nicht verfügbar.");
     }
-    printWindow.opener = null;
     printWindow.document.open();
     printWindow.document.write(prepared.content);
     printWindow.document.close();
-    printWindow.focus();
-    printWindow.setTimeout(() => printWindow.print(), 0);
+
+    const cleanup = () => printFrame.remove();
+    printWindow.addEventListener("afterprint", cleanup, { once: true });
+    window.setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+      window.setTimeout(cleanup, 60_000);
+    }, 0);
     return prepared;
   }
 

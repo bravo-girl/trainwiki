@@ -17,7 +17,7 @@ import {
 import { repairCommonMojibake } from "../../lib/text-encoding";
 
 const MAX_QUESTION_CHARS = 3_000;
-const MAX_HISTORY_MESSAGES = 8;
+const MAX_HISTORY_MESSAGES = 40;
 const MAX_HISTORY_MESSAGE_CHARS = 2_500;
 type ChatSource = {
   number: number;

@@ -354,13 +354,13 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
     assert.match(payload.messages[0].content, /Zwischenüberschriften/);
     assert.deepEqual(
       payload.messages.slice(1, -1).map((message) => message.content.slice(0, 5)),
-      ["neu-1", "neu-2", "neu-3", "neu-4"],
+      ["alt-1", "alt-2", "neu-1", "neu-2", "neu-3", "neu-4"],
     );
     assert.ok(
       payload.messages.slice(1, -1).reduce(
         (sum, message) => sum + message.content.length,
         0,
-      ) <= 3_000,
+      ) <= 48_000,
     );
   } finally {
     globalThis.fetch = originalFetch;

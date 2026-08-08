@@ -49,16 +49,19 @@ test("wires the safe Markdown renderer into assistant messages", async () => {
 });
 
 test("keeps the chat mobile-first and exposes pair and session exports", async () => {
-  const [source, css] = await Promise.all([
+  const [source, css, exportSource] = await Promise.all([
     readFile(
       new URL("../app/components/ChatWorkspace.tsx", import.meta.url),
       "utf8",
     ),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../lib/chat-export.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(source, /downloadExchange/);
   assert.match(source, /downloadSession/);
+  assert.match(exportSource, /document\.createElement\("iframe"\)/);
+  assert.doesNotMatch(exportSource, /window\.open\(/);
   assert.match(source, /MAX_CHAT_ATTACHMENTS/);
   assert.match(source, /\.md,\.pdf,\.html,\.htm,\.docx,\.xlsx/);
   assert.match(source, /Zur Wissensbasis hinzufügen/);
