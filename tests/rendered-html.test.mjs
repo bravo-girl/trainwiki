@@ -341,7 +341,7 @@ test("proxies chat only to the fixed Groq GPT-OSS 120B model", async () => {
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-120b");
-    assert.equal(payload.max_completion_tokens, 4096);
+    assert.equal(payload.max_completion_tokens, 3000);
     assert.equal(payload.reasoning_effort, "high");
     assert.equal(payload.reasoning_format, "hidden");
     assert.equal(payload.stream, false);
@@ -359,7 +359,7 @@ test("proxies chat only to the fixed Groq GPT-OSS 120B model", async () => {
       ["alt-1", "alt-2", "neu-1", "neu-2", "neu-3", "neu-4"],
     );
     assert.ok(
-      payload.messages.reduce((sum, message) => sum + message.content.length, 0) <= 20_000,
+      payload.messages.reduce((sum, message) => sum + message.content.length, 0) <= 12_000,
     );
   } finally {
     globalThis.fetch = originalFetch;

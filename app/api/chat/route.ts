@@ -32,9 +32,9 @@ const MAX_MODEL_HISTORY_MESSAGES = 40;
 // Groq Free Tier allows 8,000 TPM for GPT-OSS 120B. German text often needs
 // more tokens per character than English, so keep the complete request below
 // a conservative character envelope without limiting the generated answer.
-const MAX_GROQ_INPUT_CHARS = 20_000;
-const MAX_EVIDENCE_CONTEXT_CHARS = 13_000;
-const MAX_COMPLETION_TOKENS = 4_096;
+const MAX_GROQ_INPUT_CHARS = 12_000;
+const MAX_EVIDENCE_CONTEXT_CHARS = 7_000;
+const MAX_COMPLETION_TOKENS = 3_000;
 const MAX_ATTACHMENTS = 5;
 const MAX_ATTACHMENT_TEXT_CHARS = 12_000;
 const MAX_ATTACHMENT_TOTAL_CHARS = 50_000;
