@@ -1891,10 +1891,33 @@ a {
 }
 
 .composer-actions .send-button {
+  background: var(--forest);
+  border: 1px solid var(--forest);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
   margin-left: auto;
   min-height: 34px;
   min-width: 68px;
   padding: 6px 12px;
+}
+
+.composer-actions .send-button:hover:not(:disabled),
+.composer-actions .send-button:focus-visible:not(:disabled) {
+  background: var(--forest-2);
+  border-color: var(--forest-2);
+}
+
+.composer-actions .send-button:focus-visible {
+  outline: 3px solid rgb(31 91 77 / 18%);
+  outline-offset: 2px;
+}
+
+.composer-actions .send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
 }
 
 .attachment-list {
