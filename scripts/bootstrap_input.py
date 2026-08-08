@@ -14,10 +14,13 @@ import json
 import re
 import sys
 import unicodedata
+import zipfile
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
+from html.parser import HTMLParser
+from xml.etree import ElementTree
 from urllib.parse import quote, unquote, urlparse, urlsplit, urlunsplit
 
 try:
@@ -513,6 +516,7 @@ def deduplicate_documents(
     previous_by_filename = {
         item.original_filename.casefold(): item for item in previous_sources
     }
+    previous_by_raw = {item.sha256: item for item in previous_sources}
     previous_by_url: dict[str, PreviousSource] = {}
     for item in previous_sources:
         if item.canonical_url:
@@ -525,8 +529,10 @@ def deduplicate_documents(
     used_source_ids = set(previous_by_id)
     current_by_source: dict[str, SourceDocument] = {}
     current_by_url: dict[str, SourceDocument] = {}
+    current_by_raw: dict[str, SourceDocument] = {}
     documents: list[SourceDocument] = []
     duplicate_files: list[dict[str, object]] = []
+    pending_aliases: dict[str, list[dict[str, object]]] = {}
     identity_conflicts: list[dict[str, object]] = []
 
     for document in sorted(candidates, key=lambda item: item.input_path.name.casefold()):
@@ -540,6 +546,12 @@ def deduplicate_documents(
         filename_match = previous_by_filename.get(document.input_path.name.casefold())
         if filename_match:
             add_match(filename_match.source_id, "previous_filename")
+        raw_match = previous_by_raw.get(document.sha256)
+        if raw_match:
+            add_match(raw_match.source_id, "raw_sha256")
+        current_raw_match = current_by_raw.get(document.sha256)
+        if current_raw_match:
+            add_match(current_raw_match.source_id, "current_raw_sha256")
         if document.canonical_url:
             url_match = previous_by_url.get(document.canonical_url)
             if url_match:
@@ -547,6 +559,24 @@ def deduplicate_documents(
             current_url_match = current_by_url.get(document.canonical_url)
             if current_url_match:
                 add_match(current_url_match.source_id, "current_canonical_url")
+        if raw_match and not filename_match and not document.declared_source_id:
+            alias = {
+                "filename": document.input_path.name,
+                "content_sha256": document.sha256,
+                "normalized_sha256": document.normalized_sha256,
+                "canonical_url": document.canonical_url,
+                "reason": "same_bytes_as_existing_source",
+            }
+            pending_aliases.setdefault(raw_match.source_id, []).append(alias)
+            duplicate_files.append(
+                alias
+                | {
+                    "status": "duplicate",
+                    "duplicate_of": raw_match.original_filename,
+                    "source_id": raw_match.source_id,
+                }
+            )
+            continue
         if len(matches) > 1:
             identity_conflicts.append(
                 {
@@ -620,6 +650,7 @@ def deduplicate_documents(
             continue
 
         document.source_id = source_id
+        document.aliases.extend(pending_aliases.pop(source_id, []))
         document.slug = previous.slug if previous else allocate_slug(
             slugify(document.input_path.stem), used_slugs
         )
@@ -677,6 +708,7 @@ def deduplicate_documents(
 
         documents.append(document)
         current_by_source[source_id] = document
+        current_by_raw[document.sha256] = document
         if document.canonical_url:
             current_by_url[document.canonical_url] = document
 
@@ -861,6 +893,73 @@ def extract_pdf(path: Path) -> tuple[tuple[Section, ...], dict[str, list[int]]]:
     if not sections:
         raise ValueError(f"Kein extrahierbarer Text: {path.name}")
     return tuple(sections), findings | {"__page_count__": [page_count]}
+
+
+class _VisibleHtmlText(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.hidden = 0
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.casefold() in {"script", "style", "noscript"}:
+            self.hidden += 1
+        elif tag.casefold() in {"p", "br", "div", "li", "tr", "h1", "h2", "h3", "h4"}:
+            self.parts.append("\n")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.casefold() in {"script", "style", "noscript"} and self.hidden:
+            self.hidden -= 1
+        elif tag.casefold() in {"p", "div", "li", "tr", "h1", "h2", "h3", "h4"}:
+            self.parts.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if not self.hidden:
+            self.parts.append(data)
+
+
+def extract_html(path: Path) -> tuple[Section, ...]:
+    parser = _VisibleHtmlText()
+    parser.feed(path.read_text(encoding="utf-8-sig", errors="replace"))
+    text = redact_contact_details(clean_extracted_text(" ".join(parser.parts)))
+    if not text:
+        raise ValueError(f"Kein extrahierbarer Text: {path.name}")
+    return (Section(heading="Inhalt", text=text),)
+
+
+def extract_open_xml(path: Path) -> tuple[Section, ...]:
+    suffix = path.suffix.casefold()
+    prefix = "ppt/slides/slide" if suffix == ".pptx" else "xl/worksheets/sheet"
+    sections: list[Section] = []
+    with zipfile.ZipFile(path) as archive:
+        shared: list[str] = []
+        if suffix == ".xlsx" and "xl/sharedStrings.xml" in archive.namelist():
+            root = ElementTree.fromstring(archive.read("xl/sharedStrings.xml"))
+            shared = [" ".join(node.itertext()).strip() for node in root]
+        names = sorted(
+            (name for name in archive.namelist() if name.startswith(prefix) and name.endswith(".xml")),
+            key=lambda name: [int(value) for value in re.findall(r"\d+", name)] or [0],
+        )
+        for ordinal, name in enumerate(names, start=1):
+            root = ElementTree.fromstring(archive.read(name))
+            values: list[str] = []
+            for node in root.iter():
+                local = node.tag.rsplit("}", 1)[-1]
+                if suffix == ".pptx" and local == "t" and node.text:
+                    values.append(node.text)
+                elif suffix == ".xlsx" and local == "c":
+                    value = next((child.text for child in node if child.tag.rsplit("}", 1)[-1] == "v"), None)
+                    if value is not None:
+                        if node.attrib.get("t") == "s" and value.isdigit() and int(value) < len(shared):
+                            value = shared[int(value)]
+                        values.append(value)
+            text = redact_contact_details(clean_extracted_text("\n".join(values)))
+            if text:
+                label = "Folie" if suffix == ".pptx" else "Tabelle"
+                sections.append(Section(heading=f"{label} {ordinal}", text=text, page=ordinal))
+    if not sections:
+        raise ValueError(f"Kein extrahierbarer Text: {path.name}")
+    return tuple(sections)
 
 
 def split_long_text(text: str, limit: int = 1_800) -> list[str]:
@@ -1106,15 +1205,18 @@ def write_seed(
         metadata: dict[str, object],
         created_at: str,
     ) -> str:
+        conflict_action = (
+            "ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET "
+            "identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,"
+            "source_id=excluded.source_id,source_version_id=excluded.source_version_id,"
+            "metadata_json=excluded.metadata_json;"
+        )
         return (
             "INSERT INTO source_identities "
             "(identity_type,identity_hash,source_id,source_version_id,metadata_json,created_at) VALUES "
             f"({sql_string(identity_type)},{sql_string(identity_hash)},{sql_string(source_id)},"
             f"{sql_string(source_version_id)},{sql_string(json_text(metadata))},{sql_string(created_at)}) "
-            "ON CONFLICT(identity_type,identity_hash,source_id) DO UPDATE SET "
-            "identity_type=excluded.identity_type,identity_hash=excluded.identity_hash,"
-            "source_id=excluded.source_id,source_version_id=excluded.source_version_id,"
-            "metadata_json=excluded.metadata_json;"
+            + conflict_action
         )
 
     for document in documents:
@@ -1371,7 +1473,7 @@ def main() -> int:
             path
             for path in input_dir.iterdir()
             if path.is_file()
-            and path.suffix.casefold() in {".pdf", ".md", ".markdown", ".json", ".xml"}
+            and path.suffix.casefold() in {".pdf", ".md", ".markdown", ".json", ".xml", ".html", ".htm", ".pptx", ".xlsx"}
         ],
         key=lambda path: path.name.casefold(),
     )
@@ -1437,9 +1539,11 @@ def main() -> int:
                 previous_source = previous_by_filename_and_hash.get(
                     (path.name.casefold(), digest)
                 )
-                raw_canonical_url = link_map.get(path.name.casefold()) or (
+                # A content-addressed version is immutable. Newly discovered link
+                # context must not rewrite provenance already sealed in its manifest.
+                raw_canonical_url = (
                     previous_source.canonical_url if previous_source else None
-                )
+                ) or link_map.get(path.name.casefold())
                 canonical_url = normalize_source_url(raw_canonical_url)
                 if raw_canonical_url and not canonical_url:
                     raise ValueError("Ungültige kanonische HTTP(S)-URL.")
@@ -1449,9 +1553,9 @@ def main() -> int:
                     title=title,
                     media_type="application/pdf",
                     canonical_url=canonical_url,
-                    origin_page_url=link_origin_map.get(path.name.casefold()) or (
+                    origin_page_url=(
                         previous_source.origin_page_url if previous_source else None
-                    ),
+                    ) or link_origin_map.get(path.name.casefold()),
                     sha256=digest,
                     sections=sections,
                     page_count=page_count,
@@ -1480,6 +1584,18 @@ def main() -> int:
                     converter_name="identity-markdown",
                     converter_version="1",
                     declared_source_id=metadata.get("source_id") or None,
+                )
+            elif path.suffix.casefold() in {".html", ".htm", ".pptx", ".xlsx"}:
+                suffix = path.suffix.casefold()
+                sections = extract_html(path) if suffix in {".html", ".htm"} else extract_open_xml(path)
+                document = SourceDocument(
+                    input_path=path, slug=slug, title=human_title(path),
+                    media_type={".html": "text/html", ".htm": "text/html", ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation", ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}[suffix],
+                    canonical_url=link_map.get(path.name.casefold()),
+                    origin_page_url=link_origin_map.get(path.name.casefold()), sha256=digest,
+                    sections=sections, page_count=len(sections) if suffix == ".pptx" else None,
+                    converter_name="stdlib-openxml" if suffix in {".pptx", ".xlsx"} else "stdlib-html",
+                    converter_version="1",
                 )
             else:
                 text = raw.decode("utf-8-sig")
@@ -1796,12 +1912,16 @@ def main() -> int:
         repo,
         f"outputs/bootstrap/{corpus_sha}/seed.sql",
     )
-    chunk_count, term_count = write_seed(
-        seed_path,
-        documents,
-        imported_at,
-        corpus_sha,
-    )
+    seed_documents = [document for document in documents if document.run_status != "retry_noop"]
+    if seed_documents:
+        chunk_count, term_count = write_seed(
+            seed_path,
+            seed_documents,
+            imported_at,
+            corpus_sha,
+        )
+    else:
+        chunk_count, term_count = 0, 0
     print(
         json_text(
             {

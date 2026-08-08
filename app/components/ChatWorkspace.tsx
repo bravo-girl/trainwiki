@@ -38,15 +38,9 @@ type ChatResponse = {
 const welcomeMessage: Message = {
   id: 1,
   role: "assistant",
-  text: "Hallo! Stelle mir eine Frage zu den eingelesenen TAF/TAP-Unterlagen.",
+  text: "Hallo! Stelle eine Frage zu den eingelesenen Unterlagen.",
   includeInContext: false,
 };
-
-const suggestions = [
-  "Was ist TAF/TAP TSI?",
-  "Welche Identifikatoren werden verwendet?",
-  "Was ändert sich für Eisenbahnverkehrsunternehmen?",
-];
 
 function MarkdownAnswer({ children }: { children: string }) {
   return (
@@ -328,10 +322,7 @@ export function ChatWorkspace() {
     <main className="chat-layout chat-layout-lean">
       <section className="conversation-shell chat-panel">
         <header className="conversation-header chat-topbar">
-          <div>
-            <p className="eyebrow">Wissenschat</p>
-            <h1>Frag TrainWiki.</h1>
-          </div>
+          <h1>Was möchtest du wissen?</h1>
           <button className="chat-reset" disabled={isLoading} onClick={resetConversation} type="button">
             Neu
           </button>
@@ -348,7 +339,7 @@ export function ChatWorkspace() {
               <article className={`message message-${message.role}`} key={message.id}>
                 <div className="message-content">
                   <div className="message-meta">
-                    <strong>{message.role === "assistant" ? "TrainWiki" : "Du"}</strong>
+                    <strong>{message.role === "assistant" ? "Antwort" : "Du"}</strong>
                   </div>
                   {message.role === "assistant" ? (
                     <MarkdownAnswer>{message.text}</MarkdownAnswer>
@@ -373,7 +364,7 @@ export function ChatWorkspace() {
           {isLoading && (
             <article className="message message-assistant" role="status">
               <div className="message-content">
-                <div className="message-meta"><strong>TrainWiki</strong></div>
+                <div className="message-meta"><strong>Antwort</strong></div>
                 <p className="typing-line"><span aria-hidden="true" />Antwort wird vorbereitet …</p>
               </div>
             </article>
@@ -388,28 +379,14 @@ export function ChatWorkspace() {
         </div>
 
         <div className="chat-composer-wrap">
-          {messages.length === 1 && (
-            <div className="suggestion-row" aria-label="Beispielfragen">
-              {suggestions.map((suggestion) => (
-                <button
-                  disabled={isLoading}
-                  key={suggestion}
-                  onClick={() => setDraft(suggestion)}
-                  type="button"
-                >
-                  {suggestion}
-                </button>
-              ))}
-            </div>
-          )}
           <form className="chat-composer" onSubmit={submitQuestion}>
-            <label className="sr-only" htmlFor="chat-question">Frage an TrainWiki</label>
+            <label className="sr-only" htmlFor="chat-question">Frage eingeben</label>
             <textarea
               disabled={isLoading}
               id="chat-question"
               maxLength={MAX_QUESTION_CHARS}
               onChange={(event) => setDraft(event.target.value)}
-              placeholder="Frage stellen …"
+              placeholder="Frage eingeben …"
               rows={2}
               value={draft}
             />

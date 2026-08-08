@@ -105,10 +105,12 @@ test("renders the public, source-bound chat without authentication", async () =>
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Chat · TrainWiki<\/title>/i);
-  assert.match(html, /Frag TrainWiki\./);
-  assert.match(html, /Wissenschat/);
-  assert.match(html, /TAF\/TAP-Unterlagen/);
+  assert.match(html, /<title>TrainWiki<\/title>/i);
+  assert.match(html, /Was möchtest du wissen\?/);
+  assert.match(html, /eingelesenen Unterlagen/);
+  assert.equal((visibleText(html).match(/TrainWiki/gi) ?? []).length, 1);
+  assert.doesNotMatch(visibleText(html).replace(/TrainWiki/i, ""), /Frag den Wiki|TAF\/TAP/i);
+  assert.doesNotMatch(html, />Chat<|>Admin</i);
   assert.doesNotMatch(
     visibleText(html),
     /groq|gpt-oss|chatgpt|openai|cloudflare|dspy|modell/i,
@@ -123,10 +125,11 @@ test("shows the app-owned admin login without a session", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<title>Admin · TrainWiki<\/title>/i);
+  assert.match(html, /<title>TrainWiki<\/title>/i);
   assert.match(html, /Adminzugang/);
   assert.match(html, /Persönlicher Zugangsschlüssel/);
-  assert.doesNotMatch(visibleText(html), /GitHub|Worker|API/i);
+  assert.equal((visibleText(html).match(/TrainWiki/gi) ?? []).length, 1);
+  assert.doesNotMatch(visibleText(html).replace(/TrainWiki/i, ""), /GitHub|Worker|API/i);
   assert.doesNotMatch(html, /Quellen rein\. Wissen wächst\./);
 });
 

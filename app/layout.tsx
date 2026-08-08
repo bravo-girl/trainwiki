@@ -12,10 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: base,
-    title: {
-      default: "TrainWiki",
-      template: "%s · TrainWiki",
-    },
+    title: "TrainWiki",
     description,
     openGraph: {
       title: "TrainWiki · Wissen, das mitdenkt.",

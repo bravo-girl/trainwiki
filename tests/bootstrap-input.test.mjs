@@ -336,7 +336,7 @@ test("removing a previously public source fails closed without a repository diff
   assert.deepEqual(await snapshotFiles(repo), beforeRemoval);
 });
 
-test("corpus and seed keys include logical identity, not only the raw hash multiset", async (t) => {
+test("exact byte duplicates keep one logical identity regardless of alias filename", async (t) => {
   const root = await mkdtemp(path.join(tmpdir(), "trainwiki-seed-key-"));
   t.after(() => rm(root, { recursive: true, force: true }));
   const anonymous = "# Gleicher Inhalt\n\nText.\n";
@@ -361,8 +361,8 @@ test("corpus and seed keys include logical identity, not only the raw hash multi
 
   const first = await importPair("repo-one", "b.md");
   const renamed = await importPair("repo-two", "c.md");
-  assert.notEqual(first.output.corpus_sha256, renamed.output.corpus_sha256);
-  assert.notDeepEqual(
+  assert.equal(first.output.corpus_sha256, renamed.output.corpus_sha256);
+  assert.deepEqual(
     first.index.sources.map((source) => source.source_id).sort(),
     renamed.index.sources.map((source) => source.source_id).sort(),
   );

@@ -42,7 +42,7 @@ export function AdminLogin() {
         <p className="eyebrow">Geschützter Wissensbetrieb</p>
         <h1 id="admin-login-title">Adminzugang</h1>
         <p>
-          TrainWiki prüft einmalig, ob der eingegebene Zugangsschlüssel zum
+          Die Anwendung prüft einmalig, ob der eingegebene Zugangsschlüssel zum
           freigegebenen Administratorkonto gehört. Der Schlüssel wird nicht
           gespeichert; anschließend gilt eine zeitlich begrenzte Sitzung.
         </p>

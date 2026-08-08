@@ -1,39 +1,6 @@
 {
-  "documents": [
-    {
-      "decision": "excluded_from_public_import",
-      "filename": "Kickoff-Ende-zu-Ende-Kundentests-TTT-mit-Identifiern-data.pdf",
-      "page_count": 24,
-      "reasons": [
-        {
-          "detected_by": "visual_review",
-          "marker": "DB Intern / DB internal",
-          "pages": [
-            13
-          ]
-        }
-      ],
-      "sha256": "97504436bbb9c084e054648e4988ff62e02616b1a292226cbfdbe64d32f1a6a5",
-      "size_bytes": 1539640
-    },
-    {
-      "decision": "excluded_from_public_import",
-      "filename": "TAF-TAP-TSI-Dialog-24-Juni-2026-Terminunterlage-data.pdf",
-      "page_count": 40,
-      "reasons": [
-        {
-          "detected_by": "visual_review",
-          "marker": "DB Vertraulich / DB confidential",
-          "pages": [
-            7
-          ]
-        }
-      ],
-      "sha256": "a2ccf12f1dcc1b80ad9598ae0576e7ba2387e15008b3f4bc1b775528684013e9",
-      "size_bytes": 1338699
-    }
-  ],
+  "documents": [],
   "policy": "sensitive documents and identity conflicts remain outside the public corpus",
-  "reviewed_at": "2026-08-08T12:35:15Z",
+  "reviewed_at": "2026-08-08T16:06:49Z",
   "schema_version": 2
 }

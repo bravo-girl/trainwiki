@@ -6,12 +6,11 @@ import {
   AdminWorkspace,
   type AdminLearningProposal,
 } from "../components/AdminWorkspace";
-import { BrandHeader } from "../components/BrandHeader";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Admin",
+  title: "TrainWiki",
   description: "Quellen, Lernvorschläge und Wiki-Gesundheit kontrolliert verwalten.",
 };
 
@@ -188,7 +187,6 @@ export default async function AdminPage() {
 
   return (
     <div className="site-frame">
-      <BrandHeader active="admin" />
       {admin ? (
         <AdminWorkspace
           adminName={admin.sub}
