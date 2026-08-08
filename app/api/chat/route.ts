@@ -1,8 +1,3 @@
-import {
-  anonymousRateLimitSubject,
-  consumeD1RateLimit,
-  type D1RateLimitDatabase,
-} from "../../../lib/rate-limit";
 import { getRuntimeBinding } from "../../../lib/runtime-env";
 import {
   retrieveWikiEvidence,
@@ -43,13 +38,6 @@ const REQUEST_TIMEOUT_MS = 60_000;
 const TURN_ID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const PROGRAM_VERSION = DSPY_PROGRAM.programVersion;
-const RATE_LIMIT_HEADERS = {
-  "X-RateLimit-Limit-Minute": "4",
-  "X-RateLimit-Limit-Day": "20",
-  "X-RateLimit-Global-Limit-Minute": "25",
-  "X-RateLimit-Global-Limit-Day": "900",
-};
-
 const NO_EVIDENCE_ANSWER =
   "Zu dieser Frage finde ich in der aktuellen Wissensbasis noch keinen ausreichenden Beleg. Bitte formuliere sie konkreter oder füge eine passende Quelle hinzu.";
 const UNVERIFIED_ANSWER =
@@ -76,7 +64,6 @@ function jsonResponse(body: Record<string, unknown>, status = 200, extraHeaders?
   const headers = new Headers({
     "Cache-Control": "no-store",
     "X-Content-Type-Options": "nosniff",
-    ...RATE_LIMIT_HEADERS,
   });
   if (extraHeaders) {
     new Headers(extraHeaders).forEach((value, key) => headers.set(key, value));
@@ -111,49 +98,6 @@ function enforceSameOrigin(request: Request) {
   } catch (error) {
     if (error instanceof RequestError) throw error;
     throw new RequestError(403, "Diese Anfrage wurde aus Sicherheitsgründen abgelehnt.");
-  }
-}
-
-async function enforceRateLimit(request: Request) {
-  const db = getRuntimeBinding<D1RateLimitDatabase>("DB");
-  if (!db) {
-    console.error("DB binding is not configured for the chat rate limit.");
-    throw new RequestError(503, "Der Chat ist momentan nicht konfiguriert.");
-  }
-
-  const clientResult = await consumeD1RateLimit(db, {
-    scope: "public_chat",
-    subjectKey: await anonymousRateLimitSubject(request),
-    rules: [
-      { metric: "requests_minute", limit: 4, windowMs: 60_000 },
-      { metric: "requests_day", limit: 20, windowMs: 86_400_000 },
-    ],
-  });
-
-  if (!clientResult.allowed) {
-    throw new RequestError(
-      429,
-      clientResult.exceededMetric === "requests_day"
-        ? "Dein kostenloses Tageskontingent von 20 Fragen ist aufgebraucht."
-        : "Zu viele Anfragen. Erlaubt sind vier Fragen pro Minute.",
-      { "Retry-After": String(clientResult.retryAfterSeconds) },
-    );
-  }
-
-  const globalResult = await consumeD1RateLimit(db, {
-    scope: "public_chat_global",
-    subjectKey: "all_clients",
-    rules: [
-      { metric: "requests_minute", limit: 25, windowMs: 60_000 },
-      { metric: "requests_day", limit: 900, windowMs: 86_400_000 },
-    ],
-  });
-  if (!globalResult.allowed) {
-    throw new RequestError(
-      429,
-      "Das kostenlose Gesamtbudget ist momentan ausgelastet.",
-      { "Retry-After": String(globalResult.retryAfterSeconds) },
-    );
   }
 }
 
@@ -500,7 +444,6 @@ export async function POST(request: Request) {
       throw new RequestError(415, "Für den Chat wird JSON erwartet.");
     }
 
-    await enforceRateLimit(request);
     const { question, history, turnId, attachments, addAttachmentsToWiki } = parsePayload(await readLimitedJson(request));
     const database = getRuntimeBinding<D1DatabaseLike>("DB");
     if (!database) {

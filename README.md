@@ -20,7 +20,7 @@ TrainWiki ist ein quellengebundener, lernender Chatbot nach dem LLM-Wiki-Muster 
 - DSPy-gestützte Alias-Erweiterung und deterministisches Reranking mit einem versionierten Retrieval-Qualitätstest gegen den realen Bootstrap-Korpus
 - sichere Darstellung von Modellantworten als GitHub-Flavored Markdown; rohes HTML wird verworfen
 - Export eines Frage-Antwort-Paars oder der gesamten aktuellen Sitzung als Markdown, eigenständiges HTML oder über den Druckdialog als PDF
-- D1-gestützte Limits von vier Fragen pro Minute und 20 Fragen pro Tag je pseudonymisiertem Client sowie 25/Minute und 900/Tag global
+- keine TrainWiki-eigenen Nutzungslimits für Chatfragen; externe Providerlimits werden separat behandelt
 - Geschützte Admin-Website unter `/admin`, ohne ChatGPT/SIWC; ein GitHub-PAT wird einmalig gegen den freigegebenen GitHub-Login geprüft und nicht gespeichert
 - Quellen-, Job- und echte Lernvorschlagsansichten im Adminbereich
 - datensparsame, idempotente Lernbeobachtungen: Wiederholte Fragen erhöhen nur die Review-Priorität; Chat-Inhalte werden niemals automatisch als Wiki-Wissen veröffentlicht

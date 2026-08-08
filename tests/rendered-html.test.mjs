@@ -332,6 +332,8 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
     assert.equal(response.status, 200);
+    assert.equal(response.headers.has("x-ratelimit-limit-minute"), false);
+    assert.equal(response.headers.has("x-ratelimit-limit-day"), false);
     const responsePayload = await response.json();
     assert.equal(responsePayload.answer, "Testantwort [1]");
     assert.equal(responsePayload.sources[0].title, "Testquelle");
