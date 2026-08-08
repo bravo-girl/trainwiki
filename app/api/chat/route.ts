@@ -364,10 +364,6 @@ function buildExtractiveFallbackAnswer(
   ];
 
   return [
-    "## Belegte Fundstellen",
-    "",
-    "Die Wissensbasis enthält dazu folgende unmittelbar passende Inhalte:",
-    "",
     ...sections.map((section) => {
       const excerpt = repairCommonMojibake(section.text)
         .replace(/\s+/g, " ")

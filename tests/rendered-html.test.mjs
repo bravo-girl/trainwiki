@@ -257,7 +257,7 @@ test("returns grounded evidence when the Groq key is absent", async () => {
   });
   assert.equal(response.status, 200);
   const payload = await response.json();
-  assert.match(payload.answer, /Belegte Fundstellen/i);
+  assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
   assert.equal(payload.sources[0].number, 1);
 });
 
@@ -286,7 +286,7 @@ test("returns grounded evidence when Groq rejects a suggested ETCS question", as
     );
     assert.equal(response.status, 200);
     const payload = await response.json();
-    assert.match(payload.answer, /Belegte Fundstellen/i);
+    assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
     assert.equal(payload.sources[0].number, 1);
     assert.doesNotMatch(payload.answer, /konnte momentan nicht beantwortet werden/i);
   } finally {
@@ -559,7 +559,7 @@ test("returns cited evidence excerpts when an answer cannot be repaired", async 
     );
     assert.equal(response.status, 200);
     const payload = await response.json();
-    assert.match(payload.answer, /Belegte Fundstellen/i);
+    assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
     assert.match(payload.answer, /geprüfte Testaussage/i);
     assert.equal(payload.sources[0].number, 1);
     assert.doesNotMatch(payload.answer, /Unbelegte Behauptung/);
