@@ -6,7 +6,7 @@
     "datasetDigest": "sha256:e319863e45a7821e92e4ca3408fd2a0633e1f37825ee3003e3920b1d7871b75c",
     "networkUsed": false,
     "optimizer": "none",
-    "programDigest": "sha256:4a75436e40f0ba1b09c8d5e2b7a311a47d43f86f51cb6dbfbb78f9c3c30d8615",
+    "programDigest": "sha256:e6148c71259237dcea5733cc32f6a98f8a3f3f0eae074b73847401814ce4c76e",
     "randomSeed": 0
   },
   "corpus": {
@@ -577,10 +577,10 @@
         "title": "GroundedAnswerInput",
         "type": "object"
       },
-      "instructions": "Answer in German using only the supplied evidence.\n\nEvery factual claim must name at least one supporting evidence identifier.\nIf the evidence is insufficient, abstain explicitly instead of filling gaps\nfrom model memory. Keep facts and recommendations clearly separated.",
+      "instructions": "Answer in German using only the supplied evidence.\n\nEvery factual claim must name at least one supporting evidence identifier.\nIf the evidence is insufficient, abstain explicitly instead of filling gaps\nfrom model memory. Synthesize the evidence into a coherent, independently\nworded explanation instead of quoting or concatenating source passages.\nKeep facts and recommendations clearly separated.",
       "outputFields": [
         {
-          "description": "Concise German answer, or a clear statement that evidence is insufficient.",
+          "description": "Independent German synthesis, or a clear statement that evidence is insufficient.",
           "name": "answer",
           "type": "str"
         },

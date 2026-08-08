@@ -96,7 +96,9 @@ class GroundedAnswer(dspy.Signature):
 
     Every factual claim must name at least one supporting evidence identifier.
     If the evidence is insufficient, abstain explicitly instead of filling gaps
-    from model memory. Keep facts and recommendations clearly separated.
+    from model memory. Synthesize the evidence into a coherent, independently
+    worded explanation instead of quoting or concatenating source passages.
+    Keep facts and recommendations clearly separated.
     """
 
     question: str = dspy.InputField(desc="The user's question.")
@@ -104,7 +106,7 @@ class GroundedAnswer(dspy.Signature):
         desc="The complete and exclusive evidence set available for this answer."
     )
     answer: str = dspy.OutputField(
-        desc="Concise German answer, or a clear statement that evidence is insufficient."
+        desc="Independent German synthesis, or a clear statement that evidence is insufficient."
     )
     claim_evidence: list[GroundedClaim] = dspy.OutputField(
         desc="Atomic answer claims paired with direct supporting evidence identifiers."

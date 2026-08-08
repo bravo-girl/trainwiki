@@ -242,7 +242,7 @@ test("rejects a cross-origin admin login before contacting GitHub", async () => 
   }
 });
 
-test("returns grounded evidence when the Groq key is absent", async () => {
+test("reports the missing Groq configuration instead of quoting evidence", async () => {
   const response = await call("/api/chat", {
     method: "POST",
     headers: {
@@ -255,13 +255,13 @@ test("returns grounded evidence when the Groq key is absent", async () => {
       turnId: testTurnId,
     }),
   });
-  assert.equal(response.status, 200);
+  assert.equal(response.status, 502);
   const payload = await response.json();
-  assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
-  assert.equal(payload.sources[0].number, 1);
+  assert.match(payload.error, /GROQ_API_KEY/);
+  assert.equal(payload.answer, undefined);
 });
 
-test("returns grounded evidence when Groq rejects a suggested ETCS question", async () => {
+test("reports Groq's status and message instead of quoting evidence", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
@@ -284,11 +284,11 @@ test("returns grounded evidence when Groq rejects a suggested ETCS question", as
       },
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
-    assert.equal(response.status, 200);
+    assert.equal(response.status, 502);
     const payload = await response.json();
-    assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
-    assert.equal(payload.sources[0].number, 1);
-    assert.doesNotMatch(payload.answer, /konnte momentan nicht beantwortet werden/i);
+    assert.match(payload.error, /HTTP 400/);
+    assert.match(payload.error, /upstream fixture/);
+    assert.equal(payload.answer, undefined);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -352,6 +352,8 @@ test("proxies chat only to the fixed Groq GPT-OSS 120B model", async () => {
     assert.match(payload.messages[0].content, /intern gründlich/);
     assert.match(payload.messages[0].content, /Berechnungsschritte/);
     assert.match(payload.messages[0].content, /Zwischenüberschriften/);
+    assert.match(payload.messages[0].content, /eigenständige fachliche Synthese/);
+    assert.match(payload.messages[0].content, /keine längeren Textpassagen/);
     assert.deepEqual(
       payload.messages.slice(1, -1).map((message) => message.content.slice(0, 5)),
       ["alt-1", "alt-2", "neu-1", "neu-2", "neu-3", "neu-4"],
@@ -530,7 +532,7 @@ test("repairs invalid source numbers instead of discarding a grounded answer", a
   }
 });
 
-test("returns cited evidence excerpts when an answer cannot be repaired", async () => {
+test("rejects an answer that remains uncited instead of quoting evidence", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
@@ -558,12 +560,10 @@ test("returns cited evidence excerpts when an answer cannot be repaired", async 
       },
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
-    assert.equal(response.status, 200);
+    assert.equal(response.status, 502);
     const payload = await response.json();
-    assert.doesNotMatch(payload.answer, /Belegte Fundstellen|unmittelbar passende Inhalte/i);
-    assert.match(payload.answer, /geprüfte Testaussage/i);
-    assert.equal(payload.sources[0].number, 1);
-    assert.doesNotMatch(payload.answer, /Unbelegte Behauptung/);
+    assert.match(payload.error, /keine Antwort mit gültigen Belegen/);
+    assert.equal(payload.answer, undefined);
   } finally {
     globalThis.fetch = originalFetch;
   }
