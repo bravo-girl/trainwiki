@@ -1,10 +1,14 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { DatabaseSync } from "node:sqlite";
 import test from "node:test";
 
 import { parseDspyArtifact } from "../lib/dspy-artifact.ts";
 import { retrieveWikiEvidence } from "../lib/wiki-retrieval.ts";
+
+const bootstrapInputMigrations = (await readdir(new URL("../drizzle/", import.meta.url)))
+  .filter((filename) => /_bootstrap_input_20260808_part\d+\.sql$/.test(filename))
+  .sort();
 
 async function applyMigration(database, filename) {
   const source = await readFile(
@@ -52,10 +56,7 @@ test("portable DSPy retrieval profile meets its corpus recall gate", async () =>
       "0003_source_identities.sql",
       "0004_learning_observations.sql",
       "0005_source_import_dedupe.sql",
-      "0006_bootstrap_input_20260808_part1.sql",
-      "0007_bootstrap_input_20260808_part2.sql",
-      "0008_bootstrap_input_20260808_part3.sql",
-      "0009_bootstrap_input_20260808_part4.sql",
+      ...bootstrapInputMigrations,
     ]) {
       await applyMigration(database, migration);
     }

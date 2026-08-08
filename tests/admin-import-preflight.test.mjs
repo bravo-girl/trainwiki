@@ -1,12 +1,16 @@
 import assert from "node:assert/strict";
 import { createHmac } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { DatabaseSync } from "node:sqlite";
 import test from "node:test";
 
 const adminSecret = "test-only-admin-session-secret-32-characters";
 process.env.TRAINWIKI_ADMIN_GITHUB_LOGIN = "bravo-girl";
 process.env.TRAINWIKI_ADMIN_SESSION_SECRET = adminSecret;
+
+const bootstrapInputMigrations = (await readdir(new URL("../drizzle/", import.meta.url)))
+  .filter((filename) => /_bootstrap_input_20260808_part\d+\.sql$/.test(filename))
+  .sort();
 
 async function applyMigration(db, filename) {
   const sql = await readFile(new URL(`../drizzle/${filename}`, import.meta.url), "utf8");
@@ -80,10 +84,7 @@ test("app preflight recognizes sources imported by the bootstrap path", async ()
     "0002_bootstrap_taf_tap.sql",
     "0003_source_identities.sql",
     "0005_source_import_dedupe.sql",
-    "0006_bootstrap_input_20260808_part1.sql",
-    "0007_bootstrap_input_20260808_part2.sql",
-    "0008_bootstrap_input_20260808_part3.sql",
-    "0009_bootstrap_input_20260808_part4.sql",
+    ...bootstrapInputMigrations,
   ]) {
     await applyMigration(db, migration);
   }

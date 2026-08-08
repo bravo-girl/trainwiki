@@ -1,9 +1,13 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { DatabaseSync } from "node:sqlite";
 import test from "node:test";
 import { retrieveWikiEvidence } from "../lib/wiki-retrieval.ts";
+
+const bootstrapInputMigrations = (await readdir(new URL("../drizzle/", import.meta.url)))
+  .filter((filename) => /_bootstrap_input_20260808_part\d+\.sql$/.test(filename))
+  .sort();
 
 async function applyMigration(db, filename) {
   const sql = await readFile(new URL(`../drizzle/${filename}`, import.meta.url), "utf8");
@@ -27,19 +31,17 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
     createHash("sha256").update(immutableBootstrapMigration).digest("hex"),
     "d9417d94251400f2e334463d2b5eab06a2092bd158a1833f99d908ea2e19f367",
   );
-  const initialInputMigrationHashes = [];
-  for (const [filename, expectedHash] of [
-    ["0006_bootstrap_input_20260808_part1.sql", "54136042522007bfec0211d6ef7a98a6d632e1e03a99418e49bedc0ac9aca5a6"],
-    ["0007_bootstrap_input_20260808_part2.sql", "d81710459279ee0cf8734e0b6a5bffcdf8484aac0dbfae37fbac7b65a8f67106"],
-    ["0008_bootstrap_input_20260808_part3.sql", "c1216aa25a887789444add15d89c0661943fdc7446033a923bcd211b776b4d19"],
-    ["0009_bootstrap_input_20260808_part4.sql", "11693e2f4f3de76daf8cc44ca672768a836b2b68fcb78347997e5ba6fd872db3"],
-  ]) {
-    const migration = await readFile(new URL(`../drizzle/${filename}`, import.meta.url));
-    initialInputMigrationHashes.push(
-      createHash("sha256").update(migration).digest("hex"),
+  assert.equal(bootstrapInputMigrations.length, 14);
+  const initialInputHash = createHash("sha256");
+  for (const filename of bootstrapInputMigrations) {
+    initialInputHash.update(
+      await readFile(new URL(`../drizzle/${filename}`, import.meta.url)),
     );
-    assert.equal(initialInputMigrationHashes.at(-1), expectedHash);
   }
+  assert.equal(
+    initialInputHash.digest("hex"),
+    "d3a300ad06fe004713ef09f7a27a9cf59c1b001797f82935b83e761e25bb98b5",
+  );
 
   const db = new DatabaseSync(":memory:");
   db.exec("PRAGMA foreign_keys=ON");
@@ -140,10 +142,9 @@ test("D1 migrations preserve data and enforce TrainWiki invariants", async () =>
   await applyMigration(db, "0003_source_identities.sql");
   await applyMigration(db, "0004_learning_observations.sql");
   await applyMigration(db, "0005_source_import_dedupe.sql");
-  await applyMigration(db, "0006_bootstrap_input_20260808_part1.sql");
-  await applyMigration(db, "0007_bootstrap_input_20260808_part2.sql");
-  await applyMigration(db, "0008_bootstrap_input_20260808_part3.sql");
-  await applyMigration(db, "0009_bootstrap_input_20260808_part4.sql");
+  for (const migration of bootstrapInputMigrations) {
+    await applyMigration(db, migration);
+  }
 
   assert.equal(
     db.prepare("SELECT count(*) AS count FROM sources WHERE created_by = 'bootstrap'").get().count,
