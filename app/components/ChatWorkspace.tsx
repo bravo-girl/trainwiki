@@ -50,6 +50,37 @@ function compactHistoryContent(content: string) {
   return `${content.slice(0, headLength)}${separator}${content.slice(-tailLength)}`;
 }
 
+function contextualTopic(messages: readonly Message[]) {
+  const latestQuestion = [...messages]
+    .reverse()
+    .find((message) => message.role === "user" && message.includeInContext !== false)
+    ?.text;
+  if (!latestQuestion) return "diesem Thema";
+
+  const topic = latestQuestion
+    .replace(/[`*_#[\]]/g, " ")
+    .replace(/^\s*(?:bitte\s+)?(?:erkläre|beschreibe|zeige|nenne|was|wie|welche|welcher|welches|warum)\b[,:;\s-]*/iu, "")
+    .replace(/^\s*(?:ändert\s+sich|funktioniert|gilt|gelten|ist|sind|bedeutet)\b[,:;\s-]*/iu, "")
+    .replace(/^\s*(?:bei|für|zu|zum|zur|das|die|der)\b[,:;\s-]*/iu, "")
+    .replace(/[?.!]+$/u, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!topic) return "diesem Thema";
+  return topic.length <= 58 ? topic : `${topic.slice(0, 57).trimEnd()}…`;
+}
+
+function buildContextualSuggestions(messages: readonly Message[]) {
+  const hasAnswer = messages.some((message) => message.role === "assistant");
+  if (!hasAnswer) return [];
+  const topic = contextualTopic(messages);
+  const label = topic === "diesem Thema" ? topic : `„${topic}“`;
+  return [
+    `Was sind die wichtigsten Voraussetzungen bei ${label}?`,
+    `Welche praktischen Folgen hat ${label}?`,
+    `Welche Ausnahmen und offenen Punkte gibt es bei ${label}?`,
+  ];
+}
+
 function MarkdownAnswer({ children }: { children: string }) {
   return (
     <div className="markdown-message">
@@ -257,6 +288,10 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
   const fileInputRef = useRef<HTMLInputElement>(null);
   const nextId = useRef(1);
   const exchanges = useMemo(() => collectExchanges(messages), [messages]);
+  const suggestions = useMemo(
+    () => messages.length === 0 ? initialSuggestions : buildContextualSuggestions(messages),
+    [initialSuggestions, messages],
+  );
 
   async function selectAttachments(event: ChangeEvent<HTMLInputElement>) {
     const files = Array.from(event.target.files ?? []);
@@ -400,9 +435,9 @@ export function ChatWorkspace({ initialSuggestions }: { initialSuggestions: read
         </div>
 
         <div className="chat-composer-wrap">
-          {messages.length === 0 && initialSuggestions.length > 0 && (
-            <div className="suggestion-row" aria-label="Zufällige Fragen">
-              {initialSuggestions.map((suggestion) => (
+          {!isLoading && suggestions.length > 0 && (
+            <div className="suggestion-row" aria-label={messages.length === 0 ? "Zufällige Fragen" : "Passende Folgefragen"}>
+              {suggestions.map((suggestion) => (
                 <button key={suggestion} onClick={() => setDraft(suggestion)} type="button">
                   {suggestion}
                 </button>
