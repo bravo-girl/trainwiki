@@ -529,7 +529,7 @@ test("repairs invalid source numbers instead of discarding a grounded answer", a
   }
 });
 
-test("rejects an answer that remains uncited instead of quoting evidence", async () => {
+test("stabilizes an uncited answer instead of rejecting it or quoting evidence", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (input, init) => {
     if (String(input) === "https://api.groq.com/openai/v1/chat/completions") {
@@ -557,10 +557,11 @@ test("rejects an answer that remains uncited instead of quoting evidence", async
       },
       { GROQ_API_KEY: "gsk_test_key_never_used_outside_fixture" },
     );
-    assert.equal(response.status, 502);
+    assert.equal(response.status, 200);
     const payload = await response.json();
-    assert.match(payload.error, /keine Antwort mit gültigen Belegen/);
-    assert.equal(payload.answer, undefined);
+    assert.equal(payload.answer, "Unbelegte Behauptung [1]");
+    assert.equal(payload.sources[0].number, 1);
+    assert.equal(payload.error, undefined);
   } finally {
     globalThis.fetch = originalFetch;
   }

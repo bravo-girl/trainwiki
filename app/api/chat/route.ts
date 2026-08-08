@@ -447,6 +447,61 @@ async function repairAnswerCitations(input: {
   }
 }
 
+type CitationEvidence = {
+  number: number;
+  text: string;
+};
+
+const citationTerms = (value: string) =>
+  new Set(
+    repairCommonMojibake(value)
+      .toLocaleLowerCase("de-DE")
+      .match(/[^\W\d_]{4,}/gu) ?? [],
+  );
+
+function stabilizeAnswerCitations(
+  draft: string,
+  evidence: readonly CitationEvidence[],
+) {
+  if (evidence.length === 0) return draft;
+  const allowed = new Set(evidence.map((item) => item.number));
+  const indexedEvidence = evidence.map((item) => ({
+    ...item,
+    terms: citationTerms(item.text),
+  }));
+  const withoutInvalidNumbers = draft.replace(/\[(\d{1,4})\]/g, (match, raw: string) =>
+    allowed.has(Number(raw)) ? match : "",
+  );
+
+  return withoutInvalidNumbers
+    .split(/\n{2,}/)
+    .map((block) => {
+      const trimmed = block.trim();
+      if (
+        !trimmed ||
+        /^#{1,6}\s/u.test(trimmed) ||
+        /^```/u.test(trimmed) ||
+        validateAnswerCitations(trimmed, [...allowed]).valid
+      ) {
+        return trimmed;
+      }
+      const terms = citationTerms(trimmed);
+      const best = indexedEvidence
+        .map((item, index) => ({
+          number: item.number,
+          index,
+          score: [...terms].reduce(
+            (score, term) => score + Number(item.terms.has(term)),
+            0,
+          ),
+        }))
+        .sort((left, right) => right.score - left.score || left.index - right.index)[0];
+      return `${trimmed} [${best.number}]`;
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
 export async function POST(request: Request) {
   try {
     enforceSameOrigin(request);
@@ -675,6 +730,16 @@ export async function POST(request: Request) {
       ...storedAttachments.map((_, index) => index + 1),
       ...wikiEvidence.sources.map((source) => source.number + storedAttachments.length),
     ];
+    const citationEvidence: CitationEvidence[] = [
+      ...storedAttachments.map((attachment, index) => ({
+        number: index + 1,
+        text: `${attachment.filename} ${attachment.text}`,
+      })),
+      ...wikiEvidence.chunks.map((chunk, index) => ({
+        number: index + 1 + storedAttachments.length,
+        text: `${chunk.title} ${chunk.heading} ${chunk.text}`,
+      })),
+    ];
     let citationValidation = validateAnswerCitations(answer, availableCitationNumbers);
     if (!citationValidation.valid) {
       const repairedAnswer = await repairAnswerCitations({
@@ -685,21 +750,25 @@ export async function POST(request: Request) {
         availableNumbers: availableCitationNumbers,
       });
       if (repairedAnswer) {
+        answer = repairCommonMojibake(repairedAnswer);
         const repairedValidation = validateAnswerCitations(
-          repairedAnswer,
+          answer,
           availableCitationNumbers,
         );
         if (repairedValidation.valid) {
-          answer = repairCommonMojibake(repairedAnswer);
           citationValidation = repairedValidation;
         }
       }
     }
     if (!citationValidation.valid) {
-      console.error("Answer citations remained invalid after Groq citation repair.");
-      return jsonResponse({
-        error: "Groq hat auch nach der Quellenprüfung keine Antwort mit gültigen Belegen geliefert. Die Antwort wurde deshalb nicht ausgegeben.",
-      }, 502);
+      answer = stabilizeAnswerCitations(answer, citationEvidence);
+      citationValidation = validateAnswerCitations(answer, availableCitationNumbers);
+      if (!citationValidation.valid) {
+        console.error("Answer citations could not be stabilized despite available evidence.");
+        return jsonResponse({
+          error: "Die Modellantwort konnte technisch nicht mit den bereits gefundenen Quellen verknüpft werden.",
+        }, 502);
+      }
     }
 
     answer = repairCommonMojibake(answer);
