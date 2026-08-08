@@ -304,14 +304,17 @@ test("proxies chat only to the fixed Groq GPT-OSS model", async () => {
 
     const payload = JSON.parse(upstreamRequest.init.body);
     assert.equal(payload.model, "openai/gpt-oss-20b");
-    assert.equal(payload.max_completion_tokens, 512);
-    assert.equal(payload.reasoning_effort, "low");
+    assert.equal(payload.max_completion_tokens, 2048);
+    assert.equal(payload.reasoning_effort, "high");
     assert.equal(payload.include_reasoning, false);
     assert.equal(payload.stream, false);
     assert.match(upstreamRequest.init.headers.Authorization, /^Bearer gsk_/);
     assert.match(payload.messages[0].content, /Nummerierte Evidenz/);
     assert.match(payload.messages[0].content, /Every factual claim/i);
     assert.match(payload.messages[0].content, /ausschließlich anhand/);
+    assert.match(payload.messages[0].content, /intern gründlich/);
+    assert.match(payload.messages[0].content, /Berechnungsschritte/);
+    assert.match(payload.messages[0].content, /Zwischenüberschriften/);
     assert.deepEqual(
       payload.messages.slice(1, -1).map((message) => message.content.slice(0, 5)),
       ["neu-1", "neu-2", "neu-3", "neu-4"],
