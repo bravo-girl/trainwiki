@@ -73,10 +73,8 @@ test("keeps the chat mobile-first and exposes pair and session exports", async (
   assert.doesNotMatch(css, /\.suggestion-row::-webkit-scrollbar/);
   assert.match(source, /useState\(true\)/);
   assert.match(source, /Zufällige Fragen/);
-  assert.match(source, /Passende Folgefragen/);
-  assert.match(source, /buildContextualSuggestions/);
-  assert.match(source, /latestQuestion/);
-  assert.doesNotMatch(source, /messages\.length === 0 && initialSuggestions\.length/);
+  assert.match(source, /messages\.length === 0 && initialSuggestions\.length/);
+  assert.doesNotMatch(source, /Passende Folgefragen|buildContextualSuggestions|latestQuestion/);
   assert.match(source, /Diese Antwort/);
   assert.match(source, /Aktuelle Sitzung/);
   assert.match(source, /\["md", "html"\]/);

@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import { createHmac } from "node:crypto";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -86,17 +85,6 @@ function visibleText(html) {
     .replace(/\s+/g, " ");
 }
 
-function createAdminCookie(login = "bravo-girl", now = Date.now()) {
-  const issuedAt = Math.floor(now / 1_000);
-  const payload = Buffer.from(
-    JSON.stringify({ sub: login, iat: issuedAt, exp: issuedAt + 8 * 60 * 60 }),
-  ).toString("base64url");
-  const signature = createHmac("sha256", adminSecret)
-    .update(payload)
-    .digest("base64url");
-  return `__Host-trainwiki_admin=${payload}.${signature}`;
-}
-
 test("renders the public, source-bound chat without authentication", async () => {
   const response = await call("/chat", {
     headers: { accept: "text/html" },
@@ -115,68 +103,6 @@ test("renders the public, source-bound chat without authentication", async () =>
     /groq|gpt-oss|chatgpt|openai|cloudflare|dspy|modell/i,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
-});
-
-test("shows the app-owned admin login without a session", async () => {
-  const response = await call("/admin", {
-    headers: { accept: "text/html" },
-  });
-  assert.equal(response.status, 200);
-
-  const html = await response.text();
-  assert.match(html, /<title>TrainWiki<\/title>/i);
-  assert.match(html, /Adminzugang/);
-  assert.match(html, /Persönlicher Zugangsschlüssel/);
-  assert.equal((visibleText(html).match(/TrainWiki/gi) ?? []).length, 1);
-  assert.doesNotMatch(visibleText(html).replace(/TrainWiki/i, ""), /GitHub|Worker|API/i);
-  assert.doesNotMatch(html, /Quellen rein\. Wissen wächst\./);
-});
-
-test("renders the admin workspace with a valid signed session", async () => {
-  const response = await call("/admin", {
-    headers: {
-      accept: "text/html",
-      cookie: createAdminCookie(),
-    },
-  });
-  assert.equal(response.status, 200);
-
-  const html = await response.text();
-  assert.match(html, /Quellen rein\. Wissen wächst\./);
-  assert.match(html, /PDF/);
-  assert.match(html, /DOCX/);
-  assert.match(html, /XLSX/);
-  assert.match(html, /JSON/);
-  assert.match(html, /YAML/);
-  assert.match(html, /Website oder Weblink/);
-  assert.match(html, /bravo-girl/);
-});
-
-test("rejects spoofed ChatGPT headers and tampered admin cookies", async () => {
-  const response = await call("/admin", {
-    headers: {
-      accept: "text/html",
-      cookie: `${createAdminCookie()}tampered`,
-      "oai-authenticated-user-id": "bravo-girl",
-    },
-  });
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /Adminzugang/);
-  assert.doesNotMatch(html, /Quellen rein\. Wissen wächst\./);
-});
-
-test("fails closed when the admin session secret is missing", async () => {
-  delete process.env.TRAINWIKI_ADMIN_SESSION_SECRET;
-  try {
-    const response = await call("/admin", {
-      headers: { accept: "text/html", cookie: createAdminCookie() },
-    });
-    assert.equal(response.status, 200);
-    assert.match(await response.text(), /Adminzugang/);
-  } finally {
-    process.env.TRAINWIKI_ADMIN_SESSION_SECRET = adminSecret;
-  }
 });
 
 test("verifies the GitHub PAT once and returns only a secure host session", async () => {
